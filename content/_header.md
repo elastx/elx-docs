@@ -1,0 +1,1 @@
+![ELASTX – Documentation](/img/elastx.png)
