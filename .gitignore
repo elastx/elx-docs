@@ -1,0 +1,6 @@
+/public/*
+!/public/.gitkeep
+.DS_Store
+.vscode
+test
+resources
