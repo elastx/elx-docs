@@ -8,6 +8,7 @@ To get started you need certain tools in order to administrate your cluster and 
 
 * kubectl
 * helm (optional)
+* Knowledge of how Kubernetes works
 
 You also need a configuration file from us called `<yourcluster>-kubeconfig` and if you have access to multiple clusters, you can choose to combine your own `~/.kube/config` or set the environment variable `KUBECONFIG` which both kubectl and helm honors. We will be showing how you do the latter.
 
