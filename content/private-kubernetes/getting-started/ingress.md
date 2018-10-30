@@ -18,7 +18,9 @@ In our examples, all references the domain name `example.tld` needs to be change
 
 # Create and apply manifests
 
-Paste this yaml into `namespace-my-web-service.yaml` and run `kubectl create -f` on it:
+After you saved each manifest, you should run `kubectl create -f <manifest>.yaml`.
+
+Paste this yaml into `namespace-my-web-service.yaml`:
 
 ```yaml
 apiVersion: v1
@@ -31,7 +33,7 @@ Now let's configure an *Issuer* that works inside this namespace. An *issuer* in
 
 > Read more about how [Let's Encrypt works here!](https://letsencrypt.org/how-it-works/)
 
-Save this into `issuer-my-web-service.yaml` with modified email address.
+With modified email address, save this into `issuer-my-web-service.yaml`:
 
 ```yaml
 apiVersion: certmanager.k8s.io/v1alpha1
