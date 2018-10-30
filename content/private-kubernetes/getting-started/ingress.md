@@ -1,0 +1,135 @@
+---
+title: "Ingress with Let's Encrypt"
+description: "Example on using nginx ingress controller with cert manager"
+weight: 4
+---
+
+In this example we will expose a simple web service using Let's Encrypt staging certificates. We will do the following:
+
+* Create a *namespace* called `my-web-service`
+* Create an *Issuer* that configures *cert manager* for our namespace
+* Create a *deployment* that runs multiple Nginx containers
+* Create a *service* selecting pods from the above deployment
+* Create an *ingress* that uses the *nginx ingress controller* and *cert manager*
+
+In our examples, all references the domain name `example.tld` needs to be changed to your own DNS record, which you point to the IP addresses given by us. We will use the *HTTP-01* challenge which means you need to do this before anything else.
+
+> These examples are only to show how you get started with *Nginx Ingress Controller*, *Cert Manager* to get *Let's Encrypt* working.
+
+# Create and apply manifests
+
+Paste this yaml into `namespace-my-web-service.yaml` and run `kubectl create -f` on it:
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-web-service
+```
+
+Now let's configure an *Issuer* that works inside this namespace. An *issuer* in cert manager helps sending a Certificate Signing Request (CSR) to an ACME server, in our example the ACME is Let's Encrypt boulder server. On its own, this does nothing. It acts on annotations `certmanager.k8s.io/issuer: letsencrypt-prod` which we will see in the *ingress* manifest.
+
+> Read more about how [Let's Encrypt works here!](https://letsencrypt.org/how-it-works/)
+
+Save this into `issuer-my-web-service.yaml` with modified email address.
+
+```yaml
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Issuer
+metadata:
+  name: letsencrypt-prod
+  namespace: my-web-service
+spec:
+  acme:
+    # Let's Encrypt ACME server for production certificates
+    server: https://acme-v02.api.letsencrypt.org/directory
+    # This email address will get notifications if failure to renew certificates happens
+    email: valid-email@example.tld
+    privateKeySecretRef:
+      name: letsencrypt-prod
+    http01: {}
+```
+
+Our deployment manifest. It runs a simple nginx container just presenting "Welcome to nginx!". Save this to `deployment-my-web-service.yaml`:
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: my-web-service-nginx
+  name: my-web-service-nginx
+  namespace: my-web-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-web-service-nginx
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: my-web-service-nginx
+    spec:
+      containers:
+      - image: nginx:latest
+        name: nginx
+```
+
+Our service, matching all pods from our deployment. Save this to `service-my-web-service.yaml`
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: my-web-service-nginx
+  name: my-web-service-nginx
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: my-web-service-nginx
+  type: ClusterIP
+```
+And last but not least our *ingress*. Save this to `ingress-my-web-service.yaml`:
+
+```yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-web-service-ingress
+  namespace: my-web-service
+  annotations:
+    kubernetes.io/tls-acme: "true"
+    certmanager.k8s.io/issuer: letsencrypt-prod
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+  - hosts:
+    - example.tld
+    secretName: example-tld
+  rules:
+  - host: example.tld
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: my-web-service-nginx
+          servicePort: 80
+```
+
+## Final words
+
+End result should be a web service saying "Welcome to nginx!" with SSL enabled and the certificate issued by Let's Encrypt:
+
+![](/img/examples/letsencrypt.png)
+
+## See also
+
+* [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+* [NGINX Ingress Controller](https://github.com/kubernetes/ingress-nginx)
+* [cert-manager](https://github.com/jetstack/cert-manager)
+* [Let's Encrypt](https://letsencrypt.org/how-it-works/)
