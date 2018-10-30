@@ -1,6 +1,6 @@
 ---
 title: Persistent storage 
-descrption: "Let's setup a simple web service with SSL"
+description: "What type of storage do we offer and an example on how to create a persistent volume claim"
 weight: 3
 ---
 

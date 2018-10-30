@@ -1,7 +1,7 @@
 ---
 title: "Ingress with Let's Encrypt"
 description: "Example on using nginx ingress controller with cert manager"
-weight: 4
+weight: 5
 ---
 
 In this example we will expose a simple web service using Let's Encrypt staging certificates. We will do the following:
@@ -67,7 +67,6 @@ spec:
   selector:
     matchLabels:
       app: my-web-service-nginx
-  strategy: {}
   template:
     metadata:
       labels:
@@ -87,6 +86,7 @@ metadata:
   labels:
     app: my-web-service-nginx
   name: my-web-service-nginx
+  namespace: my-web-service
 spec:
   ports:
   - port: 80
@@ -96,6 +96,7 @@ spec:
     app: my-web-service-nginx
   type: ClusterIP
 ```
+
 And last but not least our *ingress*. Save this to `ingress-my-web-service.yaml`:
 
 ```yaml
@@ -127,7 +128,7 @@ spec:
 
 End result should be a web service saying "Welcome to nginx!" with SSL enabled and the certificate issued by Let's Encrypt:
 
-![](/img/examples/letsencrypt.png)
+![Let's Encrypt valid certificate](/img/examples/letsencrypt.png)
 
 ## See also
 
