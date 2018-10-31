@@ -1,7 +1,6 @@
 ---
 title: "ELASTX Customer Documentation"
 type: "page"
-
 ---
 
 # ELASTX documentation

@@ -2,6 +2,7 @@
 title: "Requirements"
 description: "In order to begin using Private Kubernetes, you need these tools installed"
 weight: 1
+alwaysopen: true
 ---
 
 To get started you need certain tools in order to administrate your cluster and applications.

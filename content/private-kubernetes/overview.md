@@ -2,6 +2,7 @@
 title: "Overview"
 description: "Overview over ELASTX Private Kubernetes"
 weight: 1
+alwaysopen: true
 ---
 
 *ELASTX Private Kubernetes* consists of a fully redundant cluster spread over three different physical locations in Stockholm, Sweden. Managed and monitored by us 24x7. You also have access to our support at any time.

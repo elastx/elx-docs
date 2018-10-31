@@ -2,6 +2,7 @@
 title: "Ingress with Let's Encrypt"
 description: "Example on using nginx ingress controller with cert manager"
 weight: 5
+alwaysopen: true
 ---
 
 In this example we will expose a simple web service using Let's Encrypt staging certificates. We will do the following:

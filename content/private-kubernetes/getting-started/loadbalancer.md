@@ -2,6 +2,7 @@
 title: A simple load balanced service
 description: How to expose a service through a load balancer instead of the ingress controller
 weight: 4
+alwaysopen: true
 ---
 
 Exposing services with a *service* with type *LoadBalancer* will give you an unique public IP for that specific service. We will do the following:

@@ -2,6 +2,7 @@
 title: Persistent storage 
 description: "What type of storage do we offer and an example on how to create a persistent volume claim"
 weight: 3
+alwaysopen: true
 ---
 
 Here is a list of storage classes that can be used.
