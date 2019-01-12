@@ -25,3 +25,4 @@ Our OpenStack environment currently runs the following services:
 * Cinder - Block storage with SSD based block storage and guaranteed IOPS reservations which is integrated with Barbican for optional encrypted volumes.
 * Swift - Object storage
 * Ceilometer - Metric storage, stores key metrics for the services like cpu and memory utilization
+* CloudKitty - Rating service
