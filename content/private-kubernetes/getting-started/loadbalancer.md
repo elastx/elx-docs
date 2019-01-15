@@ -13,7 +13,7 @@ Exposing services with a *service* with type *LoadBalancer* will give you an uni
 
 # Create and apply manifests
 
-Copy and save this to a file called `namespace-my-lb-service`:
+Copy and save this to a file called `namespace-my-lb-service.yaml`:
 
 ```yaml
 apiVersion: v1
@@ -22,7 +22,7 @@ metadata:
   name: my-lb-service
 ```
 
-Copy and save this to a file called `deployment-my-lb-service`:
+Copy and save this to a file called `deployment-my-lb-service.yaml`:
 
 ```yaml
 apiVersion: apps/v1
@@ -42,12 +42,15 @@ spec:
       labels:
         app: my-lb-service-servehostname
     spec:
+      securityContext:
+        runAsUser: 1001
+        fsGroup: 1001
       containers:
       - image: k8s.gcr.io/serve_hostname
         name: servehostname
 ```
 
-Copy and save this to a file called `service-my-lb-service`:
+Copy and save this to a file called `service-my-lb-service.yaml`:
 
 ```yaml
 apiVersion: v1

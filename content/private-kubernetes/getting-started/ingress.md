@@ -9,7 +9,7 @@ In this example we will expose a simple web service using Let's Encrypt staging 
 
 * Create a *namespace* called `my-web-service`
 * Create an *Issuer* that configures *cert manager* for our namespace
-* Create a *deployment* that runs multiple Nginx containers
+* Create a *deployment* that runs multiple pods
 * Create a *service* selecting pods from the above deployment
 * Create an *ingress* that uses the *nginx ingress controller* and *cert manager*
 
@@ -53,29 +53,34 @@ spec:
     http01: {}
 ```
 
-Our deployment manifest. It runs a simple nginx container just presenting "Welcome to nginx!". Save this to `deployment-my-web-service.yaml`:
+Our deployment manifest. It runs a simple serve_hostname container just presenting the hostname. Save this to `deployment-my-web-service.yaml`:
 
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: my-web-service-nginx
-  name: my-web-service-nginx
+    app: my-web-service
+  name: my-web-service
   namespace: my-web-service
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: my-web-service-nginx
+      app: my-web-service
   template:
     metadata:
       labels:
-        app: my-web-service-nginx
+        app: my-web-service
     spec:
+      securityContext:
+        runAsUser: 1001
+        fsGroup: 1001
       containers:
-      - image: nginx:latest
-        name: nginx
+      - image: k8s.gcr.io/serve_hostname
+        name: servehostname
+        ports:
+        - containerPort: 9376
 ```
 
 Our service, matching all pods from our deployment. Save this to `service-my-web-service.yaml`
@@ -85,16 +90,16 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: my-web-service-nginx
-  name: my-web-service-nginx
+    app: my-web-service
+  name: my-web-service
   namespace: my-web-service
 spec:
   ports:
-  - port: 80
+  - port: 9376
     protocol: TCP
-    targetPort: 80
+    targetPort: 9376
   selector:
-    app: my-web-service-nginx
+    app: my-web-service
   type: ClusterIP
 ```
 
@@ -121,19 +126,19 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: my-web-service-nginx
-          servicePort: 80
+          serviceName: my-web-service
+          servicePort: 9376
 ```
 
 ## Final words
 
-End result should be a web service saying "Welcome to nginx!" with SSL enabled and the certificate issued by Let's Encrypt:
+End result should be a web service printing out current pods hostname with SSL enabled and the certificate issued by Let's Encrypt:
 
 ![Let's Encrypt valid certificate](/img/examples/letsencrypt.png)
 
 ## See also
 
 * [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/)
-* [NGINX Ingress Controller](https://github.com/kubernetes/ingress-nginx)
+* [NGINX Ingress Controller](https://github.com/kubernetes/ingress)
 * [cert-manager](https://github.com/jetstack/cert-manager)
 * [Let's Encrypt](https://letsencrypt.org/how-it-works/)
