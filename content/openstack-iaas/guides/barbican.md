@@ -1,5 +1,5 @@
 ---
-title: "Barbican guide"
+title: "Barbican"
 description: "Guide for using barbican"
 weight: 1
 alwaysopen: true
@@ -16,12 +16,12 @@ Secrets in Barbican have a special design with regards to ID, they are always re
 
 ## Secret types
 There are a few types of secrets that are handled by barbican:
-* symmetric - Used for storing byte arrays such as keys suitable for symmetric encryption.
-* public - Used for storing the public key of an asymmetric keypair.
-* private - Used for storing the private key of an asymmetric keypair.
-* passphrase - Used for storing plain text passphrases.
-* certificate - Used for storing cryptographic certificates such as X.509 certificates.
-* opaque - Used for backwards compatibility with previous versions of the API without typed secrets. New applications are encouraged to specify one of the other secret types.
+- symmetric - Used for storing byte arrays such as keys suitable for symmetric encryption.
+- public - Used for storing the public key of an asymmetric keypair.
+- private - Used for storing the private key of an asymmetric keypair.
+- passphrase - Used for storing plain text passphrases.
+- certificate - Used for storing cryptographic certificates such as X.509 certificates.
+- opaque - Used for backwards compatibility with previous versions of the API without typed secrets. New applications are encouraged to specify one of the other secret types.
 
 ## Store and fetch a passphrase using openstack cli
 Make sure you have installed the openstack python client and the barbican python client.
