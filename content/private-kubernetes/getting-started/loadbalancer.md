@@ -11,7 +11,7 @@ Exposing services with a *service* with type *LoadBalancer* will give you an uni
 * Create a *deployment* that runs multiple *serve_hostname* pods
 * Create a *service* with type LoadBalancer
 
-# Create and apply manifests
+## Create and apply manifests
 
 Copy and save this to a file called `namespace-my-lb-service.yaml`:
 

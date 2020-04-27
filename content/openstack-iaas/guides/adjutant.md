@@ -5,13 +5,16 @@ weight: 1
 alwaysopen: true
 ---
 
-# Overview
+## Overview
+
 *OpenStack Adjutant* is a service that allows users to manage projects and their users directly from Horizon.
 
 ## User management
-Users can be managed directly from the (https://ops.elastx.cloud/management/project_users/)[management tab] in Horizon dashboard.
+
+Users can be managed directly from the [management tab](https://ops.elastx.cloud/management/project_users/) in Horizon dashboard.
 
 There are a couple of roles that can be assigned to users inside of a project:
+
 - Load Balancer - Allow access to manage load balancers (Octavia).
 - Object Store - Allow access to manage objects in object store (Swift).
 - Orchestration - Allow access to manage orchestration templates (Heat).

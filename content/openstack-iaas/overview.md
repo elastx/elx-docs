@@ -11,9 +11,10 @@ The current setup is based on the OpenStack version Pike.
 
 ![Overview of OpenStack IaaS data centers](/img/dc-1.png)
 
-# Services
+## Services
 
 Our OpenStack environment currently runs the following services:
+
 * Keystone - Authentication service
 * Nova - Compute service
 * Neutron - Network service

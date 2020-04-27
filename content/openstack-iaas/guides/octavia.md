@@ -7,11 +7,12 @@ alwaysopen: true
 
 *OpenStack Octavia* is the next generation load balancer as a service for OpenStack.
 
-
 Use with Barbican for SSL
 
 ## Create a SSL-Terminated Load Balancer
+
 Creating a SSL-terminated Octavia load balancer:
+
 - Generate certificates and keys
 - Store certificate key
 - Store certificate

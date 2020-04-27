@@ -17,7 +17,7 @@ In our examples, all references the domain name `example.tld` needs to be change
 
 > These examples are only to show how you get started with *Nginx Ingress Controller*, *Cert Manager* to get *Let's Encrypt* working.
 
-# Create and apply manifests
+## Create and apply manifests
 
 After you saved each manifest, you should run `kubectl create -f <manifest>.yaml`.
 
