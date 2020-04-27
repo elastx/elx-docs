@@ -17,7 +17,7 @@ You also need a configuration file from us called `<yourcluster>-kubeconfig` and
 
 To install `kubectl` you can follow the official documentation here: [Install and Set Up kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/). And for `helm` you can follow their documentation: [Installing the Helm client](https://github.com/helm/helm/blob/master/docs/install.md#installing-the-helm-client)
 
-# Verify access
+## Verify access
 
 Let's verify that you have access to your cluster.
 

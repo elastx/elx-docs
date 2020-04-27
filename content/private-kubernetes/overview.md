@@ -13,7 +13,7 @@ If you run services in our OpenStack platform you can have workloads alongside y
 
 When you schedule services, there are some things to be aware of in order to fully take advantage of the possibilities we provide. With that said, you can use all tooling that supports a standard setup of Kubernetes.
 
-# Features
+## Features
 
 As Kubernetes runs on top of our high perfomant OpenStack platform, we integrate with the features it provides.
 

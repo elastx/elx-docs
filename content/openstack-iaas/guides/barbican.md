@@ -5,17 +5,20 @@ weight: 1
 alwaysopen: true
 ---
 
-# Overview
+## Overview
+
 *OpenStack Barbican* is a key management service for storing highly sensitive data like private keys for certificates and passwords which needs to be available for applications during runtime.
 
 ELASTX Barbican service is backed by physical HSM appliances to ensure that all data is securely stored.
 
-REST API reference can be found here: https://docs.openstack.org/barbican/pike/api/index.html
+REST API reference can be found here: [https://docs.openstack.org/barbican/pike/api/index.html](https://docs.openstack.org/barbican/pike/api/index.html)
 
 Secrets in Barbican have a special design with regards to ID, they are always referenced by a "secret href" instead of a UUID! (This will change in a later release!)
 
 ## Secret types
+
 There are a few types of secrets that are handled by barbican:
+
 - symmetric - Used for storing byte arrays such as keys suitable for symmetric encryption.
 - public - Used for storing the public key of an asymmetric keypair.
 - private - Used for storing the private key of an asymmetric keypair.
@@ -24,10 +27,12 @@ There are a few types of secrets that are handled by barbican:
 - opaque - Used for backwards compatibility with previous versions of the API without typed secrets. New applications are encouraged to specify one of the other secret types.
 
 ## Store and fetch a passphrase using openstack cli
+
 Make sure you have installed the openstack python client and the barbican python client.
 
 Store a passphrase as a secret:
-```
+
+```shell
 $ openstack secret store --secret-type passphrase --name "test passphrase" --payload 'aVerYSecreTTexT!'
 +---------------+-------------------------------------------------------------------------------+
 | Field         | Value                                                                         |
@@ -46,7 +51,8 @@ $ openstack secret store --secret-type passphrase --name "test passphrase" --pay
 ```
 
 Get information (only metadata) about the secret
-```
+
+```shell
 $ openstack secret get https://ops.elastx.cloud:9311/v1/secrets/d9e88d84-c668-48d9-a051-f0df2e23485b
 +---------------+-------------------------------------------------------------------------------+
 | Field         | Value                                                                         |
@@ -65,7 +71,8 @@ $ openstack secret get https://ops.elastx.cloud:9311/v1/secrets/d9e88d84-c668-48
 ```
 
 Get the actual secret
-```
+
+```shell
 $ openstack secret get --payload https://ops.elastx.cloud:9311/v1/secrets/d9e88d84-c668-48d9-a051-f0df2e23485b
 +---------+------------------+
 | Field   | Value            |
@@ -75,10 +82,12 @@ $ openstack secret get --payload https://ops.elastx.cloud:9311/v1/secrets/d9e88d
 ```
 
 ## Store and fetch a passphrase using the REST API (curl examples)
+
 First get a keystone authentication token (using `openstack token issue` for example).
 
 Store a passphrase as a secret:
-```
+
+```shell
 Note that payloads is always base64 encoded when uploaded!
 $ echo 'AnotHeRs3crEtT3xT!' | base64
 QW5vdEhlUnMzY3JFdFQzeFQhCg==
@@ -102,7 +111,8 @@ $ curl -H "X-Auth-Token: $TOKEN" \
 ```
 
 Get the secret payload
-```
+
+```shell
 $ curl -H "X-Auth-Token: $TOKEN" \
     -H 'Accept: application/octet-stream' \
     https://ops.elastx.cloud:9311/v1/secrets/85b2df94-a44b-452b-807b-ddcee83d824b/payload
