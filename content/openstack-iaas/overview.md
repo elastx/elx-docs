@@ -7,7 +7,7 @@ alwaysopen: true
 
 *ELASTX OpenStack IaaS* consists of a fully redundant installation spread over three different physical locations (openstack availability zones) in Stockholm, Sweden. Managed and monitored by us 24x7. You also have access to our support at any time.
 
-The current setup is based on the OpenStack version Pike.
+The current setup is based on the OpenStack version Queens.
 
 ![Overview of OpenStack IaaS data centers](/img/dc-1.png)
 

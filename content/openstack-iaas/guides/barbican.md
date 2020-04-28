@@ -11,7 +11,7 @@ alwaysopen: true
 
 ELASTX Barbican service is backed by physical HSM appliances to ensure that all data is securely stored.
 
-REST API reference can be found here: [https://docs.openstack.org/barbican/pike/api/index.html](https://docs.openstack.org/barbican/pike/api/index.html)
+REST API reference can be found here: [https://docs.openstack.org/barbican/queens/api/index.html](https://docs.openstack.org/barbican/queens/api/index.html)
 
 Secrets in Barbican have a special design with regards to ID, they are always referenced by a "secret href" instead of a UUID! (This will change in a later release!)
 
