@@ -1,0 +1,114 @@
+<footer class="footer py-5 row d-print-none">
+  <div class="container-fluid">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-xs-12 footer-logo text-center">
+          <img alt="logo" src="/images/logo.svg">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2">
+          <ul class="list-unstyled">
+            {{ range .Site.Menus.footer1 }}
+            <li><a href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <ul class="list-unstyled">
+            {{ range .Site.Menus.footer2 }}
+            <li><a href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+        </div>
+
+        <div class="col-md-4">
+          <div class="row justify-content-around">
+            <div class="col-6">
+                <a href="https://elastx.se/en/information-security-policy/">
+              <img src="/images/ISO-27001.png" alt="iso 27001"></a>
+            </div>
+            <div class="col-6">
+              <a href="https://elastx.se/en/environment-policy/">
+              <img src="/images/ISO-14001.png" alt="iso 14001"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:40px;">
+        <div class="col text-center">
+          {{- with .Site.Params.social }}
+          {{ partialCached "social-icons-footer.html" . }}
+          {{- end }}
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:40px;">
+        <div class="col-md-1 text-center"></div>
+        <div class="col-md-3 text-center">Regeringsgatan 29, 111 53 Stockholm</div>
+        <div class="col-md-2 text-center">VAT: SE556906561701</div>
+        <div class="col-md-2 text-center">Phone: +46 8 557 728 10</div>
+        <div class="col-md-3 text-center">Email: <a href="mailto:info@elastx.se">info@elastx.se</a></div>
+        <div class="col-md-1 text-center"></div>
+      </div>
+
+      <div class="row" style="margin-top:40px;">
+        <div class="col text-center">
+          ©{{ dateFormat "2006" now }} by ELASTX
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</footer>
+<style>
+
+.footer-logo {
+  width: 130px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+}
+
+footer {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  text-align: left;
+  background-color: #142C34;
+}
+body > div > footer > div {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #FBCC10;
+  text-align: left;
+  background-color: #142C34;
+}
+
+.footer-social-icon {
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  margin-top: -3px;
+  margin-left: 10px;
+  padding-left: 8px;
+  padding-top: 7px;
+  color: #FBCC10;
+}
+footer > div > div > div:nth-child(6) > div:nth-child(5) > a,
+footer > div > div > div > div > ul > li > a {
+  color: #FBCC10;
+}
+footer > div > div > div {
+  color: #fff;
+}
+
+</style>
