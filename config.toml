@@ -1,5 +1,5 @@
 baseURL = "/"
-title = ""
+title = "Documentation"
 
 enableRobotsTXT = true
 
@@ -49,7 +49,7 @@ anchor = "smart"
 
 [languages]
 [languages.en]
-title = ""
+title = "Documentation"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
