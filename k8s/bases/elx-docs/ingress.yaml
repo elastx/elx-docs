@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: elx-docs
+  annotations:
+    kubernetes.io/tls-acme: "true"
+    cert-manager.io/issuer: letsencrypt
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+  - hosts:
+    - docs.elastx.cloud
+    - docs.elastx.cloud
+    secretName: docs.elastx.cloud
+  rules:
+  - host: docs.elastx.cloud
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: elx-docs
+          servicePort: http

@@ -7,7 +7,7 @@ This documentation is generated using Hugo
 To run a local server, it is very easy:
 
 ```bash
-bash test-localy.sh
+bash test-locally.sh
 ```
 
 Now you should be able to access the site through [http://localhost:1313/](http://localhost:1313/)

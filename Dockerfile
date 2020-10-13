@@ -1,5 +1,5 @@
-FROM nginx:stable
+FROM nginxinc/nginx-unprivileged:stable-alpine
 
-LABEL author="ELASTX TEAM <support@elastx.se>"
+LABEL maintainer="ELASTX Infra Team <team-infra@elastx.se>" app="elx-docs"
 
 ADD public /usr/share/nginx/html
