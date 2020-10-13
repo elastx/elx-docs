@@ -1,0 +1,69 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elx-docs
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: elx-docs
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/release: GIT_COMMIT
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app.kubernetes.io/name
+                operator: In
+                values:
+                - elx-docs
+              - key: app.kubernetes.io/release
+                operator: In
+                values:
+                - GIT_COMMIT
+            topologyKey: "kubernetes.io/hostname"
+      containers:
+      - image: quay.io/elastx/elx-docs:latest
+        imagePullPolicy: Always
+        name: elx-docs
+        livenessProbe:
+          httpGet:
+            path: /
+            port: http
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
+        ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+            memory: 200Mi
+          requests:
+            cpu: 10m
+            memory: 20Mi
+        securityContext:
+          runAsNonRoot: true
+          runAsUser: 101
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html/config.toml
+          name: elx-docs-config
+          subPath: config.toml
+      securityContext:
+        fsGroup: 101
+      serviceAccountName: elx-docs
+      volumes:
+      - name: elx-docs-config
+        configMap:
+          name: elx-docs-config
+          items:
+          - key: config.toml
+            path: config.toml
