@@ -9,6 +9,8 @@ commonLabels:
   app.kubernetes.io/version: 0.0.1
 
 resources:
+  - default-networkpolicies.yaml
+  - networkpolicies.yaml
   - deployment.yaml
   - ingress.yaml
   - issuer.yaml
