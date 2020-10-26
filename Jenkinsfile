@@ -1,3 +1,6 @@
+def isJenkinsfileTrusted = readTrusted 'Jenkinsfile'
+def isDockerfileTrusted = readTrusted 'Dockerfile'
+
 pipeline {
   agent none
   options { disableConcurrentBuilds() }
