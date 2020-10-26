@@ -4,9 +4,7 @@ kind: Kustomization
 # Adds namespace to all resources.
 namespace: elx-docs
 
-commonLabels:
-  app.kubernetes.io/name: elx-docs
-  app.kubernetes.io/version: 0.0.1
+# Labels is handled by the metadataLabelTransformer just add your labels :)
 
 resources:
   - default-networkpolicies.yaml
@@ -27,3 +25,6 @@ configMapGenerator:
   - name: elx-docs-config
     files:
       - config.toml
+
+transformers:
+- metadataLabelTransformer.yaml

@@ -48,7 +48,7 @@ pipeline {
       when { branch 'master' }
       agent {
         docker {
-          image 'bitnami/kubectl:1.18.9'
+          image 'quay.io/elastx/ci-kubernetes:1.18.9'
           args '--entrypoint ""'
         }
       }
@@ -57,7 +57,7 @@ pipeline {
       }
       steps {
         sh 'sed -i "s/GIT_COMMIT/${GIT_COMMIT}/g" ${WORKSPACE}/k8s/bases/elx-docs/deployment.yaml'
-        sh 'kubectl --kubeconfig=${CICD_KUBECONFIG} apply -k ${WORKSPACE}/k8s/bases/elx-docs'
+        sh 'kustomize build ${WORKSPACE}/k8s/bases/elx-docs | kubectl --kubeconfig=${CICD_KUBECONFIG} apply -f -'
       }
     }
   }
