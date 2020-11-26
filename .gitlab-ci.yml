@@ -15,6 +15,7 @@ content_build:
   stage: build_content
   image: quay.io/elastx/ci-hugo:0.74.3
   script:
+  - export NODE_PATH=$NODE_PATH:`npm root -g`
   - git submodule update --init --recursive
   - HUGO_ENV=production hugo -v
   - htmlproofer public --allow-hash-href --check-html --empty-alt-ignore --disable-external --file-ignore /revealjs/,/404.html/
