@@ -30,7 +30,7 @@ test_docker_build:
   services:
     - docker:19.03.12-dind
   variables:
-    IMAGE: quay.io/elastx/dox-ng
+    IMAGE: quay.io/elastx/elx-docs
   script:
     - docker info
     - docker build -t $IMAGE .
@@ -44,7 +44,7 @@ docker_build:
   services:
     - docker:19.03.12-dind
   variables:
-    IMAGE: quay.io/elastx/dox-ng
+    IMAGE: quay.io/elastx/elx-docs
   script:
     - docker info
     - docker build -t $IMAGE .
@@ -57,9 +57,9 @@ deploy_kubernetes:
     refs:
     - master
   before_script:
-  - cp "$ELX_REGISTRY_SECRET" k8s/bases/dox-ng/elx-registry-secret.yaml
+  - cp "$ELX_REGISTRY_SECRET" k8s/bases/elx-docs/elx-registry-secret.yaml
   script:
-  - sed -i "s/GIT_COMMIT/${CI_COMMIT_SHORT_SHA}/g" k8s/bases/dox-ng/deployment.yaml
-  - kustomize build k8s/bases/dox-ng | kubectl apply -f -
+  - sed -i "s/GIT_COMMIT/${CI_COMMIT_SHORT_SHA}/g" k8s/bases/elx-docs/deployment.yaml
+  - kustomize build k8s/bases/elx-docs| kubectl apply -f -
   after_script:
-  - rm k8s/bases/dox-ng/elx-registry-secret.yaml
+  - rm k8s/bases/elx-docs/elx-registry-secret.yaml
