@@ -21,10 +21,5 @@ images:
   - name: quay.io/elastx/elx-docs
     newTag: latest
 
-configMapGenerator:
-  - name: elx-docs-config
-    files:
-      - config.toml
-
 transformers:
 - metadataLabelTransformer.yaml

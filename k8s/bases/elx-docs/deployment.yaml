@@ -53,17 +53,6 @@ spec:
         securityContext:
           runAsNonRoot: true
           runAsUser: 101
-        volumeMounts:
-        - mountPath: /usr/share/nginx/html/config.toml
-          name: elx-docs-config
-          subPath: config.toml
       securityContext:
         fsGroup: 101
       serviceAccountName: elx-docs
-      volumes:
-      - name: elx-docs-config
-        configMap:
-          name: elx-docs-config
-          items:
-          - key: config.toml
-            path: config.toml
