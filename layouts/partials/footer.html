@@ -3,13 +3,25 @@
     <div class="container">
 
       <div class="row">
-        <div class="col-xs-12 footer-logo text-center">
-          <img alt="logo" src="/images/logo.svg">
+        <div class="col-md-3 col-lg-2">
+          <img class="elastx-logo" alt="logo" src="/images/logo.svg">
         </div>
-      </div>
 
-      <div class="row">
+        <div class="col-md-3">
+          <h3 class="footer-h3">Contact</h3>
+          <ul class="list-unstyled">
+            <li>Regeringsgatan 29</li>
+            <li>111 53 Stockholm</li>
+          </ul>
+          <ul class="list-unstyled">
+            <li>VAT: SE556906561701</li>
+            <li>Phone: <a href="tel:+46855772810">+46 8 557 728 10</a></li>
+            <li>Email: <a href="mailto:info@elastx.se">info@elastx.se</a></li>
+          </ul>
+        </div>
+
         <div class="col-md-2">
+          <h3 class="footer-h3">Links</h3>
           <ul class="list-unstyled">
             {{ range .Site.Menus.footer1 }}
             <li><a href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
@@ -17,7 +29,8 @@
           </ul>
         </div>
 
-        <div class="col-md-2">
+        <div class="col-md-2 col-lg-3">
+          <h3 class="footer-h3">Social channels</h3>
           <ul class="list-unstyled">
             {{ range .Site.Menus.footer2 }}
             <li><a href="{{ .URL | absLangURL }}" title="{{ .Title }}">{{ .Name }}</a></li>
@@ -25,90 +38,44 @@
           </ul>
         </div>
 
-        <div class="col-md-4">
-        </div>
-
-        <div class="col-md-4">
-          <div class="row justify-content-around">
-            <div class="col-6">
-                <a href="https://elastx.se/en/information-security-policy/">
-              <img src="/images/ISO-27001.png" alt="iso 27001"></a>
-            </div>
-            <div class="col-6">
-              <a href="https://elastx.se/en/environment-policy/">
-              <img src="/images/ISO-14001.png" alt="iso 14001"></a>
-            </div>
-          </div>
+        <div class="col-md-2">
+          <img class="cert-logo" src="/images/ISO-27001.png" alt="iso 27001"></a>
+          <img class="cert-logo" src="/images/ISO-14001.png" alt="iso 14001"></a>
         </div>
       </div>
-
-      <div class="row" style="margin-top:40px;">
-        <div class="col text-center">
-          {{- with .Site.Params.social }}
-          {{ partialCached "social-icons-footer.html" . }}
-          {{- end }}
-        </div>
-      </div>
-
-      <div class="row" style="margin-top:40px;">
-        <div class="col-md-1 text-center"></div>
-        <div class="col-md-3 text-center">Regeringsgatan 29, 111 53 Stockholm</div>
-        <div class="col-md-2 text-center">VAT: SE556906561701</div>
-        <div class="col-md-2 text-center">Phone: +46 8 557 728 10</div>
-        <div class="col-md-3 text-center">Email: <a href="mailto:info@elastx.se">info@elastx.se</a></div>
-        <div class="col-md-1 text-center"></div>
-      </div>
-
-      <div class="row" style="margin-top:40px;">
-        <div class="col text-center">
-          ©{{ dateFormat "2006" now }} by ELASTX
-        </div>
-      </div>
-      <br>
+      <br />
     </div>
   </div>
 </footer>
 <style>
 
-.footer-logo {
-  width: 130px;
-  margin-bottom: 20px;
-  padding-left: 15px;
+.elastx-logo {
+  margin-bottom: 1rem;
 }
 
-footer {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #fff;
-  text-align: left;
-  background-color: #142C34;
-}
-body > div > footer > div {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #FBCC10;
-  text-align: left;
-  background-color: #142C34;
+.cert-logo {
+  max-width: 5rem;
+  margin-bottom: 1rem;
+  opacity: 0.7;
 }
 
-.footer-social-icon {
-  height: 30px;
-  width: 30px;
-  border-radius: 15px;
-  margin-top: -3px;
-  margin-left: 10px;
-  padding-left: 8px;
-  padding-top: 7px;
-  color: #FBCC10;
+.footer-h3 {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+footer, body > div > footer > div {
+  color: #B6C4C8;
+  background-color: #1A2C33;
+}
+
+footer > div > div > div > div > ul > li {
+  color: #B6C4C8;
 }
 footer > div > div > div:nth-child(6) > div:nth-child(5) > a,
 footer > div > div > div > div > ul > li > a {
-  color: #FBCC10;
-}
-footer > div > div > div {
-  color: #fff;
+  color: rgb(182, 196, 200, 0.7);
+  text-decoration: underline;
 }
 
 </style>

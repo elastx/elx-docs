@@ -1,3 +1,5 @@
+# Elastx public documentation
+
 baseURL = "/"
 title = "Documentation"
 
@@ -53,62 +55,68 @@ title = "Documentation"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
-time_format_default = "02.01.2006"
-time_format_blog = "02.01.2006"
+time_format_default = "2006-01-02"
+time_format_blog = "2006-01-02"
 
       [[languages.en.menu.footer1]]
         identifier = "home"
         name = "Home"
-        url = "https://elastx.se/en/"
+        url = "https://elastx.se/"
         weight = 100
 
       [[languages.en.menu.footer1]]
         identifier = "about-elastx"
-        name = "About ELASTX"
-        url = "https://elastx.se/en/about-elastx/"
+        name = "About us"
+        url = "https://elastx.se/about-elastx/"
         weight = 110
 
       [[languages.en.menu.footer1]]
-        identifier = "platforms"
-        name = "Services"
-        url = "https://elastx.se/en/platforms/"
+        identifier = "contact-us"
+        name = "Contact us"
+        url = "https://elastx.se/contact-us"
         weight = 120
 
       [[languages.en.menu.footer1]]
-        identifier = "blog"
-        name = "Blog"
-        url = "https://elastx.se/en/blog/"
+        identifier = "services"
+        name = "Services"
+        url = "https://elastx.se/services"
         weight = 130
 
       [[languages.en.menu.footer1]]
-        identifier = "case-studies"
-        name = "Case Studies"
-        url = "https://elastx.se/en/case-studies/"
+        identifier = "pricing"
+        name = "Pricing"
+        url = "https://elastx.se/pricing"
         weight = 140
 
+      [[languages.en.menu.footer1]]
+        identifier = "news"
+        name = "News"
+        url = "https://elastx.se/news"
+        weight = 150
+
+      [[languages.en.menu.footer1]]
+        identifier = "career"
+        name = "Career"
+        url = "https://career.elastx.se"
+        weight = 160
+
       [[languages.en.menu.footer2]]
-        identifier = "contact-us"
-        name = "Contact Us"
-        url = "https://elastx.se/en/contact-us/"
+        identifier = "facebook"
+        name = "Facebook"
+        url = "https://www.facebook.com/Elastx/"
         weight = 100
 
       [[languages.en.menu.footer2]]
-        identifier = "support"
-        name = "Support"
-        url = "https://support.elastx.se/"
+        identifier = "twitter"
+        name = "Twitter"
+        url = "https://www.twitter.com/elastx"
         weight = 110
 
       [[languages.en.menu.footer2]]
-        identifier = "status"
-        name = "Status"
-        url = "https://status.elastx.se/"
+        identifier = "instagram"
+        name = "Instagram"
+        url = "https://www.instagram.com/elastx/"
         weight = 120
-
-      [[languages.en.menu.footer2]]
-        identifier = "career"
-        name = "Career"
-        url = "https://career.elastx.se/"
-        weight = 130
 
 [markup]
   [markup.goldmark]
@@ -203,28 +211,3 @@ enable = false
 #	url = "https://github.com/elastx"
 #	icon = "fab fa-github"
 #  desc = "Development takes place here!"
-
-# ELX footer
-  [[params.social]]
-    name = "facebook"
-    url = "https://www.facebook.com/Elastx/"
-
-  [[params.social]]
-    name = "twitter"
-    url = "https://www.twitter.com/elastx"
-
-  [[params.social]]
-    name = "instagram"
-    url = "https://www.instagram.com/elastx/"
-
-  [[params.social]]
-    name = "youtube"
-    url = "https://www.youtube.com/channel/UC6t7KweeKNJvrFP6DvPDBwA"
-
-  [[params.social]]
-    name = "github"
-    url = "https://www.github.com/elastx/"
-
-  [[params.social]]
-    name = "linkedin"
-    url = "https://www.linkedin.com/company/elastx/"
