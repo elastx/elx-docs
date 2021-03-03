@@ -8,14 +8,13 @@ alwaysopen: true
 To get started you need certain tools in order to administrate your cluster and applications.
 
 * kubectl
-* helm (optional)
 * Knowledge of how Kubernetes works
 
 You also need a configuration file from us called `<yourcluster>-kubeconfig` and if you have access to multiple clusters, you can choose to combine your own `~/.kube/config` or set the environment variable `KUBECONFIG` which both kubectl and helm honors. We will be showing how you do the latter.
 
 > To maintain your own kubeconfig you can read more about the topic in Kubernetes official documentation:  [Configure Access to Multiple Clusters](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/)
 
-To install `kubectl` you can follow the official documentation here: [Install and Set Up kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/). And for `helm` you can follow their documentation: [Installing the Helm client](https://github.com/helm/helm/blob/master/docs/install.md#installing-the-helm-client)
+To install `kubectl` you can follow the official documentation here: [Install and Set Up kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/). 
 
 ## Verify access
 
