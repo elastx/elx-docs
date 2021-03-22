@@ -5,7 +5,7 @@ weight: 5
 alwaysopen: true
 ---
 
-In this example we will expose a simple web service using Let's Encrypt staging certificates. We will do the following:
+In this example we will expose a simple web service using Let's Encrypt certificates. We will do the following:
 
 * Create a *namespace* called `my-web-service`
 * Create an *Issuer* that configures *cert manager* for our namespace
@@ -30,14 +30,14 @@ metadata:
   name: my-web-service
 ```
 
-Now let's configure an *Issuer* that works inside this namespace. An *issuer* in cert manager helps sending a Certificate Signing Request (CSR) to an ACME server, in our example the ACME is Let's Encrypt boulder server. On its own, this does nothing. It acts on annotations `certmanager.k8s.io/issuer: letsencrypt-prod` which we will see in the *ingress* manifest.
+Now let's configure an *Issuer* that works inside this namespace. An *issuer* in cert manager helps sending a Certificate Signing Request (CSR) to an ACME server, in our example the ACME is Let's Encrypt boulder server. On its own, this does nothing. It acts on annotations `cert-manager.io/issuer: letsencrypt-prod` which we will see in the *ingress* manifest.
 
 > Read more about how [Let's Encrypt works here!](https://letsencrypt.org/how-it-works/)
 
 With modified email address, save this into `issuer-my-web-service.yaml`:
 
 ```yaml
-apiVersion: certmanager.k8s.io/v1alpha1
+apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
   name: letsencrypt-prod
@@ -50,7 +50,10 @@ spec:
     email: valid-email@example.tld
     privateKeySecretRef:
       name: letsencrypt-prod
-    http01: {}
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
 ```
 
 Our deployment manifest. It runs a simple serve_hostname container just presenting the hostname. Save this to `deployment-my-web-service.yaml`:
@@ -112,8 +115,7 @@ metadata:
   name: my-web-service-ingress
   namespace: my-web-service
   annotations:
-    kubernetes.io/tls-acme: "true"
-    certmanager.k8s.io/issuer: letsencrypt-prod
+    cert-manager.io/issuer: letsencrypt-prod
     kubernetes.io/ingress.class: "nginx"
 spec:
   tls:
