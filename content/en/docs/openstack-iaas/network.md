@@ -23,3 +23,11 @@ The current network design does not yet support the use of Extra Routes in Neutr
 ### Neutron ports with allowed-address-pair
 
 The current network design does not yet fully support the use of allowed-address-pair to utilize instances as a gateway for network traffic (e.g. VPN servers). It does currently work for single addresses (/32 prefix) only.
+
+### Multicast
+
+Multicast traffic Inter-AZ works but is without any guarantee.
+
+### VIP-address
+
+ARP lookups are asynchronous Inter-AZ. When moving VIP-addresses between AZs this can lead to unexpected traffic patterns.
