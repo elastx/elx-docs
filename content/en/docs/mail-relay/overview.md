@@ -17,7 +17,7 @@ Elastx Mail Relay is availabe using the following specifications:
 |----------|------------------------------------|
 | Server   | smtp.elastx.email
 | Port     | 587
-| Protocol | SMTP + STARTTLS
+| Protocol | SMTP + STARTTLS (preferred)
 
 
 ## Setting up Sender Policy Framwork (SPF)
