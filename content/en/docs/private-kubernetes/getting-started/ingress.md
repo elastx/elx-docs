@@ -12,6 +12,7 @@ In this example we will expose a simple web service using Let's Encrypt certific
 * Create a *deployment* that runs multiple pods
 * Create a *service* selecting pods from the above deployment
 * Create an *ingress* that uses the *nginx ingress controller* and *cert manager*
+* Create a *networkpolicy* that allows traffic from the nginx ingress to the acme-http-challenge pod *(optional)*
 
 In our examples, all references the domain name `example.tld` needs to be changed to your own DNS record, which you point to the IP addresses given by us. We will use the *HTTP-01* challenge which means you need to do this before anything else.
 
@@ -130,6 +131,33 @@ spec:
         backend:
           serviceName: my-web-service
           servicePort: 9376
+```
+
+## Networkpolicies
+
+If you are also using networkpolicies in the namespace you may need to add a networkpolicy that allows traffic from the ingress to the temporary pod that performs the HTTP challenge. 
+
+If you are using the nginx-ingress we provide along with cert-manager it can look something like this, remember to change the namespace value in the metadata field to match the appropriate namespace. 
+
+```yaml
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: letsencrypt-http-challenge
+  namespace: my-web-service
+spec:
+  policyTypes:
+  - Ingress
+  podSelector:
+    matchLabels:
+      acme.cert-manager.io/http01-solver: "true"
+  ingress:
+  - ports:
+    - port: http
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          app.kubernetes.io/name: ingress-nginx
 ```
 
 ## Final words
