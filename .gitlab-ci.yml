@@ -13,7 +13,7 @@ stages:
 
 content_build:
   stage: build_content
-  image: quay.io/elastx/ci-hugo:0.74.3
+  image: quay.io/elastx/ci-hugo:0.87.0
   script:
   - export NODE_PATH=$NODE_PATH:`npm root -g`
   - git submodule update --init --recursive
