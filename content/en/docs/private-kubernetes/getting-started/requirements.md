@@ -16,6 +16,19 @@ You also need a configuration file from us called `<yourcluster>-kubeconfig` and
 
 To install `kubectl` you can follow the official documentation here: [Install and Set Up kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/). 
 
+## Configure security groups
+
+To access your master nodes you need to add rules to the _<cluster-name>-k8s-master-customer_ security group that gives you access to the API. For example, to enable the ip address 1.2.3.4 to access the API to a cluster named _cluster1_ add the following rule to the _cluster1-k8s-master-customer_ security group in OpenStack:
+
+    ```yaml
+    Rule: Custom TCP Rule
+    Direction: Ingress
+    Open Port: Port
+    Port: 6443
+    Remote: CIDR
+    CIDR: 1.2.3.4/32
+    ```
+
 ## Verify access
 
 Let's verify that you have access to your cluster.
