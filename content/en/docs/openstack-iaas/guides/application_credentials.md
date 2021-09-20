@@ -41,7 +41,7 @@ openstack application credential create test --role _member_ --role creator --ro
 
 > **Beware:** You will not be able to view the secret again after creation. In case you forget the secret you will need to delete and create a new pair of application credentials.
 
-### Available groups
+### Available roles
 
 Below you will find a table with available groups and what they mean.
 
