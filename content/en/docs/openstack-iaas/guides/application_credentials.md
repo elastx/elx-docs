@@ -39,11 +39,11 @@ openstack application credential create test --role _member_ --role creator --ro
 +--------------+----------------------------------------------------------------------------------------+
 ```
 
-> **Beware:** You will not be able to view the secreat again after creation, in case you forget the secret you need to remove and create a new pair of application credentials.
+> **Beware:** You will not be able to view the secret again after creation. In case you forget the secret you will need to delete and create a new pair of application credentials.
 
 ### Available groups
 
-Below you will find a table with avaible groups and what they mean.
+Below you will find a table with available groups and what they mean.
 
 | Group name | Description |
 |---|---|
@@ -68,7 +68,7 @@ export OS_IDENTITY_API_VERSION=3
 
 ## List Application credentials
 
-To list all existing application credentials availble in your project you can run the `openstack application credential list` command
+To list all existing application credentials available in your project you can run the `openstack application credential list` command.
 
 Example:
 
@@ -84,9 +84,9 @@ openstack application credential list
 
 ## What access does one of my application credentials have?
 
-To show what permission a set of application credentials have you can run the `openstack application credential show` command followed by the ID of the credentials you want to inspect.
+To show which permissions a set of application credentials have you can run the `openstack application credential show` command followed by the ID of the credential you want to inspect.
 
-example:
+Example:
 
 ```bash
 openstack application credential show 3cd933bbcf824bdc9f77f37692eea60a
@@ -107,9 +107,9 @@ openstack application credential show 3cd933bbcf824bdc9f77f37692eea60a
 
 ## Delete Application credentials
 
-To delete a pair of application credentials enter the `openstack application credential delete` command followed by the ID of the credentials you want to remove
+To delete a pair of application credentials enter the `openstack application credential delete` command followed by the ID of the credentials you want to remove.
 
-An example:
+Example:
 
 ```bash
 openstack application credential delete 3cd933bbcf824bdc9f77f37692eea60a
