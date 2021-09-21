@@ -43,9 +43,9 @@ openstack application credential create test --role _member_ --role creator --ro
 
 ### Available roles
 
-Below you will find a table with available groups and what they mean.
+Below you will find a table with available roles and what they mean.
 
-| Group name | Description |
+| Role name | Description |
 |---|---|
 | `_member_` | Gives access to nova, neutron and glance. This allowed to manage servers, networks, security groups and images (this role is currently always given) |
 | `creator` | Gives access to barbican. The account can create and read secrets, this permission is also requierd when creating an encrypted volumes |
