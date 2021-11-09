@@ -7,7 +7,7 @@ alwaysopen: true
 
 ## Overview
 
-Swift provides an S3 compatible API for applications that don't support the Swift API. Note that you need to create [EC2 credentials](../ec2_credentials) for this to work.
+Swift provides an S3 compatible API for applications that don't support the Swift API. Note that you need to create [EC2 credentials](../ec2_credentials/) for this to work.
 
 *NOTE: The S3 region must be set to "us-east-1" for compatibility with "AWS Signature Version 4"*
 
