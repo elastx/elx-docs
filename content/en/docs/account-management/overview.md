@@ -21,3 +21,11 @@ Users in organizations which have enrolled for tech preview can use the
 ["My Account" web page](https://auth.elastx.cloud/my_account) to change
 their password, configure multi-factor authentication and similar account
 related settings.
+
+
+## Supported MFA methods
+In addition to username and password for authentication, the tech preview
+provides the ability to configure multi-factor authentication using either
+TOTP, supported by mobile applications such as "Google Authenticator" and
+"[FreeOTP](https://freeotp.github.io/)"), or the Webauthn standard which
+enables usage of hardware tokens such as the Yubikey.
