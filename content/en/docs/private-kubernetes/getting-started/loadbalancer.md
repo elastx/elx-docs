@@ -5,7 +5,7 @@ weight: 4
 alwaysopen: true
 ---
 
-Load balancers in our Private Kubernetes service are provided by [OpenStack
+Load balancers in our Elastx Kubernetes CaaS service are provided by [OpenStack
 Octavia](https://docs.openstack.org/octavia/queens/reference/introduction.html)
 in collaboration with the [Kubernetes Cloud Provider
 OpenStack](https://github.com/kubernetes/cloud-provider-openstack). This article
@@ -16,16 +16,15 @@ each project or contacting our support for assistance.
 
 # A quick example
 
-Exposing services using a *service* with type *LoadBalancer* will give you an unique public IP backed by an OpenStack Octavia load balancer. This example will take you through the steps for creating such a service.
+Exposing services using a *service* with type *LoadBalancer* will give you an
+unique public IP backed by an OpenStack Octavia load balancer. This example will
+take you through the steps for creating such a service.
 
 ## Create the resources
 
 Create a file called `lb.yaml` with the following content:
 
-```yaml
----
-apiVersion: apps/v1
-kind: Deployment
+```yaml --- apiVersion: apps/v1 kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/name: echoserver

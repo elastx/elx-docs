@@ -17,7 +17,7 @@ however setting up other clients is beyond the scope of this documentation.
 
 Once you have a client you can use to access the cluster you will need to fetch
 the credentials for you cluster. You can find the credentials for your cluster
-by logging in to [Elastx Cloud](https://ops.elastx.cloud/).
+by logging in to [Elastx OpenStack IaaS](https://ops.elastx.cloud/).
 When logged in you can find the `kubeconfig` file for your cluster by clicking
 on the "Object Storage" menu option in the left-hand side menu. And then click
 on "Containers", you should now see a container with the same name as your cluster
@@ -46,7 +46,7 @@ Just one more step and you will be able to access your cluster! We deliver our
 clusters unaccessible from the Internet, to access your cluster you need to
 define the rules governing access.
 
-To do so, log in to [Elastx Cloud](https://ops.elastx.cloud/). When logged
+To do so, log in to [Elastx Openstack IaaS](https://ops.elastx.cloud/). When logged
 in click on the "Network" menu option in the left-hand side menu. Then click on
 "Security Groups", finally click on the "Manage Rules" button to the right of
 the security group named _cluster-name-master-customer_. To add a rule click on

@@ -1,44 +1,44 @@
 ---
 title: "Overview"
-description: "Elastx Private Kubernetes"
+description: "Elastx Kubernetes CaaS"
 weight: 1
 alwaysopen: true
 ---
 
-*Elastx Private Kubernetes* consists of a fully redundant Kubernetes cluster
+*Elastx Kubernetes CaaS* consists of a fully redundant Kubernetes cluster
 spread over three separate physical locations (availability zones) in Stockholm,
 Sweden. Managed and monitored by us 24x7. It even includes round-the-clock
 support.
 
-![Overview of Private Kubernetes data centers](/img/dc-1.png)
+![Overview of Elastx Kubernetes CaaS data centers](/img/dc-1.png)
 
 ## Features
 
-Elastx Private Kubernetes runs on top of our high perfomant OpenStack platform,
-we integrate with the features it provides.
+Elastx Kubernetes CaaS runs on top of our high perfomant OpenStack IaaS platform
+and we integrate with the features it provides.
 
-* High availability: Cluster nodes are spread over our three availability zones,
+* **High availability**: Cluster nodes are spread over our three availability zones,
   combined with our great connectivity this creates a great platform for you to
   build highly available services on.
 
-* Load Balancer: Services that use the type "LoadBalancer" in Kubernetes
-  integrate with *OpenStack Octavia*. Each service exposed this way gets its own
-  public IP (*Floating IP* in OpenStack lingo).
+* **Load Balancer**: Services that use the type "LoadBalancer" in Kubernetes
+  integrate with [OpenStack Octavia](https://docs.openstack.org/octavia/queens/reference/introduction.html).
+  Each service exposed this way gets its own public IP (*Floating IP* in OpenStack
+  lingo).
 
-* Persistent Storage: When creating a *Persistent Volume Claim* Kubernetes
-  creates a volume using *OpenStack Cinder* and then connects the volume on the
-node where your pod(s) gets scheduled. There's also support for having your
-storage encrypted thanks to our Fortanix [HSM and KMS solution for
-OpenStack](https://elastx.se/en/blog/check-out-our-customer-testimonial-for-fortanix-services).
+* **Persistent Storage**: When creating a *Persistent Volume Claim* Kubernetes
+  creates a volume using [OpenStack Cinder](https://docs.openstack.org/cinder/latest/)
+  and then connects the volume on the node where your pod(s) gets scheduled.
+  There's also support for having your storage encrypted thanks to our Fortanix
+  [HSM and KMS solution for OpenStack](https://elastx.se/en/blog/check-out-our-customer-testimonial-for-fortanix-services).
 
-* Ingress Controller: We combine *NGINX Ingress controller* with *cert-manager*.
+* **Ingress Controller**: We combine [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
+  with [cert-manager](https://cert-manager.io/docs/).
   Thereby allowing you to use Ingress resources to expose you services.
-*cert-manager* helps you automate the creation of Let's Encrypt SSL
-certificates.
+  *cert-manager* helps you automate the creation of Let's Encrypt SSL certificates.
 
-* Standards conformant: Our clusters are certified by the CNCF Conformance
-  program ensuring interoperability with Cloud Native technologies and
-minimizing vendor lock-in.
+* **Standards conformant**: Our clusters are certified by the [CNCF Conformance Program](https://www.cncf.io/certification/software-conformance/)
+  ensuring interoperability with Cloud Native technologies and minimizing vendor lock-in.
 
 ## Standard configuration
 
@@ -51,7 +51,7 @@ The standard configuration consist of the following:
 
 This configuration is the minimal configuration offered, scaling up and out as
 required is supported. Clusters using smaller flavors or fewer nodes are not
-supported by Elastx Private Kubernetes.
+supported by Elastx Kubernetes CaaS.
 
 ### Trial clusters
 
@@ -75,12 +75,12 @@ consideration with regards to high availability when ordering a cluster.
 
 ### Cluster subnet CIDR
 
-The default cluster node network CIDR is _10.128.0.0/22_ an alternate CIDR can
+The default cluster node network CIDR is _10.128.0.0/22_. An alternate CIDR can
 be specified on cluster creation. Changing CIDR after creation requires
 rebuilding the cluster.
 
 ### Ordering and scaling
 
 Ordering and scaling of clusters is currently a manual process involving contact
-with either our sales department or our support. This is by choiche but may
-change in the future.
+with either our sales department or our support. This is a known limitation, but
+may change in the future.

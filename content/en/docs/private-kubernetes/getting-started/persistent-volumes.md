@@ -5,7 +5,7 @@ weight: 3
 alwaysopen: true
 ---
 
-Persistent volumes in our Private Kubernetes service are provided by [OpenStack
+Persistent volumes in our Elastx Kubernetes CaaS service are provided by [OpenStack
 Cinder](https://docs.openstack.org/cinder/queens/). Volumes are dynamically
 provisioned by [Kubernetes Cloud Provider
 OpenStack](https://github.com/kubernetes/cloud-provider-openstack/).
@@ -29,8 +29,11 @@ NAME           PROVISIONER            AGE
 specified. Classes ending with `enc` are encrypted by a per volume encryption
 key. Hence, 16kenc creates encrypted volumes suited for 16000 IOPS.
 
-> See our [pricing page](https://elastx.se/en/pricing/)  under headline *Pricing
-> ELASTX OpenStack IaaS* in the table *Storage* to calculate your costs.
+> NOTE: The software encrypted volumes will soon be deprecated since all volume
+> storage is already encrypted in hardware.
+
+> See our [pricing page](https://elastx.se/en/pricing/)  under the heading *Pricing
+> OpenStack* in the table *Storage* to calculate your costs.
 
 # Example
 

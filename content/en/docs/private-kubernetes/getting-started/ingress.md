@@ -5,9 +5,8 @@ weight: 5
 alwaysopen: true
 ---
 
-Our Kubernetes CaaS clusters by default include the [NGINX Ingress
-Controller](https://kubernetes.github.io/ingress-nginx/) and
-[cert-manager](https://cert-manager.io/docs/). It is possible to opt-out of
+Our Elastx Kubernetes CaaS clusters by default include the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
+and [cert-manager](https://cert-manager.io/docs/). It is possible to opt-out of
 these if you wish to manage these functions on your own.
 
 We run ingress controllers as daemonsets on each of the worker nodes. Providing a
@@ -20,7 +19,7 @@ access to those nodes.
 We deliver our clusters unaccessible from the internet, to provide ingress
 access you need to define rules allowing such traffic.
 
-To do so, log in to [Elastx Cloud](https://ops.elastx.cloud/). Once logged
+To do so, log in to [Elastx OpenStack IaaS](https://ops.elastx.cloud/). Once logged
 in click on the "Network" menu option in the left-hand side menu. Then click on
 "Security Groups", finally click on the "Manage Rules" button to the right of
 the security group named _cluster-name-worker-customer_. To add a rule click on
