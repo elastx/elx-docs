@@ -24,7 +24,10 @@ take you through the steps for creating such a service.
 
 Create a file called `lb.yaml` with the following content:
 
-```yaml --- apiVersion: apps/v1 kind: Deployment
+```yaml
+---
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/name: echoserver
