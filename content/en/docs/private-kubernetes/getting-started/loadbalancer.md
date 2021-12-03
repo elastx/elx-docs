@@ -42,9 +42,6 @@ spec:
       labels:
         app.kubernetes.io/name: echoserver
     spec:
-      securityContext:
-        runAsUser: 1001
-        fsGroup: 1001
       containers:
       - image: gcr.io/google-containers/echoserver:1.10
         name: echoserver
