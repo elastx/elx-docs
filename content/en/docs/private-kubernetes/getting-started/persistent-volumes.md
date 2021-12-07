@@ -73,3 +73,10 @@ accordingly for ensured high availability!
 All volumes are encrypted at rest in hardware. Volumes created by storage
 classes ending with *enc* are also software encrypted using a per volume
 encryption key. This provides increased security but has an impact on performance.
+
+# Known issues
+
+## Resizing encrypted volumes
+
+Encrypted volumes do not resize properly, please contact our support if you wish
+to resize such a volume.
