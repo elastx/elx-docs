@@ -28,6 +28,26 @@ Our OpenStack environment currently runs the following services:
 - Ceilometer - Metric storage, stores key metrics for the services like cpu and memory utilization
 - CloudKitty - Rating service
 
+
+## Quotas
+
+These are our default project quotas, let us know if you wish to change these
+upon ordering. Or if already a customer contact support to have quotas changed.
+
+* VCPUs: 20
+* Instances: 10
+* Volumes: 10
+* Volume snapshots: 10
+* Total size of volumes and snapshots: 1000 GiB
+* Memory (RAM) 51200MB
+* Security groups: 20
+* Security group rules: 500
+* Floating IPs: 10
+* Networks: 100
+* Ports: 500
+* Routers: 1
+* Subnets: 100
+
 ## Differencies and limitations
 As every OpenStack cloud has it's own unique set of features and underlying infrastructure, there are some things that might differentiate in our cluster from others. Down below is a list of what we believe is good to know when working in our OpenStack cloud.
 
