@@ -34,7 +34,10 @@ In addition to username and password for authentication, the tech preview
 provides the ability to configure multi-factor authentication using either
 TOTP, supported by mobile applications such as "Google Authenticator" and
 "[FreeOTP](https://freeotp.github.io/)"), or the Webauthn standard which
-enables usage of hardware tokens such as the Yubikey.
+enables usage of hardware tokens such as the Yubikey.  
+  
+TOTP is default method for all accounts (except if explicitly defined otherwise
+for the organization), but can be changed by the user after initial setup.
 
 
 ## OpenStack authentication flow
@@ -62,6 +65,12 @@ functionality that may not work as expected for users in the tech preview.
   
 The following sections describe known issues, limitations and relevant
 workarounds.
+
+
+### Mandatory usage of MFA
+All users enrolled in the tech preview are required to configure both a
+password and a second factor for authentication. Enforcement of MFA for all
+non-services users is planned once the service becomes generally available.
 
 
 ### CLI and Terraform usage 
@@ -97,3 +106,15 @@ the ["My Account" web page](https://auth.elastx.cloud/my_account).
 While the ability for project moderators to invite other users to their
 projects still exist, it should be noted that new users won't be automatically
 enrolled in the tech preview.
+
+
+### Full credential reset
+Users in the tech preview can initiate a password reset by clicking on the
+"Forgot Password?" link below the login form. The password reset flow requires
+that user authenticate using their second-factor before proceeding.  
+  
+If the user has lost access to their second-factor (multiple can be
+configured as a backup), [Elastx Support](https://support.elastx.se) must be
+contacted for additional identity validation before both credentials are reset.
+This process is by design for security reasons, but may be reconsidered before
+the service is generally available.
