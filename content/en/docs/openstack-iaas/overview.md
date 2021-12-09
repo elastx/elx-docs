@@ -32,8 +32,7 @@ Our OpenStack environment currently runs the following services:
 ## Quotas
 
 These are our default project quotas, let us know if you wish to change these
-upon ordering. Or if you are already an Elastx customer contact support to have
-quotas changed.
+upon ordering. Contact support to have quotas changed on an existing project.
 
 * VCPUs: 20
 * Instances: 10
