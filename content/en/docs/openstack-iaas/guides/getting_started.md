@@ -10,7 +10,9 @@ Here are the initial steps that you need to perform to start you first instance 
 
 ## Create Network
 1. Go to "Project" > "Network" > "Networks"
-2. Select "Create Network" > set a network name > "Next" > set subnet name and network address (10.0.1.0/24 for example) > "Next" > Add "DNS Name Servers" > "Create"
+1. Select "Create Network" > set a network name > "Next" 
+1. set subnet name and network address (10.0.1.0/24 for example) > "Next" 
+1. add "DNS Name Servers" > "Create"
 
 ## Create Router
 1. Go to "Project" > "Network" > "Routers"
@@ -29,29 +31,43 @@ Now the network is up and ready for you to create the first instance.
 
 ## Create instance
 1. Go to "Project" > "Compute" > "Instances" > select "Launch Instance"
-> set instance name > "Next"
-> select "Image" in"Select Boot Source" >  select "No" in "Create New Volume"
-> select image (ubuntu-20.04-server-latest for example) > "Next"
-> select a flavor (v1-standard-1 for example) > "Next"
-> your network should already be selected > "Next"
-> you do not need to select any port > "Next"
-> add the security group you created earlier > "Next"
-> the key pair you created earlier should already be selected 
-> "Launch instance"
+1. set instance name > "Next"
+1. select "Image" in"Select Boot Source" >  select "No" in "Create New Volume"
+1. select image (ubuntu-20.04-server-latest for example) > "Next"
+1. select a flavor (v1-standard-1 for example) > "Next"
+1. your network should already be selected > "Next"
+1. you do not need to select any port > "Next"
+1. add the security group you created earlier > "Next"
+1. the key pair you created earlier should already be selected 
+1. "Launch instance"
 
 ## Add a public IP to the instance
 1. Go to "Project" > "Compute" > "Instances" > from the "Actions" menu on the instance you created select "Associate Floating IP"
-> select the "+" button next to the "IP Address" field
-> select "Pool" "elx-public1" > "Allocate IP"
-> "Associate"
+select the "+" button next to the "IP Address" field
+1. select "Pool" "elx-public1" > "Allocate IP"
+1. "Associate"
 
 ## Log in to your new instance 
 Use the floating IP and the ssh key you created.
-1. ssh -i mykeypair.pem ubuntu@1.2.3.4
-In this example the ssh key pair I created was named mykeypair and the public ip is "1.2.3.4" and the image I used was an Ubuntu image.
-If you used any other image you can find the default user names here https://elastx.zendesk.com/hc/en-us/articles/214237986-How-to-log-in-to-your-new-Linux-instance
 
+In this example the ssh key pair I created was named mykeypair and the public ip is "1.2.3.4" and the image I used was an Ubuntu image. In this example:
 
+```ssh -i mykeypair.pem ubuntu@1.2.3.4```
 
+The username is different depending on the Linux flavor you are using but you will always use the keypair and not a password.
+This is the ssh command you will use is you login from a Linux client. Here is the generic pattern:
 
+```ssh -l UserName -i /path/to/my-keypair.pem 1.2.3.4 ```
 
+Here is a list of the user names for each Linux dist.
+
+Linux flavor	User
+CentOS 6	cloud-user
+CentOS 7	centos
+CoreOS	core
+Fedora	fedora
+Redhat	cloud-user
+Ubuntu	ubuntu
+Debian	debian
+Heat instances	ec2-user
+When using Heat to deploy instances the user name will be ec2-user instead.
