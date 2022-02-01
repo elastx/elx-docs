@@ -17,7 +17,7 @@ In this example we use an ubuntu image and restrict SSH access.
 
 ## Create Router
 1. Go to "Project" > "Network" > "Routers"
-2. Select "Create Router" > set a router name and select the public network "ext-net-01" > "Create Router"
+2. Select "Create Router" > set a router name and select the public network "elx-public1" > "Create Router"
 3. Select the router you just created > "Interfaces" > "Add Interface" > select the subnet you created > "Add Interface"
 
 Now the network is up and ready for you to create the first instance.
@@ -59,7 +59,7 @@ In this example the ssh key pair I created was named mykeypair and the public ip
 ```ssh -i mykeypair.pem ubuntu@1.2.3.4```
 
 The username is different depending on the Linux flavor you are using but you will always use the keypair and not a password.
-Thiis is the generic pattern to login from a Linux client:
+This is the generic pattern to login from a Linux client:
 
 ```ssh -l UserName -i /path/to/my-keypair.pem 1.2.3.4 ```
 
