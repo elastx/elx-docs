@@ -225,7 +225,7 @@ spec:
   ingress:
   - ports:
     - port: http
-  - from:
+    from:
     - namespaceSelector:
         matchLabels:
           app.kubernetes.io/name: ingress-nginx
