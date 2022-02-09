@@ -11,37 +11,33 @@ If you need to set the root password on a Centos 7 instance or fix a faulty /etc
 
 ## Modify boot parameters
 
-Reboot the instance and press "e" when the grub 2 boot menu is shown.
+1. Reboot the instance and press "e" when the grub 2 boot menu is shown.
 
-Add the following parameters at the end of the `linux16` line:
+2. Add the following parameters at the end of the `linux16` line:
 
-`rd.break enforcing=0` 
+	`rd.break enforcing=0` 
 
-and remove all parameters starting with "console="
+3. Remove all parameters starting with "console="
 
-Press Ctrl+x to boot
+4. Press Ctrl+x to boot
 
 ## Set password
 
-Remount the root filesystem read write
+1. Remount the root filesystem read write.
 
 ```shell
-$ mount -o remount,rw /sysroot 
+$ mount -o remount,rw /sysroot
 ```
+2. You can now edit the root disk files under /sysroot.
 
-Now you can edit the root disk files under /sysroot.
-
-If you want to set a new password do a change root and set password.
+2. To set a new password do a change root and set password.
 
 ```shell
-$ chroot /sysroot 
+$ chroot /sysroot
+$ passwd
 ```
 
-```shell
-$ passwd 
-```
-
-Exit both shells and the instance will reboot.
+3. Exit both shells and the instance will reboot.
 
 ```shell
 $ exit
