@@ -30,14 +30,14 @@ $ mount -o remount,rw /sysroot
 ```
 2. You can now edit the root disk files under /sysroot.
 
-2. To set a new password do a change root and set password.
+3. To set a new password do a change root and set password.
 
 ```shell
 $ chroot /sysroot
 $ passwd
 ```
 
-3. Exit both shells and the instance will reboot.
+4. Exit both shells and the instance will reboot.
 
 ```shell
 $ exit
