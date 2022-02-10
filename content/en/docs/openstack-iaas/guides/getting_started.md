@@ -5,7 +5,6 @@ weight: 1
 alwaysopen: true
 ---
 
-
 Here are the initial steps that you need to perform to start you first instance and access it with ssh. 
 In this example we use an ubuntu image and restrict SSH access.
 
@@ -15,7 +14,6 @@ In this example we use an ubuntu image and restrict SSH access.
 1. Set subnet name and network address (10.0.1.0/24 for example) > "Next" 
 1. Make sure that "Enable DHCP" is checked.
 1. Add "DNS Name Servers" > "Create"
-
 
 ## Create Router
 1. Go to "Project" > "Network" > "Routers"
@@ -79,5 +77,3 @@ Default UserName is different depending on distribution:
 | Heat instances* | ec2-user*   |  
 
 * When using Heat to deploy instances the user name will be ec2-user instead.  
-
-Well done!
