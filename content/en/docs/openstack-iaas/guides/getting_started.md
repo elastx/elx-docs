@@ -13,7 +13,9 @@ In this example we use an ubuntu image and restrict SSH access.
 1. Go to "Project" > "Network" > "Networks"
 1. Select "Create Network" > set a network name > "Next" 
 1. Set subnet name and network address (10.0.1.0/24 for example) > "Next" 
+1. Make sure that "Enable DHCP" is checked.
 1. Add "DNS Name Servers" > "Create"
+
 
 ## Create Router
 1. Go to "Project" > "Network" > "Routers"
