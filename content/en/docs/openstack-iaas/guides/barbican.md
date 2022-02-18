@@ -1,6 +1,6 @@
 ---
 title: "Barbican"
-description: "Guide for using barbican"
+description: "Storing highly sensitive data for application runtime  in openstack"
 weight: 1
 alwaysopen: true
 ---

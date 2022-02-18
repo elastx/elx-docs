@@ -1,6 +1,6 @@
 ---
 title: "Adjutant"
-description: "Guide for using Adjutant"
+description: "User and project management through Horizon, Openstack web interface"
 weight: 1
 alwaysopen: true
 ---
