@@ -1,6 +1,6 @@
 ---
 title: "Barbican"
-description: "Storing highly sensitive data for application runtime in Openstack"
+description: "Storing highly sensitive data for applications in OpenStack"
 weight: 1
 alwaysopen: true
 ---

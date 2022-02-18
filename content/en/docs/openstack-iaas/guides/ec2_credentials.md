@@ -1,6 +1,6 @@
 ---
 title: "EC2 Credentials"
-description: "EC2 credentials are used to access SWIFT using the S3 protocol"
+description: "EC2 credentials are used to access Swift object storage using the S3 protocol"
 weight: 1
 alwaysopen: true
 ---
