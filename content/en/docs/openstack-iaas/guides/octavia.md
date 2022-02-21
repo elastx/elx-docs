@@ -1,6 +1,6 @@
 ---
 title: "Octavia"
-description: "Guide for using Octavia LBaaSv2"
+description: "Load balancer as a service for OpenStack"
 weight: 1
 alwaysopen: true
 ---
