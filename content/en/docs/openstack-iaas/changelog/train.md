@@ -4,7 +4,7 @@ description: "Upgrade of version Queens to Train"
 alwaysopen: true
 ---
 
-#### TL;DR
+#### Changelog overview
 The purpose of this upgrade is to take the OpenStack platform from the current “Queens” release to the “Train” release. This will include an intermediate upgrade to the “Rocky” release. The “Stein” release is skipped because it isn’t required.
 * No public APIs are deprecated by these upgrades
 * Support for TLS version 1.1 will be dropped during the upgrade to the “Train” release
