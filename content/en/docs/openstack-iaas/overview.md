@@ -1,7 +1,7 @@
 ---
 title: "Overview"
 description: "Overview over ELASTX OpenStack IaaS"
-weight: 1
+weight: 2
 alwaysopen: true
 ---
 

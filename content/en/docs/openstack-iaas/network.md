@@ -1,7 +1,7 @@
 ---
 title: "Network"
 description: "Network architecture in the OpenStack cloud"
-weight: 1
+weight: 3
 alwaysopen: true
 ---
 
