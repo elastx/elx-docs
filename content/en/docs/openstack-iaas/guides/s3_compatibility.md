@@ -1,6 +1,6 @@
 ---
 title: "Swift S3 compatibility"
-description: "Swift S3 compatibility"
+description: "Overview and example configuration"
 weight: 1
 alwaysopen: true
 ---
@@ -11,7 +11,7 @@ Swift provides an S3 compatible API for applications that don't support the Swif
 
 *NOTE: The S3 region must be set to "us-east-1" for compatibility with "AWS Signature Version 4"*
 
-*NOTE: If the application does support Swift natively, this will provide superior performance and generally a better experience.*
+*NOTE: If the application does support Swift natively, using Swift will provide superior performance and generally a better experience.*
 
 ## Example s3cmd configuration
 

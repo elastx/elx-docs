@@ -1,6 +1,6 @@
 ---
 title: "EC2 Credentials"
-description: "How to use EC2 Credentials"
+description: "EC2 credentials are used to access Swift object storage using the S3 protocol"
 weight: 1
 alwaysopen: true
 ---
@@ -9,7 +9,7 @@ alwaysopen: true
 
 For using the OpenStack S3 API:s you need to generate an additional set of credentials. These can then be used to store data in the Swift Object store for applications that don't have native Swift support but do support the S3 interfaces.
 
-*NOTE: If the application does support Swift natively, this will provide superior performance and generally a better experience.*
+*NOTE: If the application does support Swift natively, using Swift will provide superior performance and generally a better experience.*
 
 ## Create and fetch credentials using openstack cli
 
