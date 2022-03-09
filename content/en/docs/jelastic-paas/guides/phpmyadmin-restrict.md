@@ -11,7 +11,7 @@ If you want to limit access to the database phpMyAdmin you can use a Apache acce
 ## Configuration
 1. In the Jelastic GUI, select "Config" on the database node.
 
-2. Edit the file /conf.d/phpMyAdmin-jel.conf and make sure your `Directory /usr/share/phpMyAdmin/>` looks like this and edit the IP to the IP that should be granted access.
+2. Edit the file /conf.d/phpMyAdmin-jel.conf and make sure your `<Directory /usr/share/phpMyAdmin/>` looks like this. Edit the IP to the IP that should be granted access.
 
 ```
 <Directory /usr/share/phpMyAdmin/>
