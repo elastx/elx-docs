@@ -11,10 +11,8 @@ By default we block traffic to internet on tcp port 25. We do this to prevent ab
 
 ## Alternatives
 
-If you want to send e-mail from our platform we recommend using an external SMTP relay. All major external SMTP services offer their service on other ports than port 25.
+If you want to send e-mail from our platform we recommend using our Mail Relay service. All major SMTP services offer their service on other ports than port 25.
 
-This way you can get an automated reliable smtp service that normally is very cost effective.
+This way you can get an automated reliable SMTP service that is very cost effective.
 
-Contact us if you want us to recommend a provider or have any other questions.
-
-
+You can read more about our Mail Relay offering [here](https://elastx.se/en/mail-relay/). Contact us if you have any other questions.
