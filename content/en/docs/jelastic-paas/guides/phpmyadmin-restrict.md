@@ -9,27 +9,18 @@ alwaysopen: true
 If you want to limit access to the database phpMyAdmin you can use a Apache access rule.
 
 ## Configuration
-Step 1: In the Jelastic GUI, select "Config" on the database node.
+1. In the Jelastic GUI, select "Config" on the database node.
 
-Step 2: Edit the file /conf.d/phpMyAdmin-jel.conf
+2. Edit the file /conf.d/phpMyAdmin-jel.conf and make sure your `Directory /usr/share/phpMyAdmin/>` looks like this and edit the IP to the IP that should be granted access.
 
-Step 3a. If you do not have a public IP (which is the default) on the database node set the following configuration with the IP address you want to allow access.
 ```
 <Directory /usr/share/phpMyAdmin/>
-Order Allow,Deny
-SetEnvIF X-Forwarded-For "1.2.3.4" AllowIP
-Allow from env=AllowIP
+     SetEnvIf X-Forwarded-For ^xxx\.xxx\.xxx\.xxx env_allow_1
+     Require env env_allow_1
+     Require ip xxx.xxx.xxx.xxx
+     Require all denied
 </Directory>
 ```
 _Note: Make sure to edit the IP in the example to your desired value_
 
-Step 3b: If you have a public IP on the database node set the following configuration with the IP address you want to allow access.
-```
-<Directory /usr/share/phpMyAdmin/>
-Order Allow,Deny
-Allow from 1.2.3.4
-</Directory>
-```
-_Note: Make sure to edit the IP in the example to your desired value_
-
-Step 4: Restart the environment or contact support and we can reload the Apache configuration for you.
+3. Restart the environment or contact support and we can reload the Apache configuration for you.
