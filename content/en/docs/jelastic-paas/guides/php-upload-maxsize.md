@@ -1,5 +1,5 @@
 ---
-title: "PHP Max upload file size"
+title: "PHP max upload file size"
 description: "How to adjust the PHP max upload file size"
 weight: 1
 alwaysopen: true
