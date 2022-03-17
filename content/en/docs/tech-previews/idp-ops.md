@@ -80,13 +80,6 @@ authentication using the identity provider. For these use-cases, a dedicated
 service account or usage of
 [application credentials](/docs/openstack-iaas/guides/application_credentials/)
 is highly recommended.  
-  
-In order to create application credentials, direct usage of the APIs
-or the "openstack" CLI utility is required. This means that the application
-credentials must be generated before the user account is enrolled for the tech
-preview. The issue will however be resolved after the next upgrade of OpenStack
-(planned Q1 2022), as a feature has been implemented to generate and download
-application credentials through the OpenStack web dashboard.
 
 
 ### Logout functionality in Horizon
