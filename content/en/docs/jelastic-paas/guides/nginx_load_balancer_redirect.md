@@ -1,5 +1,5 @@
 ---
-title: "Nginx Load Balancer Redirect"
+title: "Nginx HTTP to HTTPS redirect"
 description: "Redirect to https in nginx load balancer"
 weight: 1
 alwaysopen: true
