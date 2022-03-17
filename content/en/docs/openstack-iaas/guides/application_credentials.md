@@ -7,18 +7,22 @@ alwaysopen: true
 
 ## Overview
 
-This guide will help you getting started with Openstack application credentials.
+This guide will help you getting started with OpenStack application credentials.
+Application credentials are designed to be used by automation and CLI tools, such as Terraform and the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/rocky/).
 
-Application credentials is meant to be used in automation where no user input should be required.
+## Create application credential using web dashboard
+
+Navigate to ["Identity" → "Application Credentials"](https://ops.elastx.cloud/identity/application_credentials/) in your target project and press "Create Application Credential".
+Once created, you'll be offered to download the generated credential configuration as an OpenStack RC file ("openrc" version 3) or in the "clouds.yaml" format.
 
 
-## Create Application credentials
+## Create application credential using CLI
 
-To create a pair of application credentials run the `openstack application credential create <name>` command. By default the same access as the person running the command will be given. If you wish to override the roles given add `--role <role>` for each role you want to add.
+To create a pair of application credentials run the `openstack application credential create <name>` command. By default the same access as the user running the command will be given. If you wish to override the roles given add `--role <role>` for each role you want to add.
 
 You can also set an expiration date when creating a pair of application credentials, add the flag `--expiration` followed by a timestamp in the following format: `YYYY-mm-ddTHH:MM:SS`.
 
-For more detail you can [visit the Openstack documentation](https://docs.openstack.org/python-openstackclient/rocky/cli/command-objects/application-credentials.html) that goes more into detail on all avaible options.
+For more detail you can [visit the OpenStack documentation](https://docs.openstack.org/python-openstackclient/rocky/cli/command-objects/application-credentials.html) that goes more into detail on all avaible options.
 
 An example that will give access to the most commonly used APIs:
 
@@ -41,18 +45,6 @@ openstack application credential create test --role _member_ --role creator --ro
 
 > **Beware:** You will not be able to view the secret again after creation. In case you forget the secret you will need to delete and create a new pair of application credentials.
 
-### Available roles
-
-Below you will find a table with available roles and what they mean.
-
-| Role name | Description |
-|---|---|
-| `_member_` | Gives access to nova, neutron and glance. This allowed to manage servers, networks, security groups and images (this role is currently always given) |
-| `creator` | Gives access to barbican. The account can create and read secrets, this permission is also requierd when creating an encrypted volumes |
-| `heat_stack_owner` | Gives access to manage heat |
-| `load-balancer_member` | Gives access to create and manage existing load-balancers |
-| `swiftoperator` | Gives access to object storage (all buckets) |
-
 ### Create an openrc file
 
 ```bash
@@ -66,7 +58,20 @@ export OS_INTERFACE=public
 export OS_IDENTITY_API_VERSION=3
 ```
 
-## List Application credentials
+## Available roles
+
+Below you will find a table with available roles and what they mean.
+
+| Role name | Description |
+|---|---|
+| `_member_` | Gives access to nova, neutron and glance. This allowed to manage servers, networks, security groups and images (this role is currently always given) |
+| `creator` | Gives access to barbican. The account can create and read secrets, this permission is also requierd when creating an encrypted volumes |
+| `heat_stack_owner` | Gives access to manage heat |
+| `load-balancer_member` | Gives access to create and manage existing load-balancers |
+| `swiftoperator` | Gives access to object storage (all buckets) |
+
+
+## List application credentials using CLI
 
 To list all existing application credentials available in your project you can run the `openstack application credential list` command.
 
@@ -82,7 +87,7 @@ openstack application credential list
 +----------------------------------+------+----------------------------------+-------------+------------+
 ```
 
-## What access does one of my application credentials have?
+## Show application credential permissions using CLI
 
 To show which permissions a set of application credentials have you can run the `openstack application credential show` command followed by the ID of the credential you want to inspect.
 
@@ -105,7 +110,7 @@ openstack application credential show 3cd933bbcf824bdc9f77f37692eea60a
 
 ```
 
-## Delete Application credentials
+## Delete application credentials using CLI
 
 To delete a pair of application credentials enter the `openstack application credential delete` command followed by the ID of the credentials you want to remove.
 
