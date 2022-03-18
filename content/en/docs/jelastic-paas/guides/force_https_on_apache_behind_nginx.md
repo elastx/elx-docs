@@ -7,7 +7,7 @@ alwaysopen: true
 
 ## Edit httd.conf
 
-Add the following configuration in the apache configuration file `httd.conf`.
+Add the following configuration in the Apache configuration file `httd.conf`.
 
 
 ```
