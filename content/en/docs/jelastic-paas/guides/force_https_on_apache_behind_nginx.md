@@ -1,6 +1,6 @@
 ---
 title: "Force HTTPS on Apache behind Nginx load balancer"
-description: "How to force HTTPS on apache with Nginx load balancer"
+description: "How to force HTTPS on Apache with Nginx load balancer"
 weight: 1
 alwaysopen: true
 ---
@@ -10,7 +10,7 @@ alwaysopen: true
 Add the following configuration in the apache configuration file `httd.conf`.
 
 
-```shell
+```
 <VirtualHost *:80>
 ...
 RewriteEngine on
