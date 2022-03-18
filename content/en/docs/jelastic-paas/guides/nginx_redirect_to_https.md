@@ -1,5 +1,5 @@
 ---
-title: "Nginx redirect to https"
+title: "Nginx redirect to HTTPS"
 description: "Redirect all traffic to https in nginx"
 weight: 1
 alwaysopen: true
