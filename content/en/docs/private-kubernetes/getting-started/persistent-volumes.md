@@ -6,7 +6,7 @@ alwaysopen: true
 ---
 
 Persistent volumes in our Elastx Kubernetes CaaS service are provided by [OpenStack
-Cinder](https://docs.openstack.org/cinder/queens/). Volumes are dynamically
+Cinder](https://docs.openstack.org/cinder/train/). Volumes are dynamically
 provisioned by [Kubernetes Cloud Provider
 OpenStack](https://github.com/kubernetes/cloud-provider-openstack/).
 

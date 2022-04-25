@@ -11,7 +11,7 @@ Here is how to avoid that groups of instances run on the same compute node. This
 Take note of the group UUID that is displayed when created. It is needed when deploying the instance.  
 ```openstack server group create --policy anti-affinity testgroup```  
 
-     https://docs.openstack.org/python-openstackclient/rocky/cli/command-objects/server-group.html
+     https://docs.openstack.org/python-openstackclient/train/cli/command-objects/server-group.html
 
 
 1. (Optional) Read out the affinity policies.  
@@ -20,7 +20,7 @@ Take note of the group UUID that is displayed when created. It is needed when de
 1. Add the instance to the group when deploying.  
 ```openstack server create --image ubuntu-20.04-server-latest --flavor v1-small-1 --hint group=<server_group_uuid> test-instance```
 
-    https://docs.openstack.org/python-openstackclient/rocky/cli/command-objects/server.html
+    https://docs.openstack.org/python-openstackclient/train/cli/command-objects/server.html
 
 ## Additional links
-https://docs.openstack.org/senlin/rocky/user/policy_types/affinity.html
+https://docs.openstack.org/senlin/train/user/policy_types/affinity.html

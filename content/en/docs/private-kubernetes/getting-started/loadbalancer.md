@@ -6,7 +6,7 @@ alwaysopen: true
 ---
 
 Load balancers in our Elastx Kubernetes CaaS service are provided by [OpenStack
-Octavia](https://docs.openstack.org/octavia/queens/reference/introduction.html)
+Octavia](https://docs.openstack.org/octavia/train/reference/introduction.html)
 in collaboration with the [Kubernetes Cloud Provider
 OpenStack](https://github.com/kubernetes/cloud-provider-openstack). This article
 will introduce some of the basics of how to use services of *service* type
@@ -187,7 +187,7 @@ project or contact our support:
 
 * [Kubernetes Cloud Provider
   OpenStack](https://github.com/kubernetes/cloud-provider-openstack/blob/master/docs/openstack-cloud-controller-manager/expose-applications-using-loadbalancer-type-service.md#service-annotations)
-* [OpenStack Octavia](https://docs.openstack.org/octavia/queens/user/index.html)
+* [OpenStack Octavia](https://docs.openstack.org/octavia/train/user/index.html)
 
 # Good to know
 ## Load balancers are billable resources
