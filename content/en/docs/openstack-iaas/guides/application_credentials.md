@@ -8,7 +8,7 @@ alwaysopen: true
 ## Overview
 
 This guide will help you getting started with OpenStack application credentials.
-Application credentials are designed to be used by automation and CLI tools, such as Terraform and the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/rocky/).
+Application credentials are designed to be used by automation and CLI tools, such as Terraform and the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/train/).
 
 ## Create application credential using web dashboard
 
@@ -22,7 +22,7 @@ To create a pair of application credentials run the `openstack application crede
 
 You can also set an expiration date when creating a pair of application credentials, add the flag `--expiration` followed by a timestamp in the following format: `YYYY-mm-ddTHH:MM:SS`.
 
-For more detail you can [visit the OpenStack documentation](https://docs.openstack.org/python-openstackclient/rocky/cli/command-objects/application-credentials.html) that goes more into detail on all avaible options.
+For more detail you can [visit the OpenStack documentation](https://docs.openstack.org/python-openstackclient/train/cli/command-objects/application-credentials.html) that goes more into detail on all avaible options.
 
 An example that will give access to the most commonly used APIs:
 

@@ -22,7 +22,7 @@ and we integrate with the features it provides.
   build highly available services on.
 
 * **Load Balancer**: Services that use the type "LoadBalancer" in Kubernetes
-  integrate with [OpenStack Octavia](https://docs.openstack.org/octavia/queens/reference/introduction.html).
+  integrate with [OpenStack Octavia](https://docs.openstack.org/octavia/train/reference/introduction.html).
   Each service exposed this way gets its own public IP (*Floating IP* in OpenStack
   lingo).
 
