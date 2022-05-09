@@ -70,6 +70,7 @@ Default UserName is different depending on distribution:
 | CentOS 7        | centos     |
 | CentOS 8-stream | centos     |
 | CentOS 9-stream | cloud-user |
+| Rocky Linux     | rocky      |
 | CoreOS          | core       |
 | Fedora          | fedora     |
 | Redhat          | cloud-user |
