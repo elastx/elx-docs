@@ -5,7 +5,7 @@ weight: 1
 alwaysopen: true
 ---
 
-Here are the initial steps that you need to perform to start you first instance and access it with ssh. 
+Here are the initial steps that you need to perform to start you first instance and access it with ssh.  
 In this example we use an ubuntu image and restrict SSH access.
 
 ## Create Network
@@ -58,7 +58,7 @@ In this example the ssh key pair I created was named mykeypair and the public ip
 
 ```ssh -i mykeypair.pem ubuntu@1.2.3.4```
 
-The username is different depending on the Linux flavor you are using but you will always use the keypair and not a password.
+The username is different depending on the Linux flavor you are using but you will always use the keypair and not a password.  
 This is the generic pattern to login from a Linux client:
 
 ```ssh -l UserName -i /path/to/my-keypair.pem 1.2.3.4 ```
@@ -66,14 +66,27 @@ This is the generic pattern to login from a Linux client:
 Default UserName is different depending on distribution:
 
 | Linux Distribution   | User       |
-|----------------|------------|
-| CentOS 6       | cloud-user |
-| CentOS 7       | centos     |
-| CoreOS         | core       |
-| Fedora         | fedora     |
-| Redhat         | cloud-user |
-| Ubuntu         | ubuntu     |
-| Debian         | debian     |
-| Heat instances* | ec2-user*   |  
+|-----------------|------------|
+| CentOS 7        | centos     |
+| CentOS 8-stream | centos     |
+| CentOS 9-stream | cloud-user |
+| CoreOS          | core       |
+| Fedora          | fedora     |
+| Redhat          | cloud-user |
+| Ubuntu          | ubuntu     |
+| Debian          | debian     |
+| Heat instances* | ec2-user*  |  
 
 * When using Heat to deploy instances the user name will be ec2-user instead.  
+
+### Changing the default username
+
+In most modern distributions it's also possible to change the default username when creating a server by utilizing cloud-init.  
+The sample configuration below would change the deafult username to "yourusername".
+
+```shell
+#cloud-config
+system_info:
+  default_user:
+    name: yourusername
+```
