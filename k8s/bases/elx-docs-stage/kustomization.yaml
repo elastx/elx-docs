@@ -11,7 +11,7 @@ patches:
     patch: |-
       - op: replace
         path: /spec/tls/0/hosts/0
-        value: docs-lab.elastx.cloud
+        value: docs-stage.elastx.cloud
       - op: replace
         path: /spec/rules/0/host
-        value: docs-lab.elastx.cloud
+        value: docs-stage.elastx.cloud
