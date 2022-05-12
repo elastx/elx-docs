@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - docs-lab.elastx.cloud
+        - docs.elastx.cloud
       secretName: docs-lab.elastx.cloud
   rules:
-    - host: docs-lab.elastx.cloud
+    - host: docs.elastx.cloud
       http:
         paths:
           - path: /
