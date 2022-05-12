@@ -15,4 +15,4 @@ patches:
     patch: |-
       - op: replace
         path: /spec/rules/0/host
-        value: doc-lab.elastx.cloud
+        value: docs-lab.elastx.cloud
