@@ -11,7 +11,7 @@ images:
 patches:
   - target:
       kind: Ingress
-      name: elx-docs-lab
+      name: elx-docs
     patch: |-
       - op: replace
         path: /spec/rules/0/host
