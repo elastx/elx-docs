@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: elx-docs
@@ -8,15 +8,16 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
 spec:
   tls:
-  - hosts:
-    - docs.elastx.cloud
-    - docs.elastx.cloud
-    secretName: docs.elastx.cloud
+    - hosts:
+        - docs.elastx.cloud
+        - docs.elastx.cloud
+      secretName: docs.elastx.cloud
   rules:
-  - host: docs.elastx.cloud
-    http:
-      paths:
-      - path: /
-        backend:
-          serviceName: elx-docs
-          servicePort: http
+    - host: docs.elastx.cloud
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              serviceName: elx-docs
+              servicePort: http
