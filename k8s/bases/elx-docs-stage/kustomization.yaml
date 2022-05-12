@@ -4,10 +4,6 @@ kind: Kustomization
 resources:
 - ../elx-docs
 
-images:
-  - name: quay.io/elastx/elx-docs
-    newTag: latest
-
 patches:
   - target:
       kind: Ingress
