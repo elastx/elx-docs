@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- ../elx-docs
+
+images:
+  - name: quay.io/elastx/elx-docs
+    newTag: latest
+
+patches:
+  - target:
+      kind: Ingress
+      name: elx-docs-lab
+    patch: |-
+      - op: replace
+        path: /spec/rules/0/host
+        value: doc-lab.elastx.cloud
