@@ -10,5 +10,5 @@ patches:
       name: elx-docs
     patch: |-
       - op: replace
-        path: /spec/rules/0/host
+        path: /spec/tls/hosts/0
         value: docs-lab.elastx.cloud
