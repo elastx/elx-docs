@@ -21,5 +21,14 @@ images:
   - name: quay.io/elastx/elx-docs
     newTag: latest
 
+patches:
+  - target:
+      kind: Ingress
+      name: elx-docs
+    patch: |-
+      - op: replace
+        path: /spec/rules/0/host
+        value: doc.elastx.cloud
+
 transformers:
 - metadataLabelTransformer.yaml
