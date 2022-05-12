@@ -12,7 +12,7 @@ spec:
         - docs.elastx.cloud
       secretName: docs-tls
   rules:
-    - host: docs.elastx.cloud
+    - host: docs-stage.elastx.cloud
       http:
         paths:
           - path: /
