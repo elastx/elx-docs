@@ -17,7 +17,9 @@ spec:
       http:
         paths:
           - path: /
-            pathType: ImplementationSpecific
+            pathType: Prefix
             backend:
-              serviceName: elx-docs
-              servicePort: http
+              service:
+                name: elx-docs
+                port:
+                  name: http
