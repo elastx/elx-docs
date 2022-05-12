@@ -10,7 +10,7 @@ spec:
   tls:
     - hosts:
         - docs.elastx.cloud
-      secretName: docs-lab.elastx.cloud
+      secretName: docs-tls
   rules:
     - host: docs.elastx.cloud
       http:
