@@ -10,4 +10,4 @@ To run a local server, it is very easy:
 bash test-locally.sh
 ```
 
-Now you should be able to access the site through [http://localhost:1313/](http://localhost:1313/)
+Now you should be able to access the site through [http://localhost:1313/docs](http://localhost:1313/docs)
