@@ -67,8 +67,6 @@ jobs:
           pushd k8s/bases/elx-docs/
           kustomize edit set image "quay.io/elastx/elx-docs:$(git rev-parse HEAD)"
           popd
-      - name: Prepare git
-        run: git remote set-url origin ${{ secrets.ssh }}
       - name: Git status
         run: git status
       - name: Push changes to git
