@@ -1,0 +1,20 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Adds namespace to all resources.
+namespace: elx-docs-stage
+
+resources:
+- ../elx-docs
+
+patches:
+  - target:
+      kind: Ingress
+      name: elx-docs
+    patch: |-
+      - op: replace
+        path: /spec/tls/0/hosts/0
+        value: docs-stage.elastx.cloud
+      - op: replace
+        path: /spec/rules/0/host
+        value: docs-stage.elastx.cloud
