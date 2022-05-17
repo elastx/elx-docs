@@ -18,11 +18,36 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: elastx/actions/docker-lint@main
-  buildandpush:
+  buildcontent:
     runs-on: ubuntu-latest
     needs: lint
+    container:
+      image: quay.io/elastx/ci-hugo:0.87.0
     steps:
       - uses: actions/checkout@v3
+      - name: Build content
+        run: |
+          export NODE_PATH=$NODE_PATH:`npm root -g`
+          git submodule update --init --recursive
+          HUGO_ENV=production hugo -v
+      - name: Test webpage
+        run: htmlproofer public --allow-hash-href --check-html --empty-alt-ignore --disable-external --file-ignore /revealjs/,/404.html/
+      - name: Save config and logs artifact
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: content
+          path: public/
+  buildandpush:
+    runs-on: ubuntu-latest
+    needs: buildcontent
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download content artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: content
+          path: public/
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag ${IMAGE}:$(git rev-parse HEAD)
       - name: Login to Quay
