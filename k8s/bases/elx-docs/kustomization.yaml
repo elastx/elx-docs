@@ -7,19 +7,19 @@ namespace: elx-docs
 # Labels is handled by the metadataLabelTransformer just add your labels :)
 
 resources:
-  - default-networkpolicies.yaml
-  - networkpolicies.yaml
-  - deployment.yaml
-  - ingress.yaml
-  - issuer.yaml
-  - namespace.yaml
-  - rolebinding.yaml
-  - service.yaml
-  - serviceaccount.yaml
+- default-networkpolicies.yaml
+- networkpolicies.yaml
+- deployment.yaml
+- ingress.yaml
+- issuer.yaml
+- namespace.yaml
+- rolebinding.yaml
+- service.yaml
+- serviceaccount.yaml
 
 images:
-  - name: quay.io/elastx/elx-docs
-    newTag: latest
+- name: quay.io/elastx/elx-docs
+  newTag: b9f129f3bb0c1023848752d66d51d7060183a27b
 
 transformers:
 - metadataLabelTransformer.yaml
