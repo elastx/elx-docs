@@ -1,6 +1,6 @@
 ---
 title: "Detach & Attach interface on a Ubuntu instance"
-description: "Guide to how detach & attach a network interface on a Ubuntu instance"
+description: "Guide on how to detach and attach a network interface on a Ubuntu instance"
 weight: 1
 alwaysopen: true
 ---
