@@ -19,7 +19,7 @@ resources:
 
 images:
 - name: quay.io/elastx/elx-docs
-  newTag: b9f129f3bb0c1023848752d66d51d7060183a27b
+  newTag: 38ee7b91376458951d7a2ac98158ecc790eec57a
 
 transformers:
 - metadataLabelTransformer.yaml
