@@ -1,0 +1,54 @@
+name: Test build Docker image
+
+on: 
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:    
+      - master
+
+env:
+  IMAGE: quay.io/elastx/elx-docs
+  QUAY_USER: elastx+cidocs
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: elastx/actions/docker-lint@main
+  buildandpush:
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag ${IMAGE}:$(git rev-parse HEAD)
+      - name: Login to Quay
+        run: docker login -u ${QUAY_USER} -p ${{ secrets.DOCKER_PASS }} quay.io
+        if: github.ref == 'refs/heads/master'
+      - name: Push the Docker image
+        run: docker push ${IMAGE}:$(git rev-parse HEAD)
+        if: github.ref == 'refs/heads/master'
+  updateimagetag:
+    runs-on: ubuntu-latest
+    needs: buildandpush
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v3
+      - name: Override image tag
+        run: |
+          pushd k8s/bases/elx-docs/
+          kustomize edit set image "quay.io/elastx/elx-docs:$(git rev-parse HEAD)"
+          popd
+      - name: Prepare git
+        run: git remote set-url origin ${{ secrets.ssh }}
+      - name: Git status
+        run: git status
+      - name: Push changes to git
+        run: |
+          git add .
+          git commit -m "Auto updating image tag"
+          git fetch origin master
+          git push origin HEAD:master
