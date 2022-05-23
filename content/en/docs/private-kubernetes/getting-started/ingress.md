@@ -122,7 +122,7 @@ spec:
       - path: /
         pathType: Prefix
         backend:
-          service
+          service:
             name: my-web-service
             port:
               number: 9376
