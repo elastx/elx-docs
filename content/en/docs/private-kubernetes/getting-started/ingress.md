@@ -138,6 +138,10 @@ Run `kubectl get ing` and you should see output similar to this:
 If not, wait a while and try again. Once you see output similar to the above you
 should be able to reach your service at http://example.tld.
 
+### Exposing TCP services
+
+If you wish to expose [TCP services](https://kubernetes.github.io/ingress-nginx/user-guide/exposing-tcp-udp-services/) note that the _tcp-services_ is located in the _default_ namespace in our clusters.
+
 
 ## Enabling TLS
 
