@@ -8,7 +8,7 @@ alwaysopen: true
 ## Overview
 
 This guide will help you getting started with Volume Backup and Restore in OpenStack's Horizon and CLI.<br/>
-More information about the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/train/).
+Get more information about the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/train/).
 
 ## Create volume backup from Horizon
 
