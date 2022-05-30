@@ -94,19 +94,6 @@ openstack volume backup create 3af38568-20fc-4c36-bca4-72555a6761e4 --force --na
 | name  | MyVolumeBackup                       |
 +-------+--------------------------------------+
 ```
-<!---
-
-Check backup creation status:
-
-```bash
-openstack volume backup list
-+--------------------------------------+----------------+---------------------+----------+------+
-| ID                                   | Name           | Description         | Status   | Size |
-+--------------------------------------+----------------+---------------------+----------+------+
-| 1c06756f-ebe1-4efd-a419-e94184f86fe8 | MyVolumeBackup | backup_of_my_volume | creating |   20 |
-+--------------------------------------+----------------+---------------------+----------+------+
-```
---->
 
 When the creation is finnished the backup status will show as ```available```:
 
