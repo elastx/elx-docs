@@ -137,7 +137,7 @@ openstack volume create my_volume_restore --availability-zone sto1 --type 16k-io
 +---------------------+--------------------------------------+
 ```
 
-Restore backup to the newly created volume
+Restore backup to the newly created volume:
 
 ```bash
 openstack volume backup restore MyVolumeBackup my_volume_restore
