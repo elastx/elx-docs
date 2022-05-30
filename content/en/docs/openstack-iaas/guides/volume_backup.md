@@ -95,7 +95,9 @@ openstack volume backup create 3af38568-20fc-4c36-bca4-72555a6761e4 --force --na
 +-------+--------------------------------------+
 ```
 <!---
+
 Check backup creation status:
+
 ```bash
 openstack volume backup list
 +--------------------------------------+----------------+---------------------+----------+------+
@@ -107,6 +109,7 @@ openstack volume backup list
 --->
 
 When the creation is finnished the backup status will show as ```available```:
+
 ```bash
 openstack volume backup list
 +--------------------------------------+----------------+---------------------+-----------+------+-------------------+--------------------------------------+---------------+
@@ -146,6 +149,7 @@ openstack volume create my_volume_restore --availability-zone sto1 --type 16k-io
 | user_id             | a2d55d905e05459d84ffd96900c25e9d     |
 +---------------------+--------------------------------------+
 ```
+
 Restore backup to the newly created volume
 
 ```bash
@@ -171,64 +175,3 @@ openstack volume list --long
 +--------------------------------------+--------------------------------------+-----------+------+----------+----------+-------------------------------------+--------------------------------------+
 ```
 
-
-
-
-<!---
-
-To create a pair of application credentials run the `openstack application credential create <name>` command. By default the same access as the user running the command will be given. If you wish to override the roles given add `--role <role>` for each role you want to add.
-
-You can also set an expiration date when creating a pair of application credentials, add the flag `--expiration` followed by a timestamp in the following format: `YYYY-mm-ddTHH:MM:SS`.
-
-For more detail you can [visit the OpenStack documentation](https://docs.openstack.org/python-openstackclient/train/cli/command-objects/application-credentials.html) that goes more into detail on all avaible options.
-
-An example that will give access to the most commonly used APIs:
-
-```bash
-openstack application credential create test --role _member_ --role creator --role load-balancer_member
-
-+--------------+----------------------------------------------------------------------------------------+
-| Field        | Value                                                                                  |
-+--------------+----------------------------------------------------------------------------------------+
-| description  | None                                                                                   |
-| expires_at   | None                                                                                   |
-| id           | 3cd933bbcf824bdc9f77f37692eea60a                                                       |
-| name         | test                                                                                   |
-| project_id   | bb301d6172f54d749f9aa3094d77eeef                                                       |
-| roles        | _member_ creator load-balancer_member                                                  |
-| secret       | ibHyYuIPQCf-IKVN0qOEAgf4CNvDWmT5ltI6mdbmUTMD7OvJTu-5nXX0U6_5EOXTKriq7C7Ka06wKmJa0yLcKg |
-| unrestricted | False                                                                                  |
-+--------------+----------------------------------------------------------------------------------------+
-```
-
-> **Beware:** You will not be able to view the secret again after creation. In case you forget the secret you will need to delete and create a new pair of application credentials.
-
-### Create an openrc file
-
-```bash
-#!/usr/bin/env bash
-export OS_AUTH_TYPE=v3applicationcredential
-export OS_AUTH_URL=https://ops.elastx.cloud:5000/v3
-export OS_APPLICATION_CREDENTIAL_ID="<ID>"
-export OS_APPLICATION_CREDENTIAL_SECRET="<SECRET>"
-export OS_REGION_NAME="se-sto"
-export OS_INTERFACE=public
-export OS_IDENTITY_API_VERSION=3
-```
-
-## Available roles
-
-Below you will find a table with available roles and what they mean.
-
-| Role name | Description |
-|---|---|
-| `_member_` | Gives access to nova, neutron and glance. This allowed to manage servers, networks, security groups and images (this role is currently always given) |
-| `creator` | Gives access to barbican. The account can create and read secrets, this permission is also requierd when creating an encrypted volumes |
-| `heat_stack_owner` | Gives access to manage heat |
-| `load-balancer_member` | Gives access to create and manage existing load-balancers |
-| `swiftoperator` | Gives access to object storage (all buckets) |
-
-
-
-```
--->
