@@ -14,14 +14,14 @@ Get more information about the [OpenStack command-line client](https://docs.open
 
 Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) choose the volume you want to backup and choose ```Create Backup```.
 
-![Open-create-backup](/img/openstack-iaas/guides/open_create-backup-1.png)
+![Open-create-backup](/img/openstack-iaas/guides/ops_backup-restore-1.png)
 
 
 #### Choose Backup Name
 
 In the pop-up window, choose a name and a description for your backup and press ```Create Volume Backup```.
 
-![Create-backup](/img/openstack-iaas/guides/open_create-backup-2.png)
+![Create-backup](/img/openstack-iaas/guides/ops_backup-restore-2.png)
 
 <br/>
 <br/>
@@ -30,7 +30,7 @@ In the pop-up window, choose a name and a description for your backup and press 
 
 Navigate to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/) to see the status of the volume.
 
-![Status-create-backup](/img/openstack-iaas/guides/open_create-backup-3.png)
+![Status-create-backup](/img/openstack-iaas/guides/ops_backup-restore-3.png)
 
 ## Restore volume from backup
 Backup of a volume can be restored in two ways, one way is to create a new volume manually from the ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/), or to have the volume automatically created when restoring from the ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/).
@@ -39,38 +39,56 @@ Backup of a volume can be restored in two ways, one way is to create a new volum
 ### Manually Create a new volume and restore a backup to that volume
 Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press ```Create Volume```.
 
-![Status-create-volume](/img/openstack-iaas/guides/create_new_volume.png)
+![Status-create-volume](/img/openstack-iaas/guides/ops_backup-restore-4.png)
 
 Choose a name and description for the new volume. 
 > **Beware:** Volume Size has to be at minimum the size of the backup.
 The Volume also has to be in the same Availability-zone as the instance it will be attached too.
 
-![Status-create-volume](/img/openstack-iaas/guides/create_new_volume-2.png)
+![Status-create-volume](/img/openstack-iaas/guides/ops_backup-restore-5.png)
 
 #### Restore
 
 Navigate to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/) and press ```Restore Backup``.
 
-![Status-restore-volume](/img/openstack-iaas/guides/restore_from_backup.png)
+![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-6.png)
 
 Choose the newly created volume and press Restore Backup to Volume
 
-![Status-restore-volume](/img/openstack-iaas/guides/restore_from_backup-2.png)
+![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-7.png)
 
 ### Automatically create a new volume and restore a backup to that volume
 Navigate to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/) and press ```Restore Backup```.
 
-![Status-restore-volume](/img/openstack-iaas/guides/restore_from_backup.png)
+![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-6.png)
 
 Select ```Create a New Volume``` and press ```Restore Backup to Volume```.
 
-![Status-restore-volume](/img/openstack-iaas/guides/restore_from_backup-3.png)
+![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-8.png)
 
 The restored backup will be available in ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/)
 
-![Status-restore-volume](/img/openstack-iaas/guides/restore_from_backup-4.png)
+![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-9.png)
 
-## Volume Backup using CLI
+## Volume Attachment & Deattachment in Horizon
+
+List the available volumes:
+
+![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-10.png)
+
+Attach the restored volume to an instance:
+
+![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-11.png)
+
+List volumes again to check if the volume is attached to the instance:
+
+![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-12.png)
+
+Deattach the volume from an instance:
+
+![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-13.png)
+
+## Volume Backup using OpenStack CLI
 
 List all available volumes:
 ```bash
@@ -136,6 +154,7 @@ openstack volume create my_volume_restore --availability-zone sto1 --type 16k-io
 | user_id             | a2d55d905e05459d84ffd96900c25e9d     |
 +---------------------+--------------------------------------+
 ```
+## Volume Restore using OpenStack CLI
 
 Restore backup to the newly created volume:
 
@@ -162,3 +181,57 @@ openstack volume list
 +--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
 ```
 
+## Volume attachment & Deattachment
+
+List available volumes with ```openstack volume list```:
+```bash
+openstack volume list
++--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
+| ID                                   | Name                                 | Status    | Size | Attached to                         |
++--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
+| f63a7a2d-7321-49e3-b909-d49fee733f21 | my_volume_restore                    | available |   20 |                                     |
+| 3af38568-20fc-4c36-bca4-72555a6761e4 | 3af38568-20fc-4c36-bca4-72555a6761e4 | in-use    |   20 | Attached to MyInstance on /dev/vda  |
++--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
+```
+
+List available instances with ```openstack server list```:
+```bash
+openstack server list
++--------------------------------------+------------+--------+-----------------------------------------+-------+------------+
+| ID                                   | Name       | Status | Networks                                | Image | Flavor     |
++--------------------------------------+------------+--------+-----------------------------------------+-------+------------+
+| 864db2db-9c19-416e-aa9d-fc7d713db36c | MyInstance | ACTIVE | test-network=192.168.1.9				   |       | v1-micro-1 |
++--------------------------------------+------------+--------+-----------------------------------------+-------+------------+
+```
+
+Attach your restored volume to an instance with ```openstack server add volume MyInstance my_volume_restore```:
+```bash
+openstack server add volume MyInstance my_volume_restore
+```
+
+Check to see if your volume is attached to your instance with ```openstack volume list```:
+```bash
+openstack volume list
++--------------------------------------+--------------------------------------+--------+------+-------------------------------------+
+| ID                                   | Name                                 | Status | Size | Attached to                         |
++--------------------------------------+--------------------------------------+--------+------+-------------------------------------+
+| f63a7a2d-7321-49e3-b909-d49fee733f21 | my_volume_restore                    | in-use |   20 | Attached to MyInstance on /dev/vdb  |
+| 3af38568-20fc-4c36-bca4-72555a6761e4 | 3af38568-20fc-4c36-bca4-72555a6761e4 | in-use |   20 | Attached to MyInstance on /dev/vda  |
++--------------------------------------+--------------------------------------+--------+------+-------------------------------------+
+```
+
+Deattach your volume from an instance with ```server remove volume MyInstance my_volume_restore```:
+```bash
+server remove volume MyInstance my_volume_restore
+```
+
+Now your volume is deattached. Confirm the deattachment with ```openstack volume list```:
+```bash
+(openstack) volume list
++--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
+| ID                                   | Name                                 | Status    | Size | Attached to                         |
++--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
+| f63a7a2d-7321-49e3-b909-d49fee733f21 | my_volume_restore                    | available |   20 |                                     |
+| 3af38568-20fc-4c36-bca4-72555a6761e4 | 3af38568-20fc-4c36-bca4-72555a6761e4 | in-use    |   20 | Attached to MyInstance on /dev/vda  |
++--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
+```
