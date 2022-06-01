@@ -1,6 +1,6 @@
 ---
-title: "Volume Backup / Restore"
-description: "Guide to backup/restore a Volume"
+title: "Volume Backup & Restore"
+description: "Guide to backup & restore a Volume"
 weight: 1
 alwaysopen: true
 ---
