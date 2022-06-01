@@ -70,7 +70,7 @@ The restored backup will be available in ["Project" → "Volumes"](https://ops.e
 
 ![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-9.png)
 
-## Volume Attachment & Deattachment in Horizon
+## Volume Attach & Detach in Horizon
 
 Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press ⬇ arrow next to ```Edit Volume``` on the volume you want to attach and then press ```Manage Attachments``` 
 
@@ -84,8 +84,8 @@ Check volumes again in ["Project" → "Volumes"](https://ops.elastx.cloud/projec
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-12.png)
 
-To deattach the volume, Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press ⬇ arrow next to ```Edit Volume``` on the volume you want to deattach and then press ```Manage Attachments```.
-In the pop-up window choose the instance you want to deattach the volume from.
+To detach the volume, Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press ⬇ arrow next to ```Edit Volume``` on the volume you want to detach and then press ```Manage Attachments```.
+In the pop-up window choose the instance you want to detach the volume from.
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-13.png)
 
@@ -182,7 +182,7 @@ openstack volume list
 +--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
 ```
 
-## Volume attachment & Deattachment
+## Volume Attach & Detach using Openstack CLI
 
 List available volumes with ```openstack volume list```:
 ```bash
@@ -205,7 +205,7 @@ openstack server list
 +--------------------------------------+------------+--------+-----------------------------------------+-------+------------+
 ```
 
-Attach your restored volume to an instance with ```openstack server add volume MyInstance my_volume_restore```:
+Attach your restored volume to an instance with ```openstack server add volume <Instance ID or Name> <Volume ID or Name>```:
 ```bash
 openstack server add volume MyInstance my_volume_restore
 ```
@@ -221,14 +221,14 @@ openstack volume list
 +--------------------------------------+--------------------------------------+--------+------+-------------------------------------+
 ```
 
-Deattach your volume from an instance with ```server remove volume MyInstance my_volume_restore```:
+Detach your volume from an instance with ```server remove volume <Instance ID or Name> <Volume ID or Name>```:
 ```bash
-server remove volume MyInstance my_volume_restore
+openstack server remove volume MyInstance my_volume_restore
 ```
 
-Now your volume is deattached. Confirm the deattachment with ```openstack volume list```:
+Confirm the detachment with ```openstack volume list```:
 ```bash
-(openstack) volume list
+openstack volume list
 +--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
 | ID                                   | Name                                 | Status    | Size | Attached to                         |
 +--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
