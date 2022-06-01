@@ -12,14 +12,14 @@ Get more information about the [OpenStack command-line client](https://docs.open
 
 ## Create volume backup from Horizon
 
-Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) choose the volume you want to backup and choose "Create Backup".
+Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) choose the volume you want to backup and choose ```Create Backup```.
 
 ![Open-create-backup](/img/openstack-iaas/guides/open_create-backup-1.png)
 
 
 #### Choose Backup Name
 
-In the pop-up window, choose a name and a description for your backup and press Create Volume Backup.
+In the pop-up window, choose a name and a description for your backup and press ```Create Volume Backup```.
 
 ![Create-backup](/img/openstack-iaas/guides/open_create-backup-2.png)
 
@@ -37,7 +37,7 @@ Backup of a volume can be restored in two ways, one way is to create a new volum
 > **Beware:** If option two is chosen, the Availability-Zone and Size gets chosen automaically. This means that the volume might be added to a different Availability-Zone than intended.
 
 ### Manually Create a new volume and restore a backup to that volume
-Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press create new volume.
+Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press ```Create Volume```.
 
 ![Status-create-volume](/img/openstack-iaas/guides/create_new_volume.png)
 
@@ -49,7 +49,7 @@ The Volume also has to be in the same Availability-zone as the instance it will 
 
 #### Restore
 
-Navigate to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/) and press Restore Backup.
+Navigate to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/) and press ```Restore Backup``.
 
 ![Status-restore-volume](/img/openstack-iaas/guides/restore_from_backup.png)
 
@@ -58,11 +58,11 @@ Choose the newly created volume and press Restore Backup to Volume
 ![Status-restore-volume](/img/openstack-iaas/guides/restore_from_backup-2.png)
 
 ### Automatically create a new volume and restore a backup to that volume
-Navigate to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/) and press Restore Backup.
+Navigate to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/) and press ```Restore Backup```.
 
 ![Status-restore-volume](/img/openstack-iaas/guides/restore_from_backup.png)
 
-Select Create a New Volume and press Restore Backup to Volume.
+Select ```Create a New Volume``` and press ```Restore Backup to Volume```.
 
 ![Status-restore-volume](/img/openstack-iaas/guides/restore_from_backup-3.png)
 
@@ -106,7 +106,7 @@ openstack volume backup list
 +--------------------------------------+----------------+---------------------+-----------+------+-------------------+--------------------------------------+---------------+
 ```
 
-Create a new volume to restore to from backup
+Create a new volume to restore to from backup:
 > **Beware:** Volume Size has to be at minimum the size of the backup.
 The Volume also has to be in the same Availability-zone as the instance it will be attached too.
 
@@ -150,7 +150,7 @@ openstack volume backup restore MyVolumeBackup my_volume_restore
 +-------------+--------------------------------------+
 ```
 
-After the backup is restored, it will show as available:
+After the backup is restored, it will show as ```available```:
 
 ```bash
 openstack volume list
