@@ -12,7 +12,7 @@ Get more information about the [OpenStack command-line client](https://docs.open
 
 ## Create volume backup from Horizon
 
-Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) choose the volume you want to backup and choose ```Create Backup```.
+Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) pick the volume you want to backup and choose ```Create Backup```.
 
 ![Open-create-backup](/img/openstack-iaas/guides/ops_backup-restore-1.png)
 
@@ -49,11 +49,11 @@ The Volume also has to be in the same Availability-zone as the instance it will 
 
 #### Restore
 
-Navigate to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/) and press ```Restore Backup``.
+Navigate to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/) and press ```Restore Backup```.
 
 ![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-6.png)
 
-Choose the newly created volume and press Restore Backup to Volume
+Choose the newly created volume and press ```Restore Backup to Volume```.
 
 ![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-7.png)
 
@@ -66,25 +66,25 @@ Select ```Create a New Volume``` and press ```Restore Backup to Volume```.
 
 ![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-8.png)
 
-The restored backup will be available in ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/)
+The restored backup will be available in ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/).
 
 ![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-9.png)
 
 ## Volume Attachment & Deattachment in Horizon
 
-List the available volumes:
+List the available volumes.
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-10.png)
 
-Attach the restored volume to an instance:
+Attach the restored volume to an instance.
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-11.png)
 
-List volumes again to check if the volume is attached to the instance:
+List volumes again to check if the volume is attached to the instance.
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-12.png)
 
-Deattach the volume from an instance:
+Deattach the volume from an instance.
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-13.png)
 
