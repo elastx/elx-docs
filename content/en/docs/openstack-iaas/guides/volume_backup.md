@@ -72,19 +72,20 @@ The restored backup will be available in ["Project" → "Volumes"](https://ops.e
 
 ## Volume Attachment & Deattachment in Horizon
 
-List the available volumes.
+Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press down arrow next to ```Edit Volume``` on the volume you want to attach and then press ```Manage Attachments``` 
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-10.png)
 
-Attach the restored volume to an instance.
+In the pop-up window choose the instance you want to attach the restored volume to.
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-11.png)
 
-List volumes again to check if the volume is attached to the instance.
+Check volumes again in ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) to see if the volume is attached to the instance.
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-12.png)
 
-Deattach the volume from an instance.
+To deattach the volume, Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press down arrow next to ```Edit Volume``` on the volume you want to deattach and then press ```Manage Attachments```.
+In the pop-up window choose the instance you want to deattach the volume from.
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-13.png)
 
