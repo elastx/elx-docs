@@ -72,11 +72,11 @@ The restored backup will be available in ["Project" → "Volumes"](https://ops.e
 
 ## Volume Attach & Detach in Horizon
 
-Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press ⬇ arrow next to ```Edit Volume``` on the volume you want to attach and then press ```Manage Attachments``` 
+Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press the ⬇ arrow next to ```Edit Volume``` on the volume you want to attach and then press ```Manage Attachments``` 
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-10.png)
 
-In the pop-up window choose the instance you want to attach the restored volume to.
+In the pop-up window choose an instance you want to attach the restored volume to.
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-11.png)
 
@@ -84,14 +84,14 @@ Check volumes again in ["Project" → "Volumes"](https://ops.elastx.cloud/projec
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-12.png)
 
-To detach the volume, Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press ⬇ arrow next to ```Edit Volume``` on the volume you want to detach and then press ```Manage Attachments```.
+To detach the volume, Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press the ⬇ arrow next to ```Edit Volume``` on the volume you want to detach and then press ```Manage Attachments```.
 In the pop-up window choose the instance you want to detach the volume from.
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-13.png)
 
 ## Volume Backup using OpenStack CLI
 
-List all available volumes:
+List all available volumes: ```openstack volume list```
 ```bash
 openstack volume list
 +--------------------------------------+--------------------------------------+--------+------+-------------------------------------+
@@ -101,7 +101,7 @@ openstack volume list
 +--------------------------------------+--------------------------------------+--------+------+-------------------------------------+
 ```
 
-Create backup of your volume with ```openstack volume backup create <Volume ID or Name> --description <description of your volume> ``` 
+Create backup of your volume: ```openstack volume backup create <Volume ID or Name> --name <Name of Backup> --description <Description of your Backup> ``` 
 > **Beware:** If the volume is attached to an instance, the flag ```--force``` has to be added.
 
 ```bash
@@ -114,7 +114,7 @@ openstack volume backup create 3af38568-20fc-4c36-bca4-72555a6761e4 --force --na
 +-------+--------------------------------------+
 ```
 
-When the creation is finnished the backup status will show as ```available```:
+When the creation is finnished the backup status will show as: ```available```
 
 ```bash
 openstack volume backup list
@@ -125,7 +125,9 @@ openstack volume backup list
 +--------------------------------------+----------------+---------------------+-----------+------+-------------------+--------------------------------------+---------------+
 ```
 
-Create a new volume to restore to from backup:
+Create a new volume to restore to from backup:<br/> 
+```openstack volume create <ID or Name> --availability-zone <sto1/2/3> --size <GiB> --description <a description>```
+
 > **Beware:** Volume Size has to be at minimum the size of the backup.
 The Volume also has to be in the same Availability-zone as the instance it will be attached too.
 
@@ -157,7 +159,7 @@ openstack volume create my_volume_restore --availability-zone sto1 --type 16k-io
 ```
 ## Volume Restore using OpenStack CLI
 
-Restore backup to the newly created volume:
+Restore backup to the newly created volume: ```openstack volume backup restore  <Backup ID or Name> <Volume ID or Name>```
 
 ```bash
 openstack volume backup restore MyVolumeBackup my_volume_restore
@@ -170,7 +172,7 @@ openstack volume backup restore MyVolumeBackup my_volume_restore
 +-------------+--------------------------------------+
 ```
 
-After the backup is restored, it will show as ```available```:
+After the backup is restored, it will show as: ```available```
 
 ```bash
 openstack volume list
@@ -184,7 +186,7 @@ openstack volume list
 
 ## Volume Attach & Detach using Openstack CLI
 
-List available volumes with ```openstack volume list```:
+List available volumes: ```openstack volume list```
 ```bash
 openstack volume list
 +--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
@@ -195,7 +197,7 @@ openstack volume list
 +--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
 ```
 
-List available instances with ```openstack server list```:
+List available instances: ```openstack server list```
 ```bash
 openstack server list
 +--------------------------------------+------------+--------+-----------------------------------------+-------+------------+
@@ -205,12 +207,12 @@ openstack server list
 +--------------------------------------+------------+--------+-----------------------------------------+-------+------------+
 ```
 
-Attach your restored volume to an instance with ```openstack server add volume <Instance ID or Name> <Volume ID or Name>```:
+Attach your restored volume to an instance: ```openstack server add volume <Instance ID or Name> <Volume ID or Name>```
 ```bash
 openstack server add volume MyInstance my_volume_restore
 ```
 
-Check to see if your volume is attached to your instance with ```openstack volume list```:
+Check to see if your volume is attached to your instance: ```openstack volume list```
 ```bash
 openstack volume list
 +--------------------------------------+--------------------------------------+--------+------+-------------------------------------+
@@ -221,12 +223,12 @@ openstack volume list
 +--------------------------------------+--------------------------------------+--------+------+-------------------------------------+
 ```
 
-Detach your volume from an instance with ```server remove volume <Instance ID or Name> <Volume ID or Name>```:
+Detach your volume from an instance: ```server remove volume <Instance ID or Name> <Volume ID or Name>```
 ```bash
 openstack server remove volume MyInstance my_volume_restore
 ```
 
-Confirm the detachment with ```openstack volume list```:
+Confirm the detachment: ```openstack volume list```
 ```bash
 openstack volume list
 +--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
