@@ -114,7 +114,7 @@ openstack volume backup create 3af38568-20fc-4c36-bca4-72555a6761e4 --force --na
 +-------+--------------------------------------+
 ```
 
-When the creation is finnished the backup status will show as: ```available```
+When the creation is finished the backup status will show as: ```available```
 
 ```bash
 openstack volume backup list
