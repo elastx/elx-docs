@@ -43,7 +43,7 @@ Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/)
 
 Choose a name and description for the new volume. 
 > **Beware:** Volume Size has to be at minimum the size of the backup.
-The Volume also has to be in the same Availability-zone as the instance it will be attached too.
+The Volume also has to be in the same Availability Zone as the instance it will be attached too.
 
 ![Status-create-volume](/img/openstack-iaas/guides/ops_backup-restore-5.png)
 
