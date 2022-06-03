@@ -34,7 +34,7 @@ Navigate to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/pro
 
 ## Restore volume from backup
 Backup of a volume can be restored in two ways, one way is to create a new volume manually from the ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/), or to have the volume automatically created when restoring from the ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/).
-> **Beware:** If option two is chosen, the Availability-Zone and Size gets chosen automaically. This means that the volume might be added to a different Availability-Zone than intended.
+> **Beware:** If option two is chosen, the Availability Zone and Size gets chosen automatically. This means that the volume might be added to a different Availability Zone than intended.
 
 ### Manually Create a new volume and restore a backup to that volume
 Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press ```Create Volume```.
