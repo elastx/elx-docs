@@ -101,7 +101,7 @@ openstack volume list
 +--------------------------------------+--------------------------------------+--------+------+-------------------------------------+
 ```
 
-Create backup of your volume: ```openstack volume backup create <Volume ID or Name> --name <Name of Backup> --description <Description of your Backup> ```. 
+Create backup of your volume: ```openstack volume backup create <Volume ID or Name> --name <Name of Backup> --description <Description of your Backup>```. 
 > **Beware:** If the volume is attached to an instance, the flag ```--force``` has to be added.
 
 ```bash
