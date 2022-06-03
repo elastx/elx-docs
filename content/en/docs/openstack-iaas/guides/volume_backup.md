@@ -129,7 +129,7 @@ Create a new volume to restore to from backup:<br/>
 ```openstack volume create <ID or Name> --availability-zone <sto1/2/3> --size <GiB> --description <a description>```
 
 > **Beware:** Volume Size has to be at minimum the size of the backup.
-The Volume also has to be in the same Availability-zone as the instance it will be attached too.
+The Volume also has to be in the same Availability Zone as the instance it will be attached too.
 
 ```bash
 openstack volume create my_volume_restore --availability-zone sto1 --type 16k-iops --size 20 --description restored_from_backup
