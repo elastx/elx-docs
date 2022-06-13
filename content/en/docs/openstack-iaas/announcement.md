@@ -133,7 +133,7 @@ Example, a 100GB volume will have 16000 iops and cost 720 SEK / month (290+100*4
 The new pricing will be applied from 2022-09-01.
 
 ### Deprecated volume type
-The “4k-IOPS” volume is now deprecated. It will still be available as long as it is in use but we will limit creation of new volumes 2021-12-01. The new volume type v1-dynamic-40 costs less and is faster so we recommend changing current 4k-IOPS volumes to it.
+The “4k-IOPS” volume is now deprecated. It will still be available as long as it is in use but we will limit creation of new volumes 2022-12-01. The new volume type v1-dynamic-40 costs less and is faster so we recommend changing current 4k-IOPS volumes to it.
 
 ### Changing volume type
 The volume type on a current volume can be changed without disruption and the new specifications will be applied instantly. 
