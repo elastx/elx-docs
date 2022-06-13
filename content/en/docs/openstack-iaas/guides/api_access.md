@@ -11,8 +11,9 @@ These APIs are used by automation tools such as
 [HashiCorp Terraform](https://registry.terraform.io/providers/terraform-provider-openstack/openstack/latest/docs) and
 the [OpenStack CLI utility](https://docs.openstack.org/python-openstackclient/latest/).  
   
-For advanced programmatic usage, there exist pre-built
-[SDKs and software libraries for several languages](https://wiki.openstack.org/wiki/SDKs).  
+For advanced programmatic usage, there exist freely available
+[SDKs and software libraries for several languages](https://wiki.openstack.org/wiki/SDKs) which are maintained by the
+OpenStack project or community members.  
   
 This guides describes the initial steps required for manual usage of the OpenStack REST APIs.
 
