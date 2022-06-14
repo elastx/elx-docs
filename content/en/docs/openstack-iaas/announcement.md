@@ -5,6 +5,25 @@ weight: 1
 alwaysopen: true
 ---
 
+
+
+## 2022-06-15 Increased price on Openstack d2 instances
+
+### Due to the increased pricing on hardware and power we need to increase the price on d2 instances.
+
+There has been an extreme price increase on hardware and power during the last 6 months which has forced us to increase the price on our OpenStack d2 dedicated instances. Both current and new instances with these flavors will be affected.
+
+The following instances flavors are affected.
+
+| Flavor            | Current price        | New price           
+|-------------------|----------------------|-------------
+| d2-c8-m120-d1.6k  | 5950 SEK / month     | 6890 SEK / Month              
+| d2-c8-m120-d11.6k | 8249 SEK / month     | 9250 SEK / Month
+
+The new prices will apply from 2022-10-01.
+
+<hr>
+
 ## 2022-06-14 New OpenStack Instance flavors to better match your workloads.
 
 Elastx is introducing new OpenStack Instance flavors and a new flavor naming standard. The new flavors are memory or cpu optimized flavors that can be used to better match your workload requirements. The new naming standard will make it easier to understand the flavor specification and to support additional flavor types in the future.
