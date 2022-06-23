@@ -16,7 +16,7 @@ location / {
 }
 ```
 
-If you do not have your own public IP and use the shared SSL certificate then add the following lines to the "/ location {}" section.
+If your webserver is located behind a proxy, loadbalancer or WAF (that sends x-forwarded headers) you can simply use the below snippet instead.
 
 ```bash
 if ($http_x_forwarded_proto != "https") {
