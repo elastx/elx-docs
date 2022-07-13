@@ -11,14 +11,14 @@ This guide will help you getting started with changing volume type in OpenStack'
 In this example, we will use a detached volume with the type ```16k-IOPS-enc```.
 Get more information about the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/train/).
 
-## Choose volume
+## Volume retype from Horizon
 
 Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) choose the volume you want to retype and press the ⬇ arrow next to ```Edit Volume``` and select ```Change Volume Type```.
 
 ![Open-create-backup](/img/openstack-iaas/guides/ops_volume-retype-1.png)
 
 
-#### Choose Type
+### Choose Type
 
 In the pop-up window, choose a new type and set Migration Policy to ```On Demand```.
 
