@@ -12,7 +12,8 @@ Get more information about the [OpenStack command-line client](https://docs.open
 
 ## Pick volume
 
-Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) pick the volume you want to retype ```Change Volume Type```.
+In this example, we will use a detached volume with the type ```16k-IOPS-enc```.
+Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) choose the volume you want to retype ```Change Volume Type```.
 
 ![Open-create-backup](/img/openstack-iaas/guides/ops_volume-retype-1.png)
 
