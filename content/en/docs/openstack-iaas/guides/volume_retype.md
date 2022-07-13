@@ -1,6 +1,6 @@
 ---
 title: "Volume Retype"
-description: "Guide to retype a Volume"
+description: "Guide to change volume type"
 weight: 1
 alwaysopen: true
 ---
@@ -29,7 +29,7 @@ In the pop-up window, choose a new type and set Migration Policy to ```On Demand
 
 ### Check status
 
-The volume status will change to ```retyping```, this can take a while depending on the size of volume.
+The volume status will change to ```retyping```, this can take a while depending on the volume size.
 After everything is done, the volume will have the status ```available```.
 
 ![Status-create-backup](/img/openstack-iaas/guides/ops_volume-retype-4.png)
