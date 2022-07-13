@@ -49,7 +49,7 @@ openstack volume list --long
 +--------------------------------------+------------------+-----------+------+--------------+----------+--------------------------------------+--------------------------------------+
 ```
 
-Retype volume with: ```openstack volume set --type 16k-IOPS --retype-policy on-demand <VolumeID>```.
+Retype volume with: ```openstack volume set --type <volume-type> --retype-policy on-demand <Volume ID or Name>```.
 
 ```bash
 openstack volume set --type 16k-IOPS --retype-policy on-demand ad2ca224-78e0-4930-941e-596bbea05b95
