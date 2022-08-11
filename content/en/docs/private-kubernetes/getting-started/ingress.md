@@ -197,8 +197,10 @@ spec:
       - path: /
         pathType: Prefix
         backend:
-          serviceName: my-web-service
-          servicePort: 9376
+          service:
+            name: my-web-service
+            port:
+              number: 9376
 ```
 
 Make sure to replace all references to *example.tld* by your own domain. Then
