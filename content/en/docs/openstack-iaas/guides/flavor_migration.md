@@ -26,8 +26,8 @@ openstack server list
 +--------------------------------------+------------+---------+--------------------------+----------------------------+---------------+
 ```
 
-Show information about the instance which you want to change flavor: ```openstack <Instance ID or Name>```.  
-From the excerpt below we can see that the flavor being used is "v1-small-1" and there's a volume attached to the instance.
+Show information about the instance which you want to change flavor: ```openstack server show <Instance ID or Name>```.  
+From the example below we can see that the flavor being used is "v1-small-1" and there's a volume attached to the instance.
 ```bash
 openstack server show myinstance
 +-----------------------------+----------------------------------------------------------+
