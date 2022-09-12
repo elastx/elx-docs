@@ -80,3 +80,4 @@ As every OpenStack cloud has it's own unique set of features and underlying infr
 - Encrypted volumes can only be deleted by the user that created them.
 - It's not supported to snapshot the ephemeral volume of dedicated instances (flavour with dedicated in name).
 - Encrypted volumes need to be detached and attached manually for instances to discover the new volume size when resizing.
+- When making a backup use only single line for description. There is a bug that failes the process if you use more than one line
