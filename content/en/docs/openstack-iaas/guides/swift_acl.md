@@ -8,7 +8,7 @@ alwaysopen: true
 
 In this guide we will go through how to manage user permissions for Swift containers using ACLs. 
 
-Due to current limitation on how current privilege/role  management works, the way to go is to create a separate "Swift project". 
+Due to current limitation of how privilege/role management works, the way to go is to create a separate "Swift project". 
 
 The purpose of so called "Swift projects" ("<customername>\_swift") is to work-around current limitations related to our privilege/role management in projects. When a user becomes a member of a project, they get the ability to create/manipulate resources such as virtual instances and volumes, which may not be desirable if your goal is to have a user that only has access to Swift or specific Swift containers/buckets. This is not optimal and we are planning to provide options for better permission granularity, but the currently available work-around is to create a separate project for "Swift usage" which has resources quotas set that prevents it's users from creating/manipulating non-Swift resources.
 
