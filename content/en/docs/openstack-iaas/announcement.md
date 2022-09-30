@@ -5,6 +5,46 @@ weight: 1
 alwaysopen: true
 ---
 
+## 2022-09-30 Openstack encrypted volumes and deprected flavor
+
+
+#### During 2021 we announced that all volumes in OpenStack are encrypted at no additional cost. We are now changing the end of life date of our legacy encrypted volume types. <br /> We are also deprecating our first dedicated instance flavor. No end of life date will be announced today but there will be limited availability as we will not add any additional capacity.
+
+### Encrypted Volumes EOL update
+During 2021 we enabled encryption at rest for all volumes in our Openstack IaaS. Prior to this change you could select encryption as an option which cost more than non encrypted volumes. Now all new and existing volumes are encrypted at no additional cost.
+
+
+There is a function available in OpenStack to migrate data between volume types that can be used to migrate from a legacy encrypted volume to a standard volume type which also is encrypted at rest. We have users requesting to postpone the EOL date and therefore we are now announcing a new EOL date. 
+
+
+The following volume types are deprecated and will be disabled at the latest 2023-09-30.
+- 4k-IOPS-enc
+- 8k-IOPS-enc
+- 16k-IOPS-enc
+
+
+**The price for these volume types will increase by 30% 2023-01-01.**
+
+
+If you are running any of the above volume types you need to migrate the data to other volume types.
+
+
+When you migrate the legacy encrypted volumes to our standard volumes you will reduce the cost for your volumes. You can change the volume type from a legacy encrypted to a standard volume but it is an offline process.
+Please contact support if you need any help or recommendation on how to do this.
+
+### Deprecated dedicated flavor
+The following dedicated instance flavor is now deprecated.
+- d1-c8-m58-d800
+- v1-dedicated-8 (legacy name)
+
+
+We will not announce an End Of Life date today and when we do it will be announced at least one year ahead. 
+We will not add any additional capacity to this flavor so there is limited availability. There can be situations where we do not have any available capacity to start new instances with this flavor.
+
+This is also the only flavor that doesn’t have a boot disk with at rest encryption.
+
+---
+
 ## 2022-06-15 Increased price on Openstack d2 instances
 
 ### Due to the increased pricing on hardware and power we need to increase the price on d2 instances.
