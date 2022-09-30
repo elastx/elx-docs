@@ -5,7 +5,7 @@ weight: 1
 alwaysopen: true
 ---
 
-## 2022-09-30 Openstack encrypted volumes and deprected flavor
+## 2022-09-30 Openstack encrypted volumes and deprecated flavor
 
 
 #### During 2021 we announced that all volumes in OpenStack are encrypted at no additional cost. We are now changing the end of life date of our legacy encrypted volume types. <br /> We are also deprecating our first dedicated instance flavor. No end of life date will be announced today but there will be limited availability as we will not add any additional capacity.
