@@ -70,7 +70,8 @@ List all available flavors:
 openstack flavor list
 ```
 
-Create a new instance from your snapshot: ```openstack server create <Name of Instance> --flavor <Flavor ID or Name> --image <Snapshot ID or Name> --availability-zone <sto1/sto2/sto3> <args>```  
+Create a new instance from your snapshot: ```openstack server create <Name of Instance> --flavor <Flavor ID or Name> --image <Snapshot ID or Name> --availability-zone <sto1/sto2/sto3> --key-name <Key ID or Name> --network <Network ID or Name> --security-group <Security Group ID or Name>```  
+
 The example below uses flavor "v1-standard-2"
 > **Beware:** The new instance has to be in the same availability-zone as the original instance.
 ```bash
