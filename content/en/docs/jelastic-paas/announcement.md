@@ -11,7 +11,7 @@ Virtuozzo announced its [acquisition of Jelastic](https://www.virtuozzo.com/comp
 
 Later, Jelastic PaaS became [Virtuozzo Application Platform](https://www.virtuozzo.com/application-platform/).
 
-Now it is time for Elastx to rename Jelastic PaaS as Virtuozzo PaaS.
+Now it is time for Elastx to rebrand Jelastic PaaS as Virtuozzo PaaS.
 
 With the platform upgrade 2022-09-21, the Jelastic PaaS was rebranded to Virtuozzo PaaS. 
 
