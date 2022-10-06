@@ -13,7 +13,9 @@ Later, Jelastic PaaS became [Virtuozzo Application Platform](https://www.virtuoz
 
 Now it is time for Elastx to rename Jelastic PaaS as Virtuozzo PaaS.
 
-Sometime during October 2022, Jelastic PaaS will be renamed Virtuozzo PaaS.
+With the platform upgrade 2022-09-21, the Jelastic PaaS was rebranded to Virtuozzo PaaS. 
+
+During October we will rebrand other places as well. 
 
 Documentation for Virtuozzo PaaS can be [found here](https://www.virtuozzo.com/application-platform-docs/).
 
