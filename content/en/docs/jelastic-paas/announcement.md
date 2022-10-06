@@ -17,6 +17,6 @@ Sometime during October 2022, Jelastic PaaS will be renamed Virtuozzo PaaS.
 
 Documentation for Virtuozzo PaaS can be [found here](https://www.virtuozzo.com/application-platform-docs/).
 
-Elastx is [currently running](https://elastx.se/en/jelastic/specification) version 7.0.3.
+Elastx is [currently running](https://elastx.se/en/jelastic/specification) version 7.3.1.
 
 To get info on service windows and updates, please subscribe to our [status page](https://status.elastx.se/).
