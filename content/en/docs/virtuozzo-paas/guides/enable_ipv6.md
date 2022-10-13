@@ -1,6 +1,6 @@
 ---
 title: "Enable IPv6"
-description: "Elastx supports IPv6 in Jelastic PaaS"
+description: "Elastx supports IPv6 in Virtuozzo PaaS"
 weight: 1
 alwaysopen: true
 ---
@@ -24,4 +24,3 @@ This guide will help you enable IPv6. Remember that you might need to configure 
 ![Verify-ipv6](/img/jelastic-paas/guides/jel_enable-ipv6-3.png)
 
 That's it! If something in this guide is unclear or if you have any questions, feel free to contact us.
-
