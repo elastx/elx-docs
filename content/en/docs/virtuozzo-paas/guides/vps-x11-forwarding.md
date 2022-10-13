@@ -1,6 +1,6 @@
 ---
 title: "Enable X11-Forwarding on VPS"
-description: "How to enable X11-Forwarding on a Jelastic VPS"
+description: "How to enable X11-Forwarding on a Virtuozzo VPS"
 weight: 1
 alwaysopen: true
 ---
