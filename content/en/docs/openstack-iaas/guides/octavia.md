@@ -5,22 +5,33 @@ weight: 1
 alwaysopen: true
 ---
 
-*OpenStack Octavia* is the next generation load balancer as a service for OpenStack.
+This is an example of a minimal setup that includes a basic HTTP loadbalancer.
+Here is a short explanation of a minimal (configuration) setup from GUI (Horizon).
 
-Use with Barbican for SSL
+1. Network -> Loadbalancer -> Create loadbalancer
 
-## Create a SSL-Terminated Load Balancer
+1. Load Balancer Details: 
+Subnet: Where your webservers live
 
-Creating a SSL-terminated Octavia load balancer:
+1. Listener Details:
+Select HTTP, port 80.
 
-- Generate certificates and keys
-- Store certificate key
-- Store certificate
-- Store certificate chain
-- Create container using the stored data
-- Create ACL to allow octavia to access the data
-- Create Octavia load balancer
-- Create listener with certificate data
-- Create load balancer pool
-- Create pool members
-- Create health monitors (optional)
+1. Pool Details:
+This is your "pool of webservers".
+Select Algoritm of preference.
+
+1. Pool members:
+Select your webservers.
+
+1. Finally, proceed to "Create Loadbalancer".
+
+Note, the loadbalancer will not show up in the Network Topology graph. This is expected.
+
+
+Octivia can features numerous configuration variations.
+The full reference of variations and CLI guide can be found here:
+[https://docs.openstack.org/octavia/train/user/guides/basic-cookbook.html](https://docs.openstack.org/octavia/train/user/guides/basic-cookbook.html)
+
+Take note that an additional CLI client is required to access the full potential as described above.
+[https://docs.openstack.org/python-octaviaclient/latest/cli/index.html#loadbalancer](https://docs.openstack.org/python-octaviaclient/latest/cli/index.html#loadbalancer)
+
