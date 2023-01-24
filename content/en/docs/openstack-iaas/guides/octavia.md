@@ -25,13 +25,12 @@ Select your webservers.
 
 1. Finally, proceed to "Create Loadbalancer".
 
+
 Note, the loadbalancer will not show up in the Network Topology graph. This is expected.
 
-
-Octivia can features numerous configuration variations.
+Octivia features numerous configuration variations.
 The full reference of variations and CLI guide can be found here:
 [https://docs.openstack.org/octavia/train/user/guides/basic-cookbook.html](https://docs.openstack.org/octavia/train/user/guides/basic-cookbook.html)
 
 Take note that an additional CLI client is required to access the full potential as described above.
 [https://docs.openstack.org/python-octaviaclient/latest/cli/index.html#loadbalancer](https://docs.openstack.org/python-octaviaclient/latest/cli/index.html#loadbalancer)
-
