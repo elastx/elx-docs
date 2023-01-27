@@ -5,7 +5,7 @@ weight: 1
 alwaysopen: true
 ---
 
-## 2022-01-27 Elastx Cloud Platform pricing adjustment
+## 2023-01-27 Elastx Cloud Platform pricing adjustment
 
 To Elastx Customers and Partners,<br />
 We are trying to avoid a general price increase on all services, even though the current high inflation is affecting us hard. We are investing in new more efficient technology to compensate for the increased cost derived from product vendors, utility services, financial service and internal costs. We have identified a few selected services where we need to perform price adjustments to be able to continue the development in a sustainable way.<br />The new pricing will apply from 2023-03-01.
