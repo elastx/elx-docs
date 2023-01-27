@@ -5,10 +5,30 @@ weight: 1
 alwaysopen: true
 ---
 
+## 2023-01-27 Elastx Cloud Platform pricing adjustment
+
+To Elastx Customers and Partners,<br />
+We are trying to avoid a general price increase on all services, even though the current high inflation is affecting us hard. We are investing in new more efficient technology to compensate for the increased cost derived from product vendors, utility services, financial service and internal costs. We have identified a few selected services where we need to perform price adjustments to be able to continue the development in a sustainable way.<br />
+The new pricing will apply from 2023-03-01.
+
+ We will adjust the pricing on the dedicated instance flavor d1-c8-m58-d800.
+
+| Flavor         | Current price        | New price           
+|----------------|----------------------|-------------
+| d1-c8-m58-d800 | 3950 SEK / Month     | 4750 SEK / Month              
+
+We will adjust the pricing on the network Load Balancer as a Service.
+
+| Service                    | Current price        | New price                         
+|----------------------------|----------------------|-------------
+| Load Balancer as a Service | 250 SEK / Month      | 390 SEK / Month  
+
+---
+
 ## 2022-09-30 Openstack encrypted volumes and deprecated flavor
 
 
-#### During 2021 we announced that all volumes in OpenStack are encrypted at no additional cost. We are now changing the end of life date of our legacy encrypted volume types. <br /> We are also deprecating our first dedicated instance flavor. No end of life date will be announced today but there will be limited availability as we will not add any additional capacity.
+During 2021 we announced that all volumes in OpenStack are encrypted at no additional cost. We are now changing the end of life date of our legacy encrypted volume types. <br /> We are also deprecating our first dedicated instance flavor. No end of life date will be announced today but there will be limited availability as we will not add any additional capacity.
 
 ### Encrypted Volumes EOL update
 During 2021 we enabled encryption at rest for all volumes in our Openstack IaaS. Prior to this change you could select encryption as an option which cost more than non encrypted volumes. Now all new and existing volumes are encrypted at no additional cost.
