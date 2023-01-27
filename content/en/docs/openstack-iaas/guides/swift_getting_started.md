@@ -1,6 +1,6 @@
 ---
-title: "Volume Retype"
-description: "Guide to change volume type"
+title: "Swift getting started"
+description: "A guide to getting started with Swift"
 weight: 1
 alwaysopen: true
 ---
