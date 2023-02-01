@@ -13,9 +13,9 @@ This guide will help you getting started with the basics surrounding Swift objec
 
 ## Swift CLI
 
-prerequisites: python-swiftclient, application credential.
+Prerequisites: python-swiftclient, application credential.
 
-To be able to use the swift cli client, you first need to source your application credential or if you don’t use MFA (which is recommended) you can use the .rc-file? which points to your openstack project.
+To be able to use the swift cli client, you first need to source your application credential or if you don’t use MFA (which is recommended) you can use the .rc-file which points to your openstack project.
 
 >**Beware:** The following commands executes directly without any questions.
 
@@ -28,14 +28,14 @@ Check what the swift client will use as authentication variables  ```swift auth`
 #### Create your first container
 
 Lets create your first container by using following command:<br>
-``` swift post <container name>```
+``` swift post <container name>```.
 
 ```bash 
   $ swift post my_container
 ```
 #### Upload files
 
-Upload a file to your container: ```swift upload <container_name> <file_or_folder> ```
+Upload a file to your container: ```swift upload <container_name> <file_or_folder> ```.
 ```bash 
   $ swift upload my_container ./file1.txt
   file1.txt
@@ -43,7 +43,7 @@ Upload a file to your container: ```swift upload <container_name> <file_or_folde
 ```
 #### Show containers
 
-To show all your containers, use the following command: ```swift list```
+To show all your containers, use the following command: ```swift list```.
 ```bash 
   $ swift list
   my_container
@@ -51,7 +51,7 @@ To show all your containers, use the following command: ```swift list```
 
 ```
 
-Show objects inside your container: ```swift list <container_name>```
+Show objects inside your container: ```swift list <container_name>```.
 ```bash 
   $ swift list my_container
   file1.txt
@@ -61,7 +61,7 @@ Show objects inside your container: ```swift list <container_name>```
 
 You can see statistics, ranging from specific objects to the entire account.
 Use the following command to se statistics of the specific container we created earlier.<br>
-```swift stat <container_name>```
+```swift stat <container_name>```.
 ```bash 
   $ swift stat my_container
 Account: AUTH_7bf53f20d4a2523a8045c42ae505acx
@@ -85,28 +85,28 @@ You can also type  ```swift stat <container_name> <filename>``` to check stats o
 
 #### Download objects
 
-You can download single objects by issuing the following command:<br> ```swift download <container_name> <your_object> -o /path/to/local/<your_object>``` 
+You can download single objects by issuing the following command:<br> ```swift download <container_name> <your_object> -o /path/to/local/<your_object>```. 
 ```bash 
   $ swift download newcontainer file1.txt -o ./file1.txt
   file1.txt [auth 2.763s, headers 2.907s, total 2.907s, 0.000 MB/s]
 ```
 
-It's possible to download without actually downloading any objects<br> <dry-run>
-```swift download <container-name> --no-download```
+It's possible to test downloading an object/container without actually downloading, for testing purposes 
+```swift download <container-name> --no-download```.
 
 Download all objects from specific container<br>
-``` swift download <container_name> -D </path/to/folder/>```
+``` swift download <container_name> -D </path/to/folder/>```.
 
 Download all objects from your account<br>
-```swift download --all -D </path/to/folder/>```
+```swift download --all -D </path/to/folder/>```.
 
 #### Delete objects
-Delete specific object by issuing the following command:<br> ```swift delete <container_name> <object_name>```
+Delete specific object by issuing the following command:<br> ```swift delete <container_name> <object_name>```.
 ```bash
   $ swift delete my_container file1.txt
   file1.txt
 ```
-And finally delete specific container by typing the following:<br> ```swift delete <container_name>```
+And finally delete specific container by typing the following:<br> ```swift delete <container_name>```.
 
 
 #### Futher reading
