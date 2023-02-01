@@ -9,7 +9,7 @@ alwaysopen: true
 
 This guide will help you getting started with the basics surrounding Swift object storage. We will be using Swift cli and Openstack Horizon. 
 
-
+h
 
 ## Swift CLI
 
