@@ -12,11 +12,12 @@ This guide will help you getting started with the basics surrounding Swift objec
 
 
 ## Swift CLI
->**Beware:** The following commands executes directly without any questions.
 
 prerequisites: python-swiftclient, application credential.
 
-To be able to use swift, you first need to source your application credential or if you don’t use MFA (which is recommended) you can use the .rc-file? which points to your openstack project.
+To be able to use the swift cli client, you first need to source your application credential or if you don’t use MFA (which is recommended) you can use the .rc-file? which points to your openstack project.
+
+>**Beware:** The following commands executes directly without any questions.
 
 List all available commands: ```swift```.
 
@@ -37,10 +38,25 @@ Lets create your first container by using following command:<br>
 Upload a file to your container: ```swift upload <container_name> <file_or_folder> ```
 ```bash 
   $ swift upload my_container ./file1.txt
-file1.txt
+  file1.txt
+
+```
+#### Show containers
+
+To show all your containers, use the following command: ```swift list```
+```bash 
+  $ swift list
+  my_container
+
 
 ```
 
+Show objects inside your container: ```swift list <container_name>```
+```bash 
+  $ swift list my_container
+  file1.txt
+
+```
 #### Show statistics of your containers and objects
 
 You can see statistics, ranging from specific objects to the entire account.
@@ -65,31 +81,13 @@ Account: AUTH_7bf53f20d4a2523a8045c42ae505acx
 X-Openstack-Request-Id: tx2f1e73d3b29a4aba99c1b-0063da2e2b
             Connection: close
 ```
-By using ```swift stat <container_name> <filename>``` you can se stats from individual files. If you want to se stats from your whole account, you can type ```swift stat```
-
-
-#### Show containers
-
-To show all your containers, use the following command: ```swift list```
-```bash 
-  $  swift list
-  my_container
-
-
-```
-
-Show objects inside your container: ```swift list <container_name>```
-```bash 
-  $  swift list my_container
-  file1.txt
-
-```
+You can also type  ```swift stat <container_name> <filename>``` to check stats of individual files. If you want to se stats from your whole account, you can type ```swift stat```.
 
 #### Download objects
 
 You can download single objects by issuing the following command:<br> ```swift download <container_name> <your_object> -o /path/to/local/<your_object>``` 
 ```bash 
-  $  swift download newcontainer file1.txt -o ./file1.txt
+  $ swift download newcontainer file1.txt -o ./file1.txt
   file1.txt [auth 2.763s, headers 2.907s, total 2.907s, 0.000 MB/s]
 ```
 
