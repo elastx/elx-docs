@@ -32,7 +32,7 @@ $ openstack subnet create "internal_subnet" \
          --subnet-range "10.0.1.0/24" \
          --dns-nameserver "1.1.1.1" \
          --dns-nameserver "1.0.0.1" \ 
-         --allocation-pool start=10.10.10.100,end=10.10.10.200 \
+         --allocation-pool start=10.0.1.100,end=10.0.1.200 \
          --dhcp
 ```
 
