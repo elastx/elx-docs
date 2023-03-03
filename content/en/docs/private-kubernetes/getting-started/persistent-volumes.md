@@ -44,15 +44,15 @@ A quick example of how to create an unused 1Gi persistent volume claim named
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-name: example
+  name: example
 spec:
-accessModes:
-- ReadWriteOnce
-volumeMode: Filesystem
-resources:
-requests:
-storage: 1Gi
-storageClassName: 16k
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: 16k
 ```
 
 ```bash
