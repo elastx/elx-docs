@@ -22,17 +22,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: lint
     container:
-      image: quay.io/elastx/ci-hugo:v0.99.1
+      image: quay.io/elastx/ci-hugo:v0.110.0
     steps:
       - uses: actions/checkout@v3
       - name: Build content
         run: |
-          export NODE_PATH=$NODE_PATH:`npm root -g`
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
-          git submodule update --init --recursive
           HUGO_ENV=production hugo -v
       - name: Test webpage
-        run: htmlproofer public --allow-hash-href --check-html --empty-alt-ignore --disable-external --file-ignore /revealjs/,/404.html/
+        run: htmltest -c htmltest.yml
       - name: Save config and logs artifact
         uses: actions/upload-artifact@v3
         if: always()
