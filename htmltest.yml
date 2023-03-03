@@ -1,0 +1,7 @@
+---
+DirectoryPath: public
+CheckExternal: false
+IgnoreAltEmpty: true
+IgnoreAltMissing: true
+IgnoreEmptyHref: true
+IgnoreInternalEmptyHash: true
