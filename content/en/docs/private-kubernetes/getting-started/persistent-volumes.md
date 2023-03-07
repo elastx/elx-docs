@@ -74,6 +74,10 @@ All volumes are encrypted at rest in hardware. Volumes created by storage
 classes ending with *enc* are also software encrypted using a per volume
 encryption key. This provides increased security but has an impact on performance.
 
+## Type hostPath
+
+A PV of type `hostPath` only emulates a network-attached storage and is in reality a local file/dir on the specific node instead of an actual external volume. It is as such not recommended to use if your pods should be able to run on different nodes in your cluster.
+
 # Known issues
 
 ## Resizing encrypted volumes
