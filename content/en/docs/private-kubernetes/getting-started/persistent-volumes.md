@@ -76,7 +76,9 @@ encryption key. This provides increased security but has an impact on performanc
 
 ## Type hostPath
 
-A PV of type `hostPath` only emulates a network-attached storage and is in reality a local file/dir on the specific node instead of an actual external volume. It is as such not recommended to use if your pods should be able to run on different nodes in your cluster.
+A PV of type hostPath is in reality a local file/dir on the specific node instead of an actual external volume. This might cause several undesired behaviors.
+The PV becomes tied to a specific node. During cluster maintenance/upgrades the workload will be moved off each node in turn. When a pod is restarted on another node, it will still expect to find data at its PV with type hostPath, but since that PV is tied to the previous node, it will not find the data its looking for.
+In order for the clusters workload to remain resilient in the event of a node failure, or during maintenance/upgrades, hostPath PV's needs to be avoided.
 
 # Known issues
 
