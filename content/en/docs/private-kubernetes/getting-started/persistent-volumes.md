@@ -25,10 +25,8 @@ NAME           PROVISIONER                RECLAIMPOLICY   VOLUMEBINDINGMODE     
 `4k` is short for 4000 IOPS and is the default storage class used when none is
 specified.
 
-> NOTE: The software encrypted volumes will soon be deprecated since all volume
-> storage is already encrypted in hardware.
-
 > See our [pricing page](https://elastx.se/en/openstack/pricing)  under the table *Storage* to calculate your costs.
+
 
 # Example
 
@@ -57,6 +55,7 @@ example   Bound    pvc-f8b1dc7f-db84-11e8-bda5-fa163e3803b4   1Gi        RWO    
 ```
 
 # Good to know
+
 ## Cross mounting of volumes between nodes
 
 Cross mounting of volumes is not supported! That is a volume can only be mounted
@@ -65,7 +64,7 @@ accordingly for ensured high availability!
 
 ## Limit of 25 volumes per node
 
-There is a hard limitation of 25 volumes per node, including root volume. In case >20 volumes are required, consider adding additional worker nodes.
+There is a hard limitation of 25 volumes per node, including root volume. In case >20 volumes are required per node, consider adding additional worker nodes.
 
 ## Encryption
 
