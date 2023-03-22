@@ -26,8 +26,6 @@ MSSQL licenses are billed per month and any usage change needs to be reported to
 
 The new pricing will apply from 2023-05-01
 
-----
-
 ### New Load Balancer flavors
 
 We have added multiple OpenStack Load Balancer flavors with more capacity to allow more demanding workloads. Until now we have provided a single flavor for all Load Balancers but now you can select a Load Balancer with more capacity if required.
