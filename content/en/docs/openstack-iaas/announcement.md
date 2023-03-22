@@ -5,7 +5,28 @@ weight: 1
 alwaysopen: true
 ---
 
-## 2023-03-22 New Load Balancer flavors
+## 2023-03-22 OpenStack IaaS announcement
+
+We are changing the Microsoft licensing model to make it more cost effective and we have also introduced new Load Balancer flavors that have more capacity.
+
+### New Microsoft licensing model
+
+We are changing the way we charge for Microsoft licenses in OpenStack IaaS to better align with how Microsoft charges for these licenses and to make it more cost effective for high memory instances. Until now we have based the MS server licenses on the amount of instance RAM. The new license model will be based on the number of instance CPUs which also aligns better with how you typically buy these licenses.
+
+| License                     | Current Price              | New Price
+|-----------------------------|----------------------------|-------------
+| Microsoft Windows Server    | 36.5 SEK / GB RAM / Month  | 189 SEK / CPU / Month
+| Microsoft MSSQL Standard    | 197.1 SEK / GB RAM / Month | 1229 SEK / CPU / Month
+| Microsoft MSSQL Enterprise  |                            | 4821 SEK / CPU / Month
+| Microsoft MSSQL Web Edition |                            | 79 SEK / CPU / Month
+
+
+You need to license at least 4 CPUs per instance for Microsoft MSSQL server.
+MSSQL licenses are billed per month and any usage change needs to be reported to Elastx Support.
+
+The new pricing will apply from 2023-05-01
+
+### New Load Balancer flavors
 
 We have added multiple OpenStack Load Balancer flavors with more capacity to allow more demanding workloads. Until now we have provided a single flavor for all Load Balancers but now you can select a Load Balancer with more capacity if required.
 
@@ -27,6 +48,8 @@ v1-lb-4 approximately 800Mbit<br>
 v1-lb-8 approximately 1.6Gbit<br>
 
 The new Load Balancer Flavors are available now.
+
+---
 
 ## 2023-01-27 Elastx Cloud Platform pricing adjustment
 
