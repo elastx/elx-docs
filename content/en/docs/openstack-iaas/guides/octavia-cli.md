@@ -10,7 +10,7 @@ alwaysopen: true
 
 This guide is structured in two parts. <br/> <br/>
 
-Steps 1-4 are based on Elastx's official getting started guide with Openstack (link below), where we go through the initials steps which are required to set up everything that is needed in order to start using Openstack platform: here we'll create and configure a network, subnet, router, create ssh-keys and configure security groups. <br>
+Steps 1-4 are based on Elastx's official getting started guide with Openstack (link below), where we go through the initial steps which are required to set up everything that is needed in order to start using Openstack platform: here we'll create and configure a network, subnet, router, create ssh-keys and configure security groups. <br>
 
 https://docs.elastx.cloud/docs/openstack-iaas/guides/getting_started/
 
@@ -31,7 +31,7 @@ $ openstack subnet create "internal_subnet" \
          --network "internal_network" \
          --subnet-range "10.0.1.0/24" \
          --dns-nameserver "1.1.1.1" \
-         --dns-nameserver "1.0.0.1" \ 
+         --dns-nameserver "1.0.0.1" \
          --allocation-pool start=10.0.1.100,end=10.0.1.200 \
          --dhcp
 ```
@@ -57,35 +57,30 @@ $ openstack security group rule create \
          --protocol "TCP" \
          --dst-port "22" \
          --ingress \
-         new-sec-group 
+         new-sec-group
 
 $ openstack security group rule create \
          --protocol "TCP" \
          --dst-port "80" \
          --ingress \
-         new-sec-group 
+         new-sec-group
 
 ```
 
-**Step 4.1 Copy your  public SSH-key to clipboard**
-```shell
-$ xclip -sel clip < ~/.ssh/id_ed25519.pub
 
-```
-
-**Step 4.2 Paste contents of clipboard inside vim and save it**
+**Step 4. Create a SSH-key**
 ```shell
-$ vim my-key.pub
-```
-
-**Step 4.3 Import your key**
-```shell
-$ openstack keypair create --public-key "my-key.pub" my-key  
+$ openstack keypair create --public-key "~/.ssh/id_ed25519.pub" my-key
 ```
 
 **Step 5. Create 3 Virtual Machines on the internal network**
 
-First we need to create our user-data files with a simple configuration which will allow our newly created instances to automatically install and enable Nginx webserver.
+
+*Prepare cloud-init userdata files. <br><br> The userdata file is a plain-text file in raw cloud-init format, without compression or base64 encoding. Userdata configuration can be used to accomplish a number of configuration tasks in the guest operating system. For instance, some of the more common tasks include: Installing software (like Nginx for example), adding user accounts and much more.*
+
+First we need to create our cloud-init user-data files with a simple configuration which will allow our newly created instances to automatically install and enable Nginx webserver.
+
+
 We'll create a separate user-data file for each Virtual Machine, the reason for this is that we need to somehow verify that our load balancer is actually working - this 
 will be achived by modifying text on the default index.html page which is automatically created on Nginx installation.
 
@@ -228,7 +223,7 @@ $ openstack floating ip create "elx-public1"
 +---------------------+--------------------------------------+
 ```
 
-**Step 6.3 Bind Floating IP to the load balancer**
+**Step 6.3 Associate Floating IP to the load balancer**
 
 First you need to get the port id (vip_port_id) for the newly created load balancer:
 
@@ -246,6 +241,8 @@ $ openstack floating ip set --port "b06809c7-24b2-48e1-9398-d0cab75d5e32" "91.19
 ```
 
 **Step 6.4 HTTP and SSH listeners**
+
+*A listener is essentially a network service that listens for incoming traffic on a specific port, such as port 80 for HTTP or port 22 for SSH. When a request comes in, the listener checks the protocol, port, and other information to determine which backend pool should handle the request.*
 
 Our three instances are on our internal network (internal_network) which we created during Step 1. The next step is to link those instances with our load balancer.
 
@@ -291,6 +288,11 @@ $ openstack loadbalancer listener create \
 ```
 
 **Step 6.5 Create Pools**
+
+*In the context of a load balancer like Octavia in OpenStack, pools act as a group of backend servers that can handle incoming traffic from listeners.*
+
+*When a listener receives a request, it forwards the traffic to a pool of backend servers that can handle the request. A pool can contain one or more servers, and Octavia uses various load balancing algorithms to distribute traffic among the servers.*
+
 ```shell
 $ openstack loadbalancer pool create \
          --listener "http-lb-listener" \
@@ -325,6 +327,9 @@ $ openstack loadbalancer pool create \
 
 **Step 6.6 Add members to our newly created pools**
 
+*Pool members refer to the backend servers that are associated with a particular pool.*
+
+*When a pool receives traffic from a listener, it distributes the traffic to the pool members based on the configured load balancing algorithm. Each pool member is responsible for processing the traffic and sending a response back to the client.*
 
 ```shell
 $ openstack loadbalancer member create \
@@ -377,14 +382,15 @@ We are now done with the basic configuration of our load balancer. To verify thi
 http://YOUR_FLOATING_IP/
 ``   
 
-In our case, the IP is:<br/>
+In our case, the IP is: 
 `` 
-http://91.197.42.77/
+http://91.197.42.77/ 
 ``
+*Note: this IP is used for for demonstration purposes only and will not work in your case. Whatever IP you get during Step 6.2 will work.*
 <br/>
 
 Now you'll  see Nginx's default welcome page and which availability zone you landed on - which was the point of using cloud-init during
-Step 5. If you reload the page you'll land on the next availability zone. Order / Priority which will decide which availability zone 
+Step 5. If you reload the page you'll land on the next availability zone. The order/priority which will decide which availability zone 
 the load balancer will redirect to can be set by adding ``--weight <NUM>`` flag to the command entered during Step 6.6
 
 
@@ -403,6 +409,9 @@ $ ssh ubuntu@91.197.42.77 -p 2203
 
 **Step 7. Health Minitor**
 
+*In the context of a load balancer like Octavia in OpenStack, a health monitor serves the purpose of continuously checking the health of the backend servers that are part of a load balancing pool. The health monitor sends periodic requests to the servers in the pool, such as HTTP requests, and monitors the response to determine if the server is healthy or not. <br><br>The purpose of a health monitor is to ensure that only healthy servers are used for load balancing. If a server fails the health check, it is marked as "unhealthy" and is temporarily removed from the pool, so that traffic is not directed to it. This helps to ensure that users are always directed to healthy servers, which improves the overall performance and reliability <br>
+of the application.<br><br>The health monitor can also be configured to perform additional checks on the backend servers, such as checking the CPU and memory usage, to ensure that the servers are not overloaded or experiencing other issues that may impact their ability to handle requests. <br><br>Overall, the purpose of a health monitor in the context of an load balancer like Octavia is to ensure that only healthy servers are used for load balancing, which helps to improve the performance and reliability of the application.*
+
 ```shell
 $ openstack loadbalancer healthmonitor create \
          --delay "7" \
@@ -414,6 +423,16 @@ $ openstack loadbalancer healthmonitor create \
          --name "http-lb-monitor" \
          http-lb-pool
 ```
+
+The command above creates a health monitor for our load balancer pool, with specific parameters for the interval between health checks, maximum number of retries, URL path to be checked, timeout for each check, protocol to be used, expected HTTP response codes, and name of the health monitor. The health monitor will periodically check the health of the servers in the pool, and mark any unhealthy servers as down to ensure that traffic is not directed to them.
+
+* <strong>--delay "7"</strong> sets the interval between health checks to 7 seconds. <br>
+* <strong>--max-retries "3"</strong> sets the maximum number of retries before marking the server as down to 3.<br>
+* <strong>--url-path "/"</strong> sets the URL path to be checked for the health monitor to "/". This indicates that the health monitor will send an HTTP GET request to the root directory of the server being monitored.<br>
+* <strong>--timeout "5"</strong> sets the timeout for each health check to 5 seconds. <br>
+* <strong>--type "HTTP"</strong> sets the protocol to be used for the health check to HTTP. <br>
+* <strong>--expected-codes "200,201"</strong> sets the expected HTTP response codes for the health check to 200 and 201. This indicates that if the server responds with either of these codes, it is considered to be healthy.<br>
+* <strong>--name "http-lb-monitor"</strong> sets the name of the health monitor to "http-lb-monitor".
 
 **Step 8.0 TLS Termination**
 
@@ -532,3 +551,6 @@ In our case, the IP is:
 ``
 https://91.197.42.77/
 ``
+*Note: this IP is used for for demonstration purposes only and will not work in your case. Whatever IP you get during Step 6.2 will work.*
+
+
