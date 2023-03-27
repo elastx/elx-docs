@@ -38,8 +38,6 @@ We have added multiple OpenStack Load Balancer flavors with more capacity to all
 | v1-lb-4               | 2.12 kr              | 1,547.60 kr
 | v1-lb-8               | 4.24 kr              | 3,095.20 kr
 
-Each load balancer has twice the CPU and RAM capacity as the previous one, so v1-lb-8 has 8x the CPU and RAM capacity as v1-lb-1.
-
 This is a general guideline on traffic capacity but it can differ based on traffic pattern.
 
 v1-lb-1 approximately 200Mbit<br>
