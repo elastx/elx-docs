@@ -33,12 +33,12 @@ We have added multiple OpenStack Load Balancer flavors with more capacity to all
 
 | Load Balancer Flavor  | Price per hour       | Price per month
 |-----------------------|----------------------|-------------
-| V1-lb-1 (default)     | 0.53 kr              | 386.90 kr
+| v1-lb-1 (default)     | 0.53 kr              | 386.90 kr
 | v1-lb-2               | 1.06 kr              | 773.80 kr
-| v1-lb-3               | 2.12 kr              | 1,547.60 kr
-| v1-lb-4               | 4.24 kr              | 3,095.20 kr
+| v1-lb-4               | 2.12 kr              | 1,547.60 kr
+| v1-lb-8               | 4.24 kr              | 3,095.20 kr
 
-Each load balancer has twice the CPU and RAM capacity as the previous one, so v1-lb-4 has 8x the CPU and RAM capacity as v1-lb-1.
+Each load balancer has twice the CPU and RAM capacity as the previous one, so v1-lb-8 has 8x the CPU and RAM capacity as v1-lb-1.
 
 This is a general guideline on traffic capacity but it can differ based on traffic pattern.
 
