@@ -82,10 +82,10 @@ There is a hard limitation of 25 volumes per node, including root volume. In cas
 
 All volumes are encrypted at rest in hardware.
 
-### Type `hostPath`
-A PV of type hostPath is in reality a local file/dir on the specific node instead of an actual external volume. This might cause several undesired behaviors. <br />
-The PV becomes tied to a specific node. During cluster maintenance/upgrades the workload will be moved off each node in turn. When a pod is restarted on another node, it will still expect to find data at its PV with type hostPath, but since that PV is tied to the previous node, it will not find the data its looking for. <br />
-In order for the clusters workload to remain resilient in the event of a node failure, or during maintenance/upgrades, hostPath PV's needs to be avoided.
+### Volume type `hostPath`
+A volume of type hostPath is in reality just a local directory on the specific node being mounted in a pod, this means data is stored locally and will be lost if the pod is ever rescheduled on another node. This is expected during cluster upgrades however it may also occur if a pod crashes or a node is malfunctioning. <br />
+You can read more about this [here](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath). <br />
+If you are looking for a way to store persistent data we would instead recommend to make use of PVCs. PVCs can move between nodes within one data-center meaning any data stored will be present even if the pod is being recreated.
 
 ## Known issues
 
