@@ -5,6 +5,13 @@ weight: 1
 alwaysopen: true
 ---
 
+## 2023-04-26 OpenStack IaaS announcement
+
+### Removed dedicated flavor
+
+The following dedicated instance flavor is no longer available:
+* d2-c8-m120-d11.6k
+
 ## 2023-03-22 OpenStack IaaS announcement
 
 We are changing the Microsoft licensing model to make it more cost effective and we have also introduced new Load Balancer flavors that have more capacity.
