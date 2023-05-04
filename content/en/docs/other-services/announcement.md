@@ -5,6 +5,18 @@ weight: 1
 alwaysopen: true
 ---
 
+## 2023-05-02 Cloud Colocation
+We are happy to announce these platform news that will help you to run applications on Elastx Cloud Platform with enhanced security.
+
+### Cloud Colocation
+Cloud Colocation is a service that enables customers to host their own hardware in the same data centers as the Elastx platform. This could, for example, be hardware security modules (HSM) for storing and managing secrets if required to manage that on your own.
+
+Customers can acquire individual rack units or a separate section in a rack and will receive a dedicated, fast, and private network connection to connect to the desired network in the Elastx platform via Cloud Connect. Customers can also interconnect with other cloud platforms using Elastx Cloud Exchange.
+
+Physical access to the space is provided, and on-site staff is available to offer assistance if needed. Mounting equipment, including cables and rack screws, is included.
+
+Cloud Colocation has been available since 2023-03-04
+
 ## 2023-01-27 Elastx Cloud Platform pricing adjustment
 
 To Elastx Customers and Partners,<br />
