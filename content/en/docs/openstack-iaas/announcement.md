@@ -5,6 +5,17 @@ weight: 1
 alwaysopen: true
 ---
 
+## 2023-05-02 OpenStack IaaS announcement
+
+We are happy to announce these platform news that will help you to run applications on Elastx Cloud Platform with enhanced security.
+
+### Object Storage Encryption at Rest
+Swift,  Elastx object storage in OpenStack, is now fully Encrypted at Rest. We have  migrated all data to encrypted disks. You do not need to do anything, both current data and new data is now Encrypted at Rest.
+
+If you have a requirement to encrypt data at rest you can now consume any of our storage services. All storage services in Elastx Cloud Platform, both ephemeral, volume and object storage are now Encrypted at Rest.
+
+Encryption at Rest has been active on Elastx object storage since 2023-04-14
+
 ## 2023-04-26 OpenStack IaaS announcement
 
 ### Removed dedicated flavor
