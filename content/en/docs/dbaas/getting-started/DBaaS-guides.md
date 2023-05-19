@@ -5,6 +5,9 @@ weight: 2
 alwaysopen: true
 ---
 
+## Login to DBaaS Web UI
+Go to https://dbaas.elastx.cloud/ and login with your [Elastx IdP account](https://docs.elastx.cloud/docs/tech-previews/idp-ops/).
+
 ## Create datastore
 
 1. Datastores: To create a new datastore, choose +Create datastore.
@@ -46,19 +49,6 @@ Ephemeral storage option: this is the ephemeral storage that is included in your
 
 Please note that the deleted datastore will immediately disappear upon deletion. So if you want to follow up on anything, you need to copy the datastore ID and save it somewhere for future reference.
 
-## Connect to datastore nodes
-
-1. Firewall (Connect) tab: Click on the +Create trusted source. Add a CIDR i.e.: 1.2.3.4/32 and a description.
-2. Users tab: Create Admin user, Choose username, password and what database it should be related to.
-3. Users tab: Use Connection assistant to get examples from various programming languages such as python, node.js, php etc.
-
-
-### Limitations
-
-Connect to node using public IP address
-The user must connect to a datastore node via its public IP address.
-
-
 ## Create database in datastore
 
 1. Select the datastore in which you wish to create a database in.
@@ -78,3 +68,18 @@ The user must connect to a datastore node via its public IP address.
 1. Select the datastore in which you wish to create a new user.
 2. Navigate to the ‘Users’ tab, Click on ‘Create Admin user’.
 3. Add Username, Password and which database the user should be associated with
+
+
+## Connect to datastore nodes
+
+
+1. Firewall (Connect) tab: Click on the +Create trusted source. Add a CIDR i.e.: 1.2.3.4/32 and a description.
+2. Users tab: Create Admin user, Choose username, password and what database it should be related to.
+3. Users tab: Use Connection assistant to get examples from various programming languages such as python, node.js, php etc.
+
+### Limitations
+Connect to node using public IP address.
+The user and/or application must connect to a datastore node via its public IP address.
+
+This needs to be taken into consideration when for example a failover to a new primary node is done. 
+The new primary node will have a different IP address than the previous one.
