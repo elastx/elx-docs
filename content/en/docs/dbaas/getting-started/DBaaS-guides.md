@@ -1,6 +1,6 @@
 ---
-title: "Guides"
-description: "Using DBaaS"
+title: "Getting started with DBaaS"
+description: "Getting started with DBaaS"
 weight: 2
 alwaysopen: true
 ---
