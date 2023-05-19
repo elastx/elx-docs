@@ -24,10 +24,10 @@ alwaysopen: true
 #### All databases in the datastore will use the same database version
 For example, if you create a datastore with PostgreSQL 11, then all the databases in this datastore will use PostgreSQL 11.
 #### Backup copy gets stored on the node
-Datastore backup copy gets stored locally on the node - affects capacity needs for a datastore (https://github.com/severalnines/ccx-elastx/issues/71).
+Datastore backup copy gets stored locally on the node - affects capacity needs for a datastore.
 
 #### Nodes and datastores are created one by one
-When deploying a new datastore or adding a new node, all other actions are added to a queue. If a deploy gets stuck, no other deploys can get started, because they are waiting for that deploy job to finish. A node deploy that gets stuck cannot be deleted from the CCX UI. A datastore deploy that gets stuck cannot be deleted from the CCX UI. (https://github.com/severalnines/ccx-elastx/issues/190)
+When deploying a new datastore or adding a new node, all other actions are added to a queue. If a deploy gets stuck, no other deploys can get started, because they are waiting for that deploy job to finish. A node deploy that gets stuck cannot be deleted from the CCX UI. A datastore deploy that gets stuck cannot be deleted from the CCX UI.
 
 #### Good to know for ephemeral storage
 Ephemeral storage option: this is the ephemeral storage that is included in your selected flavor. It has a static size as shown on the flavor and cannot be resized. It is the fastest storage type we have to offer. It becomes a single point of failure because it is a non-persistent storage that depends on the state of the instance where your datastore node is running. To have redundancy, you need to set up replicas or other ways to recover from failure.
@@ -56,7 +56,7 @@ Please note that the deleted datastore will immediately disappear upon deletion.
 ### Limitations
 
 Connect to node using public IP address
-The user must connect to a datastore node via its public IP address. (https://github.com/severalnines/ccx-elastx/issues/195)
+The user must connect to a datastore node via its public IP address.
 
 
 ## Create database in datastore
