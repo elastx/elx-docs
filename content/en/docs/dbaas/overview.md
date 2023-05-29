@@ -11,7 +11,7 @@ Easy high availability and disaster protection by configuring replication, clust
 
 A Datastore is a database instance with one or more nodes. In the Datastore you can have one or more databases. A datastore can be created with a single node, three nodes in a active/active cluster or a primary node with one or two read only replicas.
 
-You can manage the Datastores with the web-UI or the API. Authentication to the web-UI is done with the Elastx Identity Provider where MFA with TOTP or Yubikey is required. All datastores owned by the organization will be visible for all users with access to that organization.
+You can manage the Datastores with the web-UI. Authentication to the web-UI is done with the Elastx Identity Provider where MFA with TOTP or Yubikey is required. All datastores owned by the organization will be visible for all users with access to that organization.
 
 To access the datastores you need database user credentials which you get and manage for each individual database. You also need to configure the Datastore firewall to allow access from specific IP addresses. The Connection assistant will help you to get the connection string for common programming languages.
 
