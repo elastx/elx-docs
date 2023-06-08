@@ -81,3 +81,8 @@ As every OpenStack cloud has it's own unique set of features and underlying infr
 - It's not supported to snapshot the ephemeral volume of dedicated instances (flavour with dedicated in name).
 - Encrypted volumes need to be detached and attached manually for instances to discover the new volume size when resizing.
 - When making a backup use only single line for description. There is a bug that fails the process if you use more than one line.
+
+### Windows
+Due to the large size of Windows images, there's a limitation when creating a Windows instance with a volume as a boot disk.  
+The size of windows images requires more time during creation which tend to lead to timeouts when the volume is being created.   
+We recommend to use the disk included in the flavor as a boot disk and then create volumes as secondary storage if needed.
