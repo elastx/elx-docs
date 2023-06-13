@@ -1,6 +1,6 @@
 ---
 title: "Swift getting started"
-description: "A guide to getting started with Swift"
+description: "A guide to get started with Swift object storage"
 weight: 1
 alwaysopen: true
 ---
@@ -9,11 +9,11 @@ alwaysopen: true
 
 This guide will help you getting started with the basics surrounding Swift object storage. We will be using Swift cli and Openstack Horizon. 
 
-h
 
 ## Swift CLI
 
 Prerequisites: python-swiftclient, application credential.
+
 
 To be able to use the swift cli client, you first need to source your application credential or if you don’t use MFA (which is recommended) you can use the .rc-file which points to your openstack project.
 
@@ -108,6 +108,46 @@ Delete specific object by issuing the following command:<br> ```swift delete <co
 ```
 And finally delete specific container by typing the following:<br> ```swift delete <container_name>```.
 
+## Horizon
+With Openstacks Horizon you get a good overview over your object storage. There are some limitations in Swifts functionality when using Horizon, to fully take advantage of Swifts functions we recommend to use the swift cli.  
+This guide will show you the basics when using Swift object storage in Horizon.
+
+### Create your first container
+Navigate to ["Project" → "Object Store" →  "Containers"](https://ops.elastx.cloud/project/containers/) 
+Here you will see all the containers in your object storage.  
+Choose +Container to create a new container:
+
+![Create-container](/img/openstack-iaas/guides/ops_swift_getting_started-1.png)
+
+Choose a name for your new container:
+
+![Name-container](/img/openstack-iaas/guides/ops_swift_getting_started-2.png)
+
+You will se that a new container has been added, which date it was created and that it is empty.
+
+![Show-container](/img/openstack-iaas/guides/ops_swift_getting_started-3.png)
+
+### Upload your first file
+To upload your first file, press the up arrow next to +Folder:
+
+![Upload-file](/img/openstack-iaas/guides/ops_swift_getting_started-4.png)
+
+Select the the file you want to upload:
+
+![Choose-file](/img/openstack-iaas/guides/ops_swift_getting_started-5.png)
+
+### Download file
+To download a file, select your container and press Download next to the object.
+
+![Download-file](/img/openstack-iaas/guides/ops_swift_getting_started-6.png)
+
+### View details of an object
+You can view details such as Name, Hash, Content Type, Timestamp and Size of an object.
+Select the down arrow next to Download for the object you want to inspect and choose View Details:
+
+![Show-Details](/img/openstack-iaas/guides/ops_swift_getting_started-7.png)
+
+![View-Details](/img/openstack-iaas/guides/ops_swift_getting_started-8.png)
 
 #### Futher reading
 
