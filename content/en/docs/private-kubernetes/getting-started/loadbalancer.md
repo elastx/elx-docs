@@ -54,11 +54,13 @@ metadata:
   name: echoserver
   annotations:
     loadbalancer.openstack.org/x-forwarded-for: "true"
+    loadbalancer.openstack.org/flavor-id: 552c16d4-dcc1-473d-8683-65e37e094443
 spec:
   ports:
   - port: 80
     protocol: TCP
     targetPort: 8080
+    name: http
   selector:
     app.kubernetes.io/name: echoserver
   type: LoadBalancer
