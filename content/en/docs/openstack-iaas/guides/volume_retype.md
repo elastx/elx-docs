@@ -7,7 +7,9 @@ alwaysopen: true
 
 ## Overview
 
-This guide will help you getting started with changing volume type in OpenStack's Horizon and CLI, by using the retype function.
+This guide will help you getting started with changing volume type in OpenStack's Horizon and CLI, by using the retype function. 
+> Note: For volumes with -enc suffix it is required to detach the volume
+
 In this example, we will use a detached volume with the type ```16k-IOPS-enc```.
 Get more information about the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/train/).
 
