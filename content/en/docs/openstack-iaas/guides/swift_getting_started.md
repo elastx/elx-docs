@@ -16,7 +16,7 @@ This guide will help you get started with the basics surrounding Swift object st
 Prerequisites: python-swiftclient, application credential.
 
 
-To be able to use the swift cli client, you first need to source your application credential or if you don’t use MFA (which is recommended) you can use the .rc-file which points to your openstack project.
+To be able to use the swift cli client, you first need to source your application credential or if you don’t use MFA you can use the .rc-file which points to your openstack project.
 
 >**Beware:** The following commands executes directly without any questions.
 
@@ -150,7 +150,7 @@ Select the down arrow next to Download for the object you want to inspect and ch
 
 ![View-Details](/img/openstack-iaas/guides/ops_swift_getting_started-8.png)
 
-## Futher reading
+## Further reading
 - Swift has an s3 compatible API for applications that don't support the Swift API. You can read more about how to configure Swift for s3cmd <a href="https://docs.elastx.cloud/docs/openstack-iaas/guides/s3_compatibility/">here</a>.  
  - You can find an S3/Swift REST API comparison matrix here at the <a href="https://docs.openstack.org/swift/ussuri/s3_compat.html">OpenStacks documentation</a>.  
  - If you want to use more advanced features, please see the <a href="https://docs.openstack.org/python-swiftclient/ussuri/cli/index.html">OpenStacks documentation for Swift</a>.  
