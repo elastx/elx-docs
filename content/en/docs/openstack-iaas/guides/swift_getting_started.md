@@ -7,7 +7,8 @@ alwaysopen: true
 
 ## Overview
 
-This guide will help you getting started with the basics surrounding Swift object storage. We will be using Swift cli and Openstack Horizon. 
+Swift is Elastx object storage in OpenStack. It provides high availability using all our availability zones. It is also encrypted at rest as per default.
+This guide will help you get started with the basics surrounding Swift object storage. We will be using the Swift-cli and OpenStacks Horizon. 
 
 
 ## Swift CLI
@@ -25,7 +26,7 @@ List all available commands: ```swift```.
 
 Check what the swift client will use as authentication variables  ```swift auth```.
 
-#### Create your first container
+### Create your first container
 
 Lets create your first container by using following command:<br>
 ``` swift post <container name>```.
@@ -33,7 +34,7 @@ Lets create your first container by using following command:<br>
 ```bash 
   $ swift post my_container
 ```
-#### Upload files
+### Upload files
 
 Upload a file to your container: ```swift upload <container_name> <file_or_folder> ```.
 ```bash 
@@ -41,7 +42,7 @@ Upload a file to your container: ```swift upload <container_name> <file_or_folde
   file1.txt
 
 ```
-#### Show containers
+### Show containers
 
 To show all your containers, use the following command: ```swift list```.
 ```bash 
@@ -57,7 +58,7 @@ Show objects inside your container: ```swift list <container_name>```.
   file1.txt
 
 ```
-#### Show statistics of your containers and objects
+### Show statistics of your containers and objects
 
 You can see statistics, ranging from specific objects to the entire account.
 Use the following command to se statistics of the specific container we created earlier.<br>
@@ -83,7 +84,7 @@ X-Openstack-Request-Id: tx2f1e73d3b29a4aba99c1b-0063da2e2b
 ```
 You can also type  ```swift stat <container_name> <filename>``` to check stats of individual files. If you want to se stats from your whole account, you can type ```swift stat```.
 
-#### Download objects
+### Download objects
 
 You can download single objects by issuing the following command:<br> ```swift download <container_name> <your_object> -o /path/to/local/<your_object>```. 
 ```bash 
@@ -100,7 +101,7 @@ Download all objects from specific container<br>
 Download all objects from your account<br>
 ```swift download --all -D </path/to/folder/>```.
 
-#### Delete objects
+### Delete objects
 Delete specific object by issuing the following command:<br> ```swift delete <container_name> <object_name>```.
 ```bash
   $ swift delete my_container file1.txt
@@ -108,9 +109,9 @@ Delete specific object by issuing the following command:<br> ```swift delete <co
 ```
 And finally delete specific container by typing the following:<br> ```swift delete <container_name>```.
 
-## Horizon
-With Openstacks Horizon you get a good overview over your object storage. There are some limitations in Swifts functionality when using Horizon, to fully take advantage of Swifts functions we recommend to use the swift cli.  
-This guide will show you the basics when using Swift object storage in Horizon.
+## OpenStack Horizon
+With Openstacks Horizon you get a good overview over your object storage. There are some limitations in Swifts functionality when using Horizon, to fully take advantage of Swifts functions we recommend you to use the swift cli.  
+This guide will show you the basics with using Swift object storage in Horizon.
 
 ### Create your first container
 Navigate to ["Project" → "Object Store" →  "Containers"](https://ops.elastx.cloud/project/containers/) 
@@ -142,13 +143,15 @@ To download a file, select your container and press Download next to the object.
 ![Download-file](/img/openstack-iaas/guides/ops_swift_getting_started-6.png)
 
 ### View details of an object
-You can view details such as Name, Hash, Content Type, Timestamp and Size of an object.
+You can view details of an object such as Name, Hash, Content Type, Timestamp and Size.  
 Select the down arrow next to Download for the object you want to inspect and choose View Details:
 
 ![Show-Details](/img/openstack-iaas/guides/ops_swift_getting_started-7.png)
 
 ![View-Details](/img/openstack-iaas/guides/ops_swift_getting_started-8.png)
 
-#### Futher reading
-
-If you want use more advanced functions, then rclone is a good choice. Rclone has support for swift, read more about Rclone <a href="https://rclone.org/">here</a>.
+## Futher reading
+- Swift has an s3 compatible API for applications that don't support the Swift API. You can read more about how to configure Swift for s3cmd <a href="https://docs.elastx.cloud/docs/openstack-iaas/guides/s3_compatibility/">here</a>.  
+ - You can find an S3/Swift REST API comparison matrix here at the <a href="https://docs.openstack.org/swift/ussuri/s3_compat.html">OpenStacks documentation</a>.  
+ - If you want use more advanced features please see the <a href="https://docs.openstack.org/python-swiftclient/ussuri/cli/index.html">OpenStacks documentation for Swift</a>.  
+ - Rclone is a good choice if you need more advanced functions while using Swift. You can read more about Rclone's support for Swift <a href="https://rclone.org/">here</a>.
