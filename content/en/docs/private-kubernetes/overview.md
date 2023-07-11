@@ -32,10 +32,7 @@ and we integrate with the features it provides.
   There's also support for having your storage encrypted thanks to our Fortanix
   [HSM and KMS solution for OpenStack](https://elastx.se/en/blog/check-out-our-customer-testimonial-for-fortanix-services).
 
-* **Ingress Controller**: We combine [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
-  with [cert-manager](https://cert-manager.io/docs/).
-  Thereby allowing you to use Ingress resources to expose you services.
-  *cert-manager* helps you automate the creation of Let's Encrypt SSL certificates.
+* **Auto scaling**: Strarting in private Kubernetes 2.0 we offer node autoscaling. Autoscaling works by checking the resources your workload requestsing. Autoscaling can help you scale your clusters in case you need to run jobs or when yur application scales out due to more traffic or users than normal.
 
 * **Standards conformant**: Our clusters are certified by the [CNCF Conformance Program](https://www.cncf.io/certification/software-conformance/)
   ensuring interoperability with Cloud Native technologies and minimizing vendor lock-in.
@@ -61,12 +58,6 @@ configuration will have to be rebuilt to be turned in to production ready cluste
 
 ## Good to know
 
-### Optional features
-
-The NGINX Ingress Controller and cert-manager are optional features, they are
-however part of the default configuration. If you wish to manage those features
-on your own please opt-out when ordering.
-
 ### Persistent volumes
 
 Cross availability zone mounting of volumes is not supported. That is volumes
@@ -84,3 +75,13 @@ rebuilding the cluster.
 Ordering and scaling of clusters is currently a manual process involving contact
 with either our sales department or our support. This is a known limitation, but
 may change in the future.
+
+Since Elastx Private Kubernetes 2.0 we offer auto scaling of workload nodes. This is based on resource requests meaning it relies on setting realistc requests on your workload. All configuration is currently a manual process involving contact with either our sales department or our support.
+
+### Optional features
+
+Prior to Kubernetes relase 1.26 we offered NGINX Ingress Controller and cert-manager as optional features.
+
+If you have an Ingress or certmanager installed by Elastx prior to Kubernetes 1.26 you need to manually upgrade them starting from the Kubernetes 1.26 release. In order to do this you can follow the [instruction here:](https://docs.elastx.com/ingress-and-certmanager-guide)
+
+If you are ordering a new Kubernetes cluster you need to install an ingress and certmanager on your own behalf. We have however created a guide on how to install Nginx Ingress Controller and cert-manager. We will also maintain upgrade instructions comming out with new relases over time. If you instead wish to use your own ingress contoller you can simply ignore this part.
