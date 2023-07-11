@@ -6,7 +6,7 @@ alwaysopen: true
 ---
 
 Load balancers in our Elastx Kubernetes CaaS service are provided by [OpenStack
-Octavia](https://docs.openstack.org/octavia/train/reference/introduction.html)
+Octavia](https://docs.openstack.org/octavia/ussuri/reference/introduction.html)
 in collaboration with the [Kubernetes Cloud Provider
 OpenStack](https://github.com/kubernetes/cloud-provider-openstack). This article
 will introduce some of the basics of how to use services of *service* type
@@ -189,7 +189,7 @@ project or contact our support:
 
 * [Kubernetes Cloud Provider
   OpenStack](https://github.com/kubernetes/cloud-provider-openstack/blob/master/docs/openstack-cloud-controller-manager/expose-applications-using-loadbalancer-type-service.md#service-annotations)
-* [OpenStack Octavia](https://docs.openstack.org/octavia/train/user/index.html)
+* [OpenStack Octavia](https://docs.openstack.org/octavia/ussuri/user/index.html)
 
 # Good to know
 ## Load balancers are billable resources
@@ -207,3 +207,7 @@ zones. This is a limitation imposed by the OpenStack Octavia project.
 Reconfiguring the load balancers using annotations is not as dynamic and smooth
 as one would hope. For now, to change the configuration of a load balancer the
 service needs to be deleted and a new one created.
+
+## Loadbalancer protocols
+
+Loadbalancers are by default proxying TCP traffic however can be set to proxy UDP traffic, haproxys proxy protocal and even set to HTTP and HTTPS mode meaning the loadbalancer will act as a reverse proxy. We strongly recommend to use loadbalancers in TCP, UDP or haproxys proxy-protocol mode. This since http and https modes have quite a few limitations and does not perfom as well. Instead of using http and https mode in your loadbalancer we recommend point your loadbalance towards an ingress controller and let the ingress controller manage all proxying and TLS.

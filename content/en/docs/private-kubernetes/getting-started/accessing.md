@@ -1,9 +1,10 @@
 ---
 title: "Accessing your cluster"
 description: "How to access your cluster"
-weight: 1
+weight: 2
 alwaysopen: true
 ---
+
 In order to access your cluster there are a couple of things you need to do.
 First you need to make sure you have the correct tools installed, the default
 client for interacting with Kubernetes clusters is called
@@ -40,11 +41,36 @@ configure kubectl to utilize them. [The official
 documentation](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 covers this process in detail.
 
-# Security groups
+# Verify access
 
-Just one more step and you will be able to access your cluster! We deliver our
-clusters unaccessible from the Internet, to access your cluster you need to
-define the rules governing access.
+To verify you've got access to the cluster you can run something like this:
+
+```bash
+$ kubectl get nodes
+NAME                           STATUS   ROLES           AGE   VERSION
+hux-lab1-control-plane-c9bmm   Ready    control-plane   14h   v1.27.3
+hux-lab1-control-plane-j5p42   Ready    control-plane   14h   v1.27.3
+hux-lab1-control-plane-wlwr8   Ready    control-plane   14h   v1.27.3
+hux-lab1-worker-447sn          Ready    <none>          13h   v1.27.3
+hux-lab1-worker-9ltbp          Ready    <none>          14h   v1.27.3
+hux-lab1-worker-vszmc          Ready    <none>          14h   v1.27.3
+```
+
+If your output looks similar then you should be good to go! If it looks very
+different or contains error messages, don't hesitate to contact our support if
+you can't figure out how to solve it on your own.
+
+# Instructions for older versions
+
+Everything under this section is only for clusters running older versions of our private Kubernetes service.
+
+## Security groups
+
+> **Note:** This part only applies to clusters not already running private Kubernetes 2.0 or later.
+
+If your cluster was created prior to Kubernetes 1.26 or when we specifically informed you that this part applies.
+
+If you are not sure if this part applies, you can validate it by checking if there is a security group called _cluster-name-master-customer_ in your openstack project.
 
 To do so, log in to [Elastx Openstack IaaS](https://ops.elastx.cloud/). When logged
 in click on the "Network" menu option in the left-hand side menu. Then click on
@@ -64,22 +90,3 @@ follows:
 
 Once you've set up rules that allow you to access your cluster you are ready to
 verify that you have got access.
-
-# Verify access
-
-To verify you've got access to the cluster you can run something like this:
-
-```bash
-$ kubectl get nodes
-NAME                           STATUS   ROLES    AGE   VERSION
-elastx-example1-k8s-master-1   Ready    master   5d    v1.10.4
-elastx-example1-k8s-master-2   Ready    master   5d    v1.10.4
-elastx-example1-k8s-master-3   Ready    master   5d    v1.10.4
-elastx-example1-k8s-node-1     Ready    node     5d    v1.10.4
-elastx-example1-k8s-node-2     Ready    node     5d    v1.10.4
-elastx-example1-k8s-node-3     Ready    node     5d    v1.10.4
-```
-
-If you output looks similar then you should be good to go! If it looks very
-different or contains error messages, don't hesitate to contact our support if
-you can't figure out how to solve it on your own.

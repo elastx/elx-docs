@@ -5,41 +5,11 @@ weight: 5
 alwaysopen: true
 ---
 
-Our Elastx Kubernetes CaaS clusters by default include the [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
-and [cert-manager](https://cert-manager.io/docs/). It is possible to opt-out of
-these if you wish to manage these functions on your own.
+Prior to Kubernetes 1.26 Elastx Kubernetes CaaS clusters was shipped with [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
+and [cert-manager](https://cert-manager.io/docs/).
 
-We run ingress controllers as daemonsets on each of the worker nodes. Providing a
-cheap and easy way to let traffic in to your cluster. To enable traffic to
-reach your worker nodes you need to add rules to the security groups governing
-access to those nodes.
+For cluster running Kubernetes 1.26 or later we will publish a guide on how to install and upgrade your ingress and cert-manager deployments
 
-# Security groups
-
-We deliver our clusters unaccessible from the internet, to provide ingress
-access you need to define rules allowing such traffic.
-
-To do so, log in to [Elastx OpenStack IaaS](https://ops.elastx.cloud/). Once logged
-in click on the "Network" menu option in the left-hand side menu. Then click on
-"Security Groups", finally click on the "Manage Rules" button to the right of
-the security group named _cluster-name-worker-customer_. To add a rule click on
-the "Add Rule" button.
-
-To allow access from internet to the ingress controllers add the following rules:
-
-    Rule: Custom TCP Rule
-    Direction: Ingress
-    Open Port: Port
-    Port: 80
-    Remote: CIDR
-    CIDR: 0.0.0.0/0
-
-    Rule: Custom TCP Rule
-    Direction: Ingress
-    Open Port: Port
-    Port: 443
-    Remote: CIDR
-    CIDR: 0.0.0.0/0
 
 # A quick example
 
@@ -47,15 +17,11 @@ In this example we will expose a web service using an Ingress resource and
 additionally demonstrate how to have cert-manager request a certificate to
 enable TLS using Let's Encrypt.
 
-
 ## Prerequisites
 
-* Security groups configured to allow traffic to worker nodes on port 80 and
-  443 as described in the previous heading.
-* A DNS record pointing at the public IP address of your worker nodes. In the
-  examples all references to the domain _example.ltd_ must be replaced by the
-  domain you wish to issue certificates for. Configuring DNS is out of scope for
-this documentation.
+1. A DNS record pointing at the public IP address of your worker nodes. In the examples all references to the domain _example.ltd_ must be replaced by the domain you wish to issue certificates for. Configuring DNS is out of scope for this documentation.
+2. For clusters created prior to Kubernetes 1.26: Security groups configured to allow traffic to worker nodes on port 80 and 443 as described in the previous heading. [A guide can be found here](../ingress-prep-pre-126/)
+3. For clusters created on or after Kubernetes 1.26 you need to install [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) and [cert-manager](https://cert-manager.io/docs/) in your cluster. A guide on how to [install ingress-nginx can be found here](../link) and a guide on how to [install cert-manager can be found here](../link).
 
 ## Create resources
 
@@ -127,10 +93,11 @@ spec:
             port:
               number: 9376
 ```
+
 Then create the resources in the cluster by running:
 `kubectl apply -f ingress.yaml`
 
-Run `kubectl get ing` and you should see output similar to this:
+Run `kubectl get ingress` and you should see output similar to this:
 
     NAME                     CLASS   HOSTS         ADDRESS         PORTS     AGE
     my-web-service-ingress   nginx   example.tld   91.197.41.241   80, 443   39s
