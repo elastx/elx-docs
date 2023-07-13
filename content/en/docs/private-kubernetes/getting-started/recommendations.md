@@ -72,6 +72,6 @@ In order to get to know this more in detail and getting started we recommend to 
 
 ## Loadbalancers
 
-Load balancers here to allow your application to be accessed from the internet. Load balancers can automatically split traffic to all your nodes to even out load. Load balancers can also detect if a node is having problems and remove it to avoid displaying errors to end users.
+Load balancers allow your application to be accessed from the internet. Load balancers can automatically split traffic to all your nodes to even out load. Load balancers can also detect if a node is having problems and remove it to avoid displaying errors to end users.
 
 We have a guide on how to get started with load balancers [that can be found here](../../guides/loadbalancer/)
