@@ -210,4 +210,6 @@ service needs to be deleted and a new one created.
 
 ## Loadbalancer protocols
 
-Loadbalancers are by default proxying TCP traffic however can be set to proxy UDP traffic, haproxys proxy protocal and even set to HTTP and HTTPS mode meaning the loadbalancer will act as a reverse proxy. We strongly recommend to use loadbalancers in TCP, UDP or haproxys proxy-protocol mode. This since http and https modes have quite a few limitations and does not perfom as well. Instead of using http and https mode in your loadbalancer we recommend point your loadbalance towards an ingress controller and let the ingress controller manage all proxying and TLS.
+Loadbalancers have support for multiple protocols. In general we would recommend everyone to try avoiding http and https due to a few limitations and simply they does not perfom as well as other protocols.
+
+Instead use tcp or haproxys proxy protocol and run an ingress controller thats responsible for proxying within clusters and TLS.
