@@ -21,7 +21,7 @@ enable TLS using Let's Encrypt.
 
 1. A DNS record pointing at the public IP address of your worker nodes. In the examples all references to the domain _example.ltd_ must be replaced by the domain you wish to issue certificates for. Configuring DNS is out of scope for this documentation.
 2. For clusters created prior to Kubernetes 1.26: Security groups configured to allow traffic to worker nodes on port 80 and 443 as described in the previous heading. [A guide can be found here](../ingress-prep-pre-126/)
-3. For clusters created on or after Kubernetes 1.26 you need to install [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) and [cert-manager](https://cert-manager.io/docs/) in your cluster. A guide on how to [install ingress-nginx can be found here](../link) and a guide on how to [install cert-manager can be found here](../link).
+3. For clusters created on or after Kubernetes 1.26 you need to install [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) and [cert-manager](https://cert-manager.io/docs/) in your cluster. A guide on how to [install ingress-nginx can be found here](../install-ingress/) and a guide on how to [install cert-manager can be found here](../install-certmanager/).
 
 ## Create resources
 
