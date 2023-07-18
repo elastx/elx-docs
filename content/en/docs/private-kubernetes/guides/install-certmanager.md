@@ -32,3 +32,7 @@ cmctl check api
 If everything is working you should get this message `The cert-manager API is ready`
 
 You can also verify it manually following this guide (https://cert-manager.io/docs/installation/verify/#manual-verification)
+
+## Upgrade
+
+To upgrade cert-manager installed using our instructions (static manifest) follow the instructions here https://cert-manager.io/docs/installation/upgrading/#upgrading-using-static-manifests
