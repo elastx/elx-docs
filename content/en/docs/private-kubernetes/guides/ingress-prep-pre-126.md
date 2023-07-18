@@ -16,10 +16,10 @@ access to those nodes.
 
 ## Security groups
 
-We deliver our clusters unaccessible from the internet, to provide ingress
+We deliver our clusters inaccessible from the internet. To provide ingress
 access you need to define rules allowing such traffic.
 
-To do so, log in to [Elastx OpenStack IaaS](https://ops.elastx.cloud/). Once logged
+To do so, log into [Elastx OpenStack IaaS](https://ops.elastx.cloud/). Once logged
 in click on the "Network" menu option in the left-hand side menu. Then click on
 "Security Groups", finally click on the "Manage Rules" button to the right of
 the security group named _cluster-name-worker-customer_. To add a rule click on

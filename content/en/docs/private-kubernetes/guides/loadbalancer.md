@@ -210,6 +210,6 @@ service needs to be deleted and a new one created.
 
 ## Loadbalancer protocols
 
-Loadbalancers have support for multiple protocols. In general we would recommend everyone to try avoiding http and https due to a few limitations and simply they does not perfom as well as other protocols.
+Loadbalancers have support for multiple protocols. In general we would recommend everyone to try avoiding http and https simply because they do not perform as well as other protocols.
 
 Instead use tcp or haproxys proxy protocol and run an ingress controller thats responsible for proxying within clusters and TLS.

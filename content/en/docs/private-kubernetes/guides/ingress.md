@@ -8,7 +8,7 @@ alwaysopen: true
 Prior to Kubernetes 1.26 Elastx Kubernetes CaaS clusters was shipped with [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
 and [cert-manager](https://cert-manager.io/docs/).
 
-For cluster running Kubernetes 1.26 or later we will publish a guide on how to install and upgrade your ingress and cert-manager deployments
+For cluster running Kubernetes 1.26 or later we will publish a guide on how to install and upgrade your ingress and cert-manager deployments yourselves.
 
 
 # A quick example

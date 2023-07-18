@@ -41,14 +41,14 @@ Nodes are split into availability zones meaning if you want 3 nodes you get one 
 Another example is to have a minimum of 3 nodes and maximum of 7. This would translate to minimum one node per availability zone and maximum 3 in STO1 and 2 in STO2 and STO3 respectively.
 To keep it simple we recommend using increments of 3.
 
-If you are unshare contact out support and we will help you get the configuration you wish for.
+If you are unsure contact out support and we will help you get the configuration you wish for.
 
 ## How does autoscaling know when to add additional nodes?
 
-Nodes are added once they are needed. and there is 2 scenarious.
+Nodes are added once they are needed and there are 2 scenarios:
 
 1. You have a pod that fails to be scheduled on existing nodes
-2. You schedule pods with requests and the autoscaler senses that your pods won't be able to be scheduled. If a lot of pods are schedule this method can add more than one node at a time.
+2. You scheduled pods with requests and the autoscaler senses that your pods won't be able to be scheduled on the available nodes. If a lot of pods are scheduled this method can add more than one node at a time.
 
 ## Can I disable auto scaling after activating it?
 

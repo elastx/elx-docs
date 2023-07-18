@@ -5,13 +5,13 @@ weight: 3
 alwaysopen: true
 ---
 
-This page will help you getting an deployment up and running and exposed as a load balancer.
+This page will help you getting a deployment up and running and exposed as a load balancer.
 
 > **Note:** This guide is optional and only here to help new Kubernetes users with an example deployment.
 
 Before following this guide you need to have [ordered a cluster](../ordering/) and followed the [Accessing your cluster guide](../accessing/)
 
-You can verify access by running `kubectl get nodes` and if the output is simullar to the example below you are set to go.
+You can verify access by running `kubectl get nodes` and if the output is similar to the example below you are set to go.
 
 ```bash
 ❯ kubectl get nodes
@@ -30,7 +30,7 @@ hux-lab1-worker-k56hn          Ready    <none>          16h     v1.27.3
 To get started we need a deployment to deploy.
 Below we have a deployment called `echoserver` we can use for this example.
 
-1. Start of by creating a file called `deployment.yaml` with the content of the deployment below:
+1. Start off by creating a file called `deployment.yaml` with the content of the deployment below:
 
 
     ```yaml
@@ -75,7 +75,7 @@ Below we have a deployment called `echoserver` we can use for this example.
 
 ## Exposing our deployment
 
-After your pods are created we need to make sure to expose our deployment. In this example we are creating a service of type loadbalancer. If you would have run this application on production you most likely would like to have installed an [ingress controller](../../guides/install-ingress/)
+After your pods are created we need to make sure to expose our deployment. In this example we are creating a service of type loadbalancer. If you run this application in production you would likely install an [ingress controller](../../guides/install-ingress/)
 
 1. First of we create a file called `service.yaml` with the content of the service below
 

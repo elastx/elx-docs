@@ -32,7 +32,7 @@ and we integrate with the features it provides.
   There's also support for having your storage encrypted thanks to our Fortanix
   [HSM and KMS solution for OpenStack](https://elastx.se/en/blog/check-out-our-customer-testimonial-for-fortanix-services).
 
-* **Auto scaling**: Strarting in private Kubernetes 2.0 we offer node autoscaling. Autoscaling works by checking the resources your workload requestsing. Autoscaling can help you scale your clusters in case you need to run jobs or when yur application scales out due to more traffic or users than normal.
+* **Auto scaling**: Strarting in private Kubernetes 2.0 we offer node autoscaling. Autoscaling works by checking the resources your workload is requesting. Autoscaling can help you scale your clusters in case you need to run jobs or when yur application scales out due to more traffic or users than normal.
 
 * **Standards conformant**: Our clusters are certified by the [CNCF Conformance Program](https://www.cncf.io/certification/software-conformance/)
   ensuring interoperability with Cloud Native technologies and minimizing vendor lock-in.
@@ -84,4 +84,4 @@ Prior to Kubernetes relase 1.26 we offered NGINX Ingress Controller and cert-man
 
 If you have an Ingress or certmanager installed by Elastx prior to Kubernetes 1.26 you need to manually upgrade them starting from the Kubernetes 1.26 release. In order to do this you can follow the [instruction for ingress here:](../guides/install-ingress/) and [instructions for certmanager here](../guides/install-certmanager/)
 
-If you are ordering a new Kubernetes cluster you need to install an ingress and certmanager on your own behalf. We have however created a guide on how to install Nginx Ingress Controller and cert-manager. We will also maintain upgrade instructions comming out with new relases over time. If you instead wish to use your own ingress contoller you can simply ignore this part.
+If you are ordering a new Kubernetes cluster you need to install an ingress and certmanager on your own behalf. We have however created a guide on how to install Nginx Ingress Controller and cert-manager. We will also maintain upgrade instructions coming out with new relases over time. If you instead wish to use your own ingress contoller you can simply ignore this part.
