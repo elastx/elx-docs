@@ -9,8 +9,8 @@ alwaysopen: true
 
 # Preparation and information steps for clusters created prior to Kubernetes 1.26
 
-We run ingress controllers as daemonsets on each of the worker nodes. Providing a
-cheap and easy way to let traffic in to your cluster. To enable traffic to
+We run ingress controllers as daemonsets on each of the worker nodes. This provides a
+cheap and easy way to let traffic into your cluster. To enable traffic to
 reach your worker nodes you need to add rules to the security groups governing
 access to those nodes.
 
