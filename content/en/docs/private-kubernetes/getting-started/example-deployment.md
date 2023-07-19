@@ -38,21 +38,21 @@ Below we have a deployment called `echoserver` we can use for this example.
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-    labels:
+      labels:
         app.kubernetes.io/name: echoserver
-    name: echoserver
+      name: echoserver
     spec:
-    replicas: 3
-    selector:
+      replicas: 3
+      selector:
         matchLabels:
-        app.kubernetes.io/name: echoserver
-    template:
+          app.kubernetes.io/name: echoserver
+      template:
         metadata:
-        labels:
+          labels:
             app.kubernetes.io/name: echoserver
         spec:
-        containers:
-        - image: gcr.io/google-containers/echoserver:1.10
+          containers:
+          - image: gcr.io/google-containers/echoserver:1.10
             name: echoserver
     ```
 
@@ -84,20 +84,20 @@ After your pods are created we need to make sure to expose our deployment. In th
     apiVersion: v1
     kind: Service
     metadata:
-    labels:
+      labels:
         app.kubernetes.io/name: echoserver
-    name: echoserver
-    annotations:
+      name: echoserver
+      annotations:
         loadbalancer.openstack.org/x-forwarded-for: "true"
     spec:
-    ports:
-    - port: 80
+      ports:
+      - port: 80
         protocol: TCP
         targetPort: 8080
         name: http
-    selector:
+      selector:
         app.kubernetes.io/name: echoserver
-    type: LoadBalancer
+      type: LoadBalancer
     ```
 
 2. After creating the service.yaml file we apply it using kubectl
