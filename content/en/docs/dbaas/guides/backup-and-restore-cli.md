@@ -7,7 +7,7 @@ alwaysopen: true
 
 ## PostgreSQL
 ### Backup
-The client we are using in this guide is `pg_dump` which is included in the PostgreSQL client package.
+The client we are using in this guide is `pg_dump` which is included in the PostgreSQL client package. It is recommended to use the same client version as your server version.
 
 The basic syntax and an example to dump a PostgreSQL database with the official tool `pg_dump` is shown below. 
 To connect and authenticate with a remote host you can either specify this information either with options, environment variables or a password file.
@@ -41,7 +41,7 @@ PGUSER
 > It is not recommended to specify the password via the above methods, and thus not listed here. For the password it is better to use a so called password file. By default the client checks the user's home directory for a file named `.pgpass`. Read more about the password file by going to the official documentation linked under [PostgreSQL Documentation](#postgresql-documentation).
 
 ### Restore
-To restore a database we will use the client `psql` which is also included in the PostgreSQL client package.
+To restore a database we will use the client `psql` which is also included in the PostgreSQL client package. It is recommended to use the same client version as your server version.
 
 #### Usage & example
 ```shell
