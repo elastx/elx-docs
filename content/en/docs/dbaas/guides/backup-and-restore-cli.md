@@ -86,7 +86,7 @@ For a full list of options, check out the documentation under [MariaDB Documenta
 mariadb-dump -h mydatabaseserver -B mydatabase --quick --single-transaction --skip-lock-tables > dump.sql
 ```
 
-> It is not recommended to specify the password via the command line. Consider using an option file instead, by default the client checks the user's home directory for a file named `.my.cnf`. You can read more about Option Files in the official documentation linked under [MariaDB Documentation](#mariadb-documentation).
+> It is not recommended to specify the password via the command line. Consider using an option file instead, by default the client checks the user's home directory for a file named `.my.cnf`. You can read more about option files in the official documentation linked under [MariaDB Documentation](#mariadb-documentation).
 
 ### Restore
 To restore the database from the dump file we will use the tool `mariadb` that is also included in the MariaDB client package.
@@ -129,10 +129,10 @@ OR     mysqldump [OPTIONS] --databases DB1 [DB2 DB3...]
 For a full list of options, check out the documentation under [MySQL Documentation](#mysql-documentation).
 
 ```shell
-mysql -h mydatabaseserver -B mydatabase --quick --single-transaction --skip-lock-tables --no-tablespaces > dump.sql`
+mysqldump -h mydatabaseserver -B mydatabase --quick --single-transaction --skip-lock-tables --no-tablespaces > dump.sql`
 ```
 
-> It is not recommended to specify the password via the command line. Consider using an option file instead, by default the client checks the user's home directory for a file named `.my.cnf`. You can read more about Option Files in the official documentation linked under [MySQL Documentation](#mysql-documentation).
+> It is not recommended to specify the password via the command line. Consider using an option file instead, by default the client checks the user's home directory for a file named `.my.cnf`. You can read more about option files in the official documentation linked under [MySQL Documentation](#mysql-documentation).
 
 ### Restore
 To restore the database from the dump file we will use the tool `mysql` that is also included in the MySQL client package.
