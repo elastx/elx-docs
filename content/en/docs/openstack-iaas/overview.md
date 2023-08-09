@@ -39,7 +39,7 @@ upon ordering. Contact support to have quotas changed on an existing project.
 * Volumes: 1000
 * Volume snapshots: 1000
 * Total size of volumes and snapshots: 1000 GiB
-* Memory (RAM) 51200 MB
+* Memory (RAM) 51200MB
 * Security groups: 50
 * Security group rules: 1000
 * Floating IPs: 10
