@@ -81,6 +81,7 @@ OR     mariadb-dump [OPTIONS] --databases DB1 [DB2 DB3...]
 ```
 
 For a full list of options, check out the documentation under [MariaDB Documentation](#mariadb-documentation).
+> Depending on your specific needs and the scope of the backup you might need to use the pre-created database user. This is because any subsequent users created in the portal are set up with permissions to a specific database while the pre-existing admin user have more global permissions that are needed for some of the dump options.
 
 ```shell
 mariadb-dump -h mydatabaseserver -B mydatabase --quick --single-transaction --skip-lock-tables > dump.sql
@@ -127,6 +128,7 @@ OR     mysqldump [OPTIONS] --databases DB1 [DB2 DB3...]
 ```
 
 For a full list of options, check out the documentation under [MySQL Documentation](#mysql-documentation).
+> Depending on your specific needs and the scope of the backup you might need to use the pre-created database user. This is because any subsequent users created in the portal are set up with permissions to a specific database while the pre-existing admin user have more global permissions that are needed for some of the dump options.
 
 ```shell
 mysqldump -h mydatabaseserver -B mydatabase --quick --single-transaction --skip-lock-tables --no-tablespaces > dump.sql`
@@ -151,3 +153,4 @@ mysql -h mydatabaseserver mydatabase < dump.sql
 - MySQL [mysqldump tool](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)
 - MySQL [Option Files](https://dev.mysql.com/doc/refman/8.0/en/option-files.html)
 - MySQL [Backup and Recovery](https://dev.mysql.com/doc/refman/8.0/en/backup-and-recovery.html)
+
