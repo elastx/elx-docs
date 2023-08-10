@@ -35,15 +35,15 @@ These are our default project quotas, let us know if you wish to change these
 upon ordering. Contact support to have quotas changed on an existing project.
 
 * VCPUs: 20
-* Instances: 10
-* Volumes: 10
-* Volume snapshots: 10
+* Instances: -1
+* Volumes: 1000
+* Volume snapshots: 1000
 * Total size of volumes and snapshots: 1000 GiB
 * Memory (RAM) 51200MB
-* Security groups: 20
-* Security group rules: 500
+* Security groups: 50
+* Security group rules: 1000
 * Floating IPs: 10
-* Networks: 100
+* Networks: 10
 * Ports: 500
 * Routers: 1
 * Subnets: 100
