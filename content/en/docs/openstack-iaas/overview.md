@@ -35,18 +35,17 @@ These are our default project quotas, let us know if you wish to change these
 upon ordering. Contact support to have quotas changed on an existing project.
 
 * VCPUs: 20
-* Instances: -1
+* Memory (RAM) 51200MB
 * Volumes: 1000
 * Volume snapshots: 1000
 * Total size of volumes and snapshots: 1000 GiB
-* Memory (RAM) 51200MB
 * Security groups: 50
 * Security group rules: 1000
 * Floating IPs: 10
-* Networks: 10
-* Ports: 500
 * Routers: 1
+* Networks: 10
 * Subnets: 100
+* Ports: 500
 
 ## Differencies and limitations
 As every OpenStack cloud has it's own unique set of features and underlying infrastructure, there are some things that might differentiate in our cluster from others. Down below is a list of what we believe is good to know when working in our OpenStack cloud.
