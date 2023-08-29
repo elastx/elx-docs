@@ -47,3 +47,23 @@ loadbalancer.openstack.org/flavor-id: <id-of-your-flavor>
 ```
 
 Note that this is a destructive operation when modifying an existing Service, it will remove the current loadbalancer and create a new one (with a new public IP).
+
+Full example configuration for a basic loadbalancer service:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    loadbalancer.openstack.org/flavor-id: b4a85cd7-abe0-41aa-9928-d15b69770fd4
+  name: my-loadbalancer
+spec:
+  ports:
+  - name: http-80
+    port: 80
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: my-application
+  type: LoadBalancer
+```
