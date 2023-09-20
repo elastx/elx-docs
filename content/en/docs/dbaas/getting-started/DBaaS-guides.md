@@ -36,6 +36,9 @@ For example, if you create a datastore with PostgreSQL 11, then all the database
 #### Backup copy temporarily stored on the node
 A datastore backup copy gets temporarily stored locally on the node before being uploaded to object storage. This will have an effect on capacity needs for a datastore.
 
+#### Restore from backup and available storage capacity
+When you wish to restore a datastore from backup, you need to ensure that your storage usage on each datastore node is at maximum 65%. This is because the current restore from backup method will use your datastore nodes storage to temporarily store the backup files during the restore. To ensure this, you need to use the Scale Storage functionality when needed, before doing a restore from backup. After restore from backup is done, you can resize the datastore nodes back to the desired size again.
+
 #### Nodes and datastores are created one by one
 When deploying a new datastore or adding a new node, all other actions are added to a queue.
 
