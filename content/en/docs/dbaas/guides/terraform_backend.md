@@ -16,7 +16,7 @@ Currently only datastores can be deployed using the terraform provider. Database
 
 ## DBaaS OAuth2 credentials
 
-Before we get started with the CCX provider, we need to create OAuth2 credentials.  
+Before we get started with the CCX provider, we need to create a new set of OAuth2 credentials.  
 This can be done by logging into your DBaaS account --> Click on your **Name** and choose **Account**:
 ![Show-Details](/img/dbaas/guides/dbaas_terraform_backend-1.png)  
 </br>
