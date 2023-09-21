@@ -66,7 +66,7 @@ Everything under this section is only for clusters running older versions of our
 
 ## Security groups
 
-> **Note:** This part only applies to clusters not already running private Kubernetes 2.0 or later.
+> **Note:** This part only applies to clusters not already running Private Kubernetes 2.0 or later.
 
 If your cluster was created prior to Kubernetes 1.26 or when we specifically informed you that this part applies.
 

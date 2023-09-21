@@ -29,27 +29,28 @@ Below we describe requests and limits briefly. For a more detailed description o
 
 ### Requests
 
-Requests and limits are just to help Kubernetes make better decisions when to schedule and limit your workload.
+Requests and limits are critical to enable Kubernetes to make informed decisions on when and where to schedule and limit your workload.
 
 Requests are important for the scheduler. Requests can be seen as "Amount of resources the pod would utilize during normal operation". This means that the scheduler will allocate the required amount of resources and make sure they are always available to your pod.
 
-Requests also helps the auto-scaler to make better decisions on when to scale a cluster up and down.
+Requests also enables the auto-scaler to make decisions on when to scale a cluster up and down.
 ### Limits
 
-Limits set the maximum allowed resource usage for a pod. This is important to avoid slowdowns in other pods running on the same node.
+Limits define the maximum allowed resource usage for a pod. This is important to avoid slowdowns in other pods running on the same node.
 
-`CPU` limit. Your application will be throttled or simply run slower when trying to exceed the limit.
-`Memory` limit is another beast. If any pod trying to use more memory than the limit the pod will be Out of memory killed.
+`CPU` limit. Your application will be throttled or simply run slower when trying to exceed the limit. Run slower equals to fewer cpu cycles per given time. That is, introducing latency.
+`Memory` limit is another beast. If any pod trying to use memory above the the limit, the pod will be Out of memory killed.
 
 ## Autoscaling
 
-Autoscaling can be done by scaling nodes and/or pods. To get the absolute best experience we recommend a combination of both.
+Autoscaling can operate on both node-level and pod-level.
+To get the absolute best experience we recommend a combination of both.
 
-## Scaling nodes
+### Scaling nodes
 
-We have built in support for scaling nodes up and down. To get started with auto scaling we recommend that you check out our [guide that can be found here](../../guides/autoscaling/)
+We have built-in support for scaling nodes. To get started with autoscaling we recommend to check the guide [that can be found here](../../guides/autoscaling/)
 
-## Scaling pods
+### Scaling pods
 
 Kubernetes documentation have a guide on how to do this [that can be found here](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
 
@@ -59,7 +60,7 @@ In short, node autoscaling is only taken into consideration if you have any pods
 
 Network policies can in short be seen as Kubernetes built in firewalls.
 
-Network policy can be used to limit both incoming and outgoing traffic. This allows you for example to specify that only a set of your pods are allowed to talk to the database.
+Network policy can be used to limit both incoming and outgoing traffic. This is useful to specify a set of pods that are allowed to communicate with the database.
 
 Kubernetes documentation have an excellent guide on how to get started with network policies [that can be found here](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
 
