@@ -13,10 +13,12 @@ We now offer autoscaling of nodes.
 In order to simplify node management we now have nodegroup.
 
 A nodegroup is a set of nodes, They span over all 3 of our availability zones.
-All nodes in a nodegroup are using the same flavour. This means if you want to mix flavours in your cluster there will be at least one nodegroup per flavour. We can also create custom nodegroups upon requests meaning you can have 2 nodegroups with the same flavour.
+All nodes in a nodegroup are using the same flavour. This means if you want to mix flavours in your cluster there will be at least one nodegroup per flavor. We can also create custom nodegroups upon requests meaning you can have 2 nodegroups with the same flavour.
 
 By default clusters are created with one nodegroup called "worker".
-When listing nodes by running `kubectl get nodes` you can see the node group by looking at the nodes name. All node names begin with `clustername` - `nodegroup`. In the example below we have the cluster `hux-lab1` and can se all workers are located in the nodegroup `worker`
+When listing nodes by running `kubectl get nodes` you can see the node group by looking at the nodes name. All node names begin with `clustername` - `nodegroup`. 
+
+In the example below we have the cluster `hux-lab1` and can see the default workers are located in the nodegroup `worker` and additionally, the added nodegroup `nodegroup2` with a few extra nodes.
 
 ```bash
 ❯ kubectl get nodes
@@ -28,13 +30,15 @@ hux-lab1-worker-447sn          Ready    <none>          2d18h   v1.27.3
 hux-lab1-worker-9ltbp          Ready    <none>          2d18h   v1.27.3
 hux-lab1-worker-htfbp          Ready    <none>          15h     v1.27.3
 hux-lab1-worker-k56hn          Ready    <none>          16h     v1.27.3
+hux-lab1-nodegroup2-33hbp      Ready    <none>          15h     v1.27.3
+hux-lab1-nodegroup2-54j5k      Ready    <none>          16h     v1.27.3
 ```
 
 ## How to activate autoscaling?
 
 Autoscaling currently needs to be configured by Elastx support.
 
-In order to activate auto scaling we need to know what cluster and nodegroup to activate auto scaling on along with the minimum and maximum number of nodes the group can scale to.
+In order to activate auto scaling we need to know `clustername` and `nodegroup` with two values for `minimum/maximum` number of desired nodes.
 
 Nodes are split into availability zones meaning if you want 3 nodes you get one in each availability zone.
 
@@ -45,7 +49,7 @@ If you are unsure contact out support and we will help you get the configuration
 
 ## How does autoscaling know when to add additional nodes?
 
-Nodes are added once they are needed and there are 2 scenarios:
+Nodes are added when they are needed. There are two scenarios:
 
 1. You have a pod that fails to be scheduled on existing nodes
 2. You scheduled pods with requests and the autoscaler senses that your pods won't be able to be scheduled on the available nodes. If a lot of pods are scheduled this method can add more than one node at a time.
@@ -54,4 +58,4 @@ Nodes are added once they are needed and there are 2 scenarios:
 
 Yes, just contact Elastx support and we will help you with this.
 
-When disabling auto scaling node count will be locked meaning if you wish to keep a specific amount of nodes just let us know and we will scale the cluster to the requested amount of nodes.
+When disabling auto scaling node count will be locked. Contact support if the number if nodes you wish to keep deviates from current amount od nodes, and we will scale it for you.
