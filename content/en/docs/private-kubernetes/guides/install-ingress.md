@@ -26,7 +26,7 @@ We will base this guide on ingress-nginx [that can be found here](https://github
 1. We have used tis values file:
 
     In this example we will store this file as values.yaml
-    > **Note:** For a complete set of options se the [upstream documentation here](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx#values)
+    > **Note:** For a complete set of options see the [upstream documentation here](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx#values)
   
      ```yaml
      controller:
@@ -60,14 +60,14 @@ We will base this guide on ingress-nginx [that can be found here](https://github
     TEST SUITE: None
     NOTES:
     The ingress-nginx controller has been installed.
-    It may take a few minutes for the LoadBalancer IP to be available.
+    It may take a few minutes for the LoadBalancer IP to become available.
     You can watch the status by running 'kubectl --namespace default get services -o wide -w ingress-nginx-controller'
     [..]
     ```
 
 ## Upgrade ingress
 
-If youre ingress controller are running in the namespace `elx-ingress-nginx` (this was default behavior fopr clusters created prior to Kubernetes 1.26) change the namespace flag namespace to ` elx-ingress-nginx `.
+If your ingress controller is running in the namespace `elx-ingress-nginx` (this was default behavior for clusters created prior to Kubernetes 1.26) change the namespace flag to ` elx-ingress-nginx `.
 
 1. Run the upgrade
   
