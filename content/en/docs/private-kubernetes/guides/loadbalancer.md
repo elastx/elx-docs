@@ -194,8 +194,7 @@ project or contact our support:
 # Good to know
 ## Load balancers are billable resources
 
-Adding services of type *LoadBalancer* will create load balancers in OpenStack,
-these are billable resources and you will be charged for them.
+Adding services of type *LoadBalancer* will create load balancers in OpenStack, which is a billable resource and you will be charged for them.
 
 ## High availability properties
 
