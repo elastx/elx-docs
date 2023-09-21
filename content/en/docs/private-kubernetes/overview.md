@@ -29,8 +29,7 @@ and we integrate with the features it provides.
 * **Persistent Storage**: When creating a *Persistent Volume Claim* Kubernetes
   creates a volume using [OpenStack Cinder](https://docs.openstack.org/cinder/latest/)
   and then connects the volume on the node where your pod(s) gets scheduled.
-  There's also support for having your storage encrypted thanks to our Fortanix
-  [HSM and KMS solution for OpenStack](https://elastx.se/en/blog/check-out-our-customer-testimonial-for-fortanix-services).
+  There's also support for having your storage encrypted thanks to our Fortanix HSM and KSM solution.
 
 * **Auto scaling**: Strarting in private Kubernetes 2.0 we offer node autoscaling. Autoscaling works by checking the resources your workload is requesting. Autoscaling can help you scale your clusters in case you need to run jobs or when yur application scales out due to more traffic or users than normal.
 
@@ -60,9 +59,8 @@ configuration will have to be rebuilt to be turned in to production ready cluste
 
 ### Persistent volumes
 
-Cross availability zone mounting of volumes is not supported. That is volumes
-can only be mounted by nodes in the same availability zone. Take this in to
-consideration with regards to high availability when ordering a cluster.
+Cross availability zone mounting of volumes is not supported. Therefore, volumes
+can only be mounted by nodes in the same availability zone. 
 
 ### Cluster subnet CIDR
 
@@ -76,7 +74,7 @@ Ordering and scaling of clusters is currently a manual process involving contact
 with either our sales department or our support. This is a known limitation, but
 may change in the future.
 
-Since Elastx Private Kubernetes 2.0 we offer auto scaling of workload nodes. This is based on resource requests meaning it relies on setting realistc requests on your workload. All configuration is currently a manual process involving contact with either our sales department or our support.
+Since Elastx Private Kubernetes 2.0 we offer auto scaling of workload nodes. This is based on resource requests meaning it relies on setting realistc requests on your workload. Configuring auto-scaling options is currently a manual process involving contact with either our sales department or our support.
 
 ### Optional features
 
