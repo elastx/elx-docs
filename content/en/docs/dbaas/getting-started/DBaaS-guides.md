@@ -21,6 +21,7 @@ To create a new datastore, choose +Create datastore in the Web UI. This will ope
 4. Resources: Select type of instance to be used with your datastore.   
   
     Storage: choose between Ephemeral or Volumes. 
+    >**Beware:** Please remember that the databases in the datastore node become read-only when 90% or more of the disk space is used.  
 
     Ephemeral storage option: this is the ephemeral storage that is included in your selected flavor. It has a static size as shown on the flavor and cannot be resized. It is the fastest storage type we have to offer. It becomes a single point of failure because it is a non-persistent storage that depends on the state of the instance where your datastore node is running. To have redundancy, you need to set up replicas or other ways to recover from failure.
 
