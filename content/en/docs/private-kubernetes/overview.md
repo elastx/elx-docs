@@ -51,9 +51,9 @@ supported by Elastx Kubernetes CaaS.
 
 ### Trial clusters
 
-Trial clusters can be ordered in whatever configuration you wish. Do note
-however that trial cluster that do not meet at least the standard
-configuration will have to be rebuilt to be turned in to production ready clusters.
+Trial clusters use standard configuration.
+Trial clusters do not have monitoring.
+Trial clusters are not billed.
 
 ## Good to know
 
