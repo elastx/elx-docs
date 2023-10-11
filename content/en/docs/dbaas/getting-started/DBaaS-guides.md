@@ -95,7 +95,7 @@ Consequently, it is important for you to establish a mechanism that actively che
 
 ###### Failover-Friendly Database Drivers
 
-Recommended Drivers: PgBouncer (for PostgreSQL) or libpq, MySQL Connector/J (for MySQL), These drivers and libraries are designed with failover and high availability in mind. They offer features such as connection pooling, automatic retries, and built-in failover support.
+Recommended Drivers: PgBouncer (for PostgreSQL) or libpq, MySQL Connector/J (for MySQL), MariaDB Connector/J (for MariaDB), These drivers and libraries are designed with failover and high availability in mind. They offer features such as connection pooling, automatic retries, and built-in failover support.
 
 ##### Network Advantages on Our Platforms
 
@@ -106,6 +106,6 @@ Final Notes
 Setting up a failover mechanism is not just an optional step but a recommended practice to ensure database availability and integrity. Without a proper failover setup, you risk prolonged downtime and possible data inconsistencies during node failures or maintenance activities.
 
 
-Customer must install a loadbalancer or use failover friendly database driver, e.g connector/J for MySQL or similar for PostgreSQL, libpq also can handle it.
+Customer must install a loadbalancer or use failover friendly database driver, e.g connector/J for MySQL or MariaDB or similar for PostgreSQL, libpq also can handle it.
 Thus, if the database driver that the customer uses does not support it, they must currently update the connection string if there is a failure.
 Note about certificates: certs installed on database nodes are self-signed. This is nothing we can change now.
