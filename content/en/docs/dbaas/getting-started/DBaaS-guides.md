@@ -87,10 +87,6 @@ Our cluster configurations whether it’s a primary-replica-replica setup or a m
 
 Consequently, it is important for you to establish a mechanism that actively checks the status of the individual nodes and updates your application or DNS records to point to the new primary node’s IP during such a failover event.
 
-##### Network Advantages on Our Platforms
-
-If you're utilizing floating IPs on our OpenStack or Jelastic platforms, it's important to note that all traffic between the nodes will never leave our network. This is advantageous for both latency and security, as the internal routing ensures fast and secure data transmission.
-
 ###### Your Options for Failover Solutions
 
 1.  Load Balancer: Implementing a load balancer in front of the database cluster can automate the failover process. The load balancer can be configured to detect node failures and reroute traffic to a functional node accordingly. If your cluster is running in a primary-replica configuration, the load balancer can also be set up to direct write queries to the primary node and read queries to the replicas.
@@ -100,6 +96,10 @@ If you're utilizing floating IPs on our OpenStack or Jelastic platforms, it's im
 ###### Failover-Friendly Database Drivers
 
 Recommended Drivers: PgBouncer (for PostgreSQL) or libpq, MySQL Connector/J (for MySQL), These drivers and libraries are designed with failover and high availability in mind. They offer features such as connection pooling, automatic retries, and built-in failover support.
+
+##### Network Advantages on Our Platforms
+
+If you're utilizing floating IPs on our OpenStack or Jelastic platforms, it's important to note that all traffic between the nodes will never leave our network. This is advantageous for both latency and security, as the internal routing ensures fast and secure data transmission.
 
 Final Notes
 
