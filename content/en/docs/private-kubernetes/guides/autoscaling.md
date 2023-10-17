@@ -52,7 +52,15 @@ If you are unsure contact out support and we will help you get the configuration
 Nodes are added when they are needed. There are two scenarios:
 
 1. You have a pod that fails to be scheduled on existing nodes
-2. You scheduled pods with requests and the autoscaler senses that your pods won't be able to be scheduled on the available nodes. If a lot of pods are scheduled this method can add more than one node at a time.
+2. Scheduled pods requests more then 100% of any resource, this method is smart and senses the amount of resources per node and can therfor add more than one node at a time if required.
+
+## When does the autoscaler scale down nodes?
+
+The autoscaler removes nodes when it senses there is enough free resources to accomodate all current workload (based on requests) on fewer nodes. To avoid all nodes having 100% resource requests (and thereby usage), there is also a built-in mechanism to ensure there is always at least 50% of a node available resources to accept additional requests.
+
+Meaning if you have a nodegroup with 3 nodes and all of them have 4 CPU cores you need to have a total of 2 CPU cores that is not requested per any workload.
+
+To refrain from triggering the auto-scaling feature excessively, there is a built in delay of 10 minutes for scale down actions to occur. Scale up events are triggered immediately.
 
 ## Can I disable auto scaling after activating it?
 
