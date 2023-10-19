@@ -106,6 +106,6 @@ Final Notes
 Setting up a failover mechanism is not just an optional step but a recommended practice to ensure database availability and integrity. Without a proper failover setup, you risk prolonged downtime and possible data inconsistencies during node failures or maintenance activities.
 
 
-Customer must install a loadbalancer or use failover friendly database driver, e.g connector/J for MySQL or MariaDB or similar for PostgreSQL, libpq also can handle it.
+Customer must install a loadbalancer or use failover friendly database driver, e.g connector/J for MySQL or MariaDB or similar for PostgreSQL like libpq.
 Thus, if the database driver that the customer uses does not support it, they must currently update the connection string if there is a failure.
 Note about certificates: certs installed on database nodes are self-signed. This is nothing we can change now.
