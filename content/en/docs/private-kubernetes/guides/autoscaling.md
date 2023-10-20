@@ -38,7 +38,7 @@ hux-lab1-nodegroup2-54j5k      Ready    <none>          16h     v1.27.3
 
 Autoscaling currently needs to be configured by Elastx support.
 
-In order to activate auto scaling we need to know `clustername` and `nodegroup` with two values for `minimum/maximum` number of desired nodes.
+In order to activate auto scaling we need to know `clustername` and `nodegroup` with two values for `minimum/maximum` number of desired nodes. Currently we cannot have minimum set below 3 nodes however this is subnject to vhange in the future.
 
 Nodes are split into availability zones meaning if you want 3 nodes you get one in each availability zone.
 
