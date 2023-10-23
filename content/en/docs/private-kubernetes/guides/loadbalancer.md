@@ -6,7 +6,7 @@ alwaysopen: true
 ---
 
 Load balancers in our Elastx Kubernetes CaaS service are provided by [OpenStack
-Octavia](https://docs.openstack.org/octavia/train/reference/introduction.html)
+Octavia](https://docs.openstack.org/octavia/ussuri/reference/introduction.html)
 in collaboration with the [Kubernetes Cloud Provider
 OpenStack](https://github.com/kubernetes/cloud-provider-openstack). This article
 will introduce some of the basics of how to use services of *service* type
@@ -189,13 +189,12 @@ project or contact our support:
 
 * [Kubernetes Cloud Provider
   OpenStack](https://github.com/kubernetes/cloud-provider-openstack/blob/master/docs/openstack-cloud-controller-manager/expose-applications-using-loadbalancer-type-service.md#service-annotations)
-* [OpenStack Octavia](https://docs.openstack.org/octavia/train/user/index.html)
+* [OpenStack Octavia](https://docs.openstack.org/octavia/ussuri/user/index.html)
 
 # Good to know
 ## Load balancers are billable resources
 
-Adding services of type *LoadBalancer* will create load balancers in OpenStack,
-these are billable resources and you will be charged for them.
+Adding services of type *LoadBalancer* will create load balancers in OpenStack, which is a billable resource and you will be charged for them.
 
 ## High availability properties
 
@@ -207,3 +206,9 @@ zones. This is a limitation imposed by the OpenStack Octavia project.
 Reconfiguring the load balancers using annotations is not as dynamic and smooth
 as one would hope. For now, to change the configuration of a load balancer the
 service needs to be deleted and a new one created.
+
+## Loadbalancer protocols
+
+Loadbalancers have support for multiple protocols. In general we would recommend everyone to try avoiding http and https simply because they do not perform as well as other protocols.
+
+Instead use tcp or haproxys proxy protocol and run an ingress controller thats responsible for proxying within clusters and TLS.

@@ -1,33 +1,21 @@
 ---
-title: Persistent volumes 
+title: Persistent volumes
 description: Using persistent volumes
 weight: 3
 alwaysopen: true
 ---
 
 Persistent volumes in our Elastx Kubernetes CaaS service are provided by [OpenStack
-Cinder](https://docs.openstack.org/cinder/train/). Volumes are dynamically
+Cinder](https://docs.openstack.org/cinder/ussuri/). Volumes are dynamically
 provisioned by [Kubernetes Cloud Provider
 OpenStack](https://github.com/kubernetes/cloud-provider-openstack/).
 
-## Storage classes 
+## Storage classes
 
 `8k` refers to 8000 IOPS.
 
 > See our [pricing page](https://elastx.se/en/openstack/pricing)  under the table *Storage* to calculate your costs.
 
-### Kubernetes version < 1.22
-
-This is the list of storage classes provided in clusters of version <1.22.
-
-```bash
-$ kubectl get storageclasses
-NAME           PROVISIONER                RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
-16k            cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   167d
-4k (default)   cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   167d
-8k             cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   167d
-```
-### Kubernetes version > 1.23
 This is the list of storage classes provided in clusters of version > 1.23.
 
 ```bash
@@ -37,7 +25,6 @@ NAME                       PROVISIONER                RECLAIMPOLICY   VOLUMEBIND
 8k                         cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   167d
 v1-dynamic-40 (default)    cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   167d
 ```
-
 
 
 ### Example of PersistentVolumeClaim
