@@ -49,9 +49,6 @@ This configuration is the minimal configuration offered, scaling up and out as
 required is supported. Clusters using smaller flavors or fewer nodes are not
 supported by Elastx Kubernetes CaaS.
 
-### Trial clusters
-
-Trial clusters follow the standard configuration. The only distinct difference is the time limited discount in price.
 
 ## Good to know
 
