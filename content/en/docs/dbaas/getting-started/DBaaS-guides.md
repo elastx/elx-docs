@@ -84,7 +84,7 @@ In the Users tab you can use the Connection assistant to get examples from vario
 
 ### Important: Setting Up Failover for Your Database Cluster
 
-Our cluster configurations whether it’s a primary-replica-replica setup or a multi-primary Galera cluster provide robust performance and reliability. Each node in the database cluster is assigned a unique floating IP for ease of access. In the event of the primary node going down, the database cluster is designed to automatically promote one of the replica nodes to become the new primary. This ensures that your data remains accessible and that write operations can continue with minimal interruption. However, it’s vital to note that the floating IP of the old primary node will not automatically redirect to the new primary node.
+Our primary-replica-replica cluster configuration provide robust performance and reliability. Each node in the database cluster is assigned a unique floating IP for ease of access. In the event of the primary node going down, the database cluster is designed to automatically promote one of the replica nodes to become the new primary. This ensures that your data remains accessible and that write operations can continue with minimal interruption. However, it’s vital to note that the floating IP of the old primary node will not automatically redirect to the new primary node.
 
 Consequently, it is important for you to establish a mechanism that actively checks the status of the individual nodes and updates your application or DNS records to point to the new primary node’s IP during such a failover event.
 

@@ -17,7 +17,6 @@ This can be done by using the **scale nodes** function within the web UI.
 The new primary will also have a different Public IP. Therefore it is recommended to plan accordingly before proceeding.
 * If you are already using the maximum amount of nodes, the option to change flavor is to first scale down and then create a new node with the desired flavor.  
 * Redis can only be scaled out with at least two nodes at a time . This means that if you are running a single node deployment, it requires you to first scale out to three nodes. When all nodes are up and running you can promote one of the new nodes as primary and then scale down to one node.
-* Galera clusters (Multi-Primary) can only be scaled with at least two nodes at a time.
 
 
 ### Changing flavor
