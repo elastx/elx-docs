@@ -41,13 +41,12 @@ When you wish to restore a datastore from backup, you need to ensure that your s
 When deploying a new datastore or adding a new node, all other actions are added to a queue.
 
 #### Maximum concurrent database connections
-DBaaS sets max_connections when creating new datastore or node. The parameter can assume follwoing values:
+DBaaS sets max_connections when creating new datastore or node. 
+The parameter can assume follwoing values:
 
-**Max connections per GB RAM (max_connections)**
-```console
-Postgres       25
-MySQL/MariaDB  75
-```
+`Postgres       25 per GB RAM`
+`MySQL/MariaDB  75 per GB RAM`
+
 This number is direcly related to chosen datastore type and node flavor. Hence a larger flavor allows a higher number of concurrent connections.
 
 ## Delete datastore
