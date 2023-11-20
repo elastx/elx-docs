@@ -44,8 +44,8 @@ When deploying a new datastore or adding a new node, all other actions are added
 DBaaS sets max_connections when creating new datastore or node. 
 The parameter can assume follwoing values:
 
-`Postgres       25 per GB RAM`
-`MySQL/MariaDB  75 per GB RAM`
+* `Postgres       25 per GB RAM`
+* `MySQL/MariaDB  75 per GB RAM`
 
 This number is direcly related to chosen datastore type and node flavor. Hence a larger flavor allows a higher number of concurrent connections.
 
