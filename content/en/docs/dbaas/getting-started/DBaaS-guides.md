@@ -14,7 +14,7 @@ To create a new datastore, choose +Create datastore in the Web UI. This will ope
 
 1. Databases: Choose one of the available database types  (MariaDB, MySQL, PostgreSQL, Redis). If you opt for PostgreSQL, you will have the choice between major versions 11 and 14.
 
-2. Configuration: Add a name and optionally tags to easily categorize your datastore. Choose Multi-Primary or Primary / Replicas. For the Primary / Replica configuration, the options include, one primary node, one primary node with a single replica or one primary node with two replicas.
+2. Configuration: Add a name and optionally tags to easily categorize your datastore. For the Primary / Replica configuration, the options include, one primary node, one primary node with a single replica or one primary node with two replicas.
 
 3. Cloud service: Only one region, Continue.
 
