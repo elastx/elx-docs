@@ -92,9 +92,6 @@ Scenario if the cluster has a WAF or other proxy in front of the loadbalancer.
     You can watch the status by running 'kubectl --namespace default get services -o wide -w ingress-nginx-controller'
     [..]
     ```
-
-
-
 ## Upgrade
 
 This section helps with managing the ingress lifecycle. There are a few scenarios. If the customer would like to remove the elastx provided, there are instructions at the delete step. There are also instructions on how to upgrade the ingress.
