@@ -94,7 +94,11 @@ Scenario if the cluster has a WAF or other proxy in front of the loadbalancer.
     ```
 ## Upgrade
 
-This section helps with managing the ingress lifecycle. There are a few scenarios. If the customer would like to remove the elastx provided, there are instructions at the delete step. There are also instructions on how to upgrade the ingress.
+This section helps with managing the ingress lifecycle. There are three scenarios going forward.
+
+1. The customer have installed the ingress, then use the `Upgrade ingress by customer` section
+2. Elastx have installed the ingress and the customer wants to upgrade this deployment, follow the instructions under `Upgrade ingress installed by Elastx`
+3. Elastx have installed ingress previously but the customer want to remove the ingress and install their own ingress. In this case follow the instructions under the `Delete elastx provided elx-ingress-nginx` section
 
 ### Upgrade ingress by customer
 
