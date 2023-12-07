@@ -144,6 +144,7 @@ If your ingress controller is running in the namespace `elx-ingress-nginx` (this
 
 
 ## Delete elastx provided elx-ingress-nginx
+
 Avoid running multiple ingress controllers using the same `IngressClass`. (In case this is of interest here is [information on running multiple ingress controllers](https://kubernetes.github.io/ingress-nginx/user-guide/multiple-ingress/)). The best practice is to use the helm template method to remove the ingress. This allows for proper removal of lingering resources, before removing the namespace `elx-ingress-nginx`.
 
 Here is how the Elastx provided ingress is uninstalled:
