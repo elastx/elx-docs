@@ -19,15 +19,15 @@ We will ensure ingress is working during and after the migration and will after 
 
 ### Ingress
 
-We are changing the way the cluster default accepts incoming traffic, from accepting traffic to each worker node, to the new solution where a loadbalancer service. The service will automatically be able to add and remove worker nodes. Another consequence is that the customer will have one IP address that needs to be configured on DNS and/or WAF.
+We are changing the way the cluster default accepts incoming traffic, from accepting traffic to each worker node, to the new solution where a Load Balancer service. The service will automatically be able to add and remove worker nodes. Another consequence is that the customer will have one IP address that needs to be configured on DNS and/or WAF.
 
-In order to enable the customer to not suffer downtime during the upgrade and migration procedure, we will plan to patch the managed ingress to support a loadbalancer service. This allows the customer to change DNS/WAF configuration to point towards the loadbalancer prior to starting the upgrade, which grants the best upgrade/migration experience.
+In order to enable the customer to not suffer downtime during the upgrade and migration procedure, we will plan to patch the managed ingress to support a Load Balancer service. This allows the customer to change DNS/WAF configuration to point towards the Load Balancer prior to starting the upgrade, which grants the best upgrade/migration experience.
 
-We will setup a loadbalancer that runs in TCP mode. The operation mode is backwards compatible and will not break any existing configurations however there are a few quirks that the customer need to be aware of. In case the end users connect directly to the loadbalancer (not setting x-forwarded-for in a proxy in front of the ingress) the ingress controller will report source IPs as being the loadbalancer service. This will break setups that filters traffic based on source IP.
+We will setup a Load Balancer that runs in TCP mode. The operation mode is backwards compatible and will not break any existing configurations however there are a few quirks that the customer need to be aware of. In case the end users connect directly to the Load Balancer (not setting x-forwarded-for in a proxy in front of the ingress) the ingress controller will report source IPs as being the Load Balancer service. This will break setups that filters traffic based on source IP.
 
 There are two other options to mitigate this behavior that can be used.
 
-1. Change the ingress and loadbalancer to make use of HAProxy proxy protocol. This will ensure that source IPs are preserved. However it requires all clients that send traffic to the ingress to make use of the proxy-protocol and will break backwards compatibility for sending traffic directly to nodes on port 80 and 443.
+1. Change the ingress and Load Balancer to make use of HAProxy proxy protocol. This will ensure that source IPs are preserved. However it requires all clients that send traffic to the ingress to make use of the proxy-protocol and will break backwards compatibility for sending traffic directly to nodes on port 80 and 443.
 2. The customer can choose to install a separate ingress and migrate over the services one by one. The customer need to make sure the ingress of choice support ingress classes and does not make use of the ingress class "nginx" since it is already in use by the ingress we installed.
 
 If you wish to continue make use of the ingress we installed we have created a guide to help you get started [https://docs.elastx.cloud/docs/private-kubernetes/guides/install-ingress/](https://docs.elastx.cloud/docs/private-kubernetes/guides/install-ingress/)
@@ -42,11 +42,11 @@ To assist you, we have created a guide that can be found here [https://docs.elas
 
 Floating IPs are currently not supported on our new Kubernetes platform. We are however actively working on adding support and are targeting to have it available early 2024. We will ask all customers if they make use of this feature and in such cases, we will schedule the upgrade when the feature is ready.
 
-If the customer does not make use of floating IPs, in most cases they are used for external whitelisting we will remove the floating IPs from nodes entirely and instead rely on loadbalancers to send traffic to services running inside the cluster.
+If the customer does not make use of floating IPs, in most cases they are used for external whitelisting we will remove the floating IPs from nodes entirely and instead rely on Load Balancers to send traffic to services running inside the cluster.
 
 ## Kubernetes API
 
-We are removing floating IPs for all control-plane nodes. Instead, we use a loadbalancer in front of control-planes to ensure the traffic will be sent to an working control-plane node.
+We are removing floating IPs for all control-plane nodes. Instead, we use a Load Balancer in front of control-planes to ensure the traffic will be sent to an working control-plane node.
 
 Currently we do not support whitelisting IPs that can access the API. However we expect to have this feature available during Q1 2024.
 
