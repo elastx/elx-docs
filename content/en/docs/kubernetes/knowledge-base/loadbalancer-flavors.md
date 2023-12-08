@@ -1,18 +1,18 @@
 ---
-title: "Loadbalancer flavors"
+title: "Load Balancer flavors"
 description: "Available flavors and how to use them"
 weight: 1
 ---
 
-For a general tutorial on how to get started with loadbalancers in Kubernetes, please see the [Getting Started docs](https://docs.elastx.cloud/docs/private-kubernetes/getting-started/loadbalancer/).
+For a general tutorial on how to get started with Load Balancers in Kubernetes, please see the [Getting Started docs](https://docs.elastx.cloud/docs/private-kubernetes/getting-started/loadbalancer/).
 
-By default, loadbalancers are created with **1G RAM** and **1 CPU core**. For some use cases this will not be sufficient.
+By default, Load Balancers are created with **1G RAM** and **1 CPU core**. For some use cases this will not be sufficient.
 
 # LB provider
 
 Most of our Kubernetes clusters are still configured with the legacy `octavia` provider, for new clusters we are making the successor to `octavia`: `amphora` - the default.
 
-If you need more powerful loadbalancers than the default option mentioned above, we recommend using the `amphora` provider. To see which one you are currently using you can run the below in your cluster:
+If you need more powerful Load Balancers than the default option mentioned above, we recommend using the `amphora` provider. To see which one you are currently using you can run the below in your cluster:
 
 ```shell
 kubectl -n kube-system get secret external-openstack-cloud-config -o jsonpath='{.data.cloud\.conf}' | base64 -d - | grep lb-provider
@@ -40,15 +40,15 @@ To change lb-provider please create a support case.
 
 # Using a flavor
 
-To select a flavor for your loadbalancer, add the below to the Kubernetes Service `.metadata.annotations`:
+To select a flavor for your Load Balancer, add the below to the Kubernetes Service `.metadata.annotations`:
 
 ```yaml
 loadbalancer.openstack.org/flavor-id: <id-of-your-flavor>
 ```
 
-Note that this is a destructive operation when modifying an existing Service, it will remove the current loadbalancer and create a new one (with a new public IP).
+Note that this is a destructive operation when modifying an existing Service, it will remove the current Load Balancer and create a new one (with a new public IP).
 
-Full example configuration for a basic loadbalancer service:
+Full example configuration for a basic `LoadBalancer` service:
 
 ```yaml
 apiVersion: v1

@@ -12,7 +12,7 @@ This guide assist in taking ownership over ingress. This is required when upgrad
 
 We will base this guide on ingress-nginx [that can be found here](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx)
 
-## Prereqs
+## Prerequisites
 
 1. Setup helm repo
 
@@ -28,7 +28,7 @@ We will base this guide on ingress-nginx [that can be found here](https://github
 
 ## Install ingress-nginx
 
-1. We have used tis values file:
+1. We have used this file for values:
 
     In this example we will store this file as values.yaml
     > **Note:** For a complete set of options see the [upstream documentation here](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx#values)
@@ -48,7 +48,7 @@ We will base this guide on ingress-nginx [that can be found here](https://github
         enabled: true
      ```
 
-Scenario if the cluster has a WAF or other proxy in front of the loadbalancer.
+    Scenario if the cluster has a WAF or other proxy in front of the Load Balancer.
 
      ```yaml
       controller:
@@ -88,7 +88,7 @@ Scenario if the cluster has a WAF or other proxy in front of the loadbalancer.
     TEST SUITE: None
     NOTES:
     The ingress-nginx controller has been installed.
-    It may take a few minutes for the LoadBalancer IP to become available.
+    It may take a few minutes for the Load Balancer IP to become available.
     You can watch the status by running 'kubectl --namespace default get services -o wide -w ingress-nginx-controller'
     [..]
     ```
@@ -121,7 +121,7 @@ If your ingress controller is running in the namespace `elx-ingress-nginx` (this
     TEST SUITE: None
     NOTES:
     The ingress-nginx controller has been installed.
-    It may take a few minutes for the LoadBalancer IP to be available.
+    It may take a few minutes for the Load Balancer IP to be available.
     You can watch the status by running 'kubectl --namespace default get services -o wide -w ingress-nginx-controller'
     [..]
     ```
@@ -160,7 +160,7 @@ helm template ingress-nginx ingress-nginx/ingress-nginx --values values.yaml --n
 We delivered our clusters inaccessible from the internet. To provide ingress
 access you need to define rules allowing such traffic.
 
-To do so, log into [Elastx OpenStack IaaS](https://ops.elastx.cloud/). Once logged
+To do so, log in to [Elastx OpenStack IaaS](https://ops.elastx.cloud/). Once logged
 in click on the "Network" menu option in the left-hand side menu. Then click on
 "Security Groups", finally click on the "Manage Rules" button to the right of
 the security group named _cluster-name-worker-customer_. To add a rule click on

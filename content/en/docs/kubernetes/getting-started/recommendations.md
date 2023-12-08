@@ -17,7 +17,7 @@ An ingress controller makes sure when you go to a specific webpage you are route
 
 There are a lot of different ingress controllers available. We on Elastx are using ingress-nginx and have a guide ready on how to get started. However you can deploy any ingress controller you wish inside your clusters.
 
-To get a single IP-address you can point your DNS towards we recommend to deploy an ingress-controller with a service of type Load balancer. [More information regarding load balancers can be found here](#loadbalancers)
+To get a single IP-address you can point your DNS towards we recommend to deploy an ingress-controller with a service of type `LoadBalancer`. [More information regarding Load Balancers can be found here](#loadbalancers)
 
 In order to automatically generate and update TLS certificates cert-manager is commonly deployed side by side with an ingress controller.
 
@@ -70,8 +70,8 @@ Pod Security Admission can be used to limit what your pods can do. For example y
 
 In order to get to know this more in detail and getting started we recommend to follow the Kubernetes documentation [that can be found here](https://kubernetes.io/docs/concepts/security/pod-security-admission/)
 
-## Loadbalancers
+## Load Balancers
 
-Load balancers allow your application to be accessed from the internet. Load balancers can automatically split traffic to all your nodes to even out load. Load balancers can also detect if a node is having problems and remove it to avoid displaying errors to end users.
+Load Balancers allow your application to be accessed from the internet. Load Balancers can automatically split traffic to all your nodes to even out load. Load Balancers can also detect if a node is having problems and remove it to avoid displaying errors to end users.
 
-We have a guide on how to get started with load balancers [that can be found here](../../guides/loadbalancer/)
+We have a guide on how to get started with Boad Balancers [that can be found here.](../../guides/loadbalancer/)
