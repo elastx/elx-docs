@@ -5,12 +5,9 @@ weight: 5
 alwaysopen: true
 ---
 
-This guide will help you get a working up to date ingress manager. Either by upgrading an existing one, 
+This guide will assist you get a working up to date ingress controller. This is expected as clusters created after 1.26 are delivered without ingress.
 
-
-This guide assist in taking ownership over ingress. This is required when upgrading to 1.26. As clusters created on prior to 1.26 are delivered without ingress, this guide asissts in setting up ingress.
-
-We will base this guide on ingress-nginx [that can be found here](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx)
+We will base this guide on ingress-nginx [that can be found here](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx).
 
 ## Prerequisites
 
