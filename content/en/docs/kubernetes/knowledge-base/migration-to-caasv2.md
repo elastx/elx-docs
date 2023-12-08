@@ -36,7 +36,7 @@ If you wish to continue make use of the ingress we installed we have created a g
 
 We stop managing Certmanager after the Kubernetes 1.26 upgrade is completed. There is no breaking changes however, the customer is expected to update Certmanager in the cluster going forward.
 
-To assist you, we have created a guide that can be found here [Install and upgrade cert-manager](../../guides/install-certmanager/)
+To assist you, we have created a guide that can be found here [Install and upgrade cert-manager](../install-certmanager/)
 
 ## Floating IPs
 
