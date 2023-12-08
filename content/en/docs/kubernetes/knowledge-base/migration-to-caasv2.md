@@ -30,13 +30,13 @@ There are two other options to mitigate this behavior that can be used.
 1. Change the ingress and Load Balancer to make use of HAProxy proxy protocol. This will ensure that source IPs are preserved. However it requires all clients that send traffic to the ingress to make use of the proxy-protocol and will break backwards compatibility for sending traffic directly to nodes on port 80 and 443.
 2. The customer can choose to install a separate ingress and migrate over the services one by one. The customer need to make sure the ingress of choice support ingress classes and does not make use of the ingress class "nginx" since it is already in use by the ingress we installed.
 
-If you wish to continue make use of the ingress we installed we have created a guide to help you get started [https://docs.elastx.cloud/docs/private-kubernetes/guides/install-ingress/](https://docs.elastx.cloud/docs/private-kubernetes/guides/install-ingress/)
+If you wish to continue make use of the ingress we installed we have created a guide to help you get started [Install and upgrade ingress-nginx](../install-ingress/)
 
 ### Certmanager
 
 We stop managing Certmanager after the Kubernetes 1.26 upgrade is completed. There is no breaking changes however, the customer is expected to update Certmanager in the cluster going forward.
 
-To assist you, we have created a guide that can be found here [https://docs.elastx.cloud/docs/private-kubernetes/guides/install-certmanager/](https://docs.elastx.cloud/docs/private-kubernetes/guides/install-certmanager/)
+To assist you, we have created a guide that can be found here [Install and upgrade cert-manager](../../guides/install-certmanager/)
 
 ## Floating IPs
 

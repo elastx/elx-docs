@@ -4,7 +4,7 @@ description: "Available flavors and how to use them"
 weight: 1
 ---
 
-For a general tutorial on how to get started with Load Balancers in Kubernetes, please see the [Getting Started docs](https://docs.elastx.cloud/docs/private-kubernetes/getting-started/loadbalancer/).
+For a general tutorial on how to get started with Load Balancers in Kubernetes, please see the [Getting Started docs](../../getting-started/loadbalancer/).
 
 By default, Load Balancers are created with **1G RAM** and **1 CPU core**. For some use cases this will not be sufficient.
 
