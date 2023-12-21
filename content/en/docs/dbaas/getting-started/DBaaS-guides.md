@@ -123,4 +123,4 @@ Note about certificates: certs installed on database nodes are self-signed. This
 ### Importing database dumps to MariaDB/MySQL
 Importing backed up database dumps into your datastore using the mysql/mariadb clients also creates binlogs during the import.  
 Binlogs can vary in size and a good rule of thumb is to have twice the size of the dump free on the volume before starting the import. This is to ensure the volume is not running out of space during the import.  
-Example: You planning on creating a new datastore and import a 80GiB database dump, you should select a volume with at least 160GiB.
+Example: You are planning on creating a new datastore and import a 80GiB database dump, you should select a volume with at least 160GiB.
