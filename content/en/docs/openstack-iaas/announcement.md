@@ -5,6 +5,40 @@ weight: 1
 alwaysopen: true
 ---
 
+## 2023-12-20 ECP Block Storage
+### New v2 Volumes
+We are happy to announce our next generation Elastx Cloud Platform (ECP) v2 Block Storage. Due to a technology shift we are now able to provide a market leading Block Storage in both price and performance.
+
+There is a fully redundant storage cluster in each Availability Zone (AZ). Volumes are only accessible from compute instances running in the same AZ. All volumes are encrypted at rest. Snapshot and backup features are available.
+
+The new v2 Block Storage is now available as Volumes in Openstack IaaS and it will soon be available as Persistent Volumes in Kubernetes CaaS and volumes in DBaaS.
+
+These are the volumes and pricing that are currently available.
+| Volume type   | IOPS    | MBPS  | Price / GB | Price / Volume
+|---------------|---------|-------|------------|----------------
+| v2-1k         | 1 000   | 64    | 0.78 kr    | 0 kr
+| v2-4k         | 4 000   | 128   | 0.78 kr    | 300 kr
+| v2-8k         | 8 000   | 256   | 0.78 kr    | 700 kr
+| v2-16k        | 16 000  | 384   | 0.78 kr    | 1500 kr
+| v2-32k        | 32 000  | 512   | 0.78 kr    | 3 100 kr
+| v2-64k        | 64 000  | 1 024 | 0.78 kr    | 6 300 kr
+| v2-128k       | 128 000 | 2 048 | 0.78 kr    | 12 700 kr
+
+All prices are per month (730h).
+
+### Deprecated v1 Volumes
+The new v2 Volumes are more cost effective and more powerful than the current v1 volumes. Therefore we are now deprecating the following v1 volumes:
+
+- v1-dynamic-40
+- 8k-IOPS
+- 16k-IOPS
+
+These Volumes will be available at least one year from now. We will announce an End Of Life date at least three months ahead of termination.
+
+Migration to the new v2 Volumes can be done by mounting them in parallel and copying data or using the volume retype function which is an offline data migration tool.
+
+You can find information, specifications and pricing here, https://elastx.se/se/openstack.
+
 ## 2023-05-02 OpenStack IaaS announcement
 
 We are happy to announce these platform news that will help you to run applications on Elastx Cloud Platform with enhanced security.
