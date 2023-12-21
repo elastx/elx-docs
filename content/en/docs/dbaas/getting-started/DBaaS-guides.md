@@ -119,3 +119,8 @@ Setting up a failover mechanism is not just an optional step but a recommended p
 Customer must install a loadbalancer or use failover friendly database driver, e.g connector/J for MySQL or MariaDB or similar for PostgreSQL like libpq.
 Thus, if the database driver that the customer uses does not support it, they must currently update the connection string if there is a failure.
 Note about certificates: certs installed on database nodes are self-signed. This is nothing we can change now.
+
+### Importing database dumps to MariaDB/MySQL
+Importing backed up database dumps into your datastore using the mysql/mariadb clients also creates binlogs during the import.  
+Binlogs can vary in size and a good rule of thumb is to have twice the size of the dump free on the volume before starting the import. This is to ensure the volume is not running out of space during the import.  
+Example: You planning on creating a new datastore and import a 80GiB database dump, you should select a volume with at least 160GiB.
