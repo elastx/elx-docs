@@ -25,7 +25,7 @@ To create a new datastore, choose +Create datastore in the Web UI. This will ope
 
     Ephemeral storage option: this is the ephemeral storage that is included in your selected flavor. It has a static size as shown on the flavor and cannot be resized. It is the fastest storage type we have to offer. It becomes a single point of failure because it is a non-persistent storage that depends on the state of the instance where your datastore node is running. To have redundancy, you need to set up replicas or other ways to recover from failure.
 
-   Upon choosing 'Volumes', you will have the options of selecting Volume type either the preferred v2 volumes with different IOPS performance classes 1k-64k or the legacy v1 volumes 'Dynamic', '16k IOPS', or '8k IOPS'. Lastly if volume storage is chosen, you can specify the desired size of the disk. Read more about the volume types at our [OpenStack Specification](https://elastx.se/en/openstack/specification).
+    Upon choosing 'Volumes', you will have the options of selecting Volume type either the preferred v2 volumes with different IOPS performance classes 1k-64k or the legacy v1 volumes 'Dynamic', '16k IOPS', or '8k IOPS'. Lastly if volume storage is chosen, you can specify the desired size of the disk. Read more about the volume types at our [OpenStack Specification](https://elastx.se/en/openstack/specification).
 
 5. Preview: Review and confirm everything is satisfactory, then proceed to complete the task by clicking finish. Based on the selections made previously, the datastore should be operational within a few minutes.
 
