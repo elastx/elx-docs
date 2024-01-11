@@ -48,8 +48,8 @@ command or a website such as
 
 A correct result must include the exact string `include:elastx.email`.
 
-**Note:** Elastx Mail Relay does not support checking of sub-includes -
-the `include:elastx.email` has to be present on the domain itself.
+**Note:** Elastx Mail Relay does support sub-include, limited to 1 level of nesting -
+the `include:elastx.email` must either be present on the domain itself, or on the SPF record for one of the other `include:<domain>` domains.
 
 ### Example 1
 
@@ -90,6 +90,8 @@ This is why the DNS challenge token is required.
 
 The DNS challenge token is very similar to SPF in that it is configured on
 exactly the same place as you put your SPF record, and it is also a TXT record.
+
+**Note:** This TXT record cannot be sub-included in any way, it must be present on the domain you are sending emails from.
 
 The format of the TXT record is `elastx-mrs=[SHA256 of mail relay username]`.
 
