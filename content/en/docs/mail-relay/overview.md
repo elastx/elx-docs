@@ -4,6 +4,15 @@ description: "Using Elastx as a Mail Relay"
 weight: 1
 alwaysopen: true
 ---
+## Prerequisites
+
+For using Elastx Mail Relay service you have to adhere to following requirements:
+ * You must have SPF and DKIM configured and enabled for the sender mail domain.
+ * You should have DMARC configured.
+
+Starting February 2024 Google and Yahoo have as mandatry requirement that both SPF and DKIM are active when sending bulk mail exceeding 5000 mails per day to these domains. Since both are very basic protection against spoofing Elastx requires these to be used by all customers. DMARC is STRONGLY recommended to use.
+
+## Access
 
 When using the Elastx Mail Relay service it is important that you have the following:
 
@@ -101,3 +110,6 @@ On a Linux system it can be generated like this:
 echo "elastx-mrs=$(echo -n "steve.mailer@mycorp.se" | sha256sum | cut -d ' ' -f 1)"
 ```
 
+## Setting up DKIM and DMARC
+
+Elastx Mail Relay transparently handles DKIM and DMARC. This means that you are fully responsble for setting up and maintaining both on your side. The actions for setting up these varies but are generally supported by all major MTA providers.
