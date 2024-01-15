@@ -34,9 +34,6 @@ To create a new datastore, choose +Create datastore in the Web UI. This will ope
 #### All databases in the datastore will use the same database version
 For example, if you create a datastore with PostgreSQL 11, then all the databases in this datastore will use PostgreSQL 11.
 
-#### Before you restore from backup: storage usage must be max 65%
-When you wish to restore a datastore from backup, you need to ensure that your storage usage on each datastore node is at maximum 65%. This is because the current restore from backup method will use your datastore nodes storage to temporarily store the backup files during the restore. To ensure this, you need to use the Scale Storage functionality when needed, before doing a restore from backup. After restore from backup is done, you can resize the datastore nodes back to the desired size again.
-
 #### Nodes and datastores are created one by one
 When deploying a new datastore or adding a new node, all other actions are added to a queue.
 
