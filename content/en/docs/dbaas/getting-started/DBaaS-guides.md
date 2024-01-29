@@ -102,7 +102,7 @@ Consequently, it is important for you to establish a mechanism that actively che
 
 ###### Failover-Friendly Database Drivers
 
-Recommended Drivers: [libpq](https://www.postgresql.org/docs/15/libpq.html) (for PostgreSQL), [MySQL Connector/J](https://dev.mysql.com/doc/connector-j/en/) (for MySQL), [MariaDB Connector/J](https://mariadb.com/kb/en/about-mariadb-connector-j/) (for MariaDB), These drivers and libraries are designed with failover and high availability in mind. They offer features such as connection pooling, automatic retries, and built-in failover support.
+Recommended Drivers: [libpq](https://www.postgresql.org/docs/current/libpq.html) (for PostgreSQL), [MySQL Connector/J](https://dev.mysql.com/doc/connector-j/en/) (for MySQL), [MariaDB Connector/J](https://mariadb.com/kb/en/about-mariadb-connector-j/) (for MariaDB), These drivers and libraries are designed with failover and high availability in mind. They offer features such as connection pooling, automatic retries, and built-in failover support.
 
 ##### Network Advantages on Our Platforms
 
