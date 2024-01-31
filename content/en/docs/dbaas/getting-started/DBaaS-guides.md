@@ -82,8 +82,9 @@ Go to the Firewall (Connect) tab: Click on the +Create trusted source. Add a CID
 
 ### Connect to datastore nodes
 Every datastore node has a public IP address.
+Every datastore also has one or two automatically generated FQDN URL's depending on if the datastore is a single node or a primary-replica.
 
-You can find the public IP addresses in the Nodes tab.
+You can find the public IP addresses in the Nodes tab. The FQDN URLs can be found in overview and nodes tabs.
 
 ### Connection assistant
 In the Users tab you can use the Connection assistant to get examples from various programming languages such as python, node.js, php etc on how to configure your connection.
