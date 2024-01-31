@@ -88,21 +88,19 @@ You can find the public IP addresses in the Nodes tab.
 ### Connection assistant
 In the Users tab you can use the Connection assistant to get examples from various programming languages such as python, node.js, php etc on how to configure your connection.
 
-### Important: Setting Up Failover for Your Database Cluster
+### Built-in Failover Functionality Using DNS
+Our primary-replica-replica cluster configuration provide robust performance and reliability. For ease of access each node in the database cluster is assigned a unique floating IP and two automatically generated URL's, one pointing at the current primary node and the other one pointing towards the replica(s). This means that if for some reason the current primary node goes unavailable, one of the replicas will be promoted as the new primary and automatically assigned the primary URL. The assignment of the new primary's floating IP to the primary URL takes place automatically. This is an easy and robust way to quickly handle failovers.
 
-Our primary-replica-replica cluster configuration provide robust performance and reliability. Each node in the database cluster is assigned a unique floating IP for ease of access. In the event of the primary node going down, the database cluster is designed to automatically promote one of the replica nodes to become the new primary. This ensures that your data remains accessible and that write operations can continue with minimal interruption. However, it’s vital to note that the floating IP of the old primary node will not automatically redirect to the new primary node.
+### Setting Up Your Own Failover for More Advanced Features
+Our primary-replica-replica cluster configuration provide robust performance and reliability. Each node in the database cluster is assigned a unique floating IP for ease of access. In the event of the primary node going down, the database cluster is designed to automatically promote one of the replica nodes to become the new primary. This ensures that your data remains accessible and that write operations can continue with minimal interruption. However, it’s vital to note that the floating IP of the old primary node will not automatically redirect to the new primary node. The newly promoted primary node will however be assigned automatically to the primary URL.
 
-Consequently, it is important for you to establish a mechanism that actively checks the status of the individual nodes and updates your application or DNS records to point to the new primary node’s IP during such a failover event.
-
-###### Your Options for Failover Solutions
+###### Options for Setting up Your Own Failover Solution
 
 1.  Load Balancer: Implementing a load balancer in front of the database cluster can automate the failover process. The load balancer can be configured to detect node failures and reroute traffic to a functional node accordingly. If your cluster is running in a primary-replica configuration, the load balancer can also be set up to direct write queries to the primary node and read queries to the replicas.
 
-2.  DNS-Based Failover: Alternatively, you could set up DNS-based failover. In this configuration, you would set up a DNS record pointing to the primary database node. If the primary node were to fail, a quick DNS update could reroute the traffic to a newly promoted primary node. Note that DNS changes might take some time to propagate, depending on your DNS settings.
+2.  DNS-Based Failover: You could set up your own DNS-based failover. In this configuration, you would set up a DNS record pointing to the primary database node. If the primary node were to fail, a quick DNS update could reroute the traffic to a newly promoted primary node. Note that DNS changes might take some time to propagate, depending on your DNS settings.
 
-###### Failover-Friendly Database Drivers
-
-Recommended Drivers: [libpq](https://www.postgresql.org/docs/current/libpq.html) (for PostgreSQL), [MySQL Connector/J](https://dev.mysql.com/doc/connector-j/en/) (for MySQL), [MariaDB Connector/J](https://mariadb.com/kb/en/about-mariadb-connector-j/) (for MariaDB), These drivers and libraries are designed with failover and high availability in mind. They offer features such as connection pooling, automatic retries, and built-in failover support.
+3. Using a Failover-Friendly Database Driver. Recommended Drivers: [libpq](https://www.postgresql.org/docs/current/libpq.html) (for PostgreSQL), [MySQL Connector/J](https://dev.mysql.com/doc/connector-j/en/) (for MySQL), [MariaDB Connector/J](https://mariadb.com/kb/en/about-mariadb-connector-j/) (for MariaDB), These drivers and libraries are designed with failover and high availability in mind. They offer features such as connection pooling, automatic retries, and built-in failover support.
 
 ##### Network Advantages on Our Platforms
 
