@@ -5,6 +5,22 @@ weight: 1
 alwaysopen: true
 ---
 
+## 2024-02-01 DDoS protection now included
+
+We are happy to announce that we are now adding our DDoS protection to all Elastx Cloud Platform customers for free. This is yet another step in our mission to provide the best cloud platform for business critical services with sensitive data. Your services will now be protected from L3/L4 volumetric DDoS attacks by our inline protection.
+
+If you already are an Elastx customer you do not need to do anything, the DDoS protection service will be enabled automatically. If you are currently subscribing to our DDoS protection service, your subscription will be updated accordingly.
+
+This will apply from 2024-02-01.
+
+### L4 proxy and Geo Fencing
+We have also added an anycast L4 proxy service with an optional Geo Fencing function.
+<br>You can find information, specifications and pricing here, https://elastx.se/en/ddos-protection.
+
+
+If you have any general questions or would like to sign-up please contact us at hello@elastx.se.
+<br>Any technical questions please register a support ticket at https://support.elastx.se.
+
 ## 2023-05-02 Cloud Colocation
 We are happy to announce these platform news that will help you to run applications on Elastx Cloud Platform with enhanced security.
 
