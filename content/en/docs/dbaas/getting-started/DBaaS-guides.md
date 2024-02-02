@@ -81,28 +81,27 @@ This number is direcly related to chosen datastore type and node flavor. Hence a
 Go to the Firewall (Connect) tab: Click on the +Create trusted source. Add a CIDR i.e.: 1.2.3.4/32 and a description.
 
 ### Connect to datastore nodes
-Every datastore node has a public IP address.
 
-You can find the public IP addresses in the Nodes tab.
+Every datastore cluster has one or two uniquely external DNS names depending on if the datastore is a single node or a primary-replica(s). The DNS names are immutable and does not change over the course of the datastores' lifecycle. In case of primary-replica(s) you get one external DNS name for the primary and one for the replica(s). This is also used with our built-in failover mechanism, please see our [Built-in Failover](#built-in-failover-using-dns) for more information on how to take advantage of this functionality.   
+Every node in your datastore cluster also has a Public IP address which can be used if you want to setup your own load-balancing, please see [Load balancing and other features](#load-balancing-and-other-features) for more information.
 
-### Connection assistant
-In the Users tab you can use the Connection assistant to get examples from various programming languages such as python, node.js, php etc on how to configure your connection.
+You will find how to connect to your datastore nodes through their external DNS names in the *overview* tab of the UI.   
+If you want to connect through the nodes' IP addresses you can find them in the *nodes* tab.  
 
-### Important: Setting Up Failover for Your Database Cluster
+##### Connection assistant
+If you want to use a connection assistant you will find examples on how to configure your connection from various programming languages such as python, node.js, php etc in the *users* tab.
 
-Our primary-replica-replica cluster configuration provide robust performance and reliability. Each node in the database cluster is assigned a unique floating IP for ease of access. In the event of the primary node going down, the database cluster is designed to automatically promote one of the replica nodes to become the new primary. This ensures that your data remains accessible and that write operations can continue with minimal interruption. However, it’s vital to note that the floating IP of the old primary node will not automatically redirect to the new primary node.
+### Built-in Failover Using DNS
+Our primary-replica(s) cluster configuration provides robust performance and reliability. In the event of the primary node going down, the database cluster is designed to automatically promote one of the replica nodes to become the new primary. This ensures that your data remains accessible and that write operations can continue with minimal interruption. Our primary-replica(s) cluster provides an immutable external DNS name for the primary, this ensures that if for some reason the current primary node goes unavailable, the built-in failover will automatically promote a new primary and redirect the primary node's dns to point to the new primary nodes's IP address. This is an easy and robust way to quickly handle failover without any user intervention.
 
-Consequently, it is important for you to establish a mechanism that actively checks the status of the individual nodes and updates your application or DNS records to point to the new primary node’s IP during such a failover event.
+### Load Balancing and Other Features
+If you want additional functionality or combine failover with for instance load balancing and/or use specific database drivers, this has to be set up in front of your datastore cluster. There are numerous ways this can be set up and configured dependending on the chosen solution. On how to set this up please refer to the documention of the specific solution you plan to use. It’s vital to note that in case of the primary going down, one of the replicas will automatically be promoted as a new primary and you'll need to plan accordingly. We recommend to use the primary's DNS instead of the IP address for ease of use.
+ 
+###### Example of features than can be implemented
 
-###### Your Options for Failover Solutions
+* Load Balancer: Implementing a load balancer in front of the database cluster can be configured to detect node failures and also be set up to direct write queries to the primary node and read queries to the replicas.
 
-1.  Load Balancer: Implementing a load balancer in front of the database cluster can automate the failover process. The load balancer can be configured to detect node failures and reroute traffic to a functional node accordingly. If your cluster is running in a primary-replica configuration, the load balancer can also be set up to direct write queries to the primary node and read queries to the replicas.
-
-2.  DNS-Based Failover: Alternatively, you could set up DNS-based failover. In this configuration, you would set up a DNS record pointing to the primary database node. If the primary node were to fail, a quick DNS update could reroute the traffic to a newly promoted primary node. Note that DNS changes might take some time to propagate, depending on your DNS settings.
-
-###### Failover-Friendly Database Drivers
-
-Recommended Drivers: [libpq](https://www.postgresql.org/docs/current/libpq.html) (for PostgreSQL), [MySQL Connector/J](https://dev.mysql.com/doc/connector-j/en/) (for MySQL), [MariaDB Connector/J](https://mariadb.com/kb/en/about-mariadb-connector-j/) (for MariaDB), These drivers and libraries are designed with failover and high availability in mind. They offer features such as connection pooling, automatic retries, and built-in failover support.
+* Database Drivers: Recommended Drivers: [libpq](https://www.postgresql.org/docs/current/libpq.html) (for PostgreSQL), [MySQL Connector/J](https://dev.mysql.com/doc/connector-j/en/) (for MySQL), [MariaDB Connector/J](https://mariadb.com/kb/en/about-mariadb-connector-j/) (for MariaDB), These drivers and libraries are designed with failover and high availability in mind. They offer features such as connection pooling, automatic retries, and built-in failover support.
 
 ##### Network Advantages on Our Platforms
 
