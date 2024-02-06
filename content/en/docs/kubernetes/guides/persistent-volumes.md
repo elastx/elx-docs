@@ -61,7 +61,7 @@ Cross mounting of volumes is not supported! That is a volume can only be mounted
 by a node residing in the same availability zone as the volume. Plan
 accordingly for ensured high availability!
 
-### Limit of 25 volumes per node
+### Limit of 25 volumes per node (clusters prior to v1.26)
 
 There is a hard limitation of 25 volumes per node, including root volume. In case >20 volumes are required per node, consider adding additional worker nodes.
 
