@@ -61,9 +61,15 @@ Cross mounting of volumes is not supported! That is a volume can only be mounted
 by a node residing in the same availability zone as the volume. Plan
 accordingly for ensured high availability!
 
-### Limit of 25 volumes per node (clusters prior to v1.26)
+### Limit of volumes and pods per node
 
-There is a hard limitation of 25 volumes per node, including root volume. In case >20 volumes are required per node, consider adding additional worker nodes.
+In case higher number of volumes or pods are required, consider adding additional worker nodes.
+
+| Kubernetes version | Max pods/node | Max volumes/node |
+|:-----------------|:--------:|:--------:|
+| v1.25 and lower | 110 | 25 |
+| v1.26 and higher | 110 | 125 |
+
 
 ### Encryption
 
