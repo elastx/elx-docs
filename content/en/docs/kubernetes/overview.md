@@ -69,7 +69,7 @@ Ordering and scaling of clusters is currently a manual process involving contact
 with either our sales department or our support. This is a known limitation, but
 may change in the future.
 
-Since Elastx Private Kubernetes 2.0 we offer auto scaling of workload nodes. This is based on resource requests meaning it relies on setting realistc requests on your workload. Configuring auto-scaling options is currently a manual process involving contact with either our sales department or our support.
+Since Elastx Private Kubernetes 2.0 we offer auto scaling of workload nodes. This is based on resource requests meaning it relies on setting realistic requests on your workload. Configuring auto-scaling options is currently a manual process involving contact with either our sales department or our support.
 
 ### Optional features
 
