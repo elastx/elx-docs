@@ -122,7 +122,7 @@ Binlogs can vary in size and a good rule of thumb is to have twice the size of t
 Example: You are planning on creating a new datastore and import a 80GiB database dump, you should select a volume with at least 160GiB.
 
 ## Life-cycle management and upgrade
-CCX will keep your system updated with the latest security patches for both the operating system and the database software.
+Elastx DBaaS will keep your system updated with the latest security patches for both the operating system and the database software.
 
 You will be informed when there is a pending update and you have two options:
 - Apply the update now
