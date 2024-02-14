@@ -135,7 +135,7 @@ The update will be performed using a roll-forward upgrade algorithm:
 4. 1-3 continues until all replicas (or primaries in case of a multi-primary setup)  are updated.
 5. If it is a primary-replica configuration then the primary will be updated last. A new node will be added, the new node will be promoted to become the new primary, and the old primary will be removed.
 
-> Please be aware that the floating ip addresses assigned to the nodes may change. It's recommended to instead use the external DNS name found in the Overview tab of the UI.
+> Please be aware that the floating ip addresses assigned to the nodes may change. It is recommended to use the external DNS name found in the Overview tab of the UI instead.
 
 ### Upgrade now
 This option will start the upgrade now.
