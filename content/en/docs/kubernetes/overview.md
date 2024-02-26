@@ -53,6 +53,9 @@ The standard configuration consist of the following:
 
 This is the minimal configuration offered. Scaling to larger flavors and adding nodes are supported. Autoscaling is not supported with a single worker node.
 
+> **Note:** 
+SLA is different for minimal configuration type of cluster. SLA's can be found [here](https://elastx.se/en/kubernetes/sla).
+
 
 ## Good to know
 
