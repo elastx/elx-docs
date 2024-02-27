@@ -45,9 +45,16 @@ The standard configuration consist of the following:
 * Three worker nodes, one in each of our availability zones. Flavor:
   v1-c2-m8-d80
 
-This configuration is the minimal configuration offered, scaling up and out as
-required is supported. Clusters using smaller flavors or fewer nodes are not
-supported by Elastx Kubernetes CaaS.
+### Minimal configuration
+* Three control plane nodes, one in each of our availability zones. Flavor:
+  v1-c2-m8-d80
+* One worker node, Flavor:
+  v1-c2-m8-d80
+
+This is the minimal configuration offered. Scaling to larger flavors and adding nodes are supported. Autoscaling is not supported with a single worker node.
+
+> **Note:** 
+SLA is different for minimal configuration type of cluster. SLA's can be found [here](https://elastx.se/en/kubernetes/sla).
 
 
 ## Good to know
