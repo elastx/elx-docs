@@ -90,3 +90,4 @@ $ dig +short domain.com TXT
 "v=spf1 include:elastx.email -all"
 "elastx-mrs=4931ae9f911d21f9ba59dda70af400c9be1a06bedaeb60ad372e336c69d70f5b"
 "elastx-mrs=189e7fa5e685b1f8fa9eaa681890d6a2e081ebe8dad94b02710e68dc405a0c0f"
+```
