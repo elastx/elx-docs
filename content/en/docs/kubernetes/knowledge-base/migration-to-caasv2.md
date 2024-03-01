@@ -6,16 +6,34 @@ weight: 1
 
 This document will guide through all new changes introduced when migrating to our new kubernetes deployment backend. All customers with a Kubernetes cluster created on Kubernetes 1.25 or earlier are affected.
 
-There are a few changes listed below. Make sure to carefully read through and understand them in order to avoid potential downtime during the upgrade. All customers will receive this information when we upgrade clusters to v1.26, 
-which also includes the migration procedure.
+We have recieved, and acted upon, customer feedback since our main announcement 2023Q4.
+Two most notable changes:
+- We've reverted to continue providing Ingress/Certmanager.
+- We offer the an additional "Migration cluster" for free during 30days.
+
+
+Below is an updated (20240305) version. First, an overview of the process that lays ahead.
+
+![Show-Details](/img/kubernetes/capi-migration/flowchart_medium.png)
+
+
+There are a few changes listed below. Make sure to carefully read through and understand them in order to avoid potential downtime during the upgrade. All customers will receive this information when we upgrade clusters to v1.26, which also includes the migration procedure.
 
 ## Addons
 
-We have chosen to stop providing a managed Ingress and Certmanager.
+There are now a few options for you as a customer:
+1.  Take ownership over the elastx-provided ingress and certmanager.
 
-There are multiple reasons. Most notably that the ingress configuration often changes based on each customer's requirements. Over time, this has proven challenging to support and test every scenario our customers might face. We have also witnessed an increased interest among customers to run and manage thier own ingress controllers.
 
-We will ensure ingress is working during and after the migration and will after the Kubernetes 1.26 upgrade is completed hand over the responsibility to the customer that can decide if they want to continue to run and update the deployments we have installed or simply install their own. We will provide helpful instructions to migrate from an elastx managed default solution, but the work is required to be performed by the customer to avoid downtime, come the upgrade date.
+1. Take the opportunity to setup your own ingress/cert-manager for full control and customizability.
+
+1. Continue using your own Ingress/Certmanager solution.
+
+  See notes [Upgrade ingress by customer](../install-ingress/#upgrade-ingress-by-customer).
+  <br>
+  See notes [Install and upgrade cert-manager](../install-certmanager/).
+
+
 
 ### Ingress
 
@@ -32,17 +50,14 @@ There are two other options to mitigate this behavior that can be used.
 
 If you wish to continue make use of the ingress we installed we have created a guide to help you get started [Install and upgrade ingress-nginx](../install-ingress/)
 
-### Certmanager
-
-We stop managing Certmanager after the Kubernetes 1.26 upgrade is completed. There is no breaking changes however, the customer is expected to update Certmanager in the cluster going forward.
-
-To assist you, we have created a guide that can be found here [Install and upgrade cert-manager](../install-certmanager/)
 
 ## Floating IPs
 
-Floating IPs are currently not supported on our new Kubernetes platform. We are however actively working on adding support and are targeting to have it available early 2024. We will ask all customers if they make use of this feature and in such cases, we will schedule the upgrade when the feature is ready.
+Floating IPs (FIPS) are currently not supported on our new Kubernetes platform. We are however actively working on adding support and are targeting to have it available early 2024. We will ask all customers if they make use of this feature and in such cases, we will schedule the upgrade when the feature is ready.
 
 If the customer does not make use of floating IPs, in most cases they are used for external whitelisting we will remove the floating IPs from nodes entirely and instead rely on Load Balancers to send traffic to services running inside the cluster.
+
+One typical usecase for Floating IPs would be to maintain control over egress IP from the cluster. Without using FIPS, the traffic will be SNAT:ed via the hypervisor.
 
 ## Kubernetes API
 
