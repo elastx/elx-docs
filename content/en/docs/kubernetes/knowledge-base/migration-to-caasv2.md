@@ -8,48 +8,43 @@ This document will guide through all new changes introduced when migrating to ou
 
 We have recieved, and acted upon, customer feedback since our main announcement 2023Q4.
 Two most notable changes:
+
 - We've reverted to continue providing Ingress/Certmanager.
 - We offer the an additional "Migration cluster" for free during 30days.
-
 
 Below is an updated (20240305) version. First, an overview of the process that lays ahead.
 
 ![Show-Details](/img/kubernetes/capi-migration/flowchart_medium.png)
 
-
 There are a few changes listed below. Make sure to carefully read through and understand them in order to avoid potential downtime during the upgrade. All customers will receive this information when we upgrade clusters to v1.26, which also includes the migration procedure.
 
-## Addons
+## Possibility to get a new cluster isntead of migrating
 
-There are now a few options for you as a customer:
-1.  Take ownership over the elastx-provided ingress and certmanager.
+To address the growing demand for new clusters rather than upgrades, customers currently running Kubernetes 1.25 (or earlier) can opt for a new Kubernetes cluster instead of migrating their existing one. This new cluster is provided free of charge for an initial 30-day period, allowing you the flexibility to migrate your services at your own pace. However, if the migration extends beyond 30 days, please note that you will be billed for both clusters during the extended period. We understand the importance of a smooth transition, and our support team is available to assist you throughout the process.
 
+## Ingress
 
-1. Take the opportunity to setup your own ingress/cert-manager for full control and customizability.
+We are updating the way clusters accept incoming traffic by transitioning from accepting traffic on each worker node to utilizing a load balancer. This upgrade, effective from Kubernetes 1.26 onwards, offers automatic addition and removal of worker nodes, providing enhanced fault management and a single IP address for DNS and/or WAF configuration.
 
-1. Continue using your own Ingress/Certmanager solution.
+Before upgrading to Kubernetes 1.26, a migration to the new Load Balancer is necessary. Please review the following scenarios for a smooth transition.
 
-  See notes [Upgrade ingress by customer](../install-ingress/#upgrade-ingress-by-customer).
-  <br>
-  See notes [Install and upgrade cert-manager](../install-certmanager/).
+(Insert flowhart)
 
+### Using Your Own Ingress
 
+If you manage your own addons, you can continue doing so. Starting from Kubernetes 1.26, clusters will no longer have public IP addresses on all nodes by default. We strongly recommend implementing a load balancer in front of your ingress for improved fault tolerance, especially in handling issues better than web browsers.
 
-### Ingress
+### Elastx managed ingress
 
-We are changing the way the cluster default accepts incoming traffic, from accepting traffic to each worker node, to the new solution where a Load Balancer service. The service will automatically be able to add and remove worker nodes. Another consequence is that the customer will have one IP address that needs to be configured on DNS and/or WAF.
+If you are using the Elastx managed ingress, additional details about your setup are required.
 
-In order to enable the customer to not suffer downtime during the upgrade and migration procedure, we will plan to patch the managed ingress to support a Load Balancer service. This allows the customer to change DNS/WAF configuration to point towards the Load Balancer prior to starting the upgrade, which grants the best upgrade/migration experience.
+#### Proxy Deployed in Front of the Ingress (CDN, WAF, etc.)
 
-We will setup a Load Balancer that runs in TCP mode. The operation mode is backwards compatible and will not break any existing configurations however there are a few quirks that the customer need to be aware of. In case the end users connect directly to the Load Balancer (not setting x-forwarded-for in a proxy in front of the ingress) the ingress controller will report source IPs as being the Load Balancer service. This will break setups that filters traffic based on source IP.
+If a proxy is deployed, provide information on the IP addresses used by your proxy. We rely on this information to trust the `x-forwarded-` headers. By default, connections not from your proxy are blocked directly on the load balancer, requiring clients to connect through your proxy.
 
-There are two other options to mitigate this behavior that can be used.
+#### Clients Connect Directly to Your Ingress
 
-1. Change the ingress and Load Balancer to make use of HAProxy proxy protocol. This will ensure that source IPs are preserved. However it requires all clients that send traffic to the ingress to make use of the proxy-protocol and will break backwards compatibility for sending traffic directly to nodes on port 80 and 443.
-2. The customer can choose to install a separate ingress and migrate over the services one by one. The customer need to make sure the ingress of choice support ingress classes and does not make use of the ingress class "nginx" since it is already in use by the ingress we installed.
-
-If you wish to continue make use of the ingress we installed we have created a guide to help you get started [Install and upgrade ingress-nginx](../install-ingress/)
-
+If clients connect directly to the ingress, we will redirect them to the new ingress. To maintain client source IPs, we utilize HAProxy proxy protocol in the load balancer. However, during the change, traffic will only be allowed to the load balancer for approximately 1-2 minutes. Please plan accordingly, as some connections may experience downtime during this transition.
 
 ## Floating IPs
 
