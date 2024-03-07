@@ -11,6 +11,7 @@ This guide will assist you get a working up to date ingress controller and provi
 The guide is based on on ingress-nginx Helm chart, [found here](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx).
 
 ### Prerequisites
+Helm needs to be provided with the correct repository:
 
 1. Setup helm repo
 
