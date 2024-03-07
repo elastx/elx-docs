@@ -5,26 +5,21 @@ weight: 5
 alwaysopen: true
 ---
 
-Prior to Kubernetes 1.26 Elastx Kubernetes CaaS clusters was shipped with [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
-and [cert-manager](https://cert-manager.io/docs/).
+## A quick example
 
-For cluster running Kubernetes 1.26 or later we will publish a guide on how to install and upgrade your ingress and cert-manager deployments yourselves.
+In this example we will expose a web service using an Ingress resource and additionally demonstrate how to have cert-manager request a certificate to enable TLS using Let's Encrypt.
 
-
-# A quick example
-
-In this example we will expose a web service using an Ingress resource and
-additionally demonstrate how to have cert-manager request a certificate to
-enable TLS using Let's Encrypt.
-
-## Prerequisites
+### Prerequisites
 
 1. A DNS record pointing at the public IP address of your worker nodes. In the examples all references to the domain _example.ltd_ must be replaced by the domain you wish to issue certificates for. Configuring DNS is out of scope for this documentation.
-2. For clusters created prior to Kubernetes 1.26: Security groups configured to allow traffic to worker nodes on port 80 and 443.[ An example can be found here.](../../knowledge-base/install-ingress/#security-groups-for-clusters-running-kubernetes-v125)
+2. For clusters created on or after Kubernetes 1.26 you need to ensure there is a Ingress controller and cert-manager installed.
+    * [Our guide to ingress-nginx can be found here](../../knowledge-base/install-ingress/)
+    * [Our guide to install cert-manager can be found here](../../knowledge-base/install-certmanager/)
+    * [Upstream documentation: NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
+    * [Upstream documentation: cert-manager](https://cert-manager.io/docs/)
 
-3. For clusters created on or after Kubernetes 1.26 you need to install [NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/) and [cert-manager](https://cert-manager.io/docs/) in your cluster. A guide on how to [install ingress-nginx can be found here](../../knowledge-base/install-ingress/) and a guide on how to [install cert-manager can be found here](../../knowledge-base/install-certmanager/).
 
-## Create resources
+### Create resources
 
 Create a file called `ingress.yaml` with the following content:
 
