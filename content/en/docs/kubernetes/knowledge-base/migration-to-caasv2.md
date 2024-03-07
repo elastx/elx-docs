@@ -103,7 +103,9 @@ One typical usecase for Floating IPs would be to maintain control over egress IP
 
 We are removing floating IPs for all control-plane nodes. Instead, we use a Load Balancer in front of control-planes to ensure the traffic will be sent to an working control-plane node.
 
-Currently we do not support whitelisting IPs that can access the API. However we expect to have this feature available during Q1 2024.
+Whitelisting of access to the API server is now controlled in the loadbalancer in front of the API.
+Currently, managing the IP-range whitelist requires a [support ticket here](https://support.elastx.se/hc/en-us).
+
 
 ## Node local DNS
 
