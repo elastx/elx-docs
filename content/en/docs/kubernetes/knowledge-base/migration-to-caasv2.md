@@ -8,17 +8,17 @@ weight: 1
 This document will guide through all new changes introduced when migrating to our new kubernetes deployment backend. All customers with a Kubernetes cluster created on Kubernetes 1.25 and earlier are affected.
 
 We have received, and acted upon, customer feedback since our main announcement 2023Q4.
-Two most notable changes:
+We provide two additional paths to reach v1.26:
 
 - We've reverted to continue providing Ingress/Certmanager.
-- We offer an additional cluster for free during 30 days, to become your new cluster.
+- We offer you a new additional cluster (v1.26 or latest version), for free during 30 days.
 
 <br>
 
 
 ![Show-Details](/img/kubernetes/capi-migration/flowchart_shorter_overview.png)
 
-There are a few changes listed below. Make sure to carefully read through and understand them in order to avoid potential downtime during the upgrade. All customers will receive this information when we upgrade clusters to v1.26, which also includes the migration procedure.
+All customers will receive this information when we upgrade clusters to v1.26, which also includes the migration procedure. Make sure to carefully read through and understand the procedure and changes in order to avoid potential downtime during the upgrade. 
 
 **Pre-Upgrade Information:**
 
@@ -85,7 +85,7 @@ If you are using the Elastx managed ingress, additional details about your setup
 
 #### Proxy Deployed in Front of the Ingress (CDN, WAF, etc.)
 
-If a proxy is deployed, provide information on the IP addresses used by your proxy. We rely on this information to trust the `x-forwarded-` headers. By default, connections not from your proxy are blocked directly on the load balancer, requiring clients to connect through your proxy.
+If a proxy is deployed, provide information on the IP addresses used by your proxy. We rely on this information to trust the `x-forwarded-` headers. By default, connections that do not come from your proxy are blocked directly on the load balancer, enforcing clients to connect through your proxy.
 
 #### Clients Connect Directly to Your Ingress
 
@@ -95,9 +95,9 @@ If clients connect directly to the ingress, we will redirect them to the new ing
 
 Floating IPs (FIPS) are currently not supported on our new Kubernetes platform. We are however actively working on adding support and are targeting to have it available early 2024. We will ask all customers if they make use of this feature and in such cases, we will schedule the upgrade when the feature is ready.
 
-If the customer does not make use of floating IPs, in most cases they are used for external whitelisting we will remove the floating IPs from nodes entirely and instead rely on Load Balancers to send traffic to services running inside the cluster.
+By default, we will remove the floating IPs from nodes entirely and instead rely on Load Balancers to send traffic to services running inside the cluster.
 
-One typical usecase for Floating IPs would be to maintain control over egress IP from the cluster. Without using FIPS, the traffic will be SNAT:ed via the hypervisor.
+One typical usecase for Floating IPs would be to maintain control over egress IP from the cluster. Without using FIPS, the egress traffic will be SNAT:ed via the hypervisor.
 
 ## Kubernetes API
 
