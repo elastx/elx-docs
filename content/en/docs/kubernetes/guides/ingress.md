@@ -5,9 +5,9 @@ weight: 5
 alwaysopen: true
 ---
 
-## A quick example
+## Follow along demo
 
-In this example we will expose a web service using an Ingress resource and additionally demonstrate how to have cert-manager request a certificate to enable TLS using Let's Encrypt.
+In this piece, we show all steps to expose a web service using an Ingress resource. Additionally, we demonstrate how to enable TLS, by using cert-manager to request a Let's Encrypt certificate.
 
 ### Prerequisites
 
