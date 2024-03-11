@@ -25,16 +25,15 @@ Helm needs to be provided with the correct repository:
     helm repo update
     ```
 
-### Install ingress-nginx
-We provide two main scenarios of how clients connect to the cluster. The configuration file, `values.yaml`, must reflect the correct scenario. For a complete set of options see the [upstream documentation here](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx#values).
+### Generate values.yaml
+We provide settings for two main scenarios of how clients connect to the cluster. The configuration file, `values.yaml`, must reflect the correct scenario. For a complete set of options see the [upstream documentation here](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx#values).
 
 
 >**NOTE**: Whitelisting IPs is achieved by specifying `loadBalancerSourceRanges` (see below).
 
-       
-1. Provide the correct configuration file for your scenario
-    
-      **Customer connects directly to the Ingress:**
+
+
+  A.  **Customer connects directly to the Ingress:**
   
      ```yaml
       controller:
@@ -56,7 +55,7 @@ We provide two main scenarios of how clients connect to the cluster. The configu
      ```
 
 
-      **Customer connects via Proxy:**
+  B.  **Customer connects via Proxy:**
 
      ```yaml
       controller:
@@ -77,56 +76,56 @@ We provide two main scenarios of how clients connect to the cluster. The configu
         enabled: true
      ```
 
+### Install ingress-nginx
+Use the values.yaml generated in the [previous step](../install-ingress/#generate-valuesyaml).
 
-2. Install ingress-nginx using Helm
+  ```bash
+  helm install ingress-nginx ingress-nginx/ingress-nginx --values values.yaml --namespace ingress-nginx --create-namespace
+  ```
 
-    ```bash
-    helm install ingress-nginx ingress-nginx/ingress-nginx --values values.yaml --namespace ingress-nginx --create-namespace
-    ```
-  
-    Example output:
-  
-    ```log
-    NAME: ingress-nginx
-    LAST DEPLOYED: Tue Jul 18 11:26:17 2023
-    NAMESPACE: default
-    STATUS: deployed
-    REVISION: 1
-    TEST SUITE: None
-    NOTES:
-    The ingress-nginx controller has been installed.
-    It may take a few minutes for the Load Balancer IP to become available.
-    You can watch the status by running 'kubectl --namespace default get services -o wide -w ingress-nginx-controller'
-    [..]
-    ```
+  Example output:
+
+  ```log
+  NAME: ingress-nginx
+  LAST DEPLOYED: Tue Jul 18 11:26:17 2023
+  NAMESPACE: default
+  STATUS: deployed
+  REVISION: 1
+  TEST SUITE: None
+  NOTES:
+  The ingress-nginx controller has been installed.
+  It may take a few minutes for the Load Balancer IP to become available.
+  You can watch the status by running 'kubectl --namespace default get services -o wide -w ingress-nginx-controller'
+  [..]
+  ```
 
 
 ### Upgrade ingress-nginx
+  Use the values.yaml generated in the [previous step](../install-ingress/#generate-valuesyaml).
 
-1. Run the upgrade
-  
-    ```bash
-    helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx --values values.yaml --namespace ingress-nginx
-    ```
-    Example output:
-  
-    ```log
-    Release "ingress-nginx" has been upgraded. Happy Helming!
-    NAME: ingress-nginx
-    LAST DEPLOYED: Tue Jul 18 11:29:41 2023
-    NAMESPACE: default
-    STATUS: deployed
-    REVISION: 2
-    TEST SUITE: None
-    NOTES:
-    The ingress-nginx controller has been installed.
-    It may take a few minutes for the Load Balancer IP to be available.
-    You can watch the status by running 'kubectl --namespace default get services -o wide -w ingress-nginx-controller'
-    [..]
-    ```
+
+  ```bash
+  helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx --values values.yaml --namespace ingress-nginx
+  ```
+  Example output:
+
+  ```log
+  Release "ingress-nginx" has been upgraded. Happy Helming!
+  NAME: ingress-nginx
+  LAST DEPLOYED: Tue Jul 18 11:29:41 2023
+  NAMESPACE: default
+  STATUS: deployed
+  REVISION: 2
+  TEST SUITE: None
+  NOTES:
+  The ingress-nginx controller has been installed.
+  It may take a few minutes for the Load Balancer IP to be available.
+  You can watch the status by running 'kubectl --namespace default get services -o wide -w ingress-nginx-controller'
+  [..]
+  ```
 
 ### Remove ingress-nginx
-The best practice is to use the helm template method to remove the ingress. This allows for proper removal of lingering resources, then remove the namespace.
+The best practice is to use the helm template method to remove the ingress. This allows for proper removal of lingering resources, then remove the namespace. Use the values.yaml generated in the [previous step](../install-ingress/#generate-valuesyaml).
 >**Note**:
     Avoid running multiple ingress controllers using the same `IngressClass`. <br>
     [See more information here](https://kubernetes.github.io/ingress-nginx/user-guide/multiple-ingress/). 
