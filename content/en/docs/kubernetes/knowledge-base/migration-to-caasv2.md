@@ -11,7 +11,7 @@ We have received, and acted upon, customer feedback since our main announcement 
 We provide two additional paths to reach v1.26:
 
 - We've reverted to continue providing Ingress/Certmanager.
-- We offer you a new additional cluster (v1.26 or latest version), for free during 30 days.
+- To assist with your transition we can offer you an additional cluster (v1.26 or latest version) up to 30 days at no extra charge.
 
 <br>
 
