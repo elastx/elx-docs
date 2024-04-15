@@ -26,11 +26,11 @@ External resources that explains how DMARC, DKIM and SPF works:
 - [Cloudflare - What is a DNS DKIM record?](https://www.cloudflare.com/learning/dns/dns-records/dns-dkim-record/)
 - [Cloudflare - What is a DNS SPF record?](https://www.cloudflare.com/learning/dns/dns-records/dns-spf-record/)
 
-## Limited DKIM support
+## Options for DKIM support
 
-At this time the Elastx Mail Relay service does not sign emails with DKIM.
+Either you let Elastx handle DKIM signing or you make sure emails are signed with DKIM before they are passed to the Elastx Mail Relay service.
 
-If you want to use DKIM you will need to ensure the emails are signed (have a DKIM header) before being passed on to the Elastx Mail Relay service.
+If you let Elastx handle DKIM signing, you will be provided a value for the DKIM DNS record that you need to set for the domain you are sending emails from.
 
 ## Configuration
 
@@ -74,6 +74,24 @@ echo "elastx-mrs=$(echo -n "user@domain.com" | sha256sum | cut -d ' ' -f 1)"
 ```
 
 Note that the address used above should be your username email address, not your sender address.
+
+#### DKIM DNS record
+
+If you have chosen to let Elastx sign your emails with DKIM;
+
+DNS TXT record should be created for `elastx._domainkey.yourdomain.com` with value as provided by Elastx.
+
+Due to the size of the record it will be split into multiple TXT records. Ie. a DNS lookup will show something similar to:
+
+```shell
+$ dig elastx._domainkey.yourdomain.com TXT
+(..)
+;; ANSWER SECTION:  
+elastx._domainkey.elastx.no. 1800 IN    TXT     "v=DKIM1; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwHsOJDTnxAkcz/RBek0XDqLaSZov/icY7mZHUSIV7gbHRVLhMWKvWqDV56WdbO+tVo2  
+Gaf298Jo0WxwGsIUe0zi6dT0WXgv2zhP0KDT5aRu4q34SsLvrDe218xOC677gm6xUcFaqIMeiU73b9osCDlAxnNSwa2pjxx9yeO6py75tfzw86YkKUvPXPUW754E6mu/k+/4q" "z4NeFnGrCyHLr5rlyxpljMyL8eD13VRP3am  
+kCl3Bcgkzt/JWLLa3/9X+N8gkWbB1W2RHAxacvxErSN5K8UHOAT3cUR3qvPGjE4iIKLoU1IkH7s8Gud5gHkiiY5opgDhdfz2kiILyrSv5DQIDAQAB"
+(..)
+```
 
 ### Multiple users/accounts
 
