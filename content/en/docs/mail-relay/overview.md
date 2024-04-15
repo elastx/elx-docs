@@ -87,7 +87,7 @@ Due to the size of the record it will be split into multiple TXT records. Ie. a 
 $ dig elastx._domainkey.yourdomain.com TXT
 (..)
 ;; ANSWER SECTION:  
-elastx._domainkey.elastx.no. 1800 IN    TXT     "v=DKIM1; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwHsOJDTnxAkcz/RBek0XDqLaSZov/icY7mZHUSIV7gbHRVLhMWKvWqDV56WdbO+tVo2  
+elastx._domainkey.yourdomain.com. 1800 IN    TXT     "v=DKIM1; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwHsOJDTnxAkcz/RBek0XDqLaSZov/icY7mZHUSIV7gbHRVLhMWKvWqDV56WdbO+tVo2  
 Gaf298Jo0WxwGsIUe0zi6dT0WXgv2zhP0KDT5aRu4q34SsLvrDe218xOC677gm6xUcFaqIMeiU73b9osCDlAxnNSwa2pjxx9yeO6py75tfzw86YkKUvPXPUW754E6mu/k+/4q" "z4NeFnGrCyHLr5rlyxpljMyL8eD13VRP3am  
 kCl3Bcgkzt/JWLLa3/9X+N8gkWbB1W2RHAxacvxErSN5K8UHOAT3cUR3qvPGjE4iIKLoU1IkH7s8Gud5gHkiiY5opgDhdfz2kiILyrSv5DQIDAQAB"
 (..)
