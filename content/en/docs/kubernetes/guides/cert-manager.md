@@ -5,18 +5,16 @@ weight: 5
 alwaysopen: true
 ---
 
+Cert-manager will obtain certificates from a variety of Issuers and ensure the certificates are valid and up-to-date, and will attempt to renew certificates at a configured time before expiry.
 
-cert-manager is a powerful X.509 certificate controller for Kubernetes.
-It will obtain certificates from a variety of Issuers and ensure the certificates are valid and up-to-date, and will attempt to renew certificates at a configured time before expiry.
-
-In this guide we will make use of a Cloudflare managed DNS, and a cert-manager like in [our guide](../install-certmanager) to setup LetsEncrypt certificate on a test deployment.
+In this guide we will use a Cloudflare managed DNS and cert-manager to provide LetsEncrypt certificates for test deployments.
 
 
 ### Prerequisites
-* DNS entry on Cloudflare pointing to LoadBalancer IP
+* DNS managed on Cloudflare
 * Cloudflare API token
-* Installed cert-manager
-* Installed IngressController [nginx guide here](../install-ingress)
+* Installed cert-manager. [See our guide here](../../knowledge-base/install-certmanager).
+* Installed IngressController. [See our guide here](../../knowledge-base/install-ingress).
 
 ### Setup ClusterIssuer
 Create a file to hold the secret of your api token for your Cloudflare DNS, and the ClusterIssuer configuration adapted for Cloudflare.
@@ -56,94 +54,18 @@ kubectl apply -f cloudflare-issuer.yml
 The clusterIssuer is now ready. Example output:
 
 ```code
-k get clusterissuers.cert-manager.io 
+kubectl get clusterissuers.cert-manager.io 
 NAME                READY   AGE
 cloudflare-issuer   True    6d18h
 ```
 
 
-### Expose a workload using a DNSprovider managed DNS
 
-Let's setup a workload, and expose it via the ingress controller. In this example we will use a DNS record (test1.domain.ltd) that we manage at the DNS provider.
+### Expose a workload and secure with Let's encrypt certificate
 
-The DNS setup is as follows:
-An `A record` ("test1.domain.ltd") points to the loadbalancer IP of the cluster.
+In this section we will setup a deployment, with it's accompanying service and ingress object. The ingress object will request a certificate for test2.domain.ltd, and once fully up and running, should provide https://test2.domain.ltd with a valid letsencrypt certificate.
 
-
-```workload1.yaml
-
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: echo1-dep
-spec:
-  selector:
-    matchLabels:
-      app: echo1
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: echo1
-    spec:
-      containers:
-      - name: echo1
-        image: hashicorp/http-echo
-        args:
-        - "-text=echo1"
-        ports:
-        - containerPort: 5678
-      securityContext:
-        runAsUser: 1001
-        fsGroup: 1001
----
-apiVersion: v1
-kind: Service
-metadata:
-  labels:
-    app: echo1
-  name: echo1-service
-spec:
-  ports:
-    - protocol: TCP
-      port: 5678
-      targetPort: 5678
-  selector:
-    app: echo1
-  type: ClusterIP
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: echo1-ingress
-  annotations:
-    cert-manager.io/cluster-issuer: cloudflare-issuer
-    kubernetes.io/ingress.class: "nginx"
-spec:
-  ingressClassName: nginx
-  tls:
-  - hosts:
-    - test1.domain.ltd
-    secretName: test1-domain-tls
-  rules:
-  - host: test1.domain.ltd
-    http:
-      paths:
-      - path: /
-        pathType: ImplementationSpecific
-        #pathType: Prefix
-        backend:
-          service:
-            name: echo1-service
-            port:
-              number: 5678
-```
-
-
-### Expose a workload using wildcard DNS managed by cert-manager
-
-In the following example, we'll use the same `ClusterIssuer` but let cert-manager issue new certificates for any added ingress object.
-This setup requires a different setup in the DNS provider, notably the "*" record. 
+We'll use the created `ClusterIssuer` and let cert-manager request new certificates for any added ingress object. This setup requires the "*" record setup in the DNS provider.
 
 This is how the DNS is setup in this particular example:
 A `A record` ("domain.ltd") points to the loadbalancer IP of the cluster.
@@ -222,4 +144,3 @@ spec:
 ```
 
 
-k events -w -n echo5
