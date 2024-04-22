@@ -9,6 +9,8 @@ Cert-manager will obtain certificates from a variety of Issuers and ensure the c
 
 In this guide we will use a Cloudflare managed DNS and cert-manager to provide LetsEncrypt certificates for test deployments.
 
+The guide is suitable if you have a domain connected to a single cluster, and would like a to issue/manage certificates from within kubernetes.
+
 
 ### Prerequisites
 * DNS managed on Cloudflare
@@ -106,7 +108,8 @@ metadata:
   labels:
     app: echo2
   name: echo2-service
-  namespace: echo2
+  namespace: ech
+  2
 spec:
   ports:
     - protocol: TCP
@@ -144,3 +147,10 @@ spec:
 ```
 
 
+The DNS challenge and certificate issue process takes a couple of minutes. You can follow the progress by watching:
+
+```bash
+kubectl events -n cert-manager
+```
+
+Once completed, it shall all be accessible at http://test2.domain.ltd
