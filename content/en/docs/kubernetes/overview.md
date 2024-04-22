@@ -86,4 +86,4 @@ Since Elastx Private Kubernetes 2.0 we offer auto scaling of workload nodes. Thi
 
 We offer a managed cert-manager and a managed NGINX Ingress Controller. 
 
-If you are interested in removing any limitations, we've assembled guides with everything you need to install the same IngressController and cert-manager as we provide. This will give you full control. The various resources gives configuration examples, and instructions for lifecycle management. These can be found in the sections [Knowledge Base](../knowledge-base), [Getting Started](../getting-started) and [Guides](../guides).
+If you are interested in removing any limitations, we've assembled guides with everything you need to install the same IngressController and cert-manager as we provide. This will give you full control. The various resources gives configuration examples, and instructions for lifecycle management. These can be found in the sections [Knowledge Base](../knowledge-base/), [Getting Started](../getting-started/) and [Guides](../guides/).
