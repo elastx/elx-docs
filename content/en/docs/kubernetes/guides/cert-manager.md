@@ -15,8 +15,8 @@ The guide is suitable if you have a domain connected to a single cluster, and wo
 ### Prerequisites
 * DNS managed on Cloudflare
 * Cloudflare API token
-* Installed cert-manager. [See our guide here](../../knowledge-base/install-certmanager).
-* Installed IngressController. [See our guide here](../../knowledge-base/install-ingress).
+* Installed cert-manager. [See our guide here](../../knowledge-base/install-certmanager/).
+* Installed IngressController. [See our guide here](../../knowledge-base/install-ingress/).
 
 ### Setup ClusterIssuer
 Create a file to hold the secret of your api token for your Cloudflare DNS, and the ClusterIssuer configuration adapted for Cloudflare.
