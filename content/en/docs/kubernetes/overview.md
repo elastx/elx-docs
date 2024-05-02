@@ -44,6 +44,7 @@ The standard configuration consist of the following:
   v1-c2-m8-d80
 
 ### Minimal configuration
+
 * Three control plane nodes, one in each of our availability zones. Flavor:
   v1-c2-m8-d80
 * One worker node, Flavor:
@@ -51,9 +52,8 @@ The standard configuration consist of the following:
 
   This is the minimal configuration offered. Scaling to larger flavors and adding nodes are supported. Autoscaling is not supported with a single worker node.
 
-> **Note:** 
+> **Note:**
 SLA is different for minimal configuration type of cluster. SLA's can be found [here](https://elastx.se/en/kubernetes/sla).
-
 
 ## Good to know
 
@@ -63,17 +63,20 @@ We expect customers to design their setup to not require access to Openstack Hor
 This means, do not place other instances in the same Openstack project, nor utilize Swift (objectstore) in the same project.
 We are happy to provide a separate Swiftproject, and a secondary Openstack project for all needs. We do not charge per each Openstack project!
 
-
 ### Persistent volumes
 
 Cross availability zone mounting of volumes is not supported. Therefore, volumes
-can only be mounted by nodes in the same availability zone. 
+can only be mounted by nodes in the same availability zone.
 
 ### Cluster subnet CIDR
 
-The default cluster node network CIDR is _10.128.0.0/22_. An alternate CIDR can
+The default cluster node network CIDR is *10.128.0.0/22*. An alternate CIDR can
 be specified on cluster creation. Changing CIDR after creation requires
 rebuilding the cluster.
+
+### Worker nodes Floating IPs
+
+By default, our clusters come with nodes that do not have any Floating IPs attached to them. If, for any reason, you require Floating IPs on your workload nodes, please inform us, and we can configure your cluster accordingly. It's worth noting that the most common use case for Floating IPs is to ensure predictable source IPs. However, please note that enabling or disabling Floating IPs will necessitate the recreation of all your nodes, one by one.
 
 ### Ordering and scaling
 
@@ -84,6 +87,6 @@ Since Elastx Private Kubernetes 2.0 we offer auto scaling of workload nodes. Thi
 
 ### Optional features and add-ons
 
-We offer a managed cert-manager and a managed NGINX Ingress Controller. 
+We offer a managed cert-manager and a managed NGINX Ingress Controller.
 
 If you are interested in removing any limitations, we've assembled guides with everything you need to install the same IngressController and cert-manager as we provide. This will give you full control. The various resources gives configuration examples, and instructions for lifecycle management. These can be found in the sections [Knowledge Base](../knowledge-base/), [Getting Started](../getting-started/) and [Guides](../guides/).
