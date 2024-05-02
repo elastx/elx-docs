@@ -13,16 +13,13 @@ We provide two additional paths to reach v1.26:
 - We've reverted to continue providing Ingress/Certmanager.
 - To assist with your transition we can offer you an additional cluster (v1.26 or latest version) up to 30 days at no extra charge.
 
-<br>
+![Show-Details](/img/kubernetes/capi-migration/upgradepathv5.png)
 
-
-![Show-Details](/img/kubernetes/capi-migration/flowchart_shorter_overview.png)
-
-All customers will receive this information when we upgrade clusters to v1.26, which also includes the migration procedure. Make sure to carefully read through and understand the procedure and changes in order to avoid potential downtime during the upgrade. 
+All customers will receive this information when we upgrade clusters to v1.26, which also includes the migration procedure. Make sure to carefully read through and understand the procedure and changes in order to avoid potential downtime during the upgrade.
 
 **Pre-Upgrade Information:**
 
-* The following overall steps are crucial for a seamless upgrade process:
+- The following overall steps are crucial for a seamless upgrade process:
   1. Date for the upgrade is agreed upon.
   2. For users of Elastx managed ingress opting to continue with our management services:
       - Elastx integrates a load balancer into the ingress service. The load balancer is assigned an external IP-address that will be used for all DNS records post-transition (do not point DNS to this IP at this point).
@@ -60,8 +57,6 @@ All customers will receive this information when we upgrade clusters to v1.26, w
 
 - Users are advised to download a new kubeconfig from the object store for continued access and management.
 
-
-
 ## Possibility to get a new cluster instead of migrating
 
 To address the growing demand for new clusters rather than upgrades, customers currently running Kubernetes 1.25 (or earlier) can opt for a new Kubernetes cluster instead of migrating their existing one. The new cluster can be of version 1.26 or the latest available (1.29 at the moment). This new cluster is provided free of charge for an initial 30-day period, allowing you the flexibility to migrate your services at your own pace. However, if the migration extends beyond 30 days, please note that you will be billed for both clusters during the extended period. We understand the importance of a smooth transition, and our support team is available to assist you throughout the process.
@@ -93,11 +88,13 @@ If clients connect directly to the ingress, we will redirect them to the new ing
 
 ## Floating IPs
 
-Floating IPs (FIPS) are currently not supported on our new Kubernetes platform. We are however actively working on adding support and are targeting to have it available early 2024. We will ask all customers if they make use of this feature and in such cases, we will schedule the upgrade when the feature is ready.
+Floating IPs (FIPs) are now available for customers who choose to opt in. As part of the upgrade to Kubernetes 1.26, floating IPs will be removed from nodes by default. Instead, Load Balancers will be employed to efficiently direct traffic to services within the cluster.
 
-By default, we will remove the floating IPs from nodes entirely and instead rely on Load Balancers to send traffic to services running inside the cluster.
+Please note that current floating IPs will be lost if customers do not opt in for this feature during the upgrade process.
 
-One typical usecase for Floating IPs would be to maintain control over egress IP from the cluster. Without using FIPS, the egress traffic will be SNAT:ed via the hypervisor.
+Should you wish to continue utilizing Floating IPs or enable them in the future, simply inform us, and we'll ensure to assist you promptly.
+
+A primary use case where Floating IPs prove invaluable is in retaining control over egress IP from the cluster. Without leveraging FIPs, egress traffic will be SNAT'ed via the hypervisor.
 
 ## Kubernetes API
 
@@ -105,7 +102,6 @@ We are removing floating IPs for all control-plane nodes. Instead, we use a Load
 
 Whitelisting of access to the API server is now controlled in the loadbalancer in front of the API.
 Currently, managing the IP-range whitelist requires a [support ticket here](https://support.elastx.se/hc/en-us).
-
 
 ## Node local DNS
 

@@ -18,7 +18,6 @@ In this piece, we show all steps to expose a web service using an Ingress resour
     * [Upstream documentation: NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
     * [Upstream documentation: cert-manager](https://cert-manager.io/docs/)
 
-
 ### Create resources
 
 Create a file called `ingress.yaml` with the following content:
@@ -95,8 +94,10 @@ Then create the resources in the cluster by running:
 
 Run `kubectl get ingress` and you should see output similar to this:
 
-    NAME                     CLASS   HOSTS         ADDRESS         PORTS     AGE
-    my-web-service-ingress   nginx   example.tld   91.197.41.241   80, 443   39s
+  ```code
+  NAME                     CLASS   HOSTS         ADDRESS         PORTS     AGE
+  my-web-service-ingress   nginx   example.tld   91.197.41.241   80, 443   39s
+  ```
 
 If not, wait a while and try again. Once you see output similar to the above you
 should be able to reach your service at http://example.tld.
@@ -104,7 +105,6 @@ should be able to reach your service at http://example.tld.
 ### Exposing TCP services
 
 If you wish to expose [TCP services](https://kubernetes.github.io/ingress-nginx/user-guide/exposing-tcp-udp-services/) note that the _tcp-services_ is located in the _default_ namespace in our clusters.
-
 
 ## Enabling TLS
 
@@ -138,7 +138,7 @@ by running:
 `kubectl apply -f issuer.yaml`
 
 Next edit the file called `ingress.yaml` from the previous example and make sure
-the *Ingress* resource matches the example below:
+the _Ingress_ resource matches the example below:
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -166,7 +166,7 @@ spec:
               number: 9376
 ```
 
-Make sure to replace all references to *example.tld* by your own domain. Then
+Make sure to replace all references to _example.tld_ by your own domain. Then
 update the resources by running:
 `kubectl apply -f ingress.yaml`
 
@@ -200,7 +200,7 @@ spec:
           app.kubernetes.io/name: ingress-nginx
 ```
 
-# Advanced usage
+## Advanced usage
 
 For more advanced use cases please refer to the documentation provided by each
 project or contact our support:

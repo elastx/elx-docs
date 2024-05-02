@@ -32,7 +32,6 @@ Below we have a deployment called `echoserver` we can use for this example.
 
 1. Start off by creating a file called `deployment.yaml` with the content of the deployment below:
 
-
     ```yaml
     ---
     apiVersion: apps/v1
@@ -134,36 +133,36 @@ After your pods are created we need to make sure to expose our deployment. In th
 
 Now if we open our web browser and visits the IP address we should get a response looking something like this:
 
-```
-Hostname: echoserver-545465d8dc-ghrj6
+  ```code
+  Hostname: echoserver-545465d8dc-ghrj6
 
-Pod Information:
-	-no pod information available-
+  Pod Information:
+    -no pod information available-
 
-Server values:
-	server_version=nginx: 1.13.3 - lua: 10008
+  Server values:
+    server_version=nginx: 1.13.3 - lua: 10008
 
-Request Information:
-	client_address=192.168.252.64
-	method=GET
-	real path=/
-	query=
-	request_version=1.1
-	request_scheme=http
-	request_uri=http://185.24.134.39:8080/
+  Request Information:
+    client_address=192.168.252.64
+    method=GET
+    real path=/
+    query=
+    request_version=1.1
+    request_scheme=http
+    request_uri=http://185.24.134.39:8080/
 
-Request Headers:
-	accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
-	accept-encoding=gzip, deflate
-	accept-language=en-US,en;q=0.9,sv;q=0.8
-	host=185.24.134.39
-	upgrade-insecure-requests=1
-	user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
-	x-forwarded-for=90.230.66.18
+  Request Headers:
+    accept=text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+    accept-encoding=gzip, deflate
+    accept-language=en-US,en;q=0.9,sv;q=0.8
+    host=185.24.134.39
+    upgrade-insecure-requests=1
+    user-agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36
+    x-forwarded-for=90.230.66.18
 
-Request Body:
-	-no body in request-
-```
+  Request Body:
+    -no body in request-
+  ```
 
 The Hostname shows which pod we reached and if we refresh the page we should be able to see this value change.
 

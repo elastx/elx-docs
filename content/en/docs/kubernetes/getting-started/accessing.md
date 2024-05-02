@@ -14,7 +14,7 @@ installing it on your system can be found by following the link.
 You may of course use any Kubernetes client you wish to access your cluster
 however setting up other clients is beyond the scope of this documentation.
 
-# Credentials (kubeconfig)
+## Credentials (kubeconfig)
 
 Once you have a client you can use to access the cluster you will need to fetch
 the credentials for you cluster. You can find the credentials for your cluster
@@ -41,7 +41,7 @@ configure kubectl to utilize them. [The official
 documentation](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/)
 covers this process in detail.
 
-# Verify access
+## Verify access
 
 To verify you've got access to the cluster you can run something like this:
 
@@ -60,7 +60,7 @@ If your output looks similar then you should be good to go! If it looks very
 different or contains error messages, don't hesitate to contact our support if
 you can't figure out how to solve it on your own.
 
-# Instructions for older versions
+## Instructions for older versions
 
 Everything under this section is only for clusters running older versions of our private Kubernetes service.
 
@@ -81,12 +81,13 @@ the "Add Rule" button.
 For example, to allow access from the ip address _1.2.3.4_ configure the rule as
 follows:
 
-    Rule: Custom TCP Rule
-    Direction: Ingress
-    Open Port: Port
-    Port: 6443
-    Remote: CIDR
-    CIDR: 1.2.3.4/32
+```code
+Rule: Custom TCP Rule
+Direction: Ingress
+Open Port: Port
+Port: 6443
+Remote: CIDR
+CIDR: 1.2.3.4/32
+```
 
-Once you've set up rules that allow you to access your cluster you are ready to
-verify that you have got access.
+Once you've set up rules that allow you to access your cluster you are ready to verify access.
