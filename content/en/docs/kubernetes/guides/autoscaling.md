@@ -16,7 +16,7 @@ A nodegroup is a set of nodes, They span over all 3 of our availability zones.
 All nodes in a nodegroup are using the same flavour. This means if you want to mix flavours in your cluster there will be at least one nodegroup per flavor. We can also create custom nodegroups upon requests meaning you can have 2 nodegroups with the same flavour.
 
 By default clusters are created with one nodegroup called "worker".
-When listing nodes by running `kubectl get nodes` you can see the node group by looking at the nodes name. All node names begin with `clustername` - `nodegroup`.
+When listing nodes by running `kubectl get nodes` you can see the node group by looking at the node name. All node names begin with `clustername` - `nodegroup`.
 
 In the example below we have the cluster `hux-lab1` and can see the default workers are located in the nodegroup `worker` and additionally, the added nodegroup `nodegroup2` with a few extra nodes.
 

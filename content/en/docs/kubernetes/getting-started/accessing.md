@@ -81,14 +81,13 @@ the "Add Rule" button.
 For example, to allow access from the ip address _1.2.3.4_ configure the rule as
 follows:
 
-    ```code
-    Rule: Custom TCP Rule
-    Direction: Ingress
-    Open Port: Port
-    Port: 6443
-    Remote: CIDR
-    CIDR: 1.2.3.4/32
-    ```
+```code
+Rule: Custom TCP Rule
+Direction: Ingress
+Open Port: Port
+Port: 6443
+Remote: CIDR
+CIDR: 1.2.3.4/32
+```
 
-Once you've set up rules that allow you to access your cluster you are ready to
-verify that you have got access.
+Once you've set up rules that allow you to access your cluster you are ready to verify access.
