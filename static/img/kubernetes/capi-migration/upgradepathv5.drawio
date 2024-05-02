@@ -1,0 +1,459 @@
+<mxfile host="app.diagrams.net" modified="2024-05-02T14:15:00.644Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="gmxq0J0HQoMZK1TcQmAh" version="24.0.2" type="device" pages="3">
+  <diagram name="Main flowchart" id="UVeJwMqddr4o5iSUF7Ny">
+    <mxGraphModel dx="803" dy="772" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="2400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Fy50DDdIJUFJX9FduXWH-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Fy50DDdIJUFJX9FduXWH-11" target="Fy50DDdIJUFJX9FduXWH-52" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fy50DDdIJUFJX9FduXWH-11" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;30day Free of charge new cluster v1.26 or v1.29&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="510" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Fy50DDdIJUFJX9FduXWH-23" value="Upgrade" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Fy50DDdIJUFJX9FduXWH-12" target="Fy50DDdIJUFJX9FduXWH-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fy50DDdIJUFJX9FduXWH-26" value="Migrate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="Fy50DDdIJUFJX9FduXWH-12" target="Fy50DDdIJUFJX9FduXWH-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fy50DDdIJUFJX9FduXWH-12" value="Upgrade or Migrate?" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Fy50DDdIJUFJX9FduXWH-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Fy50DDdIJUFJX9FduXWH-15" target="Fy50DDdIJUFJX9FduXWH-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fy50DDdIJUFJX9FduXWH-20" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="Fy50DDdIJUFJX9FduXWH-19" vertex="1" connectable="0">
+          <mxGeometry x="-0.1419" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Fy50DDdIJUFJX9FduXWH-22" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="Fy50DDdIJUFJX9FduXWH-15" target="Fy50DDdIJUFJX9FduXWH-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Fy50DDdIJUFJX9FduXWH-15" value="Adapted to the use of coredns instead of nodelocaldns?" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="782" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Fy50DDdIJUFJX9FduXWH-18" value="See documentation and fix this first." style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="151" y="782" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Fy50DDdIJUFJX9FduXWH-21" value="Proceed to information on ingress" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="320" y="889" width="127" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Fy50DDdIJUFJX9FduXWH-52" value="Ask for cluster" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="510" y="785" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lRVam8Hos2i1mP0UMyrZ-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="kp95BDaZumNE8r471OJa-1" target="Fy50DDdIJUFJX9FduXWH-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="kp95BDaZumNE8r471OJa-1" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Road to v1.26&lt;/span&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="320.5" y="581" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="Vn9GEK0yUz7taQXveGK1-3" target="Vn9GEK0yUz7taQXveGK1-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="Vn9GEK0yUz7taQXveGK1-3" target="Vn9GEK0yUz7taQXveGK1-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-3" value="Who operates the ingress?" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="357" y="1540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Vn9GEK0yUz7taQXveGK1-4" target="Vn9GEK0yUz7taQXveGK1-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-4" value="Self Managed Ingress" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="441" y="1611" width="120" height="59" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.195;entryY=0.014;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="Vn9GEK0yUz7taQXveGK1-5" target="Vn9GEK0yUz7taQXveGK1-13" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="392" y="1761" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Vn9GEK0yUz7taQXveGK1-5" target="Vn9GEK0yUz7taQXveGK1-11" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="295" y="1762" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-5" value="Ingress Elastx Managed" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="277" y="1611" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-8" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="27" y="1354" as="sourcePoint" />
+            <mxPoint x="1154" y="1328" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="Vn9GEK0yUz7taQXveGK1-11" target="ZvNc9lJzoOSVrYC_enmH-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-11" value="Clients connect directly to ingress" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="212" y="1702" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Vn9GEK0yUz7taQXveGK1-13" target="Vn9GEK0yUz7taQXveGK1-43" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-13" value="Clients connect via proxy (WAF/CDN etC)" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="353" y="1702" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Vn9GEK0yUz7taQXveGK1-16" target="ZvNc9lJzoOSVrYC_enmH-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-16" value="Ensure Loadbalancer is used" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="490" y="1702" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" parent="1" source="Vn9GEK0yUz7taQXveGK1-43" target="ZvNc9lJzoOSVrYC_enmH-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="410" y="1870" as="sourcePoint" />
+            <mxPoint x="369.44000000000005" y="1901.98" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-43" value="We need the IP address of the Proxy (to limit access only to this proxy)" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="353" y="1787" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-52" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Vn9GEK0yUz7taQXveGK1-53" target="Vn9GEK0yUz7taQXveGK1-54" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-53" value="Do you use Whitelisting of source IP for clients?" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="92" y="2320" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Vn9GEK0yUz7taQXveGK1-54" value="Ensure Loadbalancer is used ant not traffic towards worker node FIP." style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="82" y="2420" width="140" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-2" target="ZvNc9lJzoOSVrYC_enmH-7" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-2" value="Incoming traffic is migrated to the loadbalancer" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="272" y="1869" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-7" value="Traffic migrated" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="490" y="1869" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-12" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-14" target="ZvNc9lJzoOSVrYC_enmH-20" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-13" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-14" target="ZvNc9lJzoOSVrYC_enmH-19" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="692" y="2425" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-14" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Require FIPS for predictable egress IP?&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="492" y="2315" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-16" target="ZvNc9lJzoOSVrYC_enmH-40" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-16" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;30day Free of charge new cluster v1.26 or v1.29&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="682" y="2435" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-17" value="Upgrade" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-19" target="ZvNc9lJzoOSVrYC_enmH-24" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-18" value="Migrate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-19" target="ZvNc9lJzoOSVrYC_enmH-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-19" value="Upgrade or Migrate?" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="492" y="2435" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-20" value="Not yet supported. Abort" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="292" y="2315" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-24" target="ZvNc9lJzoOSVrYC_enmH-25" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-22" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ZvNc9lJzoOSVrYC_enmH-21" vertex="1" connectable="0">
+          <mxGeometry x="-0.1419" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-23" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-24" target="ZvNc9lJzoOSVrYC_enmH-29" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-24" value="Adapted to the use of coredns instead of nodelocaldns?" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="492" y="2555" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-25" value="See documentation and fix this first." style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="292" y="2555" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-26" value="elastx" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-29" target="ZvNc9lJzoOSVrYC_enmH-31" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-27" value="Already installed" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-38" target="ZvNc9lJzoOSVrYC_enmH-35" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="612" y="2845" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-28" value="Customer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-29" target="ZvNc9lJzoOSVrYC_enmH-38" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-29" value="Maintainer of Ingress/Certmanager&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="492" y="2675" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-30" value="Dns migrated" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-31" target="ZvNc9lJzoOSVrYC_enmH-39" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-31" value="Elastx expects the customer to migrate DNS to the loadbalancer IP connected to ingress during preparation" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="693" y="2655" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-35" target="ZvNc9lJzoOSVrYC_enmH-43" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="682" y="3005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-33" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ZvNc9lJzoOSVrYC_enmH-32" vertex="1" connectable="0">
+          <mxGeometry x="0.2152" y="-1" relative="1" as="geometry">
+            <mxPoint x="-18" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-34" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-35" target="ZvNc9lJzoOSVrYC_enmH-36" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-35" value="Do you use loadbalancer instead of worker node IP to ingest traffic?" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="492" y="2984" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-36" value="Please move to loadbalancer" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="292" y="2984" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-37" value="Install new&lt;br&gt;Ingress" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-38" target="ZvNc9lJzoOSVrYC_enmH-47" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="682" y="2835" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-38" value="Install/use your own Ingress" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="492" y="2795" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-39" value="Ready for upgrade" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="891" y="2897" width="111" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-40" value="Ask for cluster" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="842" y="2435" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-41" value="No" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-43" target="ZvNc9lJzoOSVrYC_enmH-39" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1012" y="2947" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-42" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-43" target="ZvNc9lJzoOSVrYC_enmH-45" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600.6600000000001" y="2985" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-43" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Proxy in front of cluster?&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="692" y="2984" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-44" value="Completed" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="ZvNc9lJzoOSVrYC_enmH-39" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="861" y="2960" as="targetPoint" />
+            <mxPoint x="811" y="2917" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-45" value="See Proxy configuration Examples for Ingress" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="692" y="2887" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-46" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-47" target="ZvNc9lJzoOSVrYC_enmH-45" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-47" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Proxy in front of cluster?&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="692" y="2795" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-48" value="No" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;edgeStyle=orthogonalEdgeStyle;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-47" target="ZvNc9lJzoOSVrYC_enmH-39" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="822" y="3024" as="sourcePoint" />
+            <mxPoint x="972" y="2875" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="ZvNc9lJzoOSVrYC_enmH-50" target="ZvNc9lJzoOSVrYC_enmH-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZvNc9lJzoOSVrYC_enmH-50" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Road to v1.26&lt;/span&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
+          <mxGeometry x="492" y="2236" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Copy of Main flowchart" id="XAtJBA2BKowSJY-9i74N">
+    <mxGraphModel dx="1259" dy="1147" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1920" math="0" shadow="0">
+      <root>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-0" />
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-1" parent="ycT2-npyi3O_NB_fXPr7-0" />
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-2" value="The way to 1.26" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="340" y="450" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-3" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-5" target="ycT2-npyi3O_NB_fXPr7-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-4" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-5" target="ycT2-npyi3O_NB_fXPr7-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="670" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-5" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Require FIPS for predictable egress IP?&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="320" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-7" target="ycT2-npyi3O_NB_fXPr7-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-7" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;30day Free of charge new cluster v1.26 or v1.29&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="510" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-8" value="Upgrade" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-10" target="ycT2-npyi3O_NB_fXPr7-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-9" value="Migrate" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-10" target="ycT2-npyi3O_NB_fXPr7-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-10" value="Upgrade or Migrate?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="320" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-11" value="Not yet supported. Abort" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="120" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-15" target="ycT2-npyi3O_NB_fXPr7-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-13" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ycT2-npyi3O_NB_fXPr7-12">
+          <mxGeometry x="-0.1419" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-14" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-15" target="ycT2-npyi3O_NB_fXPr7-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-15" value="Adapted to the use of coredns instead of nodelocaldns?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="320" y="800" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-16" value="See documentation and fix this first" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="120" y="800" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-17" value="elastx" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-20" target="ycT2-npyi3O_NB_fXPr7-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-18" value="Already installed" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-35" target="ycT2-npyi3O_NB_fXPr7-27">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="1090" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-19" value="Customer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-20" target="ycT2-npyi3O_NB_fXPr7-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-20" value="Maintainer of Ingress/Certmanager&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="320" y="920" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-21" value="Yes" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-29" target="ycT2-npyi3O_NB_fXPr7-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-22" value="Dns migrated" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-23" target="ycT2-npyi3O_NB_fXPr7-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-23" value="Elastx expects the customer to migrate DNS to the loadbalancer IP connected to ingress during preparation" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="525" y="900" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-27" target="ycT2-npyi3O_NB_fXPr7-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-25" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ycT2-npyi3O_NB_fXPr7-24">
+          <mxGeometry x="0.2152" y="-1" relative="1" as="geometry">
+            <mxPoint x="-18" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-26" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-27" target="ycT2-npyi3O_NB_fXPr7-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-27" value="Do you use loadbalancer instead of worker node IP to ingest traffic?" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="320" y="1229" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-28" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-29" target="ycT2-npyi3O_NB_fXPr7-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="433.66" y="1230" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-29" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Proxy in front of cluster?&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="525" y="1229" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-30" value="Please move to loadbalancer" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="120" y="1229" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-32" target="ycT2-npyi3O_NB_fXPr7-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-32" value="See Proxy configuration Examples for Ingress" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="730" y="1132" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-33" value="Ready for upgrade" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="525" y="1132" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-34" value="Install new&lt;br&gt;Ingress" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-35" target="ycT2-npyi3O_NB_fXPr7-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-35" value="Install/use your own Ingress" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="320" y="1040" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-36" value="Ready for upgrade" style="whiteSpace=wrap;html=1;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="730" y="1000" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-37" value="Ask for cluster" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="670" y="680" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-38" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Proxy in front of cluster?&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="525" y="1040" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-39" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-38" target="ycT2-npyi3O_NB_fXPr7-33">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="595" y="1280" as="sourcePoint" />
+            <mxPoint x="595" y="1230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-40" value="Yes" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-38" target="ycT2-npyi3O_NB_fXPr7-32">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="655" y="1269" as="sourcePoint" />
+            <mxPoint x="710" y="1150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-41" value="No" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-43" target="ycT2-npyi3O_NB_fXPr7-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-42" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-43" target="ycT2-npyi3O_NB_fXPr7-47">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="418.66" y="1510" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-43" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Proxy in front of cluster?&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="510" y="1509" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-44" value="Ready for upgrade" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="760" y="1412" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-45" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-47" target="ycT2-npyi3O_NB_fXPr7-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-46" value="Completed" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-47" target="ycT2-npyi3O_NB_fXPr7-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-47" value="See Proxy configuration Examples for Ingress" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="510" y="1412" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-48" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Proxy in front of cluster?&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="ycT2-npyi3O_NB_fXPr7-1">
+          <mxGeometry x="510" y="1320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-49" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-48" target="ycT2-npyi3O_NB_fXPr7-47">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="580" y="1560" as="sourcePoint" />
+            <mxPoint x="580" y="1510" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ycT2-npyi3O_NB_fXPr7-50" value="No" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="ycT2-npyi3O_NB_fXPr7-1" source="ycT2-npyi3O_NB_fXPr7-48" target="ycT2-npyi3O_NB_fXPr7-44">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="1549" as="sourcePoint" />
+            <mxPoint x="695" y="1430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="fWwMH_SHHN9XN6rBQKGm" name="Saved chonkz">
+    <mxGraphModel dx="1259" dy="1147" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1920" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

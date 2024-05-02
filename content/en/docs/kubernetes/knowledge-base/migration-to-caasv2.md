@@ -13,7 +13,7 @@ We provide two additional paths to reach v1.26:
 - We've reverted to continue providing Ingress/Certmanager.
 - To assist with your transition we can offer you an additional cluster (v1.26 or latest version) up to 30 days at no extra charge.
 
-![Show-Details](/img/kubernetes/capi-migration/flowchart_shorter_overview.png)
+![Show-Details](/img/kubernetes/capi-migration/upgradepathv5.png)
 
 All customers will receive this information when we upgrade clusters to v1.26, which also includes the migration procedure. Make sure to carefully read through and understand the procedure and changes in order to avoid potential downtime during the upgrade.
 
