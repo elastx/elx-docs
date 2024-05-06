@@ -6,7 +6,8 @@ alwaysopen: true
 ---
 
 ## Overview
-To be able to establish a connection between your Kubernetes cluster and DBaaS, you need to permit the external IP addresses of your worker nodes  in DBaaS UIs firewall.
+To connect your Kubernetes cluster with DBaaS, you need to allow the external IP addresses of your worker nodes, including reserved IP adresses, in DBaaS UIs firewall.
+You can find the reserved IPs in your clusters Openstack project or ask the support for help.
 
 Get your worker nodes external IP with the CLI tool kubectl: `kubectl get nodes -o wide`
 
@@ -21,10 +22,6 @@ company-stage1-worker-sto3-1701437761-4d9bl     Ready    <none>          153d   
 ```
 
 Copy the external IP for each worker node, in this case the three nodes with the ROLE `<none>`.
-
->You should add all workers external IP and the reserved external IP address to the firewall.
->The reserved external IP is for future cluster upgrades. If you don't know the
->reserved external IP, you can always contact support and we will help you. 
 
 In the DBaaS UI, go to Datastores -> Firewall -> Create trusted source,
 Add the external IP with CIDR notation /32 for each IP address (E.g. `1.2.3.5/32`).
