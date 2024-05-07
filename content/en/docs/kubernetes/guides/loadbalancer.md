@@ -1,7 +1,7 @@
 ---
 title: Load balancers
 description: Using a load balancer to expose services in the cluster
-weight: 4
+weight: 5
 alwaysopen: true
 ---
 
