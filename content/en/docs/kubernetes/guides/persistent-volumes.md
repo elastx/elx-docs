@@ -1,7 +1,7 @@
 ---
 title: Persistent volumes
 description: Using persistent volumes
-weight: 3
+weight: 5
 alwaysopen: true
 ---
 
