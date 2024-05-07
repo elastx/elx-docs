@@ -5,10 +5,16 @@ weight: 1
 alwaysopen: true
 ---
 
+## Table of contents
+
+- [Horizon backup and restore](#create-volume-backup-from-horizon)
+- [CLI backup and restore](#volume-backup-using-openstack-cli)
+
 ## Overview
 
 This guide will help you getting started with Volume Backup and Restore in OpenStack's Horizon and CLI.<br/>
 Get more information about the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/train/).
+
 
 ## Create volume backup from Horizon
 
