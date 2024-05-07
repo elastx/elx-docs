@@ -14,4 +14,4 @@ To migrate volume data between Availability Zones (sto1|sto2|sto3) you can use O
 3. Create a new volume in Availability Zone sto2 and select the backup as the source. 
 4. Create a new instance in Availability Zone sto2 and attach the newly created volume.
 
-To get a more in-depth look at how to perform backup and restore of a volume, follow our [Volume Backup & Restore](../volume_backup#overview) guide.
+To get a more in-depth look at how to perform backup and restore of a volume, follow our [Volume Backup & Restore](../volume_backup/) guide.
