@@ -7,97 +7,97 @@ alwaysopen: true
 
 ## Table of contents
 
+- [Overview](#overview)
 - [Horizon backup and restore](#create-volume-backup-from-horizon)
 - [CLI backup and restore](#volume-backup-using-openstack-cli)
 
 ## Overview
 
 This guide will help you getting started with Volume Backup and Restore in OpenStack's Horizon and CLI.<br/>
-Get more information about the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/train/).
+Get more information about the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/ussuri/).
 
 
 ## Create volume backup from Horizon
 
-Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) pick the volume you want to backup and choose ```Create Backup```.
+1. Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) pick the volume you want to backup and choose ```Create Backup```.
 
 ![Open-create-backup](/img/openstack-iaas/guides/ops_backup-restore-1.png)
 
 
-#### Choose Backup Name
 
-In the pop-up window, choose a name and a description for your backup and press ```Create Volume Backup```.
+
+2. In the pop-up window, choose a name and a description for your backup and press ```Create Volume Backup```.
 
 ![Create-backup](/img/openstack-iaas/guides/ops_backup-restore-2.png)
 
 <br/>
 <br/>
 
-### Check the status of your backup
-
-Navigate to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/) to see the status of the volume.
+3. Check the status of your backup by Navigating to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/).
+When done, Status will change to available.
 
 ![Status-create-backup](/img/openstack-iaas/guides/ops_backup-restore-3.png)
 
 ## Restore volume from backup
-Backup of a volume can be restored in two ways, one way is to create a new volume manually from the ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/), or to have the volume automatically created when restoring from the ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/).
-> **Beware:** If option two is chosen, the Availability Zone and Size gets chosen automatically. This means that the volume might be added to a different Availability Zone than intended.
+Backup of a volume can be restored in two ways.
+1. Create a new volume manually from the ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/)
+2. Have the volume automatically created when restoring from the ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/).
+> **Beware:** If option 2. is chosen, the Availability Zone and Size gets chosen automatically. This means that the volume might be added to a different Availability Zone than intended.
 
-### Manually Create a new volume and restore a backup to that volume
-Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press ```Create Volume```.
+### Option 1. Manually create and restore a backup to a new volume
+1. Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press ```Create Volume```.
 
 ![Status-create-volume](/img/openstack-iaas/guides/ops_backup-restore-4.png)
 
-Choose a name and description for the new volume. 
+2. Choose a name and description for the new volume. 
 > **Beware:** Volume Size has to be at minimum the size of the backup.
 The Volume also has to be in the same Availability Zone as the instance it will be attached too.
 
 ![Status-create-volume](/img/openstack-iaas/guides/ops_backup-restore-5.png)
 
-#### Restore
-
-Navigate to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/) and press ```Restore Backup```.
+3. Restore by Navigating to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/) and press ```Restore Backup```.
 
 ![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-6.png)
 
-Choose the newly created volume and press ```Restore Backup to Volume```.
+4. Choose the newly created volume and press ```Restore Backup to Volume```.
 
 ![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-7.png)
 
-### Automatically create a new volume and restore a backup to that volume
-Navigate to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/) and press ```Restore Backup```.
+### Option 2. Automatically create volume and restore to new volume
+1. Navigate to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/) and press ```Restore Backup```.
 
 ![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-6.png)
 
-Select ```Create a New Volume``` and press ```Restore Backup to Volume```.
+2. Select ```Create a New Volume``` and press ```Restore Backup to Volume```.
 
 ![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-8.png)
 
-The restored backup will be available in ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/).
+3. The restored backup will be available in ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/).
 
 ![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-9.png)
 
 ## Volume Attach & Detach in Horizon
 
-Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press the ⬇ arrow next to ```Edit Volume``` on the volume you want to attach and then press ```Manage Attachments``` 
+1. Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press the ⬇ arrow next to ```Edit Volume``` on the volume you want to attach and then press ```Manage Attachments``` 
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-10.png)
 
-In the pop-up window choose an instance you want to attach the restored volume to.
+2. In the pop-up window choose an instance you want to attach the restored volume to.
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-11.png)
 
-Check volumes again in ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) to see if the volume is attached to the instance.
+3. Check volumes again in ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) to see if the volume is attached to the instance.
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-12.png)
 
-To detach the volume, Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press the ⬇ arrow next to ```Edit Volume``` on the volume you want to detach and then press ```Manage Attachments```.
+4. To detach the volume, Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press the ⬇ arrow next to ```Edit Volume``` on the volume you want to detach and then press ```Manage Attachments```.
 In the pop-up window choose the instance you want to detach the volume from.
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-13.png)
 
 ## Volume Backup using OpenStack CLI
 
-List all available volumes: ```openstack volume list```.
+1. List all available volumes: ```openstack volume list```.
 ```bash
 openstack volume list
 +--------------------------------------+--------------------------------------+--------+------+-------------------------------------+
@@ -107,7 +107,7 @@ openstack volume list
 +--------------------------------------+--------------------------------------+--------+------+-------------------------------------+
 ```
 
-Create backup of your volume: ```openstack volume backup create <Volume ID or Name> --name <Name of Backup> --description <Description of your Backup>```. 
+2. Create backup of your volume: ```openstack volume backup create <Volume ID or Name> --name <Name of Backup> --description <Description of your Backup>```. 
 > **Beware:** If the volume is attached to an instance, the flag ```--force``` has to be added.
 
 ```bash
@@ -120,7 +120,7 @@ openstack volume backup create 3af38568-20fc-4c36-bca4-72555a6761e4 --force --na
 +-------+--------------------------------------+
 ```
 
-When the creation is finished the backup status will show as: ```available```.
+3. When the creation is finished the backup status will show as: ```available```.
 
 ```bash
 openstack volume backup list
@@ -131,7 +131,8 @@ openstack volume backup list
 +--------------------------------------+----------------+---------------------+-----------+------+-------------------+--------------------------------------+---------------+
 ```
 
-Create a new volume to restore to from backup:<br/> 
+## Volume Restore using OpenStack CLI
+1. Create a new volume to restore to from backup:<br/> 
 ```openstack volume create <ID or Name> --availability-zone <sto1/2/3> --size <GiB> --description <a description>```.
 
 > **Beware:** Volume Size has to be at minimum the size of the backup.
@@ -163,9 +164,8 @@ openstack volume create my_volume_restore --availability-zone sto1 --type 16k-io
 | user_id             | a2d55d905e05459d84ffd96900c25e9d     |
 +---------------------+--------------------------------------+
 ```
-## Volume Restore using OpenStack CLI
 
-Restore backup to the newly created volume: ```openstack volume backup restore  <Backup ID or Name> <Volume ID or Name>```.
+2. Restore backup to the newly created volume: ```openstack volume backup restore  <Backup ID or Name> <Volume ID or Name>```.
 
 ```bash
 openstack volume backup restore MyVolumeBackup my_volume_restore
@@ -178,7 +178,7 @@ openstack volume backup restore MyVolumeBackup my_volume_restore
 +-------------+--------------------------------------+
 ```
 
-After the backup is restored, it will show as: ```available```.
+3. After the backup is restored, it will show as: ```available```.
 
 ```bash
 openstack volume list
@@ -192,7 +192,7 @@ openstack volume list
 
 ## Volume Attach & Detach using Openstack CLI
 
-List available volumes: ```openstack volume list```.
+1. List available volumes: ```openstack volume list```.
 ```bash
 openstack volume list
 +--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
@@ -203,7 +203,7 @@ openstack volume list
 +--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
 ```
 
-List available instances: ```openstack server list```.
+2. List available instances: ```openstack server list```.
 ```bash
 openstack server list
 +--------------------------------------+------------+--------+-----------------------------------------+-------+------------+
@@ -213,12 +213,12 @@ openstack server list
 +--------------------------------------+------------+--------+-----------------------------------------+-------+------------+
 ```
 
-Attach your restored volume to an instance: ```openstack server add volume <Instance ID or Name> <Volume ID or Name>```.
+3. Attach your restored volume to an instance: ```openstack server add volume <Instance ID or Name> <Volume ID or Name>```.
 ```bash
 openstack server add volume MyInstance my_volume_restore
 ```
 
-Check to see if your volume is attached to your instance: ```openstack volume list```.
+4. Check to see if your volume is attached to your instance: ```openstack volume list```.
 ```bash
 openstack volume list
 +--------------------------------------+--------------------------------------+--------+------+-------------------------------------+
@@ -229,12 +229,12 @@ openstack volume list
 +--------------------------------------+--------------------------------------+--------+------+-------------------------------------+
 ```
 
-Detach your volume from an instance: ```server remove volume <Instance ID or Name> <Volume ID or Name>```.
+5. Detach your volume from an instance: ```server remove volume <Instance ID or Name> <Volume ID or Name>```.
 ```bash
 openstack server remove volume MyInstance my_volume_restore
 ```
 
-Confirm the detachment: ```openstack volume list```.
+6. Confirm the detachment: ```openstack volume list```.
 ```bash
 openstack volume list
 +--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
