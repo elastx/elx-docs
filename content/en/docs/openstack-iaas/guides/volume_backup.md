@@ -9,9 +9,9 @@ alwaysopen: true
 
 - [Overview](#overview)
 - [Horizon backup and restore](#create-volume-backup-from-horizon)
-  - [Horizon attach/detach volume](#volume-attach--detach-in-horizon)
+  - [Horizon attach & detach volume](#volume-attach--detach-in-horizon)
 - [CLI backup and restore](#volume-backup-using-openstack-cli)
-  - [CLI attach/detach volume](#volume-backup-using-openstack-cli)
+  - [CLI attach & detach volume](#volume-backup-using-openstack-cli)
 ## Overview
 
 This guide will help you getting started with Volume Backup and Restore in OpenStack's Horizon and CLI.<br/>
