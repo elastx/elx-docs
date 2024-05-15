@@ -13,8 +13,8 @@ In this piece, we show all steps to expose a web service using an Ingress resour
 
 1. A DNS record pointing at the public IP address of your worker nodes. In the examples all references to the domain _example.ltd_ must be replaced by the domain you wish to issue certificates for. Configuring DNS is out of scope for this documentation.
 2. For clusters created on or after Kubernetes 1.26 you need to ensure there is a Ingress controller and cert-manager installed.
-    * [Our guide to ingress-nginx can be found here](../../knowledge-base/install-ingress/)
-    * [Our guide to installing cert-manager can be found here](../../knowledge-base/install-certmanager/)
+    * [Our guide to ingress-nginx can be found here](../install-ingress/)
+    * [Our guide to installing cert-manager can be found here](../install-certmanager/)
     * [Upstream documentation: NGINX Ingress Controller](https://kubernetes.github.io/ingress-nginx/)
     * [Upstream documentation: cert-manager](https://cert-manager.io/docs/)
 

@@ -74,7 +74,7 @@ Below we have a deployment called `echoserver` we can use for this example.
 
 ## Exposing our deployment
 
-After your pods are created we need to make sure to expose our deployment. In this example we are creating a service of type loadbalancer. If you run this application in production you would likely install an [ingress controller](../../knowledge-base/install-ingress/)
+After your pods are created we need to make sure to expose our deployment. In this example we are creating a service of type loadbalancer. If you run this application in production you would likely install an [ingress controller](../install-ingress/)
 
 1. First of we create a file called `service.yaml` with the content of the service below
 
