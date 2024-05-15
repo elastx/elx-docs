@@ -8,17 +8,19 @@ alwaysopen: true
 ## Table of contents
 
 - [Overview](#overview)
-- [Horizon backup and restore](#create-volume-backup-from-horizon)
-  - [Horizon attach & detach volume](#volume-attach--detach-in-horizon)
-- [CLI backup and restore](#volume-backup-using-openstack-cli)
-  - [CLI attach & detach volume](#volume-backup-using-openstack-cli)
+- [Backup volume from Horizon](#backup-volume-from-horizon)
+  - [Restore volume from backup](#restore-volume-from-backup)
+  - [Attach & Detach volume from Horizon](#attach--detach-volume-from-horizon)
+- [Backup volume using Openstack CLI](#backup-volume-using-openstack-cli)
+  - [Restore volume using Openstack CLI](#restore-volume-using-openstack-cli)
+  - [Attach & Detach using Opentack CLI](#attach--detach-volume-using-openstack-cli)
 ## Overview
 
 This guide will help you getting started with Volume Backup and Restore in OpenStack's Horizon and CLI.<br/>
 Get more information about the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/ussuri/).
 
 
-## Create volume backup from Horizon
+## Backup volume from Horizon
 
 1. Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) pick the volume you want to backup and choose ```Create Backup```.
 
@@ -75,7 +77,7 @@ The Volume also has to be in the same Availability Zone as the instance it will 
 
 ![Status-restore-volume](/img/openstack-iaas/guides/ops_backup-restore-9.png)
 
-## Volume Attach & Detach in Horizon
+## Attach & Detach volume from Horizon
 
 1. Navigate to ["Project" → "Volumes"](https://ops.elastx.cloud/project/volumes/) and press the ⬇ arrow next to ```Edit Volume``` on the volume you want to attach and then press ```Manage Attachments``` 
 
@@ -94,7 +96,7 @@ In the pop-up window choose the instance you want to detach the volume from.
 
 ![Status-attach-volume](/img/openstack-iaas/guides/ops_backup-restore-13.png)
 
-## Volume Backup using OpenStack CLI
+## Backup volume using OpenStack CLI
 
 1. List all available volumes: ```openstack volume list```.
 ```bash
@@ -130,7 +132,7 @@ openstack volume backup list
 +--------------------------------------+----------------+---------------------+-----------+------+-------------------+--------------------------------------+---------------+
 ```
 
-## Volume Restore using OpenStack CLI
+## Restore volume using OpenStack CLI
 1. Create a new volume to restore to from backup:<br/> 
 ```openstack volume create <ID or Name> --availability-zone <sto1/2/3> --size <GiB> --description <a description>```.
 
@@ -189,7 +191,7 @@ openstack volume list
 +--------------------------------------+--------------------------------------+-----------+------+-------------------------------------+
 ```
 
-## Volume Attach & Detach using Openstack CLI
+## Attach & Detach volume using Openstack CLI
 
 1. List available volumes: ```openstack volume list```.
 ```bash
