@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Adds namespace to all resources.
+namespace: elx-docs
+
+resources:
+- namespace.yaml
+- ../../bases/elx-docs
+
+images:
+- name: elx-docs
+  newName: quay.io/elastx/elx-docs
+  newTag: f9d95032a05c61dbc02330408d6193b3b1a5247b
