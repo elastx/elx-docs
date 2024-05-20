@@ -44,6 +44,7 @@ We provide settings for two main scenarios of how clients connect to the cluster
         default: true
       publishService:
         enabled: false  
+      allowSnippetAnnotations: true
       config:
         use-proxy-protocol: "true"
     defaultBackend:
@@ -66,6 +67,7 @@ We provide settings for two main scenarios of how clients connect to the cluster
         default: true
       publishService:
         enabled: false  
+      allowSnippetAnnotations: true
       config:
         use-forwarded-headers: "true"
     defaultBackend:
