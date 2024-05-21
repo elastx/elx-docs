@@ -5,7 +5,8 @@ kind: Kustomization
 namespace: elx-docs-stage
 
 resources:
-- ../elx-docs
+- namespace.yaml
+- ../../bases/elx-docs
 
 patches:
   - target:
@@ -18,3 +19,7 @@ patches:
       - op: replace
         path: /spec/rules/0/host
         value: docs-stage.elastx.cloud
+
+images:
+- name: elx-docs
+  newName: quay.io/elastx/elx-docs

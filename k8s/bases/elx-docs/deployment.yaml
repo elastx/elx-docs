@@ -11,7 +11,7 @@ spec:
   template:
     metadata:
       labels:
-        app.kubernetes.io/release: "GIT_COMMIT"
+        app.kubernetes.io/name: elx-docs    
     spec:
       affinity:
         podAntiAffinity:
@@ -22,13 +22,9 @@ spec:
                 operator: In
                 values:
                 - elx-docs
-              - key: app.kubernetes.io/release
-                operator: In
-                values:
-                - "GIT_COMMIT"
             topologyKey: "kubernetes.io/hostname"
       containers:
-      - image: quay.io/elastx/elx-docs:latest
+      - image: elx-docs
         imagePullPolicy: Always
         name: elx-docs
         livenessProbe:
