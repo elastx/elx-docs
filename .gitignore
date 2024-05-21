@@ -1,10 +1,8 @@
-/public/*
-!/public/.gitkeep
-.DS_Store
-.vscode
-test
-resources
+node_modules
+package.json
+package-lock.json
+public/
+resources/
+.idea/
 tmp
-
-# Hugo
 .hugo_build.lock

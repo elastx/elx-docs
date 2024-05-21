@@ -1,4 +1,18 @@
 #!/usr/bin/env sh
 
-echo "Building and serving web content on http://localhost:1313/docs (Ctrl + C to exit)"
-docker run --rm -v $(pwd):/root/project/ -p 1313:1313 -e HUGO_ENV=production quay.io/elastx/ci-hugo:v0.110.0 hugo server --bind 0.0.0.0
+LOCAL_IMAGE="localhost/elx-docs:latest"
+
+if command -v docker > /dev/null 2>&1; then
+  if [ "$(docker image ls $LOCAL_IMAGE | wc -l)" = "1" ] || [ "$1" = "rebuild" ]; then
+    DOCKER_BUILDKIT=1 docker build -t $LOCAL_IMAGE --build-arg LOCALTEST=yes --target builder .
+  fi
+  docker run --rm -v $(pwd):/project/ -p 1313:1313 $LOCAL_IMAGE
+elif command -v podman > /dev/null 2>&1; then
+  if [ "$(podman image ls $LOCAL_IMAGE | wc -l)" = "1" ] || [ "$1" = "rebuild" ]; then
+    podman build -t $LOCAL_IMAGE --build-arg LOCALTEST=yes --target builder .
+  fi
+  podman run --rm --mount type=bind,source=$(pwd),destination=/project/ -p 1313:1313 $LOCAL_IMAGE
+else
+  echo "ERROR: No supported container engine found"
+  exit 1
+fi
