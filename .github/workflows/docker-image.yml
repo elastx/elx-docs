@@ -32,7 +32,8 @@ jobs:
         run: |
           echo "IMAGE_CI=$IMAGE:ci" >> "$GITHUB_OUTPUT"
           echo "IMAGE_FULL=$IMAGE:$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
-          echo "IMAGE_LATEST=$IMAGE:latest-$(date +%s)" >> "$GITHUB_OUTPUT"
+          echo "IMAGE_LATEST=$IMAGE:latest" >> "$GITHUB_OUTPUT"
+          echo "IMAGE_LATEST_DATED=$IMAGE:latest-$(date +%s)" >> "$GITHUB_OUTPUT"
       - name: Set SHOULD_PUSH output parameter
         id: spo
         run: |
@@ -62,7 +63,7 @@ jobs:
             ${{ steps.ifo.outputs.IMAGE_CI }}
             ${{ steps.ifo.outputs.IMAGE_FULL }}
             ${{ steps.ifo.outputs.IMAGE_LATEST }}
-            latest
+            ${{ steps.ifo.outputs.IMAGE_LATEST_DATED }}
           cache-from: type=registry,ref=${{ steps.ifo.outputs.IMAGE_CI }}
           cache-to: type=inline
   updateimagetag:
