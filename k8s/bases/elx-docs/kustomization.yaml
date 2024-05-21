@@ -12,6 +12,5 @@ resources:
 - deployment.yaml
 - ingress.yaml
 - issuer.yaml
-- namespace.yaml
 - service.yaml
 - serviceaccount.yaml
