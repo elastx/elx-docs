@@ -4,7 +4,7 @@ metadata:
   name: letsencrypt
 spec:
   acme:
-    email: andreas.holmsten@elastx.se
+    email: ts2@elastx.se
     privateKeySecretRef:
       name: letsencrypt
     server: https://acme-v02.api.letsencrypt.org/directory
