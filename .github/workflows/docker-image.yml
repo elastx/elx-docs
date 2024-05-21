@@ -67,7 +67,7 @@ jobs:
           cache-to: type=inline
   updateimagetag:
     runs-on: ubuntu-latest
-    needs: buildandpush
+    needs: buildcontent
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v3
