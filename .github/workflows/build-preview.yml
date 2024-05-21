@@ -10,21 +10,11 @@ env:
   QUAY_USER: elastx+cidocs
 
 jobs:
-  lint:
-    name: Lint Dockerfile
-    runs-on:
-      - self-hosted
-      - non-persistent
-    steps:
-    - uses: actions/checkout@v3
-    - uses: elastx/actions/docker-lint@main
-
   buildcontent:
     name: Hugo build & HTML Proofer
     runs-on:
       - self-hosted
       - non-persistent
-    needs: lint
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -32,7 +22,7 @@ jobs:
         id: ifo
         run: |
           PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
-          echo "IMAGE_PREVIEW=preview-${PR_NUMBER}-$(date +%s)" >> "$GITHUB_OUTPUT"
+          echo "IMAGE_PREVIEW=$IMAGE:preview-${PR_NUMBER}-$(date +%s)" >> "$GITHUB_OUTPUT"
       - name: Docker context
         run: docker context create buildctx
       - name: Setup Docker Buildx
@@ -49,6 +39,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
+          push: true
           tags: |
             ${{ steps.ifo.outputs.IMAGE_PREVIEW }}
           cache-from: type=registry,ref=${{ steps.ifo.outputs.IMAGE_PREVIEW }}
