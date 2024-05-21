@@ -8,25 +8,25 @@ resources:
 replacements:
 - source:
     kind: Ingress
-    name: dox-ng
+    name: elx-docs
     fieldPath: metadata.annotations.frontend/param-host
   targets:
     - select:
         kind: Ingress
-        name: dox-ng
+        name: elx-docs
       fieldPaths:
         - spec.rules.0.host
         - spec.tls.0.hosts.0
 - source:
     version: v1
     kind: Namespace
-    name: dox-ng-preview-
+    name: elx-docs-preview-
     fieldPath: metadata.annotations.k8s\.elx\.io/preview-pr
   targets:
   - select:
       version: v1
       kind: Namespace
-      name: dox-ng-preview-
+      name: elx-docs-preview-
     fieldPaths:
     - metadata.name
     options:
