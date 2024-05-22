@@ -5,6 +5,38 @@ weight: 1
 alwaysopen: true
 ---
 
+## 2024-04-29 ECP Block Storage
+
+### ECP storage price cut
+
+We are happy to announce that we will perform a price cut on our next generation v2 volumes. We launched the v2 volumes at the end of 2023 and it has performed just as good as we had hoped.
+
+The v2 volumes have marked leading performance and are very cost effective and now we will cut the price for volume performance which will make it a market leader.
+We are cutting the price for volume performance by 40%.
+
+The new v2 Block Storage is available as Volumes in Openstack IaaS, DBaaS and as Persistent Volumes in Kubernetes CaaS.
+
+These are the volume types and pricing.
+| Volume type   | IOPS    | MBPS  | Price / GB | Current Price / Volume  | New Price / Volume |
+|---------------|---------|-------|------------|------------------------ | ------------------ |
+| v2-1k         | 1 000   | 64    | 0.78 kr    | 0 kr                    | 0 kr               |
+| v2-4k         | 4 000   | 128   | 0.78 kr    | 300 kr                  | 180 kr             |
+| v2-8k         | 8 000   | 256   | 0.78 kr    | 700 kr                  | 420 kr             |
+| v2-16k        | 16 000  | 384   | 0.78 kr    | 1500 kr                 | 900 kr             |
+| v2-32k        | 32 000  | 512   | 0.78 kr    | 3 100 kr                | 1860 kr            |
+| v2-64k        | 64 000  | 1 024 | 0.78 kr    | 6 300 kr                | 3780 kr            |
+| v2-128k       | 128 000 | 2 048 | 0.78 kr    | 12 700 kr               | 7620 kr            |
+
+All prices are per month (730h) and VAT excluded.
+
+This will apply from 2024-06-01.
+As a customer you do not need to do anything, the new pricing will be applied and visible on the next invoice.
+
+You can find information, specifications and pricing here, https://elastx.se/se/openstack.
+
+If you have any general questions or would like to sign-up please contact us at hello@elastx.se.
+Any technical questions please register a support ticket at https://support.elastx.se.
+
 ## 2023-12-20 ECP Block Storage
 ### New v2 Volumes
 We are happy to announce our next generation Elastx Cloud Platform (ECP) v2 Block Storage. Due to a technology shift we are now able to provide a market leading Block Storage in both price and performance.

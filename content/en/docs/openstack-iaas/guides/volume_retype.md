@@ -12,7 +12,8 @@ This guide will help you getting started with changing volume type in OpenStack'
 > Note: For volumes with -enc suffix it is required to work with the volume in detached mode
 
 In this example, we will use a detached volume with the type ```16k-IOPS-enc```.
-Get more information about the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/train/).
+
+Get more information about the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/ussuri/).
 
 ## Volume retype from Horizon
 

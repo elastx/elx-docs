@@ -26,55 +26,75 @@ Helm needs to be provided with the correct repository:
     ```
 
 ### Generate values.yaml
-We provide settings for two main scenarios of how clients connect to the cluster. The configuration file, `values.yaml`, must reflect the correct scenario. For a complete set of options see the [upstream documentation here](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx#values).
+We provide settings for two main scenarios of how clients connect to the cluster. The configuration file, `values.yaml`, must reflect the correct scenario. 
 
 
->**NOTE**: Whitelisting IPs is achieved by specifying `loadBalancerSourceRanges` (see below).
-
-
-
-  A.  **Customer connects directly to the Ingress:**
+*   **Customer connects directly to the Ingress:**
   
-     ```yaml
-      controller:
-        kind: DaemonSet
-        metrics:
-          enabled: true
-        service:
-          enabled: true
-          annotations:
-            loadbalancer.openstack.org/proxy-protocol: "true"
-        ingressClassResource:
-          default: true
-        publishService:
-          enabled: false  
-        config:
-          use-proxy-protocol: "true"
-      defaultBackend:
+    ```yaml
+    controller:
+      kind: DaemonSet
+      metrics:
         enabled: true
-     ```
-
-
-  B.  **Customer connects via Proxy:**
-
-     ```yaml
-      controller:
-        kind: DaemonSet
-        metrics:
-          enabled: true
-        service:
-          enabled: true
-          #loadBalancerSourceRanges:
-          #  - <Proxy(s)-CIDR>
-        ingressClassResource:
-          default: true
-        publishService:
-          enabled: false  
-        config:
-          use-forwarded-headers: "true"
-      defaultBackend:
+      service:
         enabled: true
-     ```
+        annotations:
+          loadbalancer.openstack.org/proxy-protocol: "true"
+      ingressClassResource:
+        default: true
+      publishService:
+        enabled: false  
+      allowSnippetAnnotations: true
+      config:
+        use-proxy-protocol: "true"
+    defaultBackend:
+      enabled: true
+    ```
+
+
+*  **Customer connects via Proxy:**
+
+    ```yaml
+    controller:
+      kind: DaemonSet
+      metrics:
+        enabled: true
+      service:
+        enabled: true
+        #loadBalancerSourceRanges:
+        #  - <Proxy(s)-CIDR>
+      ingressClassResource:
+        default: true
+      publishService:
+        enabled: false  
+      allowSnippetAnnotations: true
+      config:
+        use-forwarded-headers: "true"
+    defaultBackend:
+      enabled: true
+    ```
+
+* **Other useful settings:**
+
+  For a complete set of options see the [upstream documentation here](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx#values).
+
+    ```yaml
+      [...]
+      service:
+        ingressClassResource:
+          default: false                 # useful to specify which ingress is used when not specified.
+          name: "nginx2"                 # specifies ingressclass name. 
+        ingressClass: "nginx2"           # legacy for annotations matching of ingressclass to be used.
+        loadBalancerIP: "91.193....."    # specify floating IP if available in floating ip pool.
+        loadBalancerSourceRanges:        # Whitelist source IPs.
+          - 133.124.../32
+          - 122.123.../24
+        annotations:
+          loadbalancer.openstack.org/keep-floatingip: "true"  # retain floating IP in floating IP pool.
+          loadbalancer.openstack.org/flavor-id: "v1-lb-2"     # specify flavor.
+      [...]
+    ```
+
 
 ### Install ingress-nginx
 Use the values.yaml generated in the [previous step](../install-ingress/#generate-valuesyaml).

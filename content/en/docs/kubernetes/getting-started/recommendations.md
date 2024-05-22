@@ -34,6 +34,7 @@ Requests and limits are critical to enable Kubernetes to make informed decisions
 Requests are important for the scheduler. Requests can be seen as "Amount of resources the pod would utilize during normal operation". This means that the scheduler will allocate the required amount of resources and make sure they are always available to your pod.
 
 Requests also enables the auto-scaler to make decisions on when to scale a cluster up and down.
+
 ### Limits
 
 Limits define the maximum allowed resource usage for a pod. This is important to avoid slowdowns in other pods running on the same node.

@@ -1,7 +1,7 @@
 ---
 title: Persistent volumes
 description: Using persistent volumes
-weight: 3
+weight: 5
 alwaysopen: true
 ---
 
@@ -70,14 +70,16 @@ In case higher number of volumes or pods are required, consider adding additiona
 | v1.25 and lower | 110 | 25 |
 | v1.26 and higher | 110 | 125 |
 
-
 ### Encryption
 
 All volumes are encrypted at rest in hardware.
 
 ### Volume type `hostPath`
-A volume of type hostPath is in reality just a local directory on the specific node being mounted in a pod, this means data is stored locally and will be unavailable if the pod is ever rescheduled on another node. This is expected during cluster upgrades or maintenance, however it may also occur because of other reasons, for example if a pod crashes or a node is malfunctioning. <br />
-You can read more about this [here](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath). <br />
+
+A volume of type hostPath is in reality just a local directory on the specific node being mounted in a pod, this means data is stored locally and will be unavailable if the pod is ever rescheduled on another node. This is expected during cluster upgrades or maintenance, however it may also occur because of other reasons, for example if a pod crashes or a node is malfunctioning.
+
+You can read more about this [here](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
+
 If you are looking for a way to store persistent data we would instead recommend to make use of PVCs. PVCs can move between nodes within one data-center meaning any data stored will be present even if the pod is being recreated.
 
 ## Known issues
