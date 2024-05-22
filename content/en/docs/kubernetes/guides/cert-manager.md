@@ -5,21 +5,21 @@ weight: 5
 alwaysopen: true
 ---
 
-Cert-manager will obtain certificates from a variety of Issuers and ensure the certificates are valid and up-to-date, and will attempt to renew certificates at a configured time before expiry.
+In this guide we will use a Cloudflare managed domain and a our own cert-manager to provide LetsEncrypt certificates for a test deployment.
 
-In this guide we will use a Cloudflare managed DNS and cert-manager to provide LetsEncrypt certificates for test deployments.
-
-The guide is suitable if you have a domain connected to a single cluster, and would like a to issue/manage certificates from within kubernetes.
+The guide is suitable if you have a domain connected to a single cluster, and would like a to issue/manage certificates from within kubernetes. The setup below becomes Clusterwider, meaning it will deploy certificates to any namespace specifed.
 
 
 ### Prerequisites
+
 * DNS managed on Cloudflare
 * Cloudflare API token
 * Installed cert-manager. [See our guide here](../../knowledge-base/install-certmanager/).
 * Installed IngressController. [See our guide here](../../knowledge-base/install-ingress/).
 
 ### Setup ClusterIssuer
-Create a file to hold the secret of your api token for your Cloudflare DNS, and the ClusterIssuer configuration adapted for Cloudflare.
+
+Create a file to hold the secret of your _api token_ for your Cloudflare DNS. Then create the `ClusterIssuer` configuration file adapted for Cloudflare.
 
 ```yaml
 apiVersion: v1
@@ -53,15 +53,13 @@ spec:
 kubectl apply -f cloudflare-issuer.yml
 ```
 
-The clusterIssuer is now ready. Example output:
+The clusterIssuer is soon ready. Example output:
 
 ```code
 kubectl get clusterissuers.cert-manager.io 
 NAME                READY   AGE
 cloudflare-issuer   True    6d18h
 ```
-
-
 
 ### Expose a workload and secure with Let's encrypt certificate
 
@@ -73,7 +71,7 @@ This is how the DNS is setup in this particular example:
 A `A record` ("domain.ltd") points to the loadbalancer IP of the cluster.
 A `CNAME record` refers to ("*") and points to the `A record` above. 
 
-This example also makes use of its own `namespace` called "echo2". 
+This example also specifies the `namespace` "echo2". 
 
 ```workload2.yaml
 apiVersion: apps/v1
@@ -108,8 +106,7 @@ metadata:
   labels:
     app: echo2
   name: echo2-service
-  namespace: ech
-  2
+  namespace: echo2
 spec:
   ports:
     - protocol: TCP
