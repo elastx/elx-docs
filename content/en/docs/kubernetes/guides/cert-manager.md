@@ -19,7 +19,7 @@ The guide is suitable if you have a domain connected to a single cluster, and wo
 
 ### Setup ClusterIssuer
 
-Create a file to hold the secret of your _api token_ for your Cloudflare DNS. Then create the `ClusterIssuer` configuration file adapted for Cloudflare.
+Create a file to hold the secret of your _api token_ for your Cloudflare DNS. Then create the `ClusterIssuer` configuration file adapted for Cloudflare. 
 
 ```yaml
 apiVersion: v1
