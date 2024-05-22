@@ -14,8 +14,8 @@ The guide is suitable if you have a domain connected to a single cluster, and wo
 
 * DNS managed on Cloudflare
 * Cloudflare API token
-* Installed cert-manager. [See our guide here](../../knowledge-base/install-certmanager/).
-* Installed IngressController. [See our guide here](../../knowledge-base/install-ingress/).
+* Installed cert-manager. [See our guide here](../install-certmanager/).
+* Installed IngressController. [See our guide here](../install-ingress/).
 
 ### Setup ClusterIssuer
 
