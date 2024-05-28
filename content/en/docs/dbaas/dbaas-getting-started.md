@@ -26,7 +26,7 @@ To create a new datastore, choose +Create datastore in the Web UI. This will ope
 
     **Ephemeral storage option:** this is the ephemeral storage that is included in your selected flavor. It has a static size as shown on the flavor and cannot be resized. It is the fastest storage type we have to offer. It becomes a single point of failure because it is a non-persistent storage that depends on the state of the instance where your datastore node is running. To have redundancy, you need to set up replicas or other ways to recover from failure.
 
-    **Volume storage option:** This is the *recommended* storage alternative for most setups. With volume storage you have the ability to choose your own storage size and type. Minimum size requirement is 80GiB. Volumes can also be extended later if needed. We recommend using our latest V2 storage type for best performance and price.  
+    **Volume storage option:** This is the *recommended* storage alternative for most setups. With volume storage you have the ability to choose your own storage size and type. Minimum size requirement is 80GiB. Volume size can also be extended later if needed. We recommend using our latest V2 storage type for best performance and price.  
 Please see more information about our latest storage types here: [ECP/OpenStack Block Storage](https://elastx.se/en/openstack/specification).
 
 5. Preview: Review and confirm everything is satisfactory, then proceed to complete the task by clicking finish. Based on the selections made previously, the datastore should be operational within a few minutes.
