@@ -1,5 +1,5 @@
 ---
-title: "Life-cycle Management and Upgrade"
+title: "Life-cycle Management and Upgrades"
 description: "Keeping your datastores up to date"
 weight: 2
 alwaysopen: true

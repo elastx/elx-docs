@@ -21,38 +21,33 @@ To create a new datastore, choose +Create datastore in the Web UI. This will ope
 
 4. Resources: Select type of instance to be used with your datastore.   
   
-    Storage: choose between **Ephemeral** or **Volume**. 
-    >**Beware:** Please remember that the databases in the datastore node become read-only when 90% or more of the disk space is used and ephemeral storage size can't be resized.  
-
-    **Ephemeral storage option:** This is the ephemeral storage that is included in your selected flavor. It has a static size as shown on the flavor and cannot be resized. It is the fastest storage type we have to offer. It becomes a single point of failure because it is a non-persistent storage that depends on the state of the instance where your datastore node is running. To have redundancy, you need to set up replicas or other ways to recover from failure.
-
-    **Volume storage option:** This is the *recommended* storage alternative for most setups. With volume storage you have the ability to choose your own storage size and type. Minimum size requirement is 80GiB. Volume size can also be extended later if needed. We recommend using our latest V2 storage type for best performance and price.  
-Please see more information about our latest storage types here: [ECP/OpenStack Block Storage](https://elastx.se/en/openstack/specification).
+    Storage: choose between Ephemeral or Volume.  
+    See [Difference between ephemeral and volume storage](#difference-between-ephemeral-and-volume-storage) for more information. 
+    >**Beware:** Please remember that the databases in the datastore node become read-only when 90% or more of the disk space is used and ephemeral storage cannot be extended.  
 
 5. Preview: Review and confirm everything is satisfactory, then proceed to complete the task by clicking finish. Based on the selections made previously, the datastore should be operational within a few minutes.
 
 ## Database and User management
 
 ### Create a new database
-For MariaDB/MySQL you need to create a **database** before creating a database user.  
-For Postgresql you need to create a **database user** before creating a database.
+For MariaDB/MySQL you need to create a database before creating a database user.  
+For Postgresql you need to create a database user before creating a database.
 
 1. Select the datastore in which you wish to create a database in.
-2. Under *Databases* tab pick Create new database
+2. Under Databases tab pick Create new database
 3. Write a name for the database. For Posgresql select the owner (database user) and click Create.
 
 ### Create a new database user
 
 1. Select the datastore in which you wish to create a new user.
-2. Navigate to the *Users* tab, Click on *Create Admin user*.
+2. Navigate to the Users tab, Click on Create Admin user.
 3. Add a Username and a Password. For MariaDB/MySQL select the database that the user should be associated with.
 
-### Delete a database from your datastore
+### Delete a database
 
 1. Select the datastore in which you wish to delete a database in.
-2. Navigate to the *Databases* tab, find the desired database under the *Actions* column, and click the trash bin icon to remove the selected database. 
+2. Navigate to the Databases tab, find the desired database under the Actions column, and click the trash bin icon to remove the selected database. 
 3. Confirm the delete action in the confirmation window.
-
 
 ## Connect to datastore nodes
 
@@ -80,7 +75,6 @@ If you want to use a connection assistant you will find examples on how to confi
 4. Click the Delete button
 4. Confirm the delete action in the confirmation window
 
-
 ## Network and Failover
 If you're utilizing floating IPs on our OpenStack or Virtuozzo platforms, it's important to note that all traffic between the nodes will never leave our network. This is advantageous for both latency and security, as the internal routing ensures fast and secure data transmission.
 
@@ -95,6 +89,12 @@ If you want additional functionality or combine failover with for instance load 
 * Load Balancer: Implementing a load balancer in front of the database cluster can be configured to detect node failures and also be set up to direct write queries to the primary node and read queries to the replicas.
 
 * Database Drivers: Recommended Drivers: [libpq](https://www.postgresql.org/docs/current/libpq.html) (for PostgreSQL), [MySQL Connector/J](https://dev.mysql.com/doc/connector-j/en/) (for MySQL), [MariaDB Connector/J](https://mariadb.com/kb/en/about-mariadb-connector-j/) (for MariaDB), These drivers and libraries are designed with failover and high availability in mind. They offer features such as connection pooling, automatic retries, and built-in failover support.
+
+## Difference between Ephemeral and Volume storage
+*  Ephemeral storage option: This is the ephemeral storage that is included in your selected flavor. It has a static size as shown on the flavor and cannot be resized. It is the fastest storage type we have to offer. It becomes a single point of failure because it is a non-persistent storage that depends on the state of the instance where your datastore node is running. To have redundancy, you need to set up replicas or other ways to recover from failure.
+
+*  Volume storage option: This is the recommended storage alternative. With volume storage you have the ability to choose your own storage size and type. Minimum size requirement is 80GiB. Volume size can also be extended later if needed. We recommend using our latest V2 storage type for best performance and price.  
+Please see more information about our latest storage types here: [ECP/OpenStack Block Storage](https://elastx.se/en/openstack/specification).
 
 
 ## Good-to-Know and Limitations
