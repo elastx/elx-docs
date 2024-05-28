@@ -82,7 +82,7 @@ If you want to use a connection assistant you will find examples on how to confi
 
 
 ## Network and Failover
-If you're utilizing floating IPs on our OpenStack or Jelastic platforms, it's important to note that all traffic between the nodes will never leave our network. This is advantageous for both latency and security, as the internal routing ensures fast and secure data transmission.
+If you're utilizing floating IPs on our OpenStack or Virtuozzo platforms, it's important to note that all traffic between the nodes will never leave our network. This is advantageous for both latency and security, as the internal routing ensures fast and secure data transmission.
 
 ### Built-in Failover Using DNS
 Our primary-replica(s) cluster configuration provides robust performance and reliability. In the event of the primary node going down, the database cluster is designed to automatically promote one of the replica nodes to become the new primary. This ensures that your data remains accessible and that write operations can continue with minimal interruption. Our primary-replica(s) cluster provides an immutable external DNS name for the primary, this ensures that if for some reason the current primary node goes unavailable, the built-in failover will automatically promote a new primary and redirect the primary node's dns to point to the new primary nodes's IP address. This is an easy and robust way to quickly handle failover without any user intervention.
