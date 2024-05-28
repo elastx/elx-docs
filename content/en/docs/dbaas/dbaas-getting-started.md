@@ -24,7 +24,7 @@ To create a new datastore, choose +Create datastore in the Web UI. This will ope
     Storage: choose between **Ephemeral** or **Volume**. 
     >**Beware:** Please remember that the databases in the datastore node become read-only when 90% or more of the disk space is used and ephemeral storage size can't be resized.  
 
-    **Ephemeral storage option:** this is the ephemeral storage that is included in your selected flavor. It has a static size as shown on the flavor and cannot be resized. It is the fastest storage type we have to offer. It becomes a single point of failure because it is a non-persistent storage that depends on the state of the instance where your datastore node is running. To have redundancy, you need to set up replicas or other ways to recover from failure.
+    **Ephemeral storage option:** This is the ephemeral storage that is included in your selected flavor. It has a static size as shown on the flavor and cannot be resized. It is the fastest storage type we have to offer. It becomes a single point of failure because it is a non-persistent storage that depends on the state of the instance where your datastore node is running. To have redundancy, you need to set up replicas or other ways to recover from failure.
 
     **Volume storage option:** This is the *recommended* storage alternative for most setups. With volume storage you have the ability to choose your own storage size and type. Minimum size requirement is 80GiB. Volume size can also be extended later if needed. We recommend using our latest V2 storage type for best performance and price.  
 Please see more information about our latest storage types here: [ECP/OpenStack Block Storage](https://elastx.se/en/openstack/specification).
@@ -44,13 +44,13 @@ For Postgresql you need to create a **database user** before creating a database
 ### Create a new database user
 
 1. Select the datastore in which you wish to create a new user.
-2. Navigate to the ‘Users’ tab, Click on ‘Create Admin user’.
+2. Navigate to the *Users* tab, Click on *Create Admin user*.
 3. Add a Username and a Password. For MariaDB/MySQL select the database that the user should be associated with.
 
 ### Delete a database from your datastore
 
 1. Select the datastore in which you wish to delete a database in.
-2. Navigate to the *Databases* tab, find the desired database under the 'Actions' column, and click the trash bin icon to remove the selected database. 
+2. Navigate to the *Databases* tab, find the desired database under the *Actions* column, and click the trash bin icon to remove the selected database. 
 3. Confirm the delete action in the confirmation window.
 
 
