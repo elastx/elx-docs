@@ -9,7 +9,10 @@ alwaysopen: true
 
 This guide will help you getting started with changing volume type in OpenStack's Horizon and CLI, by using the retype function. 
 
-> Note: For volumes with -enc suffix it is required to work with the volume in detached mode
+{{% alert title="Note" color="info" %}}
+For v2 volume types as well as -enc volume types you will need to detach the volume from your server before retyping.  
+Either shut down your server or unmount the volume in your operating system before detaching the volume in Openstack.
+{{% /alert %}}
 
 In this example, we will use a detached volume with the type ```16k-IOPS-enc```.
 
