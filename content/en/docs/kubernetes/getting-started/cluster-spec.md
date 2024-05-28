@@ -1,0 +1,92 @@
+---
+title: "Cluster configuration"
+description: "Cluster configuration and optional features"
+weight: 1
+alwaysopen: true
+---
+
+There are a lot of options possible for your cluster. Most options have a sane default howver could be overriden on request.
+
+A default cluster comes with 3 controlplane and 3 woker nodes. To connect all nodes we create a network, default (10.128.0.0/22). We also deploy monitoring to ensure functionality of all cluster components. However most things are just a default and could be overriden.
+
+
+## Common options
+
+### Nodes
+
+The standard configuration consist of the following:
+
+* Three control plane nodes, one in each of our availability zones. Flavor:
+  v1-c2-m8-d80
+* Three worker nodes, one in each of our availability zones. Flavor:
+  v1-c2-m8-d80
+
+#### Minimal configuration
+
+* Three control plane nodes, one in each of our availability zones. Flavor:
+  v1-c2-m8-d80
+* One worker node, Flavor:
+  v1-c2-m8-d80
+
+  This is the minimal configuration offered. Scaling to larger flavors and adding nodes are supported. Autoscaling is not supported with a single worker node.
+
+    > **Note:** SLA is different for minimal configuration type of cluster. SLA's can be found [here](https://elastx.se/en/kubernetes/sla).
+
+### Nodegroups and multiple flavors
+
+To try keep node management as easy as possible we make user of nodegroups. A nodegroup contains of one or multiple nodes with one flavor and a list of avalability zones to deploy nodes in. Clusters are default deliverd with a nodegroup called `workers` containing 3 nodes one in each az. Anodegroup are limited to one flavour meaning all nodes in the nodegroup will have the same amount of cpu, ram and disk.
+
+You could have multiple nodegroups, if you for example want to tarket workload on separate nodes or in case you wish to consume multiple flavours.
+
+A few eamxples of nodegroups:
+
+| Name | Flavour | AZ list | Min node count | Max node count (autoscaling) |
+| -------- | ----------------- | ------------- | ------------- | ------------- |
+|worker |v1-c2-m8-d80 |STO1, STO2, STO3 |3 |0 |
+|database |d2-c8-m120-d1.6k |STO1, STO2, STO3 |3 |0 |
+|frontend |v1-c4-m16-d160 |STO1, STO2, STO3 |3 |12 |
+|jobs |v1-c4-m16-d160 |STO1 |1 |3 |
+
+In the examples we could se worker our default nodegroup and an example of having separate nodes for database and frontend where the database is running on dedicated nodes and the frontend is running on smaller nodes but can autosacle between 3 and 12 nodes based on current cluster request. We also have a jobs nodegroup where we have one node in sto1 but can scale up to 3 nodes where all are placed inside STO1.
+You can read more about [autocalsing here](../autoscaling).
+
+Nodegroups can be chagned at any time. Please also not that we have auto-healing meaning in case any of your nodes for any reason stops working we will replace them. More about [autohealing could be found here](TBD)
+
+### Network
+
+By default we create a network (10.128.0.0/22). However we could use another subnet per cusotmer request. The most common scenario when customers request another subnet is when exposing multiple Kubernetes clsuters over a VPN.
+
+Please make sure to inform us you wish to use a custom subnet during the ordering process since we cannot replace the network after creation meaning we need to recreate your entire cluster.
+
+We currently only support cidr in the 10.0.0.0/8 subnet and at lest a /24. Both nodes and loadbalancers are using IPs for this range meaning you need to have a sizable network from the begning.
+
+### Clsuter domain
+
+We default all clusters to "cluster.local". This is simullar as most other providers out there. If you wish to have another cluster doamin please let us know during the ordering procedure since it cannot be replaces after cluster creation.
+
+### Worker nodes Floating IPs
+
+By default, our clusters come with nodes that do not have any Floating IPs attached to them. If, for any reason, you require Floating IPs on your workload nodes, please inform us, and we can configure your cluster accordingly. It's worth noting that the most common use case for Floating IPs is to ensure predictable source IPs. However, please note that enabling or disabling Floating IPs will necessitate the recreation of all your nodes, one by one but could be enabled or disabled at any time.
+
+Since during upgrades we create a new node prior to removing an old node you would need to have an additional IP adress on standby. If you wish we to preallocate a list or range of IP adresses just mention this and we will configure your cluster accordingly.
+
+Please know that only worker nodes are consume IP adresses meaning controlplane nodes does not make use of Floating IPs.
+
+## Less common options
+
+### OIDC
+
+If you wish to integrate with your existing OIDC compatible IDP, example Microsoft AD And Google Workspace that is supported directy in the kubernetes api service.
+
+By default we ship clusters with this option disabled however if you wish to make use of OIDC just let us know when order the cluster or afterwards. OIDC can be enabled, disabled or changed at any time.
+
+### Cluster add-ons
+
+We currently offer managed cert-manager, NGINX Ingress and elx-nodegroup-controller.
+
+#### Cert-manager
+
+
+#### Ingress
+
+If you are interested in removing any limitations, we've assembled guides with everything you need to install the same IngressController and cert-manager as we provide. This will give you full control. The various resources gives configuration examples, and instructions for lifecycle management. These can be found in the sections [Getting Started](../getting-started/) and [Guides](../guides/).

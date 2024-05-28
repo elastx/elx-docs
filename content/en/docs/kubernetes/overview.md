@@ -34,49 +34,18 @@ and we integrate with the features it provides.
 * **Standards conformant**: Our clusters are certified by the [CNCF Conformance Program](https://www.cncf.io/certification/software-conformance/)
   ensuring interoperability with Cloud Native technologies and minimizing vendor lock-in.
 
-## Flavor of nodes
-
-The standard configuration consist of the following:
-
-* Three control plane nodes, one in each of our availability zones. Flavor:
-  v1-c2-m8-d80
-* Three worker nodes, one in each of our availability zones. Flavor:
-  v1-c2-m8-d80
-
-### Minimal configuration
-
-* Three control plane nodes, one in each of our availability zones. Flavor:
-  v1-c2-m8-d80
-* One worker node, Flavor:
-  v1-c2-m8-d80
-
-  This is the minimal configuration offered. Scaling to larger flavors and adding nodes are supported. Autoscaling is not supported with a single worker node.
-
-> **Note:**
-SLA is different for minimal configuration type of cluster. SLA's can be found [here](https://elastx.se/en/kubernetes/sla).
-
 ## Good to know
 
 ### Design your Cloud
 
 We expect customers to design their setup to not require access to Openstack Horizon. This is to future proof the product.
 This means, do not place other instances in the same Openstack project, nor utilize Swift (objectstore) in the same project.
-We are happy to provide a separate Swiftproject, and a secondary Openstack project for all needs. We do not charge per each Openstack project!
+We are happy to provide a separate Swiftproject, and a secondary Openstack project for all needs.
 
 ### Persistent volumes
 
 Cross availability zone mounting of volumes is not supported. Therefore, volumes
 can only be mounted by nodes in the same availability zone.
-
-### Cluster subnet CIDR
-
-The default cluster node network CIDR is *10.128.0.0/22*. An alternate CIDR can
-be specified on cluster creation. Changing CIDR after creation requires
-rebuilding the cluster.
-
-### Worker nodes Floating IPs
-
-By default, our clusters come with nodes that do not have any Floating IPs attached to them. If, for any reason, you require Floating IPs on your workload nodes, please inform us, and we can configure your cluster accordingly. It's worth noting that the most common use case for Floating IPs is to ensure predictable source IPs. However, please note that enabling or disabling Floating IPs will necessitate the recreation of all your nodes, one by one.
 
 ### Ordering and scaling
 
@@ -85,7 +54,7 @@ with either our sales department or our support. This is a known limitation, but
 
 Since Elastx Private Kubernetes 2.0 we offer auto scaling of workload nodes. This is based on resource requests, which means it relies on the administator to set realistic requests on the workload. Configuring auto-scaling options is currently a manual process involving contact with either our sales department or our support.
 
-### Optional features and add-ons
+### Cluster add-ons
 
 We offer a managed cert-manager and a managed NGINX Ingress Controller.
 
