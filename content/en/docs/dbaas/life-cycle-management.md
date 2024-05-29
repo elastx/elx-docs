@@ -16,8 +16,8 @@ The update will be performed using a roll-forward upgrade algorithm:
 1. The oldest replica (or primary if no replica exist) will be selected first
 2. A new node will be added with the same specification as the oldest node and join the datastore
 3. The oldest node will be removed
-4. 1-3 continues until all replicas (or primaries in case of a multi-primary setup)  are updated.
-5. If it is a primary-replica configuration then the primary will be updated last. A new node will be added, the new node will be promoted to become the new primary, and the old primary will be removed.
+4. 1-3 continues until all replicas are updated.
+5. Lastly the primary will be updated. A new node will be added, the new node will be promoted to become the new primary, and the old primary will be removed.
 
 > Please be aware that the floating ip addresses assigned to the nodes may change. It is recommended to use the external DNS name found in the Overview tab of the UI instead.
 
