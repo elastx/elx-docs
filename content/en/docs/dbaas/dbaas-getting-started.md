@@ -9,7 +9,7 @@ alwaysopen: true
 The management of your datastore clusters takes place in our DBaaS Web UI. To create your first datastore go to https://dbaas.elastx.cloud/ and login with your [Elastx IdP account](https://docs.elastx.cloud/docs/tech-previews/idp-ops/).
 
 ## Create a datastore
-You can create multiple datastores within your DBaaS Project. A datastore is a database cluster which can consist of one or multiple nodes. If you opt for a primary with two replicas you will get three nodes that are spread out on all three of our availability zones. This will ensure the the highest availability that also comes with built-in failover.
+You can create multiple datastores within your DBaaS Project. A datastore is a database cluster which can consist of one or multiple nodes. If you opt for a primary with two replicas you will get three nodes that are spread out on all three of our availability zones. This will ensure the highest availability that also comes with built-in failover.
 
 To create a new datastore, choose +Create datastore in the Web UI. This will open a configuration wizard.
 
@@ -30,11 +30,11 @@ To create a new datastore, choose +Create datastore in the Web UI. This will ope
 
 ### Create a new database
 For MariaDB/MySQL you need to create a database before creating a database user.  
-For Postgresql you need to create a database user before creating a database.
+For PostgreSQL you need to create a database user before creating a database.
 
 1. Select the datastore in which you wish to create a database in.
 2. Under Databases tab pick Create new database
-3. Write a name for the database. For Posgresql select the owner (database user) and click Create.
+3. Write a name for the database. For PostgreSQL select the owner (database user) and click Create.
 
 ### Create a new database user
 
