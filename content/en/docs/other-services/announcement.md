@@ -1,9 +1,39 @@
 ---
 title: "Announcements"
-description: "Announcement for Elastx other services"
+description: "Announcement for Elastx AI and other services"
 weight: 1
 alwaysopen: true
 ---
+
+## 2024-06-04 AI services now available
+
+Starting with AI to create business value can seem like a complex process. To help our customers to get started with AI we have launched a few different AI introduction services that offer a structured and proven approach to get started. They allow each business to choose which steps to implement and when, based on their unique situation and needs.
+
+The following AI services are now available.
+
+### GPU and Private Language Model
+
+Our Private Language Model as a Service is designed to provide you with a secure, cost-effective way to test and verify our future generative AI services within your system.
+
+### AI Introduction
+
+AI Introduction is a collaborative starter package by [Algorithma](https://elastx.se/en/partners/consulting/algorithma) and Elastx, designed to efficiently and swiftly kickstart your AI journey.
+
+### Responsible AI Training
+
+Join us at our location or invite us to yours for an in-depth session on information security and responsible AI.
+
+### GPU and Private Language Model
+
+Our Private Language Model as a Service is designed to provide you with a secure, cost-effective way to test and verify our future generative AI services within your system.
+
+### Customized AI Projects
+
+In collaboration with you, [Algorithma](https://elastx.se/en/partners/consulting/algorithma) and Elastx plan and execute tailored AI projects.
+
+You can find information, specifications and pricing here, [https://elastx.se/en/ai-services/](https://elastx.se/en/ai-services/).
+
+If you have any general questions or would like to sign-up please contact us at hello@elastx.se. For technical questions please register a support ticket at [https://support.elastx.se](https://support.elastx.se).
 
 ## 2024-02-01 DDoS protection now included
 
