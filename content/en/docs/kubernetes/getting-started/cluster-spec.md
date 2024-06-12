@@ -37,7 +37,7 @@ To try keep node management as easy as possible we make use of nodegroups. A nod
 
 You could have multiple nodegroups, if you for example want to target workload on separate nodes or in case you wish to consume multiple flavors.
 
-A few eamxples of nodegroups:
+A few examples of nodegroups:
 
 | Name | Flavour | AZ list | Min node count | Max node count (autoscaling) |
 | -------- | ----------------- | ------------- | ------------- | ------------- |
@@ -46,22 +46,22 @@ A few eamxples of nodegroups:
 |frontend |v1-c4-m16-d160 |STO1, STO2, STO3 |3 |12 |
 |jobs |v1-c4-m16-d160 |STO1 |1 |3 |
 
-In the examples we could se worker our default nodegroup and an example of having separate nodes for database and frontend where the database is running on dedicated nodes and the frontend is running on smaller nodes but can autosacle between 3 and 12 nodes based on current cluster request. We also have a jobs nodegroup where we have one node in sto1 but can scale up to 3 nodes where all are placed inside STO1.
-You can read more about [autocalsing here](../../guides/autoscaling/).
+In the examples we could see worker our default nodegroup and an example of having separate nodes for databases and frontend where the database is running on dedicated nodes and the frontend is running on smaller nodes but can autoscale between 3 and 12 nodes based on current cluster request. We also have a jobs nodegroup where we have one node in sto1 but can scale up to 3 nodes where all are placed inside STO1.
+You can read more about [autoscaling here](../../guides/autoscaling/).
 
-Nodegroups can be chagned at any time. Please also not that we have auto-healing meaning in case any of your nodes for any reason stops working we will replace them. More about [autohealing could be found here](TBD)
+Nodegroups can be changed at any time. Please also note that we have auto-healing meaning in case any of your nodes for any reason stops working we will replace them. More about [autohealing could be found here](TBD)
 
 ### Network
 
-By default we create a network (10.128.0.0/22). However we could use another subnet per cusotmer request. The most common scenario when customers request another subnet is when exposing multiple Kubernetes clsuters over a VPN.
+By default we create a cluster network  (10.128.0.0/22). However we could use another subnet per customer request. The most common scenario is when customer request another subnet is when exposing multiple Kubernetes clusters over a VPN.
 
-Please make sure to inform us you wish to use a custom subnet during the ordering process since we cannot replace the network after creation meaning we need to recreate your entire cluster.
+Please make sure to inform us if you wish to use a custom subnet during the ordering process since we cannot replace the network after creation, meaning we would then need to recreate your entire cluster.
 
-We currently only support cidr in the 10.0.0.0/8 subnet and at lest a /24. Both nodes and loadbalancers are using IPs for this range meaning you need to have a sizable network from the begning.
+We currently only support cidr in the 10.0.0.0/8 subnet range and at least a /24. Both nodes and loadbalancers are using IPs for this range meaning you need to have a sizable network from the beginning.
 
-### Clsuter domain
+### Cluster domain
 
-We default all clusters to "cluster.local". This is simullar as most other providers out there. If you wish to have another cluster doamin please let us know during the ordering procedure since it cannot be replaces after cluster creation.
+We default all clusters to "cluster.local". This is simular to most other providers. If you wish to have another cluster domain please let us know during the ordering procedure since it cannot be replaced after cluster creation.
 
 ### Worker nodes Floating IPs
 
