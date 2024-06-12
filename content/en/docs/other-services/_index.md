@@ -1,6 +1,6 @@
 ---
-title: "Other services"
+title: "AI and Other Services"
 type: "page"
-description: "Documentation over Elastx other services"
+description: "Documentation for Elastx AI and other services"
 weight: 1
 ---
