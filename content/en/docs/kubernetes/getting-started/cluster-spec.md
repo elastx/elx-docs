@@ -49,7 +49,7 @@ A few examples of nodegroups:
 In the examples we could see worker our default nodegroup and an example of having separate nodes for databases and frontend where the database is running on dedicated nodes and the frontend is running on smaller nodes but can autoscale between 3 and 12 nodes based on current cluster request. We also have a jobs nodegroup where we have one node in sto1 but can scale up to 3 nodes where all are placed inside STO1.
 You can read more about [autoscaling here](../../guides/autoscaling/).
 
-Nodegroups can be changed at any time. Please also note that we have auto-healing meaning in case any of your nodes for any reason stops working we will replace them. More about [autohealing could be found here](TBD)
+Nodegroups can be changed at any time. Please also note that we have auto-healing meaning in case any of your nodes for any reason stops working we will replace them. More about [autohealing could be found here](../../guides/autohealing/)
 
 ### Network
 
