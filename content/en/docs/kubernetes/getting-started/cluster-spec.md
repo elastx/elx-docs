@@ -33,7 +33,7 @@ The standard configuration consists of the following:
 
 ### Nodegroups and multiple flavors
 
-To try keep node management as easy as possible we make user of nodegroups. A nodegroup contains of one or multiple nodes with one flavor and a list of avalability zones to deploy nodes in. Clusters are default deliverd with a nodegroup called `workers` containing 3 nodes one in each az. Anodegroup are limited to one flavour meaning all nodes in the nodegroup will have the same amount of cpu, ram and disk.
+To try keep node management as easy as possible we make use of nodegroups. A nodegroup contains of one or multiple nodes with one flavor and a list of availability zones to deploy nodes in. Clusters are default deliverd with a nodegroup called `workers` containing 3 nodes one in each AZ. A nodegroup is limited to one flavor meaning all nodes in the nodegroup will have the same amount of CPU, RAM and disk.
 
 You could have multiple nodegroups, if you for example want to tarket workload on separate nodes or in case you wish to consume multiple flavours.
 
