@@ -13,7 +13,7 @@ A default cluster comes with 3 controlplane and 3 worker nodes. To connect all n
 
 ### Nodes
 
-The standard configuration consist of the following:
+The standard configuration consists of the following:
 
 * Three control plane nodes, one in each of our availability zones. Flavor:
   v1-c2-m8-d80
