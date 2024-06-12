@@ -222,3 +222,42 @@ service needs to be deleted and a new one created.
 Loadbalancers have support for multiple protocols. In general we would recommend everyone to try avoiding http and https simply because they do not perform as well as other protocols.
 
 Instead use tcp or haproxys proxy protocol and run an ingress controller thats responsible for proxying within clusters and TLS.
+
+### Load Balancer Flavors
+
+Load balancers come in multiple flavors. The biggest difference is how much traffic they can handle. If no flavor is deployed, we default to `v1-lb-1`. However, this flavor can only push around 200 Mbit/s. For customers wanting to push potentially more, we have a couple of flavors to choose from:
+
+| ID                                   | Name    | Specs     | Approx Traffic |
+| ------------------------------------ | ------- | --------- | ---------------|
+| 16cce6f9-9120-4199-8f0a-8a76c21a8536 | v1-lb-1 | 1G, 1 CPU | 200 Mbit/s     |
+| 48ba211c-20f1-4098-9216-d28f3716a305 | v1-lb-2 | 1G, 2 CPU | 400 Mbit/s     |
+| b4a85cd7-abe0-41aa-9928-d15b69770fd4 | v1-lb-4 | 2G, 4 CPU | 800 Mbit/s     |
+| 1161b39a-a947-4af4-9bda-73b341e1ef47 | v1-lb-8 | 4G, 8 CPU | 1600 Mbit/s    |
+
+To select a flavor for your Load Balancer, add the following to the Kubernetes Service `.metadata.annotations`:
+
+```yaml
+loadbalancer.openstack.org/flavor-id: <id-of-your-flavor>
+```
+
+Note that this is a destructive operation when modifying an existing Service; it will remove the current Load Balancer and create a new one (with a new public IP).
+
+Full example configuration for a basic `LoadBalancer` service:
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    loadbalancer.openstack.org/flavor-id: b4a85cd7-abe0-41aa-9928-d15b69770fd4
+  name: my-loadbalancer
+spec:
+  ports:
+  - name: http-80
+    port: 80
+    protocol: TCP
+    targetPort: http
+  selector:
+    app: my-application
+  type: LoadBalancer
+```
