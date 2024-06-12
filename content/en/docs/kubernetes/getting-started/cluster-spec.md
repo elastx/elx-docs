@@ -85,7 +85,7 @@ We currently offer managed cert-manager, NGINX Ingress and elx-nodegroup-control
 
 #### Cert-manager
 
-Cert-manager ([link to cert-manager.io](https://cert-manager.io/)) helpsyou to manage TLS certificates. A common usecase if to use lets-exncrypt to "automaticly" generate certificates for web apps. However the functiuonality goes much deeper. We also have [usage instructions](../../guides/cert-manager/) and have a [guide](../../guides/install-certmanager/) if you wish to deploy cert-manager yourself.
+Cert-manager ([link to cert-manager.io](https://cert-manager.io/)) helps you to manage TLS certificates. A common use case is to use lets-encrypt to "automatically" generate certificates for web apps. However the functionality goes much deeper. We also have [usage instructions](../../guides/cert-manager/) and have a [guide](../../guides/install-certmanager/) if you wish to deploy cert-manager yourself.
 
 #### Ingress
 
