@@ -79,15 +79,15 @@ If you wish to integrate with your existing OIDC compatible IDP, example Microso
 
 By default we ship clusters with this option disabled however if you wish to make use of OIDC just let us know when order the cluster or afterwards. OIDC can be enabled, disabled or changed at any time.
 
-### Cluster add-ons
+## Cluster add-ons
 
 We currently offer managed cert-manager, NGINX Ingress and elx-nodegroup-controller.
 
-#### Cert-manager
+### Cert-manager
 
 Cert-manager ([link to cert-manager.io](https://cert-manager.io/)) helps you to manage TLS certificates. A common use case is to use lets-encrypt to "automatically" generate certificates for web apps. However the functionality goes much deeper. We also have [usage instructions](../../guides/cert-manager/) and have a [guide](../../guides/install-certmanager/) if you wish to deploy cert-manager yourself.
 
-#### Ingress
+### Ingress
 
 An ingress controller in a Kubernetes cluster manages how external traffic reaches your services. It routes requests based on rules, handles load balancing, and can integrate with cert-manager to manage TLS certificates. This simplifies traffic handling and improves scalability and security compared to exposing each service individually. We have a usage guide with examples that can be found [here.](../../guides/ingress/)
 
@@ -95,6 +95,6 @@ We have chosen to use ingress-nginx and to support ingress, we limit what custom
 
 If you are interested in removing any limitations, we've assembled guides with everything you need to install the same IngressController as we provide. This will give you full control. The various resources give configuration examples and instructions for lifecycle management. These can be found [here.](../../guides/install-ingress/)
 
-#### elx-nodegroup-controller
+### elx-nodegroup-controller
 
 The nodegroup controller is useful when customers want to use custom taints or labels on their nodes. It supports matching nodes based on nodegroup or by name. The controller can be found on [Github](https://github.com/elastx/elx-nodegroup-controller) if you wish to inspect the code or deploy it yourself.
