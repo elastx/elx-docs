@@ -47,7 +47,7 @@ A few eamxples of nodegroups:
 |jobs |v1-c4-m16-d160 |STO1 |1 |3 |
 
 In the examples we could se worker our default nodegroup and an example of having separate nodes for database and frontend where the database is running on dedicated nodes and the frontend is running on smaller nodes but can autosacle between 3 and 12 nodes based on current cluster request. We also have a jobs nodegroup where we have one node in sto1 but can scale up to 3 nodes where all are placed inside STO1.
-You can read more about [autocalsing here](../autoscaling).
+You can read more about [autocalsing here](../../guides/autoscaling/).
 
 Nodegroups can be chagned at any time. Please also not that we have auto-healing meaning in case any of your nodes for any reason stops working we will replace them. More about [autohealing could be found here](TBD)
 
