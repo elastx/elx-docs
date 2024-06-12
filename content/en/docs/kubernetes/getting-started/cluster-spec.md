@@ -97,4 +97,4 @@ If you are interested in removing any limitations, we've assembled guides with e
 
 #### elx-nodegroup-controller
 
-The nodegroup controller is usefull when customers wants to make use custom taints or labels on their nodes. It supports matching nodes based on nodegroup or by name. The controller can be found on [Github](https://github.com/elastx/elx-nodegroup-controller) if you wish to inspect the code or deploy it yourself.
+The nodegroup controller is useful when customers want to use custom taints or labels on their nodes. It supports matching nodes based on nodegroup or by name. The controller can be found on [Github](https://github.com/elastx/elx-nodegroup-controller) if you wish to inspect the code or deploy it yourself.
