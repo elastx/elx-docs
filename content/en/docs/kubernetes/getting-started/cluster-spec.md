@@ -7,7 +7,7 @@ alwaysopen: true
 
 There are a lot of options possible for your cluster. Most options have a sane default however could be overridden on request.
 
-A default cluster comes with 3 controlplane and 3 woker nodes. To connect all nodes we create a network, default (10.128.0.0/22). We also deploy monitoring to ensure functionality of all cluster components. However most things are just a default and could be overriden.
+A default cluster comes with 3 controlplane and 3 worker nodes. To connect all nodes we create a network, default (10.128.0.0/22). We also deploy monitoring to ensure functionality of all cluster components. However most things are just a default and could be overridden.
 
 ## Common options
 
