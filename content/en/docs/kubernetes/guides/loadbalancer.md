@@ -206,6 +206,35 @@ project or contact our support:
 
 Adding services of type *LoadBalancer* will create load balancers in OpenStack, which is a billable resource and you will be charged for them.
 
+### Loadbalancer statuses
+
+Load balancers within OpenStack have two distinct statuses, which may cause confusion regarding their meanings:
+
+* **Provisioning Status**: This status reflects the overall condition of the load balancer itself. If any issues arise with the load balancer, this status will indicate them. Should you encounter any problems with this status, please don't hesitate to contact Elastx support for assistance.
+* **Operating Status**: This status indicates the health of the configured backends, typically referring to the nodes within your cluster, especially when health checks are enabled (which is the default setting). It's important to note that an operational status doesn't necessarily imply a problem, as it depends on your specific configuration. If a service is only exposed on a single node, for instance, this is to be expected since load balancers by default distribute traffic across all cluster nodes.
+
+#### Provisioning status codes
+
+| Code | Description|
+|------|------------|
+|ACTIVE|The entity was provisioned successfully|
+|DELETED|The entity has been successfully deleted|
+|ERROR|Provisioning failed|
+|PENDING_CREATE|The entity is being created|
+|PENDING_UPDATE|The entity is being updated|
+|PENDING_DELETE|The entity is being deleted|
+
+#### Operating status codes
+
+| Code | Description|
+|------|------------|
+|ONLINE| - Entity is operating normally </br> - All pool members are healthy|
+|DRAINING| The member is not accepting new connections |
+|OFFLINE| Entity is administratively disabled |
+|DEGRADED| One or more of the entity’s components are in ERROR |
+|ERROR| -The entity has failed </br> - The member is failing it’s health monitoring checks </br> - All of the pool members are in ERROR|
+|NO_MONITOR| No health monitor is configured for this entity and it’s status is unknown|
+
 ### High availability properties
 
 OpenStack Octavia load balancers are placed in two of our three availability
