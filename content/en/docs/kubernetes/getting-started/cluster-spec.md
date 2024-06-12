@@ -9,7 +9,6 @@ There are a lot of options possible for your cluster. Most options have a sane d
 
 A default cluster comes with 3 controlplane and 3 woker nodes. To connect all nodes we create a network, default (10.128.0.0/22). We also deploy monitoring to ensure functionality of all cluster components. However most things are just a default and could be overriden.
 
-
 ## Common options
 
 ### Nodes
@@ -86,7 +85,16 @@ We currently offer managed cert-manager, NGINX Ingress and elx-nodegroup-control
 
 #### Cert-manager
 
+Cert-manager ([link to cert-manager.io](https://cert-manager.io/)) helpsyou to manage TLS certificates. A common usecase if to use lets-exncrypt to "automaticly" generate certificates for web apps. However the functiuonality goes much deeper. We also have [usage instructions](../../guides/cert-manager/) and have a [guide](../../guides/install-certmanager/) if you wish to deploy cert-manager yourself.
 
 #### Ingress
 
-If you are interested in removing any limitations, we've assembled guides with everything you need to install the same IngressController and cert-manager as we provide. This will give you full control. The various resources gives configuration examples, and instructions for lifecycle management. These can be found in the sections [Getting Started](../getting-started/) and [Guides](../guides/).
+An ingress controller in a Kubernetes cluster manages how external traffic reaches your services. It routes requests based on rules, handles load balancing, and can integrate with cert-manager to manage TLS certificates. This simplifies traffic handling and improves scalability and security compared to exposing each service individually. We have a usage guide with examples that can be found [here.](../../guides/ingress/)
+
+We have chosen to use ingress-nginx and to support ingress, we limit what custom configurations can be made per cluster. We offer two "modes". One that we call direct mode, which is the default behavior. This mode is used when end-clients connect directly to your ingress. We also have a proxy mode for when a proxy (e.g., WAF) is used in front of your ingress. When running in proxy mode, we also have the ability to limit traffic from specific IP addresses, which we recommend doing for security reasons. If you are unsure which mode to use or how to handle IP whitelisting, just let us know and we will help you choose the best options for your use case.
+
+If you are interested in removing any limitations, we've assembled guides with everything you need to install the same IngressController as we provide. This will give you full control. The various resources give configuration examples and instructions for lifecycle management. These can be found [here.](../../guides/install-ingress/)
+
+#### elx-nodegroup-controller
+
+The nodegroup controller is usefull when customers wants to make use custom taints or labels on their nodes. It supports matching nodes based on nodegroup or by name. The controller can be found on [Github](https://github.com/elastx/elx-nodegroup-controller) if you wish to inspect the code or deploy it yourself.
