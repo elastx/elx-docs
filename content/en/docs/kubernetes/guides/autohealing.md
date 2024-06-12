@@ -1,5 +1,5 @@
 ---
-title: "Auto Heling"
+title: "Auto Healing"
 description: "Automatic Healing for Unresponsive or Failed Kubernetes Nodes"
 weight: 5
 alwaysopen: true
