@@ -16,14 +16,21 @@ OpenStack](https://github.com/kubernetes/cloud-provider-openstack/).
 
 > See our [pricing page](https://elastx.se/en/openstack/pricing)  under the table *Storage* to calculate your costs.
 
-This is the list of storage classes provided in clusters of version > 1.23.
+Below is the list of storage classes provided in newly created clusters.
+In case you see other storageclasses in your cluster, consider these legacy and please migrate data away from them.
+We provide a guide to [Change  PV StorageClass](https://docs.elastx.cloud/docs/kubernetes/guides/change_storageclass/).
+
 
 ```bash
 $ kubectl get storageclasses
-NAME                       PROVISIONER                RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
-16k                        cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   167d
-8k                         cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   167d
-v1-dynamic-40 (default)    cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   167d
+NAME              PROVISIONER                RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+v2-128k           cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   27d
+v2-16k            cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   27d
+v2-1k (default)   cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   27d
+v2-32k            cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   27d
+v2-4k             cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   27d
+v2-64k            cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   27d
+v2-8k             cinder.csi.openstack.org   Delete          WaitForFirstConsumer   true                   27d
 ```
 
 
@@ -44,13 +51,13 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: 16k
+  storageClassName: v2-16k
 ```
 
 ```bash
 $ kubectl get persistentvolumeclaim
 NAME      STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
-example   Bound    pvc-f8b1dc7f-db84-11e8-bda5-fa163e3803b4   1Gi        RWO            16k            18s
+example   Bound    pvc-f8b1dc7f-db84-11e8-bda5-fa163e3803b4   1Gi        RWO            v2-16k            18s
 ```
 
 ## Good to know
@@ -76,11 +83,11 @@ All volumes are encrypted at rest in hardware.
 
 ### Volume type `hostPath`
 
-A volume of type hostPath is in reality just a local directory on the specific node being mounted in a pod, this means data is stored locally and will be unavailable if the pod is ever rescheduled on another node. This is expected during cluster upgrades or maintenance, however it may also occur because of other reasons, for example if a pod crashes or a node is malfunctioning.
+A volume of type hostPath is in reality just a local directory on the specific node being mounted in a pod, this means data is stored locally and will be unavailable if the pod is ever rescheduled on another node. This is expected during cluster upgrades or maintenance, however it may also occur because of other reasons, for example if a pod crashes or a node is malfunctioning. Malfunctioning nodes are automatically healed, meaning they are automatically replaced.
 
-You can read more about this [here](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
+You can read more about hostpath [here](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath).
 
-If you are looking for a way to store persistent data we would instead recommend to make use of PVCs. PVCs can move between nodes within one data-center meaning any data stored will be present even if the pod is being recreated.
+If you are looking for a way to store persistent data we recommend to use PVCs. PVCs can move between nodes within one data-center meaning any data stored will be present even if the pod or node is recreated.
 
 ## Known issues
 
