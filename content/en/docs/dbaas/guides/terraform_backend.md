@@ -23,7 +23,7 @@ In the DBaaS UI, go to your [Account settings](https://dbaas.elastx.cloud/accoun
 
 In the *Create Credentials*  window, you can add a description and set an expiration date for your new OAuth2 credential.  
 Expiration date is based on the number of hours starting from when the credential were created. If left empty, the credential will not have an expiration date. You can however revoke and-/or remove your credentials at any time.  
-When your done select Create.
+When you're done select Create.
 
 
 ![Create credential](/img/dbaas/guides/dbaas_terraform_backend-1.png)
@@ -31,7 +31,7 @@ When your done select Create.
 ---
 
 Copy Client ID and Client Secret. We will be using them to authenticate to DBaaS with Terraform.  
-Make sure you've copied and saved the client secret before you close the dialog. The client secret value can not be obtained later and you will have to create new a new one.
+Make sure you've copied and saved the client secret before you close the dialog. The client secret value cannot be obtained later and you will have to create new a new one.
 
 ![Copy credential](/img/dbaas/guides/dbaas_terraform_backend-2.png)
 
