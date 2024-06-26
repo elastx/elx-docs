@@ -31,7 +31,7 @@ When you're done select Create.
 ---
 
 Copy Client ID and Client Secret. We will be using them to authenticate to DBaaS with Terraform.  
-Make sure you've copied and saved the client secret before you close the dialog. The client secret value cannot be obtained later and you will have to create new a new one.
+Make sure you've copied and saved the client secret before you close the dialog. The client secret value cannot be obtained later and you will have to create a new one.
 
 ![Copy credential](/img/dbaas/guides/dbaas_terraform_backend-2.png)
 
