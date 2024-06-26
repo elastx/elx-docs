@@ -40,7 +40,7 @@ Make sure you've copied and saved the client secret before you close the dialog.
 ## Terraform configuration
 
 Create a new file locally with the variables below and add your Client ID and Client Secret.
-```json
+```shell
 #!/usr/bin/env bash
 
 export CCX_BASE_URL="https://dbaas.elastx.cloud"
@@ -48,13 +48,13 @@ export CCX_CLIENT_ID="<client-id>"
 export CCX_CLIENT_SECRET="<client-secret>"
 ```
 Source your newly created credentials file.
-```json
+```shell
 source /path/to/myfile.sh
 ```
 
 ### Terraform provider
 Create a new terraform configuration file. In this example we create `provider.tf` and add the CCX provider.
-```json
+```hc1
 terraform {
   required_providers {
     ccx = {
@@ -67,7 +67,7 @@ terraform {
 
 ### Create your first datastore with Terraform
 Create an additional terraform configuration file and add your prefered datastore settings. In this example we create a configuration file named `main.tf` and specify that his is a single node datastore with MariaDB.
-```json
+```hc1
 resource "ccx_datastore" "elastx-dbaas" {
   name           = "my-terraform-datastore"
   db_vendor      = "mariadb"
