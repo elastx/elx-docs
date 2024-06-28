@@ -5,6 +5,26 @@ weight: 1
 alwaysopen: true
 ---
 
+## 2024-06-28 New default Kubernetes StorageClass
+We are changing the default StorageClass from v1-dynamic-40 to v2-1k ahead of schedule. 
+
+**Background**<br>
+The change was already implemented by accident to clusters created on versions after v1.26, which meant we diverged from advertised changes in our changelog.
+
+By committing to doing this change actively for all clusters, we're catching up to reality and uniforming our clusters.
+
+**Impact**<br>
+Customers who are not specifying a storage class, will not have any impact on creating new volumes. In this scenario, a volume will be created with the v2-1k as the new default. Customers that actively specify the old v1-dynamic-40 will face no impact as this StorageClass is still supported.
+
+**General note**<br>
+To simplify the future necessary migration to v2 storage classes, please consider to stop creating new volumes using StorageClass that are not prefixed with “v2-”. 
+
+A list of available StorageClasses and their respective pricing can be found here: https://elastx.se/en/openstack/pricing
+A guide on how to migrate volumes between StorageClasses can be found here: https://docs.elastx.cloud/docs/kubernetes/guides/change_storageclass/
+
+
+
+
 ## 2024-03-08 Kubernetes v1.26 upgrade notice
 To ECP customers that have not yet upgraded to v1.26, this announcement is valid for you.
 
