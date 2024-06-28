@@ -20,6 +20,7 @@ Customers who are not specifying a storage class, will not have any impact on cr
 To simplify the future necessary migration to v2 storage classes, please consider to stop creating new volumes using StorageClass that are not prefixed with “v2-”. 
 
 A list of available StorageClasses and their respective pricing can be found here: https://elastx.se/en/openstack/pricing
+
 A guide on how to migrate volumes between StorageClasses can be found here: https://docs.elastx.cloud/docs/kubernetes/guides/change_storageclass/
 
 
