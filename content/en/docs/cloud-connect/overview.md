@@ -1,7 +1,6 @@
 ---
 title: "Cloud Connect"
 description: "Make a physical connection to Elastx"
-weight: 1
 alwaysopen: true
 ---
 
