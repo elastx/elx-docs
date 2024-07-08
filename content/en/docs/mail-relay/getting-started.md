@@ -1,6 +1,6 @@
 ---
-title: Setup
-description: Getting started
+title: Getting started
+description: Configuring DNS and using the service
 ---
 ## Overview
 
