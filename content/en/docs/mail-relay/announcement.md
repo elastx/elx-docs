@@ -7,6 +7,10 @@ description: "Mail Relay service announcements"
 We now offer DKIM signing on emails sent through our mail relay.
 
 
+**What's new?**<br />
+Previously the only option for DKIM signed messages sent through our mail relay was to sign the emails before sending them to us. This is still a viable option in case you want to control the key used for signing. As an alternative to the above, you can now contact us to request that Elastx mail relay handles DKIM signing for you.
+
+
 **Background**<br />
 DKIM adds a digital signature to an outgoing message. Receiving mail servers can, using this digital signature, verify that a message did originate from a trusted source for the sender domain.
 
