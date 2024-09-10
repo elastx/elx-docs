@@ -37,7 +37,6 @@ Get more information about the [OpenStack command-line client](https://docs.open
 3. Check the status of your backup by Navigating to ["Project" → "Volumes" → "Backups"](https://ops.elastx.cloud/project/backups/).
 When done, Status will change to available.
 
-![Status-create-backup](/img/openstack-iaas/guides/ops_backup-restore-3.png)
 
 ## Restore volume from backup
 Backup of a volume can be restored in two ways.
