@@ -7,7 +7,7 @@ alwaysopen: true
 
 ## Overview
 This guide will help you getting started with creating and restoring your own backups using various database CLI tools.  
-For the build-in backup functionality, please see [here](../backup-and-restore-ui/).
+For the built-in backup functionality, please see [here](../backup-and-restore-ui/).
 
 ## PostgreSQL
 ### Backup
