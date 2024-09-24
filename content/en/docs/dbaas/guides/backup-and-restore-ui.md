@@ -13,7 +13,7 @@ For backup pricing, you can use our DBaaS price calculator found here: [ECP-DBaa
 >**Beaware**: Please note that if you delete a datastore, all backups for that datastore will also be deleted. This action cannot be reverted.
 * Backups are taken for the whole datastore.
 * Maximum backup retention period is 90 days.  
-* No storage capacity limit is googset for backups within the retention period.
+* There's no storage capacity limit for backups within the retention period.
 * Incremental backups are supported and enabled by default on MySQL and MariaDB.
 * Backups cannot be downloaded locally. To create an offsite backup, you can use one of the CLI-tools. See [here](backup-and-restore-cli/) for some examples.
 * Create new datastore from a previously taken backup is supported on MySQL, MariaDB and PostgreSQL.
