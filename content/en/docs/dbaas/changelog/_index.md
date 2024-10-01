@@ -7,7 +7,7 @@ alwaysopen: true
 
 # V 1.48
 ## Overview
-Bring the DBaas control plane to ver 1.48 and to introduce MSSQL.
+Bring DBaas control plane to ver 1.48, introduce MSSQL plus the new V2 instances and storage.
 
 ## New features
 The upgrades come with a bunch of new features, such as:
