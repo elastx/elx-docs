@@ -30,7 +30,7 @@ Start by locating your datastore in the DBaaS UI and go to the **Nodes** section
 ---
 
 ### Promote new replica as primary
->**Important:** Make sure to have read [Good to know](#good-toknow) and have a fresh backup of your datastore before proceeding.
+>**Important:** Make sure to have read [Good to know](#good-to-know) and have a fresh backup of your datastore before proceeding.
 
 To be able to use your new node as a primary, you first have to promote it.
 Select the three dots next to the new replica and choose **Promote Replica**, this will start the process of changing primary.  
