@@ -21,7 +21,7 @@ In this release we introduce MSSQL, the new Openstack V2 instance flavors and vo
 * Terraform provider upgrade allowing automated datastore and firewall management.
 * Improved documentation with more practical examples for, among other, external backup/restore and Terraform provider usage, and much more.
   
- ## Important fixes 
+## Important fixes 
 * Fixed a problem where DNS name for datatore nodes occasionally disappeared.
 * Fixed Postgres creation and restore who occasionally could fail.
 * Corrected a problem where datastore creation from backup failed.
@@ -41,7 +41,7 @@ The release focus on datastore failure handling, e.g. when nodes are lost and ho
 * Improved UI guidance tool tips.
 * Terraform API for grouped firewall rules.
 
-# Important fixes
+## Important fixes
 * Corrected a problem where promotion of new MSSQL primary led to endless loops.
 * Fixed problem where DNS records for datastore nodes could sometime disappear after upgrades.
 * Corrected a problem with inconsistent logging and presentation of changed cluster and node status.
@@ -57,5 +57,5 @@ This release introduces configuration management and simplified service access. 
 * Lifecycle Management. Ability to upgrade datastores (OS and database software) using a roll-forward upgrade method.
 * Improved customer error interaction for handling nodes.
 
-# Important fixes
+## Important fixes
 * Corrected a bug that caused the control plane process to restart occasionally.
