@@ -5,10 +5,19 @@ weight: 1
 alwaysopen: true
 ---
 
+## 2024-08-19 ECP Compute
+### New generation v2 flavors
+We are excited to announce that the new v2 compute flavor is now available in our Openstack IaaS. This new flavor is based on the AMD EPYC processor. While the price remains comparable to the v1 compute flavor, you can expect up to double the CPU performance.
+
+The v2 flavors are also available for our Database DBaaS and Kubernetes CaaS services. 
+You can migrate your existing instances from v1 to v2 flavors.
+
+This will take effect starting August 19, 2024.
+
+You can find information, specifications and pricing here, https://elastx.se/se/openstack.
+
 ## 2024-04-29 ECP Block Storage
-
 ### ECP storage price cut
-
 We are happy to announce that we will perform a price cut on our next generation v2 volumes. We launched the v2 volumes at the end of 2023 and it has performed just as good as we had hoped.
 
 The v2 volumes have marked leading performance and are very cost effective and now we will cut the price for volume performance which will make it a market leader.
@@ -33,9 +42,6 @@ This will apply from 2024-06-01.
 As a customer you do not need to do anything, the new pricing will be applied and visible on the next invoice.
 
 You can find information, specifications and pricing here, https://elastx.se/se/openstack.
-
-If you have any general questions or would like to sign-up please contact us at hello@elastx.se.
-Any technical questions please register a support ticket at https://support.elastx.se.
 
 ## 2023-12-20 ECP Block Storage
 ### New v2 Volumes
