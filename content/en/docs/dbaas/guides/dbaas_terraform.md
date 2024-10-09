@@ -84,7 +84,7 @@ resource "ccx_datastore" "elastx-dbaas" {
 ```
 
 ### Create primary/replica datastores with added firewall rules and database parameter values
-This example is built upon the previous MariaDB example. Here we added a second node to create a primary/replica datastore. We're also adding firewall rules and setting database parameter values. To see all available database paramaters for your specific database type, log into the DBaaS UI, go to your specific datastore > Settings > DB Paramaters.
+This example is built upon the previous MariaDB example. Here we added a second node to create a primary/replica datastore. We're also adding firewall rules and setting database parameter values. To see all available database paramaters for your specific database type, log into the DBaaS UI, go to your specific datastore > Settings > DB Parameters.
 ```hcl
 resource "ccx_datastore" "elastx-dbaas" {
   name           = "my-terraform-datastore"
@@ -108,7 +108,7 @@ resource "ccx_datastore" "elastx-dbaas" {
     description = "My database client"
   }
 
-# Set your specific database parameter values here, separated with a comma and no spaces in between.
+# Set your specific database parameter values here. Values should be comma-separated without spaces.
   db_params = {
     sql_mode = "STRICT_TRANS_TABLES,NO_AUTO_CREATE_USER"
   }
@@ -130,5 +130,5 @@ Below you will find a table with available options you can choose from.
 | `volume_size` | *Recommended* - Required if volume_type is used. Minimum volume size requirement is **80GB**. |
 | `db_version` | *Optional* - Only applicable to PostgreSQL. Selects the version of PostgreSQL you want to use. You can choose between 14 and 15. Defaults to **15** if not set. |
 | `firewall` | *Optional* - Inline block for adding firewall rules. Can be set multiple times. |
-| `db_params`| *Optional* - Inline block for setting specific database parameter values using: paramter="values". Values should be comma-separated. |
+| `db_params`| *Optional* - Inline block for setting specific database parameter values using: parameter="values". Values should be comma-separated. |
 | `tags` | *Optional* - Add additional tags. 
