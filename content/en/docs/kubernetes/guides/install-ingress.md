@@ -4,7 +4,6 @@ description: "A guide showing you how to install, upgrade and remove ingress-ngi
 weight: 5
 alwaysopen: true
 ---
-Starting at Kubernetes version v1.26, our default configured clusters are delivered without ingress.
 
 This guide will assist you get a working up to date ingress controller and provide instructions for how to upgrade and delete it. Running your own is useful if you want to have full control.
 
@@ -81,11 +80,6 @@ We provide settings for two main scenarios of how clients connect to the cluster
     ```yaml
       [...]
       service:
-        ingressClassResource:
-          default: false                 # useful to specify which ingress is used when not specified.
-          name: "nginx2"                 # specifies ingressclass name. 
-        ingressClass: "nginx2"           # legacy for annotations matching of ingressclass to be used.
-        loadBalancerIP: "91.193....."    # specify floating IP if available in floating ip pool.
         loadBalancerSourceRanges:        # Whitelist source IPs.
           - 133.124.../32
           - 122.123.../24
