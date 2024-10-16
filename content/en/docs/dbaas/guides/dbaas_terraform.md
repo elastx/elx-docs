@@ -12,7 +12,7 @@ For this we will be using OAuth2 for authentication and the CCX Terraform provid
 
 ## Good To Know
 * Create/Destroy datastores supported.
-* Adding firewall rules supported.
+* Setting firewall rules supported.
 * Setting database parameter values supported.
 * Scale out/in nodes supported.
 * Create users and databases currently not supported.
@@ -22,7 +22,7 @@ For this we will be using OAuth2 for authentication and the CCX Terraform provid
 Before we get started with terraform, we need to create a new set of OAuth2 credentials.  
 In the DBaaS UI, go to your [Account settings](https://dbaas.elastx.cloud/account), select Authorization and choose Create credentials.
 
-In the *Create Credentials*  window, you can add a description and set an expiration date for your new OAuth2 credential.  
+In the Create Credentials window, you can add a description and set an expiration date for your new OAuth2 credential.  
 Expiration date is based on the number of hours starting from when the credential were created. If left empty, the credential will not have an expiration date. You can however revoke and-/or remove your credentials at any time.  
 When you're done select Create.
 
@@ -32,7 +32,7 @@ When you're done select Create.
 ---
 
 Copy Client ID and Client Secret. We will be using them to authenticate to DBaaS with Terraform.  
-Make sure you've copied and saved the client secret before you close the dialog. The client secret cannot be obtained later and you will have to create a new one.
+Make sure you've copied and saved the client secret before closing the popup window. The client secret cannot be obtained later and you will have to create a new one.
 
 ![Copy credential](/img/dbaas/guides/dbaas_terraform_backend-2.png)
 
@@ -84,7 +84,7 @@ resource "ccx_datastore" "elastx-dbaas" {
 ```
 
 ### Create primary/replica datastores with added firewall rules and database parameter values
-This example is built upon the previous MariaDB example. Here we added a second node to create a primary/replica datastore. We're also adding firewall rules and setting database parameter values. To see all available database paramaters for your specific database type, log into the DBaaS UI, go to your specific datastore > Settings > DB Parameters.
+This example is built upon the previous MariaDB example. Here we added a second node to create a primary/replica datastore. We're also adding firewall rules and setting database parameter values. To see all available database parameters for your specific database type, log into the DBaaS UI, go to your specific datastore > Settings > DB Parameters.
 ```hcl
 resource "ccx_datastore" "elastx-dbaas" {
   name           = "my-terraform-datastore"
