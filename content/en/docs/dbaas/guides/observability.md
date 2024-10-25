@@ -81,14 +81,12 @@ The following tables are excerpts of metrics for the different exporters to quic
     |---|---|
     |Temporary tables|Count of temporary tables created|
     |Temporary tables on Disk|Count of temporary tables created on disk rather than in memory|
-  - Sorting
-    - Aborted Connections
-      - Count of failed or aborted connections to the database. Shown as
-        |**Metric**|**Description**|
-        |---|---|
-        |Aborted Clients|Number of connections aborted due to client not closing|
-        |Aborted Connects|Number of failed connection attempts|
-        |Access Denied Errors|Count of unsuccessful authentication attempts|
+  - Aborted Connections
+    |**Metric**|**Description**|
+    |---|---|
+    |Aborted Clients|Number of connections aborted due to client not closing|
+    |Aborted Connects|Number of failed connection attempts|
+    |Access Denied Errors|Count of unsuccessful authentication attempts|
   - Memory Utilisation
     |**Metric**|**Description**|
     |---|---|
