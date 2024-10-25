@@ -25,7 +25,7 @@ Each exporter has its own port used by prometheus to scrape metrics.
 |Mysql|9104|
 |Postgres|9187|
 |Redis|9121|
-|MSSQL|4000|
+|MSSQL|9399|
   
 ---
 
