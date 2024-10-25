@@ -44,7 +44,8 @@ The following tables are excerpts of metrics for the different exporters to quic
 | Disk IOPS | The number of read and write operations within the preset period | 
 | Disk Throughput | The amount of data (in Megabytes per second) that is being read from, or written to, the disk within the preset period |
 
-### [**MySQL**](https://dev.mysql.com/doc/mysql-em-plugin/en/myoem-metrics.html) **/ MariaDB**
+### **MySQL / MariaDB**
+[MySQL metrics reference](https://dev.mysql.com/doc/mysql-em-plugin/en/myoem-metrics.html)
   - Handler Stats
     |**Statistic**|**Description**|
     |---|---|
@@ -105,7 +106,8 @@ The following tables are excerpts of metrics for the different exporters to quic
     |Checkpoint sync time|Time synchronising checkpoint files to disk|
     |Checkpoint write time|Time to write checkpoints to disk|
 
-### [**Redis**](https://docs.redis.com/latest/rs/clusters/monitoring/prometheus-metrics-definitions/)
+### **Redis**
+[Redis metrics reference](https://docs.redis.com/latest/rs/clusters/monitoring/prometheus-metrics-definitions/)
 |**Metric**|**Description**|
 |---|---|
 |Blocked Clients|Clients blocked while waiting on a command to execute|
