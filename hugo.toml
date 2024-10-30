@@ -89,22 +89,16 @@ time_format_default = "January 2, 2006"
         weight = 160
 
       [[languages.en.menu.footer2]]
-        identifier = "facebook"
-        name = "Facebook"
-        url = "https://www.facebook.com/Elastx/"
+        identifier = "linkedin"
+        name = "Linkedin"
+        url = "https://www.linkedin.com/company/elastx/"
         weight = 100
 
       [[languages.en.menu.footer2]]
-        identifier = "twitter"
-        name = "Twitter"
-        url = "https://www.twitter.com/elastx"
+        identifier = "youtube"
+        name = "Youtube"
+        url = "https://www.youtube.com/@Elastx"
         weight = 110
-
-      [[languages.en.menu.footer2]]
-        identifier = "instagram"
-        name = "Instagram"
-        url = "https://www.instagram.com/elastx/"
-        weight = 120
 
 [markup]
   [markup.goldmark]
