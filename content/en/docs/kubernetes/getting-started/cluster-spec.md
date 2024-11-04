@@ -17,7 +17,7 @@ The standard configuration consists of the following:
 
 * Three control plane nodes, one in each of our availability zones. Flavor:
   v1-c2-m8-d80
-* Three worker nodes, one in each of our availability zones. Flavor:
+* Three worker nodes, one in each of our availability zones, in a single nodegroup. Flavor:
   v1-c2-m8-d80
 
 #### Minimal configuration
