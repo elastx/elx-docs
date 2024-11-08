@@ -152,6 +152,6 @@ Select the down arrow next to Download for the object you want to inspect and ch
 
 ## Further reading
 - Swift has an s3 compatible API for applications that don't support the Swift API. You can read more about how to configure Swift for s3cmd <a href="https://docs.elastx.cloud/docs/openstack-iaas/guides/s3_compatibility/">here</a>.  
- - You can find an S3/Swift REST API comparison matrix here at the <a href="https://docs.openstack.org/swift/ussuri/s3_compat.html">OpenStacks documentation</a>.  
- - If you want to use more advanced features, please see the <a href="https://docs.openstack.org/python-swiftclient/ussuri/cli/index.html">OpenStacks documentation for Swift</a>.  
+ - You can find an S3/Swift REST API comparison matrix here at the <a href="https://docs.openstack.org/swift/wallaby/s3_compat.html">OpenStacks documentation</a>.  
+ - If you want to use more advanced features, please see the <a href="https://docs.openstack.org/python-swiftclient/wallaby/cli/index.html">OpenStacks documentation for Swift</a>.  
  - Rclone is a good choice if you need more advanced functions while using Swift. You can read more about Rclone's support for Swift <a href="https://rclone.org/">here</a>.

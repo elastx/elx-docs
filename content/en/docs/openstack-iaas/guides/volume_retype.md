@@ -16,7 +16,7 @@ Either shut down your server or unmount the volume in your operating system befo
 
 In this example, we will use a detached volume with the type ```16k-IOPS-enc```.
 
-Get more information about the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/ussuri/).
+Get more information about the [OpenStack command-line client](https://docs.openstack.org/python-openstackclient/wallaby/).
 
 ## Volume retype from Horizon
 
