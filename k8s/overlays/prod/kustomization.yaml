@@ -13,4 +13,4 @@ images:
   newName: quay.io/elastx/elx-docs
   newTag: f9d95032a05c61dbc02330408d6193b3b1a5247b
 - name: quay.io/elastx/elx-docs
-  newTag: 145b07df5d0bd935aca7c9bbd6642fe0b44e1a20
+  newTag: 1d378db68d1c61768730584bf7f469515c653d0c
