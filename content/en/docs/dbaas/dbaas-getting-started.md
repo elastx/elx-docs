@@ -13,7 +13,7 @@ You can create multiple datastores within your DBaaS Project. A datastore is a d
 
 To create a new datastore, choose +Create datastore in the Web UI. This will open a configuration wizard.
 
-1. Databases: Choose one of the available database types  (MariaDB, MySQL, PostgreSQL, Redis). If you opt for PostgreSQL, you will have the choice between major versions 11, 14 and 15.
+1. Databases: Choose one of the available database types  (MariaDB, MySQL, PostgreSQL, Redis). If you opt for PostgreSQL, you will have the choice between major versions 14 and 15.
 
 2. Configuration: Add a name and optionally tags to easily categorize your datastore. For the Primary / Replica configuration, the options include, one primary node, one primary node with a single replica or one primary node with two replicas.
 
@@ -92,7 +92,7 @@ If you want additional functionality or combine failover with for instance load 
 ## Good-to-Know and Limitations
 
 #### All databases in the datastore will use the same database version
-For example, if you create a datastore with PostgreSQL 11, then all the databases in this datastore will use PostgreSQL 11.
+For example, if you create a datastore with PostgreSQL 15, then all the databases in this datastore will use PostgreSQL 15.
 
 #### Nodes and datastores are created one by one
 When deploying a new datastore or adding a new node, all other actions are added to a queue.
