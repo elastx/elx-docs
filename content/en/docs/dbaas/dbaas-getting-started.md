@@ -91,6 +91,16 @@ If you want additional functionality or combine failover with for instance load 
 
 ## Good-to-Know and Limitations
 
+#### MSSQL limitations
+* Refer to the Microsoft standard license for a complete list of limitations.
+* Only asynchronous commit mode is currently supported.
+* Scaling is not supported as the standard license does not permit more than two nodes.
+* The ccxdb is currently the only supported Always On enabled database.
+* In the Always On configuration, only the ccxdb is replicated.
+* User-created databases (not Always On) are not transferred to the replica
+* Data loss may occur for other user-created databases, as they are not transferred to the replica during the add node process. Therefore, they may be lost if a failover, automatic repair, or any other life-cycle management event occurs.
+
+
 #### All databases in the datastore will use the same database version
 For example, if you create a datastore with PostgreSQL 15, then all the databases in this datastore will use PostgreSQL 15.
 
