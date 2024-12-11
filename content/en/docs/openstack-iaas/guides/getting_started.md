@@ -35,7 +35,7 @@ Now the network is up and ready for you to create the first instance.
 
 ## Create instance
 1. Go to "Project" > "Compute" > "Instances"
-1. Select "Launch Instance" > Set instance name > "Next"
+1. Select "Launch Instance" > Set instance name > Specify Availability Zone > "Next"
 1. Select "Image" in "Select Boot Source" > Select "No" in "Create New Volume"
 1. Select image (ubuntu-20.04-server-latest for example) > "Next"
 1. Select a flavor (v1-standard-1 for example) > "Next"
@@ -44,6 +44,9 @@ Now the network is up and ready for you to create the first instance.
 1. Add the security group you created earlier > "Next"
 1. The key pair you created earlier should already be selected.
 1. "Launch instance"
+
+> [!NOTE]
+> Specifying the Availability Zone is important if you plan on using volumes, as these can't be attached nor migrated across Availability Zones
 
 ## Add a public IP to the instance
 1. Go to "Project" > "Compute" > "Instances" > from the "Actions" menu on the instance you created select "Associate Floating IP"
