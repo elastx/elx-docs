@@ -45,7 +45,7 @@ Now the network is up and ready for you to create the first instance.
 1. The key pair you created earlier should already be selected.
 1. "Launch instance"
 
-> [!NOTE]
+
 > Specifying the Availability Zone is important if you plan on using volumes, as these can't be attached nor migrated across Availability Zones
 
 ## Add a public IP to the instance
