@@ -7,14 +7,15 @@ alwaysopen: true
 
 # V 1.50
 ## Overview
-This release offers upward volume autoscaling, new customer database parameters, improved monitoring in terms of mail notifications and more metrics. It is now possible to create TLS-based sessions. The backup management has been improved disalloving concurrent backup race conditions.
+This release offers upward volume autoscaling, new customer database parameters, improved monitoring in terms of mail notifications and more metrics. It is now possible to create (m)TLS-based sessions where the client can prefetch server certificates. The backup management has been improved disalloving concurrent backup race conditions.
 
 ## Changes
 * Auto-scale volumes, enabled by default.
 * Send email notifications to end user.
-* TLS v1 Mysql/MariaDB, Postgres and Redis.
+* (m)TLS for Mysql/MariaDB, Postgres and Redis.
 * Do all DNS queries through ExternalDNS.
 * The Terraform provider has been substantially improved.
+* Postgres 16.
 
 ## Important fixes 
 * Fixed a problem where multiple concurrent backups were executed.
