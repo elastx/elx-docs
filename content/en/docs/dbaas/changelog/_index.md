@@ -15,7 +15,6 @@ This release offers upward volume autoscaling, new customer database parameters,
 * (m)TLS for Mysql/MariaDB, Postgres and Redis.
 * Do all DNS queries through ExternalDNS.
 * The Terraform provider has been substantially improved.
-* Postgres 16.
 
 ## Important fixes 
 * Fixed a problem where multiple concurrent backups were executed.
