@@ -13,14 +13,17 @@ This guide will help you get started with the basics surrounding Swift object st
 
 ## Swift CLI
 
-Prerequisites: python-swiftclient, application credential.
+To use swift cli you'll need either an application credential or openstack .rc-file:
 
+### Prerequisites
+* python-swiftclient installed
+* Application credential. See [here](application_credentials.md) on how to get started with application crendentials. This is required if your account is using MFA.
+* OpenStack .rc-file. Cannot be used if your account is using MFA. To download the .rc-file log into [your project](https://ops.elastx.cloud/project/), click on your user at the top right and select OpenStack RC File.
 
-To be able to use the swift cli client, you first need to source your application credential or if you don’t use MFA you can use the .rc-file which points to your openstack project.
+### Getting started
 
+Start by sourcing your application credential or openstack .rc-file.
 >**Beware:** The following commands executes directly without any questions.
-
-List all available commands: ```swift```.
 
 ### Check your authentication variables
 
