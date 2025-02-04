@@ -18,7 +18,6 @@ A new way to group custom database parameters is introduced. This allows to appl
    
 
 ## Important fixes
-Reset password is not working
 * Deployments stuck in deploying status forever
 * Corrected state transitions so a failed deployment eventually marks as “failed” instead of hanging.
 * Reduced unnecessary Service updates, lowering API calls to Kubernetes.
