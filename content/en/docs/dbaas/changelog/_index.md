@@ -16,7 +16,6 @@ A new way to group custom database parameters is introduced. This allows to appl
 * Reboot database node.
 * Make Postgres SUPERUSER configurable.
    
-
 ## Important fixes
 * Deployments stuck in deploying status forever
 * Corrected state transitions so a failed deployment eventually marks as “failed” instead of hanging.
