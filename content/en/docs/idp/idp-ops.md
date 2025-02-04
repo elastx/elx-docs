@@ -1,5 +1,5 @@
 ---
-title: "Elastx Identity Provider"
+title: "Introduction"
 weight: 1
 alwaysopen: true
 ---
