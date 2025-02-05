@@ -5,6 +5,25 @@ weight: 2
 alwaysopen: true
 ---
 
+# V 1.51
+## Overview
+A new way to group custom database parameters is introduced. This allows to apply the group to multiple datastores in a more structured way. Autoscaling of volumes has been improved where the actual scaling is less intrusive than it was in 1.50. Added a SUPERUSER checkbox when creating a new PostgreSQL user, with caution prompts.
+
+## Changes
+* Parameter Groups for Database Management.
+* Database Logs in Events Viewer.
+* Create Datastore from incremental backup from different storage types.
+* Reboot database node.
+* Make Postgres SUPERUSER configurable.
+   
+## Important fixes
+* Deployments stuck in deploying status forever
+* Corrected state transitions so a failed deployment eventually marks as “failed” instead of hanging.
+* Reduced unnecessary Service updates, lowering API calls to Kubernetes.
+* Set correct interval to 15/30/60 minutes for incremental backups.
+* Disabled volume-editing for ephemeral storage as it was never intended.
+
+
 # V 1.50
 ## Overview
 This release offers upward volume autoscaling, new customer database parameters, improved monitoring in terms of mail notifications and more metrics. It is now possible to create (m)TLS-based sessions where the client can prefetch server certificates. The backup management has been improved disalloving concurrent backup race conditions.
