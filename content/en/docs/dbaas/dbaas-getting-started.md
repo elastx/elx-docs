@@ -123,3 +123,11 @@ Example: You are planning on creating a new datastore and import a 80GiB databas
 
 #### Certificates
 Currently certificates installed on database nodes are self-signed.
+
+#### Monitoring Metrics
+
+The metrics displayed under the Monitoring tab are per node, not aggregated for the entire cluster.
+
+In this context, CPU and core refer to the same thing. A utilization of 100% means that one CPU/core is fully used.
+
+The maximum CPU capacity is calculated as 100 × N, where N is the number of CPU cores. For example, a database node with the specification v2-c4-m8-d120 would reach full CPU utilization at 400% load.
