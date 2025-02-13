@@ -1,6 +1,6 @@
 ---
 title: "Cert-manager and Cloudflare demo"
-description: "Using ClusterIssuer with cert-manager and wildcard DNS"
+description: "Using Cluster Issuer with cert-manager and wildcard DNS"
 weight: 5
 alwaysopen: true
 ---

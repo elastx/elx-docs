@@ -1,6 +1,6 @@
 ---
 title: "Change PV StorageClass"
-description: "How to migrate from between storageclasses"
+description: "How to migrate between storage classes"
 weight: 5
 alwaysopen: true
 ---
