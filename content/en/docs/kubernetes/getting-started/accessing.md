@@ -60,6 +60,10 @@ If your output looks similar then you should be good to go! If it looks very
 different or contains error messages, don't hesitate to contact our support if
 you can't figure out how to solve it on your own.
 
+## Restrict access
+
+Access to the API server is controlled in the loadbalancer in front of the API. Currently, managing the IP-range allowlist requires a [support ticket here](https://support.elastx.se/hc/en-us). All Elastx IP ranges are always included.
+
 ## Instructions for older versions
 
 Everything under this section is only for clusters running older versions of our private Kubernetes service.
